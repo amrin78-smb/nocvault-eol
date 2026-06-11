@@ -1,0 +1,28 @@
+name: Scrape Sangfor EOS
+
+# Sangfor is behind Cloudflare and cannot be fetched from the Netlify serverless
+# runtime. This job fetches the page with curl (whose TLS fingerprint passes
+# Cloudflare) and POSTs the HTML to the ingest endpoint, which parses + upserts.
+#
+# Required repository secrets:
+#   NV_BASE_URL       deployment base URL, e.g. https://nocvault-eol.netlify.app
+#   NV_INGEST_SECRET  value of API_SECRET_KEY on the deployment
+#
+# Note: if a GitHub-hosted runner's IP is challenged by Cloudflare, run
+# scripts/scrape-sangfor.sh locally instead (or use a self-hosted runner).
+
+on:
+  schedule:
+    - cron: '17 3 * * 1' # weekly, Monday 03:17 UTC
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Sangfor and ingest
+        env:
+          NV_BASE_URL: ${{ secrets.NV_BASE_URL }}
+          NV_INGEST_SECRET: ${{ secrets.NV_INGEST_SECRET }}
+        run: bash scripts/scrape-sangfor.sh
