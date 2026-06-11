@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS vendors (
   scrape_status TEXT DEFAULT 'pending',
   manual_only BOOLEAN DEFAULT false,
   record_count INTEGER DEFAULT 0,
+  description TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -69,14 +70,20 @@ CREATE UNIQUE INDEX IF NOT EXISTS uq_eol_products_vendor_model
   ON eol_products (vendor_id, model_normalized);
 `;
 
+// Bring existing databases (created before the column was added) up to date.
+const ALTER_SQL = `
+ALTER TABLE vendors ADD COLUMN IF NOT EXISTS description TEXT;
+`;
+
 interface SeedVendor {
   slug: string;
   name: string;
   manual_only?: boolean;
 }
 
-// Vendors not tracked by endoflife.date (verified 2026-06-11) have no automated
-// source and are handled via the manual-entry workflow. See lib/eol-mapping.ts.
+// Vendors not tracked by endoflife.date (verified 2026-06-11) and with no
+// scrapeable source are handled via the manual-entry workflow. Sangfor is NOT
+// here because it has a scrapeable EOS table (see scrape route + reconcileVendorSources).
 const MANUAL_ONLY_SLUGS = [
   'hp',
   'juniper',
@@ -85,8 +92,14 @@ const MANUAL_ONLY_SLUGS = [
   'checkpoint',
   'sonicwall',
   'forcepoint',
-  'sangfor',
 ];
+
+const SANGFOR_EOS_URL =
+  'https://www.sangfor.com/support/services-policy/support-life-cycle-policy/end-of-sale-service-eos';
+const FORCEPOINT_LIFECYCLE_URL =
+  'https://support.forcepoint.com/s/productsupportlifecycle';
+const FORCEPOINT_NOTE =
+  'Lifecycle data is rendered by JavaScript (Salesforce Experience Cloud) and is not present in the page HTML, so it cannot be scraped. Open the source URL in a browser and enter EOS/EOL dates manually.';
 
 const SEED_VENDORS: SeedVendor[] = [
   { slug: 'cisco', name: 'Cisco' },
@@ -100,7 +113,7 @@ const SEED_VENDORS: SeedVendor[] = [
   { slug: 'sonicwall', name: 'SonicWall', manual_only: true },
   { slug: 'paloalto', name: 'Palo Alto' },
   { slug: 'forcepoint', name: 'Forcepoint', manual_only: true },
-  { slug: 'sangfor', name: 'Sangfor', manual_only: true },
+  { slug: 'sangfor', name: 'Sangfor' },
 ];
 
 export async function runInit(): Promise<void> {
@@ -112,10 +125,37 @@ export async function runInit(): Promise<void> {
     }
   }
   await rawQuery(CONSTRAINT_SQL.trim());
+  await rawQuery(ALTER_SQL.trim());
 
   await seedVendors();
   await reconcileManualOnly();
+  await reconcileVendorSources();
   await seedAdmin();
+}
+
+// seedVendors uses ON CONFLICT DO NOTHING, so vendor source config must be
+// reconciled separately for databases seeded before these scrapers existed.
+async function reconcileVendorSources(): Promise<void> {
+  // Sangfor publishes a plain-HTML EOS table -> scrapeable.
+  await rawQuery(
+    `UPDATE vendors
+        SET manual_only = false,
+            scrape_url = $1,
+            scrape_method = 'html_table'
+      WHERE slug = 'sangfor'`,
+    [SANGFOR_EOS_URL]
+  );
+
+  // Forcepoint is a JS-rendered Salesforce shell -> not scrapeable; keep manual.
+  await rawQuery(
+    `UPDATE vendors
+        SET manual_only = true,
+            scrape_url = $1,
+            scrape_status = 'js_rendered',
+            description = $2
+      WHERE slug = 'forcepoint'`,
+    [FORCEPOINT_LIFECYCLE_URL, FORCEPOINT_NOTE]
+  );
 }
 
 // seedVendors uses ON CONFLICT DO NOTHING, so it never updates existing rows.

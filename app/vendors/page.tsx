@@ -13,12 +13,15 @@ interface VendorRow {
   manual_only: boolean;
   record_count: number;
   last_scraped_at: string | null;
+  scrape_url: string | null;
+  description: string | null;
 }
 
 export default async function VendorsPage() {
   const { rows } = await query<VendorRow>(
     `SELECT id, slug, name, scrape_status, manual_only, record_count,
-            to_char(last_scraped_at, 'YYYY-MM-DD HH24:MI') AS last_scraped_at
+            to_char(last_scraped_at, 'YYYY-MM-DD HH24:MI') AS last_scraped_at,
+            scrape_url, description
      FROM vendors
      ORDER BY name`
   );
@@ -33,6 +36,7 @@ export default async function VendorsPage() {
           <thead>
             <tr>
               <th>Name</th>
+              <th>Source</th>
               <th>Records</th>
               <th>Last Scraped</th>
               <th>Status</th>
@@ -43,7 +47,26 @@ export default async function VendorsPage() {
           <tbody>
             {rows.map((vendor) => (
               <tr key={vendor.id}>
-                <td>{vendor.name}</td>
+                <td>
+                  {vendor.name}
+                  {vendor.description && (
+                    <div className="vendor-note">{vendor.description}</div>
+                  )}
+                </td>
+                <td>
+                  {vendor.scrape_url ? (
+                    <a
+                      className="source-link"
+                      href={vendor.scrape_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source ↗
+                    </a>
+                  ) : (
+                    '—'
+                  )}
+                </td>
                 <td>{vendor.record_count}</td>
                 <td>{vendor.last_scraped_at ?? '—'}</td>
                 <td>

@@ -226,6 +226,26 @@ a:hover {
   background: #fef3c7;
   color: #b45309;
 }
+.badge-js_rendered {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.source-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.source-link:hover {
+  text-decoration: underline;
+}
+.vendor-note {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  max-width: 320px;
+}
 .badge-yes {
   background: #dcfce7;
   color: var(--green);

@@ -7,10 +7,33 @@ import { EOL_PRODUCT_MAP } from '@/lib/eol-mapping';
 
 export const dynamic = 'force-dynamic';
 
+// Sangfor sits behind Cloudflare bot management. A full browser-like header set
+// is the best we can do from a server; note that CF also fingerprints the TLS
+// client (JA3), so datacenter/Node requests may still be challenged with a 403.
+const BROWSER_HEADERS: Record<string, string> = {
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  Accept:
+    'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9',
+  'Upgrade-Insecure-Requests': '1',
+  'Sec-Fetch-Dest': 'document',
+  'Sec-Fetch-Mode': 'navigate',
+  'Sec-Fetch-Site': 'none',
+  'Sec-Fetch-User': '?1',
+  'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+};
+
+const SANGFOR_EOS_URL =
+  'https://www.sangfor.com/support/services-policy/support-life-cycle-policy/end-of-sale-service-eos';
+
 interface VendorRow {
   id: number;
   slug: string;
   manual_only: boolean;
+  scrape_url: string | null;
 }
 
 interface Cycle {
@@ -34,7 +57,7 @@ export async function POST(
 
   try {
     const { rows } = await query<VendorRow>(
-      'SELECT id, slug, manual_only FROM vendors WHERE slug = $1',
+      'SELECT id, slug, manual_only, scrape_url FROM vendors WHERE slug = $1',
       [slug]
     );
     const vendor = rows[0];
@@ -45,6 +68,11 @@ export async function POST(
 
     if (vendor.manual_only) {
       return NextResponse.json({ error: 'vendor is manual_only' }, { status: 400 });
+    }
+
+    // Sangfor publishes a bespoke HTML EOS table rather than an endoflife.date feed.
+    if (slug === 'sangfor') {
+      return await scrapeSangfor(vendorId, vendor.scrape_url ?? SANGFOR_EOS_URL);
     }
 
     const products = EOL_PRODUCT_MAP[slug] ?? [];
@@ -137,4 +165,171 @@ export async function POST(
     const message = err instanceof Error ? err.message : 'Internal error';
     return NextResponse.json({ error: message }, { status: 500 });
   }
+}
+
+// ---------------------------------------------------------------------------
+// Sangfor adapter
+//
+// The "End of Services Announcements" table has three columns:
+//   1. Service        - one or more model names separated by <br>
+//   2. EOS Date        - e.g. "Apr 30, 2026"
+//   3. Announcement    - an <a href> to the EOS announcement page
+//
+// The date and announcement cells use rowspan="2", so some <tr> rows omit them
+// and inherit the value from the row above. We classify each non-first cell by
+// whether it contains an <a> (announcement) or not (date), and carry forward the
+// last-seen date/url for rows where the cell was rowspanned away.
+// ---------------------------------------------------------------------------
+
+interface SangforRow {
+  models: string[];
+  dateRaw: string | null;
+  sourceUrl: string | null;
+}
+
+function stripTags(html: string): string {
+  return html.replace(/<[^>]*>/g, '');
+}
+
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&quot;/gi, '"');
+}
+
+function cleanText(html: string): string {
+  return decodeEntities(stripTags(html)).replace(/\s+/g, ' ').trim();
+}
+
+function parseSangforTable(html: string): SangforRow[] {
+  // Isolate the "End of Services Announcements" section, then its first table.
+  const aliasIdx = html.indexOf('End of Services Announcements');
+  const scope = aliasIdx >= 0 ? html.slice(aliasIdx) : html;
+  const tableStart = scope.indexOf('<table');
+  const tableEnd = scope.indexOf('</table>', tableStart);
+  if (tableStart < 0 || tableEnd < 0) return [];
+  const tableHtml = scope.slice(tableStart, tableEnd);
+
+  const out: SangforRow[] = [];
+  let carriedDate: string | null = null;
+  let carriedUrl: string | null = null;
+
+  const trRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  let tr: RegExpExecArray | null;
+  while ((tr = trRegex.exec(tableHtml)) !== null) {
+    const cells = [...tr[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]);
+    if (cells.length === 0) continue;
+
+    // Skip the header row ("Service" / "EOS Date" / "Announcement").
+    if (cleanText(cells[0]).toLowerCase() === 'service') continue;
+
+    const models = cells[0]
+      .replace(/<br\s*\/?>/gi, '\n')
+      .split('\n')
+      .map((part) => cleanText(part))
+      .filter((p) => p.length > 0);
+    if (models.length === 0) continue;
+
+    let dateRaw: string | null = null;
+    let sourceUrl: string | null = null;
+    for (const cell of cells.slice(1)) {
+      const hrefMatch = cell.match(/href="([^"]+)"/i);
+      if (hrefMatch) {
+        sourceUrl = hrefMatch[1];
+      } else {
+        // Prefer the bold primary date over any trailing exception note.
+        const strong = cell.match(/<strong[^>]*>([\s\S]*?)<\/strong>/i);
+        const text = cleanText(strong ? strong[1] : cell);
+        if (text) dateRaw = text;
+      }
+    }
+
+    // Apply rowspan inheritance from the previous row where cells were omitted.
+    if (dateRaw) carriedDate = dateRaw;
+    else dateRaw = carriedDate;
+    if (sourceUrl) carriedUrl = sourceUrl;
+    else sourceUrl = carriedUrl;
+
+    out.push({ models, dateRaw, sourceUrl });
+  }
+
+  return out;
+}
+
+async function scrapeSangfor(
+  vendorId: number,
+  scrapeUrl: string
+): Promise<NextResponse> {
+  await query("UPDATE vendors SET scrape_status = 'running' WHERE id = $1", [
+    vendorId,
+  ]);
+
+  const res = await fetch(scrapeUrl, { headers: BROWSER_HEADERS });
+  if (!res.ok) {
+    if (res.status === 403) {
+      throw new Error(
+        'Sangfor fetch blocked by Cloudflare (HTTP 403). The page loads in a ' +
+          'normal browser but Cloudflare blocks server-side/datacenter requests ' +
+          'by TLS fingerprint. A scraping-unblocker proxy or a headless browser ' +
+          'is required to scrape this source automatically.'
+      );
+    }
+    throw new Error(`Sangfor fetch failed: HTTP ${res.status}`);
+  }
+  const html = await res.text();
+  const parsed = parseSangforTable(html);
+  if (parsed.length === 0) {
+    throw new Error('Sangfor: EOS table not found or empty (page structure changed?)');
+  }
+
+  let upserts = 0;
+  const warnings: string[] = [];
+
+  for (const row of parsed) {
+    const eos_date = normalizeDate(row.dateRaw);
+    if (!eos_date && row.dateRaw) {
+      warnings.push(`unparsed date "${row.dateRaw}" for ${row.models.join(', ')}`);
+    }
+    for (const model of row.models) {
+      const model_normalized = normalizeModel(model);
+      if (!model_normalized) continue;
+      await query(
+        `INSERT INTO eol_products
+           (vendor_id, model_raw, model_normalized, category, eos_date, source_url, entry_method, confidence)
+         VALUES ($1, $2, $3, NULL, $4, $5, 'scraped', 'high')
+         ON CONFLICT (vendor_id, model_normalized) DO UPDATE SET
+           model_raw = EXCLUDED.model_raw,
+           eos_date = EXCLUDED.eos_date,
+           source_url = EXCLUDED.source_url,
+           entry_method = 'scraped',
+           confidence = 'high',
+           updated_at = NOW()`,
+        [vendorId, model, model_normalized, eos_date, row.sourceUrl]
+      );
+      upserts += 1;
+    }
+  }
+
+  const { rows: countRows } = await query<{ c: number }>(
+    'SELECT COUNT(*)::int AS c FROM eol_products WHERE vendor_id = $1',
+    [vendorId]
+  );
+  const count = countRows[0]?.c ?? 0;
+
+  await query(
+    "UPDATE vendors SET scrape_status = 'success', last_scraped_at = NOW(), record_count = $2 WHERE id = $1",
+    [vendorId, count]
+  );
+
+  return NextResponse.json({
+    ok: true,
+    status: 'success',
+    rows: parsed.length,
+    upserts,
+    warnings: warnings.length ? warnings : undefined,
+  });
 }
