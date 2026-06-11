@@ -58,6 +58,20 @@ CREATE TABLE IF NOT EXISTS admin_users (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Work queue for the resumable Cisco EOL crawl (series -> listing -> bulletin).
+CREATE TABLE IF NOT EXISTS cisco_eol_queue (
+  id SERIAL PRIMARY KEY,
+  url TEXT UNIQUE NOT NULL,
+  kind TEXT NOT NULL,
+  category TEXT,
+  series_name TEXT,
+  status TEXT NOT NULL DEFAULT 'pending',
+  attempts INTEGER NOT NULL DEFAULT 0,
+  note TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  processed_at TIMESTAMPTZ
+);
+
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 CREATE INDEX IF NOT EXISTS idx_eol_products_normalized
@@ -144,6 +158,16 @@ async function reconcileVendorSources(): Promise<void> {
             scrape_method = 'html_table'
       WHERE slug = 'sangfor'`,
     [SANGFOR_EOS_URL]
+  );
+
+  // Cisco: public EOL index crawl (lib/cisco.ts), wired via scrape_method.
+  await rawQuery(
+    `UPDATE vendors
+        SET manual_only = false,
+            scrape_url = $1,
+            scrape_method = 'cisco_eol_index'
+      WHERE slug = 'cisco'`,
+    ['https://www.cisco.com/c/en/us/support/eol/index.html']
   );
 
   // Forcepoint is a JS-rendered Salesforce shell -> not scrapeable; keep manual.

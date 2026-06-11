@@ -5,6 +5,7 @@ import { query } from '@/lib/db';
 import { normalizeModel, normalizeDate } from '@/lib/normalize';
 import { EOL_PRODUCT_MAP } from '@/lib/eol-mapping';
 import { ingestSangforHtml, SANGFOR_EOS_URL } from '@/lib/sangfor';
+import { runCisco, CISCO_EOL_INDEX_URL } from '@/lib/cisco';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,7 +43,7 @@ interface Cycle {
 }
 
 export async function POST(
-  _req: Request,
+  req: Request,
   { params }: { params: { slug: string } }
 ) {
   const session = await getServerSession(authOptions);
@@ -71,6 +72,14 @@ export async function POST(
     // Sangfor publishes a bespoke HTML EOS table rather than an endoflife.date feed.
     if (slug === 'sangfor') {
       return await scrapeSangfor(vendorId, vendor.scrape_url ?? SANGFOR_EOS_URL);
+    }
+
+    // Cisco: large, resumable public EOL index crawl. Each call drains a bounded
+    // chunk; re-invoke until done:true. Pass ?reset=1 to restart from scratch.
+    if (slug === 'cisco') {
+      const reset = new URL(req.url).searchParams.get('reset') === '1';
+      const result = await runCisco(vendorId, vendor.scrape_url ?? CISCO_EOL_INDEX_URL, reset);
+      return NextResponse.json({ ok: true, vendor: 'cisco', ...result });
     }
 
     const products = EOL_PRODUCT_MAP[slug] ?? [];
