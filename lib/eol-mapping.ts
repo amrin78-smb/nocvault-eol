@@ -1,13 +1,16 @@
 // Vendor slug -> endoflife.date product mapping for Phase 1 scraping.
 // Empty array means "no endoflife.date source available" -> status 'no_source'.
+// Slugs verified against https://endoflife.date/api/all.json (2026-06-11).
+// HP/Aruba, Juniper, Ubiquiti, CheckPoint, Ruckus and SonicWall are NOT tracked
+// by endoflife.date at all, so they have no source and must be sourced elsewhere.
 
 export const EOL_PRODUCT_MAP: Record<string, string[]> = {
-  cisco: ['cisco-ios', 'cisco-ios-xe', 'cisco-nx-os', 'cisco-asr-1000', 'cisco-catalyst-9000'],
-  fortinet: ['fortinet-fortigate', 'fortinet-fortimanager'],
-  hp: ['hp-uefi', 'hpe-simplivity'],
-  juniper: ['juniper-junos'],
+  cisco: ['cisco-ios-xe'],
+  fortinet: ['fortios'],
+  hp: [],
+  juniper: [],
   mikrotik: ['routeros'],
-  ubiquiti: ['unifi', 'unifi-network-server'],
+  ubiquiti: [],
   ruckus: [],
   checkpoint: [],
   sonicwall: [],
