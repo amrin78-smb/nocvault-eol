@@ -222,6 +222,10 @@ a:hover {
   background: #f3f4f6;
   color: #9ca3af;
 }
+.badge-manual_only {
+  background: #fef3c7;
+  color: #b45309;
+}
 .badge-yes {
   background: #dcfce7;
   color: var(--green);

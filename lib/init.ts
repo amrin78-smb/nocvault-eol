@@ -75,16 +75,29 @@ interface SeedVendor {
   manual_only?: boolean;
 }
 
+// Vendors not tracked by endoflife.date (verified 2026-06-11) have no automated
+// source and are handled via the manual-entry workflow. See lib/eol-mapping.ts.
+const MANUAL_ONLY_SLUGS = [
+  'hp',
+  'juniper',
+  'ubiquiti',
+  'ruckus',
+  'checkpoint',
+  'sonicwall',
+  'forcepoint',
+  'sangfor',
+];
+
 const SEED_VENDORS: SeedVendor[] = [
   { slug: 'cisco', name: 'Cisco' },
   { slug: 'fortinet', name: 'Fortinet' },
-  { slug: 'hp', name: 'HP/Aruba' },
-  { slug: 'juniper', name: 'Juniper' },
+  { slug: 'hp', name: 'HP/Aruba', manual_only: true },
+  { slug: 'juniper', name: 'Juniper', manual_only: true },
   { slug: 'mikrotik', name: 'MikroTik' },
-  { slug: 'ubiquiti', name: 'Ubiquiti' },
-  { slug: 'ruckus', name: 'Ruckus' },
-  { slug: 'checkpoint', name: 'CheckPoint' },
-  { slug: 'sonicwall', name: 'SonicWall' },
+  { slug: 'ubiquiti', name: 'Ubiquiti', manual_only: true },
+  { slug: 'ruckus', name: 'Ruckus', manual_only: true },
+  { slug: 'checkpoint', name: 'CheckPoint', manual_only: true },
+  { slug: 'sonicwall', name: 'SonicWall', manual_only: true },
   { slug: 'paloalto', name: 'Palo Alto' },
   { slug: 'forcepoint', name: 'Forcepoint', manual_only: true },
   { slug: 'sangfor', name: 'Sangfor', manual_only: true },
@@ -101,7 +114,20 @@ export async function runInit(): Promise<void> {
   await rawQuery(CONSTRAINT_SQL.trim());
 
   await seedVendors();
+  await reconcileManualOnly();
   await seedAdmin();
+}
+
+// seedVendors uses ON CONFLICT DO NOTHING, so it never updates existing rows.
+// Flip vendors that have no automated source to manual_only on existing DBs too.
+async function reconcileManualOnly(): Promise<void> {
+  await rawQuery(
+    `UPDATE vendors
+       SET manual_only = true,
+           scrape_status = 'manual_only'
+     WHERE slug = ANY($1) AND manual_only = false`,
+    [MANUAL_ONLY_SLUGS]
+  );
 }
 
 async function seedVendors(): Promise<void> {
