@@ -6,6 +6,18 @@ import { normalizeModel, normalizeDate } from '@/lib/normalize';
 import { EOL_PRODUCT_MAP } from '@/lib/eol-mapping';
 import { ingestSangforHtml, SANGFOR_EOS_URL } from '@/lib/sangfor';
 import { runCisco, CISCO_EOL_INDEX_URL } from '@/lib/cisco';
+import { scrapePaloAlto } from '@/lib/paloalto';
+import { scrapeFortinet } from '@/lib/fortinet';
+import { scrapeEolNetwork } from '@/lib/eol-network';
+
+// Our vendor slug -> eol.network slug (only Aruba/HP differs).
+const EOL_NETWORK_VENDORS: Record<string, string> = {
+  juniper: 'juniper',
+  hp: 'aruba',
+  ruckus: 'ruckus',
+  sonicwall: 'sonicwall',
+  checkpoint: 'checkpoint',
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -80,6 +92,23 @@ export async function POST(
       const reset = new URL(req.url).searchParams.get('reset') === '1';
       const result = await runCisco(vendorId, vendor.scrape_url ?? CISCO_EOL_INDEX_URL, reset);
       return NextResponse.json({ ok: true, vendor: 'cisco', ...result });
+    }
+
+    // Palo Alto: public hardware EOL table.
+    if (slug === 'paloalto') {
+      return NextResponse.json(await scrapePaloAlto(vendorId, vendor.scrape_url));
+    }
+
+    // Fortinet: lifecycle page is auth-gated; import the FortiOS firmware fallback.
+    if (slug === 'fortinet') {
+      return NextResponse.json(await scrapeFortinet(vendorId, vendor.scrape_url));
+    }
+
+    // Juniper / Aruba(hp) / Ruckus / SonicWall / CheckPoint via eol.network.
+    if (EOL_NETWORK_VENDORS[slug]) {
+      return NextResponse.json(
+        await scrapeEolNetwork(vendorId, EOL_NETWORK_VENDORS[slug], 'medium')
+      );
     }
 
     const products = EOL_PRODUCT_MAP[slug] ?? [];

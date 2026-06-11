@@ -95,18 +95,10 @@ interface SeedVendor {
   manual_only?: boolean;
 }
 
-// Vendors not tracked by endoflife.date (verified 2026-06-11) and with no
-// scrapeable source are handled via the manual-entry workflow. Sangfor is NOT
-// here because it has a scrapeable EOS table (see scrape route + reconcileVendorSources).
-const MANUAL_ONLY_SLUGS = [
-  'hp',
-  'juniper',
-  'ubiquiti',
-  'ruckus',
-  'checkpoint',
-  'sonicwall',
-  'forcepoint',
-];
+// Vendors with no scrapeable source, handled via the manual-entry workflow.
+// Juniper, HP/Aruba, Ruckus, SonicWall and CheckPoint moved OUT (scraped from
+// eol.network); Sangfor scrapes its own EOS table. See reconcileVendorSources.
+const MANUAL_ONLY_SLUGS = ['ubiquiti', 'forcepoint'];
 
 const SANGFOR_EOS_URL =
   'https://www.sangfor.com/support/services-policy/support-life-cycle-policy/end-of-sale-service-eos';
@@ -169,6 +161,47 @@ async function reconcileVendorSources(): Promise<void> {
       WHERE slug = 'cisco'`,
     ['https://www.cisco.com/c/en/us/support/eol/index.html']
   );
+
+  // Palo Alto: public hardware EOL table.
+  await rawQuery(
+    `UPDATE vendors
+        SET manual_only = false,
+            scrape_url = $1,
+            scrape_method = 'paloalto_eol'
+      WHERE slug = 'paloalto'`,
+    [
+      'https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates',
+    ]
+  );
+
+  // Fortinet: lifecycle page is auth-gated; firmware via endoflife.date fallback.
+  await rawQuery(
+    `UPDATE vendors
+        SET manual_only = false,
+            scrape_url = $1,
+            scrape_method = 'fortinet_lifecycle'
+      WHERE slug = 'fortinet'`,
+    ['https://support.fortinet.com/Information/ProductLifeCycle.aspx']
+  );
+
+  // Juniper / HP-Aruba / Ruckus / SonicWall / CheckPoint scraped from eol.network.
+  const eolNetwork: Array<[string, string]> = [
+    ['juniper', 'https://www.eol.network/juniper/'],
+    ['hp', 'https://www.eol.network/aruba/'],
+    ['ruckus', 'https://www.eol.network/ruckus/'],
+    ['sonicwall', 'https://www.eol.network/sonicwall/'],
+    ['checkpoint', 'https://www.eol.network/checkpoint/'],
+  ];
+  for (const [slug, url] of eolNetwork) {
+    await rawQuery(
+      `UPDATE vendors
+          SET manual_only = false,
+              scrape_url = $2,
+              scrape_method = 'eol_network'
+        WHERE slug = $1`,
+      [slug, url]
+    );
+  }
 
   // Forcepoint is a JS-rendered Salesforce shell -> not scrapeable; keep manual.
   await rawQuery(
