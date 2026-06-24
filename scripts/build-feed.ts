@@ -132,6 +132,12 @@ async function main() {
   let sigB64: string;
 
   try {
+    // Safety net (IF NOT EXISTS no-op once the app/seed has run). Canonical schema: lib/init.ts.
+    await pool.query(`CREATE TABLE IF NOT EXISTS feed_versions (
+      id SERIAL PRIMARY KEY, feed_version TEXT UNIQUE NOT NULL,
+      generated_at TIMESTAMPTZ DEFAULT NOW(), row_count INTEGER, content_sha256 TEXT,
+      signature TEXT, normalizer_version INTEGER, published_by TEXT)`);
+
     const { rows } = await pool.query<ModelRow>(
       `SELECT
           v.name AS vendor,

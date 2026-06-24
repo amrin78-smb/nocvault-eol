@@ -26,6 +26,32 @@ function vendorSlug(vendor: string): string {
   return vendor.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+// Safety net so `npm run seed` works on a fresh Neon DB without first deploying the
+// app. Canonical schema lives in lib/init.ts; these are IF NOT EXISTS no-ops once the
+// app has run its own init. Only the tables this script writes.
+async function ensureSchema(pool: Pool): Promise<void> {
+  await pool.query(`CREATE TABLE IF NOT EXISTS vendors (
+    id SERIAL PRIMARY KEY, slug TEXT UNIQUE NOT NULL, name TEXT NOT NULL,
+    manual_only BOOLEAN DEFAULT false, lifecycle_source_url TEXT, notes TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW())`);
+  await pool.query(`CREATE TABLE IF NOT EXISTS eol_models (
+    id SERIAL PRIMARY KEY, vendor_id INTEGER REFERENCES vendors(id),
+    model_raw TEXT NOT NULL, model_normalized TEXT NOT NULL,
+    end_of_sale DATE, support_end_date DATE, os_eol_date DATE,
+    confidence TEXT DEFAULT 'medium', source_url TEXT, note TEXT,
+    verified BOOLEAN DEFAULT false, verified_at TIMESTAMPTZ,
+    entry_method TEXT DEFAULT 'manual',
+    created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW())`);
+  await pool.query(`CREATE TABLE IF NOT EXISTS model_aliases (
+    id SERIAL PRIMARY KEY,
+    eol_model_id INTEGER REFERENCES eol_models(id) ON DELETE CASCADE,
+    alias_raw TEXT NOT NULL, alias_normalized TEXT NOT NULL)`);
+  await pool.query(`CREATE UNIQUE INDEX IF NOT EXISTS uq_eol_models_vendor_model
+    ON eol_models (vendor_id, model_normalized)`);
+  await pool.query(`CREATE UNIQUE INDEX IF NOT EXISTS uq_model_aliases_model_alias
+    ON model_aliases (eol_model_id, alias_raw)`);
+}
+
 async function main() {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) {
@@ -46,6 +72,7 @@ async function main() {
   let aliasCount = 0;
 
   try {
+    await ensureSchema(pool);
     for (const entry of entries) {
       const vendor = entry.vendor;
       const slug = vendorSlug(vendor);
