@@ -27,62 +27,115 @@ function vendorSlug(vendor: string): string {
 
 export type SeedResult = { entries: number; vendors: number; models: number; aliases: number };
 
-/** Upsert the curated seed (data/eol-seed.json) into eol_models + model_aliases. Idempotent. */
+/**
+ * Upsert the curated seed (data/eol-seed.json) into eol_models + model_aliases.
+ * BULK / set-based (a few queries, not ~2.5k round-trips) so it completes well inside
+ * the serverless function timeout even at 800+ models. Idempotent.
+ */
 export async function applyCuratedSeed(): Promise<SeedResult> {
   const entries = seedData as SeedEntry[];
-  let vendors = 0;
-  let models = 0;
-  let aliases = 0;
 
-  for (const entry of entries) {
-    const slug = vendorSlug(entry.vendor);
-    const vIns = await query<{ id: number }>(
-      `INSERT INTO vendors (slug, name) VALUES ($1, $2)
-       ON CONFLICT (slug) DO NOTHING RETURNING id`,
-      [slug, entry.vendor]
-    );
-    let vendorId: number;
-    if (vIns.rows.length > 0) {
-      vendorId = vIns.rows[0].id;
-      vendors++;
+  // 1) Vendors — distinct by slug, bulk upsert, then read back ids.
+  const vendorName = new Map<string, string>(); // slug -> name
+  for (const e of entries) vendorName.set(vendorSlug(e.vendor), e.vendor);
+  const slugs = [...vendorName.keys()];
+  await query(
+    `INSERT INTO vendors (slug, name)
+       SELECT s, n FROM unnest($1::text[], $2::text[]) AS t(s, n)
+     ON CONFLICT (slug) DO NOTHING`,
+    [slugs, slugs.map((s) => vendorName.get(s)!)]
+  );
+  const vres = await query<{ id: number; slug: string }>(
+    `SELECT id, slug FROM vendors WHERE slug = ANY($1::text[])`,
+    [slugs]
+  );
+  const vendorIdBySlug = new Map<string, number>(vres.rows.map((r) => [r.slug, r.id]));
+
+  // 2) Models — dedupe by (vendor_id, model_normalized), bulk upsert with RETURNING.
+  type M = {
+    vendorId: number; vendor: string; raw: string; norm: string;
+    sed: string | null; oed: string | null; conf: string; src: string | null;
+    note: string | null; aliases: string[];
+  };
+  const modelByKey = new Map<string, M>();
+  for (const e of entries) {
+    const vendorId = vendorIdBySlug.get(vendorSlug(e.vendor));
+    if (!vendorId || !e.matches?.[0]) continue;
+    const norm = normalizeForMatch(e.vendor, e.matches[0]);
+    if (!norm) continue;
+    const key = `${vendorId}|${norm}`;
+    const existing = modelByKey.get(key);
+    if (!existing) {
+      modelByKey.set(key, {
+        vendorId, vendor: e.vendor, raw: e.matches[0], norm,
+        sed: e.support_end_date ?? null, oed: e.os_eol_date ?? null,
+        conf: e.confidence ?? 'medium', src: e.source ?? null, note: e.note ?? null,
+        aliases: e.matches.slice(1),
+      });
     } else {
-      const vSel = await query<{ id: number }>(`SELECT id FROM vendors WHERE slug = $1`, [slug]);
-      vendorId = vSel.rows[0].id;
-    }
-
-    const modelRaw = entry.matches[0];
-    const modelNormalized = normalizeForMatch(entry.vendor, modelRaw);
-    const mIns = await query<{ id: number }>(
-      `INSERT INTO eol_models
-         (vendor_id, model_raw, model_normalized, end_of_sale, support_end_date,
-          os_eol_date, confidence, source_url, note, entry_method, updated_at)
-       VALUES ($1, $2, $3, NULL, $4, $5, $6, $7, $8, 'seed', now())
-       ON CONFLICT (vendor_id, model_normalized) DO UPDATE SET
-          support_end_date = EXCLUDED.support_end_date,
-          os_eol_date      = EXCLUDED.os_eol_date,
-          confidence       = EXCLUDED.confidence,
-          source_url       = EXCLUDED.source_url,
-          note             = EXCLUDED.note,
-          entry_method     = 'seed',
-          updated_at       = now()
-       RETURNING id`,
-      [vendorId, modelRaw, modelNormalized, entry.support_end_date, entry.os_eol_date,
-       entry.confidence, entry.source, entry.note]
-    );
-    const modelId = mIns.rows[0].id;
-    models++;
-
-    for (const alias of entry.matches.slice(1)) {
-      const aIns = await query(
-        `INSERT INTO model_aliases (eol_model_id, alias_raw, alias_normalized)
-           VALUES ($1, $2, $3)
-         ON CONFLICT (eol_model_id, alias_raw) DO NOTHING`,
-        [modelId, alias, normalizeForMatch(entry.vendor, alias)]
-      );
-      aliases += aIns.rowCount ?? 0;
+      for (const a of e.matches.slice(1)) if (!existing.aliases.includes(a)) existing.aliases.push(a);
     }
   }
-  return { entries: entries.length, vendors, models, aliases };
+  const models = [...modelByKey.values()];
+
+  const mres = await query<{ id: number; vendor_id: number; model_normalized: string }>(
+    `INSERT INTO eol_models
+       (vendor_id, model_raw, model_normalized, support_end_date, os_eol_date,
+        confidence, source_url, note, entry_method)
+     SELECT vendor_id, model_raw, model_normalized, sed::date, oed::date,
+            confidence, source_url, note, 'seed'
+       FROM unnest($1::int[], $2::text[], $3::text[], $4::text[], $5::text[],
+                   $6::text[], $7::text[], $8::text[])
+         AS t(vendor_id, model_raw, model_normalized, sed, oed, confidence, source_url, note)
+     ON CONFLICT (vendor_id, model_normalized) DO UPDATE SET
+        support_end_date = EXCLUDED.support_end_date,
+        os_eol_date      = EXCLUDED.os_eol_date,
+        confidence       = EXCLUDED.confidence,
+        source_url       = EXCLUDED.source_url,
+        note             = EXCLUDED.note,
+        entry_method     = 'seed',
+        updated_at       = now()
+     RETURNING id, vendor_id, model_normalized`,
+    [
+      models.map((m) => m.vendorId),
+      models.map((m) => m.raw),
+      models.map((m) => m.norm),
+      models.map((m) => m.sed),
+      models.map((m) => m.oed),
+      models.map((m) => m.conf),
+      models.map((m) => m.src),
+      models.map((m) => m.note),
+    ]
+  );
+  const modelIdByKey = new Map<string, number>(
+    mres.rows.map((r) => [`${r.vendor_id}|${r.model_normalized}`, r.id])
+  );
+
+  // 3) Aliases — bulk insert, dedupe by (model_id, alias_raw).
+  const aMid: number[] = [], aRaw: string[] = [], aNorm: string[] = [];
+  const aliasSeen = new Set<string>();
+  for (const m of models) {
+    const mid = modelIdByKey.get(`${m.vendorId}|${m.norm}`);
+    if (!mid) continue;
+    for (const a of m.aliases) {
+      const ak = `${mid}|${a}`;
+      if (aliasSeen.has(ak)) continue;
+      aliasSeen.add(ak);
+      aMid.push(mid); aRaw.push(a); aNorm.push(normalizeForMatch(m.vendor, a));
+    }
+  }
+  let aliases = 0;
+  if (aMid.length) {
+    const ares = await query(
+      `INSERT INTO model_aliases (eol_model_id, alias_raw, alias_normalized)
+         SELECT * FROM unnest($1::int[], $2::text[], $3::text[])
+       ON CONFLICT (eol_model_id, alias_raw) DO NOTHING`,
+      [aMid, aRaw, aNorm]
+    );
+    aliases = ares.rowCount ?? 0;
+  }
+
+  return { entries: entries.length, vendors: slugs.length, models: models.length, aliases };
 }
 
 type ModelRow = {
