@@ -1,5 +1,11 @@
 # nocvault-eol — Claude Development Guide
 
+## Workflow & deployment — READ FIRST
+**Commit straight to `main`. Do NOT open PRs or work on feature branches.** The flow
+every time is: **test (`npm run build`) → commit → `git push origin main`.** Netlify
+auto-deploys `main` to production (~2 min). No branch, no PR, no merge step.
+(Owner preference — PRs just added an extra merge that left commits undeployed.)
+
 ## What this is
 The **central EOL Intelligence service** for the NocVault suite. It curates
 vendor-confirmed End-of-Life / End-of-Support dates and publishes them as a
@@ -65,7 +71,7 @@ official date.
    existing by `normalizeForMatch(vendor, matches[0])`; append new ones; keep the file
    sorted/clean.
 3. `npm run build` (verify it still compiles — the JSON is imported by `lib/feed-core.ts`).
-4. Commit + push (branch, then merge so Netlify deploys the new bundled seed).
+4. Commit + `git push origin main` (no branch/PR — see "Workflow & deployment"). Netlify auto-deploys.
 5. **In the app:** Dashboard → **Feed actions** → **Load curated seed** → **Build &
    Publish Feed**. (The button reads the deployed `data/eol-seed.json`, upserts Neon,
    signs + writes the feed to Blobs.)
