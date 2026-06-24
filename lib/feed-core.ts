@@ -6,7 +6,7 @@
 import { createHash, createPrivateKey, sign as cryptoSign } from 'node:crypto';
 import { query } from '@/lib/db';
 import { normalizeForMatch, NORMALIZER_VERSION } from '@/lib/match-normalize';
-import seedData from '@/data/netvault-seed.json';
+import seedData from '@/data/eol-seed.json';
 
 const SCHEMA_VERSION = 1;
 
@@ -27,8 +27,8 @@ function vendorSlug(vendor: string): string {
 
 export type SeedResult = { entries: number; vendors: number; models: number; aliases: number };
 
-/** Upsert the curated NetVault-derived seed into eol_models + model_aliases. Idempotent. */
-export async function applyNetvaultSeed(): Promise<SeedResult> {
+/** Upsert the curated seed (data/eol-seed.json) into eol_models + model_aliases. Idempotent. */
+export async function applyCuratedSeed(): Promise<SeedResult> {
   const entries = seedData as SeedEntry[];
   let vendors = 0;
   let models = 0;

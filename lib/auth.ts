@@ -23,13 +23,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         const email = credentials?.email?.toLowerCase().trim() ?? '';
-        // TEMP debug logging — visible in Netlify function logs. Remove once auth is confirmed working.
-        console.log('[auth] authorize called, email received:', JSON.stringify(email));
-
-        if (!email || !credentials?.password) {
-          console.log('[auth] missing email or password');
-          return null;
-        }
+        if (!email || !credentials?.password) return null;
 
         try {
           const { rows } = await query<AdminRow>(
@@ -37,11 +31,9 @@ export const authOptions: NextAuthOptions = {
             [email]
           );
           const user = rows[0];
-          console.log('[auth] DB user found:', Boolean(user));
           if (!user) return null;
 
           const ok = await bcrypt.compare(credentials.password, user.password_hash);
-          console.log('[auth] bcrypt.compare succeeded:', ok);
           if (!ok) return null;
 
           return { id: String(user.id), email: user.email, name: user.role };
