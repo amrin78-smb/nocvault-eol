@@ -9,7 +9,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Pool } from 'pg';
-import { normalizeForMatch } from '../lib/match-normalize';
+import { normalizeForMatch } from '../lib/match-normalize.ts';
 
 type SeedEntry = {
   key: string;
@@ -32,7 +32,7 @@ async function main() {
     throw new Error('DATABASE_URL is not set');
   }
 
-  const seedPath = resolve(__dirname, '..', 'data', 'netvault-seed.json');
+  const seedPath = resolve(import.meta.dirname, '..', 'data', 'netvault-seed.json');
   const entries: SeedEntry[] = JSON.parse(readFileSync(seedPath, 'utf8'));
 
   const pool = new Pool({

@@ -18,7 +18,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createHash, createPrivateKey, sign as cryptoSign } from 'node:crypto';
 import { Pool } from 'pg';
-import { NORMALIZER_VERSION } from '../lib/match-normalize';
+import { NORMALIZER_VERSION } from '../lib/match-normalize.ts';
 
 const SCHEMA_VERSION = 1;
 
@@ -87,7 +87,14 @@ async function publishToBlobs(
 ): Promise<void> {
   try {
     const { getStore } = await import('@netlify/blobs');
-    const store = getStore('eol-feed');
+    // Explicit siteID+token when running OUTSIDE Netlify (GitHub Actions / local);
+    // fall back to ambient context when running inside a Netlify build/function.
+    const siteID = process.env.NETLIFY_SITE_ID;
+    const token = process.env.NETLIFY_AUTH_TOKEN || process.env.NETLIFY_BLOBS_TOKEN;
+    const store =
+      siteID && token
+        ? getStore({ name: 'eol-feed', siteID, token })
+        : getStore('eol-feed');
     await store.set('feed.json', feedJson);
     await store.set('feed.json.sig', sigB64);
     await store.set('latest.json', latestJson);
@@ -219,7 +226,7 @@ async function main() {
   };
   const latestJson = JSON.stringify(latest, null, 2);
 
-  const outDir = resolve(__dirname, '..', 'dist', 'feed');
+  const outDir = resolve(import.meta.dirname, '..', 'dist', 'feed');
   mkdirSync(outDir, { recursive: true });
   writeFileSync(resolve(outDir, 'feed.json'), canonical, 'utf8');
   writeFileSync(resolve(outDir, 'feed.json.sig'), sigB64, 'utf8');

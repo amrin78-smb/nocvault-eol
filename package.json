@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:keys": "tsx scripts/gen-keys.ts",
-    "seed": "tsx scripts/seed-from-netvault.ts",
-    "build:feed": "tsx scripts/build-feed.ts"
+    "gen:keys": "node scripts/gen-keys.ts",
+    "seed": "node scripts/seed-from-netvault.ts",
+    "build:feed": "node scripts/build-feed.ts"
   },
   "dependencies": {
     "@netlify/blobs": "^8.1.0",
@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.7.4",
-    "tsx": "^4.16.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.14.10",
     "@types/pg": "^8.11.6",
