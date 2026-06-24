@@ -58,7 +58,7 @@ export default function AdminActions() {
             run('/api/admin/seed', 'seed', (d) => `Seeded: ${d.models} models, ${d.aliases} aliases.`)
           }
         >
-          {busy === 'seed' ? 'Seeding…' : 'Seed from NetVault'}
+          {busy === 'seed' ? 'Seeding…' : 'Load curated seed'}
         </button>
         <button
           style={{ ...btn, background: '#0b5fff', color: '#fff', borderColor: '#0b5fff' }}
