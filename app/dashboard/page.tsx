@@ -1,4 +1,5 @@
 import AppLayout from '@/components/AppLayout';
+import AdminActions from '@/components/AdminActions';
 import { query } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -69,6 +70,7 @@ export default async function DashboardPage() {
           )}
         </div>
       </div>
+      <AdminActions />
     </AppLayout>
   );
 }
