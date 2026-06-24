@@ -29,12 +29,12 @@ export default async function VendorRecordsPage({
   }
 
   const { rows } = await query<RecordRow>(
-    `SELECT id, model_raw, category,
-            eol_date::text AS eol_date,
-            eos_date::text AS eos_date,
-            eosl_date::text AS eosl_date,
-            source_url, confidence, verified, entry_method
-     FROM eol_products
+    `SELECT id, model_raw,
+            support_end_date::text AS support_end_date,
+            end_of_sale::text AS end_of_sale,
+            os_eol_date::text AS os_eol_date,
+            confidence, verified, source_url
+     FROM eol_models
      WHERE vendor_id = $1
      ORDER BY model_raw`,
     [vendor.id]

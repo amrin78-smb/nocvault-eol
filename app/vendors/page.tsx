@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import AppLayout from '@/components/AppLayout';
-import ScrapeButton from '@/components/ScrapeButton';
 import { query } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -9,21 +8,17 @@ interface VendorRow {
   id: number;
   slug: string;
   name: string;
-  scrape_status: string;
   manual_only: boolean;
+  lifecycle_source_url: string | null;
   record_count: number;
-  last_scraped_at: string | null;
-  scrape_url: string | null;
-  description: string | null;
 }
 
 export default async function VendorsPage() {
   const { rows } = await query<VendorRow>(
-    `SELECT id, slug, name, scrape_status, manual_only, record_count,
-            to_char(last_scraped_at, 'YYYY-MM-DD HH24:MI') AS last_scraped_at,
-            scrape_url, description
-     FROM vendors
-     ORDER BY name`
+    `SELECT v.id, v.slug, v.name, v.manual_only, v.lifecycle_source_url,
+            (SELECT count(*) FROM eol_models m WHERE m.vendor_id = v.id)::int AS record_count
+     FROM vendors v
+     ORDER BY v.name`
   );
 
   return (
@@ -36,28 +31,29 @@ export default async function VendorsPage() {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Source</th>
-              <th>Records</th>
-              <th>Last Scraped</th>
-              <th>Status</th>
+              <th>Models</th>
               <th>Manual Only</th>
+              <th>Lifecycle Source</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((vendor) => (
               <tr key={vendor.id}>
+                <td>{vendor.name}</td>
+                <td>{vendor.record_count}</td>
                 <td>
-                  {vendor.name}
-                  {vendor.description && (
-                    <div className="vendor-note">{vendor.description}</div>
+                  {vendor.manual_only ? (
+                    <span className="badge badge-yes">Yes</span>
+                  ) : (
+                    <span className="badge badge-no">No</span>
                   )}
                 </td>
                 <td>
-                  {vendor.scrape_url ? (
+                  {vendor.lifecycle_source_url ? (
                     <a
                       className="source-link"
-                      href={vendor.scrape_url}
+                      href={vendor.lifecycle_source_url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -67,17 +63,8 @@ export default async function VendorsPage() {
                     '—'
                   )}
                 </td>
-                <td>{vendor.record_count}</td>
-                <td>{vendor.last_scraped_at ?? '—'}</td>
-                <td>
-                  <span className={`badge badge-${vendor.scrape_status}`}>
-                    {vendor.scrape_status}
-                  </span>
-                </td>
-                <td>{vendor.manual_only ? 'Yes' : 'No'}</td>
                 <td>
                   <div className="row-actions">
-                    <ScrapeButton slug={vendor.slug} manualOnly={vendor.manual_only} />
                     <Link className="btn btn-sm" href={`/vendors/${vendor.slug}`}>
                       View Records
                     </Link>
