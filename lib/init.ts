@@ -1,53 +1,58 @@
 import bcrypt from 'bcryptjs';
 import { rawQuery } from './db';
 
+// ── Schema (NocVault EOL central seed) ──────────────────────────────────────
+// Source of truth for the signed EOL feed. Device matching happens in the
+// CONSUMING apps, never here — this DB holds only generic vendor model→date data.
 const SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS vendors (
   id SERIAL PRIMARY KEY,
   slug TEXT UNIQUE NOT NULL,
   name TEXT NOT NULL,
-  scrape_url TEXT,
-  scrape_method TEXT DEFAULT 'html_table',
-  last_scraped_at TIMESTAMPTZ,
-  scrape_status TEXT DEFAULT 'pending',
-  manual_only BOOLEAN DEFAULT false,
-  record_count INTEGER DEFAULT 0,
-  description TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS eol_products (
-  id SERIAL PRIMARY KEY,
-  vendor_id INTEGER REFERENCES vendors(id),
-  model_raw TEXT NOT NULL,
-  model_normalized TEXT NOT NULL,
-  category TEXT,
-  eol_date DATE,
-  eos_date DATE,
-  eosl_date DATE,
-  source_url TEXT,
-  verified BOOLEAN DEFAULT false,
-  verified_at TIMESTAMPTZ,
-  entry_method TEXT DEFAULT 'manual',
-  confidence TEXT DEFAULT 'medium',
+  manual_only BOOLEAN DEFAULT false,        -- curated-only (no structured source)
+  lifecycle_source_url TEXT,                -- vendor's published EoL page (reference)
+  notes TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS model_aliases (
+CREATE TABLE IF NOT EXISTS eol_models (
   id SERIAL PRIMARY KEY,
-  eol_product_id INTEGER REFERENCES eol_products(id),
-  alias TEXT NOT NULL
+  vendor_id INTEGER REFERENCES vendors(id),
+  model_raw TEXT NOT NULL,                  -- vendor's exact string (canonical/display)
+  model_normalized TEXT NOT NULL,           -- dedupe key (lib/match-normalize)
+  end_of_sale DATE,                         -- last-order / end-of-sale
+  support_end_date DATE,                    -- end-of-support / LDOS  (apps key on this)
+  os_eol_date DATE,                         -- software/firmware EOL, if separate
+  confidence TEXT DEFAULT 'medium',         -- 'high' | 'medium' | 'low'
+  source_url TEXT,
+  note TEXT,
+  verified BOOLEAN DEFAULT false,
+  verified_at TIMESTAMPTZ,
+  entry_method TEXT DEFAULT 'manual',       -- 'agent' | 'manual' | 'seed'
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS api_queries (
+-- Activated (was dead in the old repo). Additional raw strings that resolve to one
+-- model row: SKU variants AND legacy "garbage" strings (e.g. 'Ne INT', '432e INT').
+CREATE TABLE IF NOT EXISTS model_aliases (
   id SERIAL PRIMARY KEY,
-  license_key TEXT,
-  vendor TEXT,
-  model_query TEXT,
-  matched_product_id INTEGER REFERENCES eol_products(id),
-  cache_hit BOOLEAN DEFAULT false,
-  queried_at TIMESTAMPTZ DEFAULT NOW()
+  eol_model_id INTEGER REFERENCES eol_models(id) ON DELETE CASCADE,
+  alias_raw TEXT NOT NULL,
+  alias_normalized TEXT NOT NULL
+);
+
+-- Audit/generation log for each published feed version.
+CREATE TABLE IF NOT EXISTS feed_versions (
+  id SERIAL PRIMARY KEY,
+  feed_version TEXT UNIQUE NOT NULL,
+  generated_at TIMESTAMPTZ DEFAULT NOW(),
+  row_count INTEGER,
+  content_sha256 TEXT,
+  signature TEXT,
+  normalizer_version INTEGER,
+  published_by TEXT
 );
 
 CREATE TABLE IF NOT EXISTS admin_users (
@@ -58,35 +63,21 @@ CREATE TABLE IF NOT EXISTS admin_users (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Work queue for the resumable Cisco EOL crawl (series -> listing -> bulletin).
-CREATE TABLE IF NOT EXISTS cisco_eol_queue (
-  id SERIAL PRIMARY KEY,
-  url TEXT UNIQUE NOT NULL,
-  kind TEXT NOT NULL,
-  category TEXT,
-  series_name TEXT,
-  status TEXT NOT NULL DEFAULT 'pending',
-  attempts INTEGER NOT NULL DEFAULT 0,
-  note TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  processed_at TIMESTAMPTZ
-);
-
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
-CREATE INDEX IF NOT EXISTS idx_eol_products_normalized
-  ON eol_products USING gin(model_normalized gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS idx_eol_models_normalized
+  ON eol_models USING gin(model_normalized gin_trgm_ops);
+
+CREATE INDEX IF NOT EXISTS idx_model_aliases_normalized
+  ON model_aliases (alias_normalized);
 `;
 
-// Unique constraint required for the scrape upsert (ON CONFLICT vendor_id + model_normalized).
+// Required for the seed/agent upsert (ON CONFLICT vendor_id + model_normalized).
 const CONSTRAINT_SQL = `
-CREATE UNIQUE INDEX IF NOT EXISTS uq_eol_products_vendor_model
-  ON eol_products (vendor_id, model_normalized);
-`;
-
-// Bring existing databases (created before the column was added) up to date.
-const ALTER_SQL = `
-ALTER TABLE vendors ADD COLUMN IF NOT EXISTS description TEXT;
+CREATE UNIQUE INDEX IF NOT EXISTS uq_eol_models_vendor_model
+  ON eol_models (vendor_id, model_normalized);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_model_aliases_model_alias
+  ON model_aliases (eol_model_id, alias_raw);
 `;
 
 interface SeedVendor {
@@ -95,136 +86,64 @@ interface SeedVendor {
   manual_only?: boolean;
 }
 
-// Vendors with no scrapeable source, handled via the manual-entry workflow.
-// Juniper, HP/Aruba, Ruckus, SonicWall and CheckPoint moved OUT (scraped from
-// eol.network); Sangfor scrapes its own EOS table. See reconcileVendorSources.
-const MANUAL_ONLY_SLUGS = ['ubiquiti', 'forcepoint'];
-
-const SANGFOR_EOS_URL =
-  'https://www.sangfor.com/support/services-policy/support-life-cycle-policy/end-of-sale-service-eos';
-const FORCEPOINT_LIFECYCLE_URL =
-  'https://support.forcepoint.com/s/productsupportlifecycle';
-const FORCEPOINT_NOTE =
-  'Lifecycle data is rendered by JavaScript (Salesforce Experience Cloud) and is not present in the page HTML, so it cannot be scraped. Open the source URL in a browser and enter EOS/EOL dates manually.';
-
+// v1 vendor scope = the fleet's actual vendors. Missing vendors are auto-created
+// by the seed/agent import; this just gives the curation UI a starting list.
 const SEED_VENDORS: SeedVendor[] = [
   { slug: 'cisco', name: 'Cisco' },
-  { slug: 'fortinet', name: 'Fortinet' },
-  { slug: 'hp', name: 'HP/Aruba', manual_only: true },
-  { slug: 'juniper', name: 'Juniper', manual_only: true },
-  { slug: 'mikrotik', name: 'MikroTik' },
-  { slug: 'ubiquiti', name: 'Ubiquiti', manual_only: true },
-  { slug: 'ruckus', name: 'Ruckus', manual_only: true },
-  { slug: 'checkpoint', name: 'CheckPoint', manual_only: true },
-  { slug: 'sonicwall', name: 'SonicWall', manual_only: true },
+  { slug: 'aruba', name: 'Aruba / HPE' },
+  { slug: 'meraki', name: 'Cisco Meraki' },
+  { slug: 'sonicwall', name: 'SonicWall' },
+  { slug: 'tplink', name: 'TP-Link' },
+  { slug: 'netgear', name: 'Netgear' },
+  { slug: 'ruckus', name: 'Ruckus' },
+  { slug: 'huawei', name: 'Huawei' },
   { slug: 'paloalto', name: 'Palo Alto' },
   { slug: 'forcepoint', name: 'Forcepoint', manual_only: true },
-  { slug: 'sangfor', name: 'Sangfor' },
+  { slug: 'fortinet', name: 'Fortinet' },
+  { slug: 'grandstream', name: 'Grandstream' },
+  { slug: 'dlink', name: 'D-Link' },
+  { slug: 'ubiquiti', name: 'Ubiquiti' },
+  { slug: 'alliedtelesis', name: 'Allied Telesis' },
+];
+
+// One-time migrations from the OLD nocvault-eol schema (scraper/live-query era) to
+// the feed-builder schema. Run BEFORE the CREATE TABLE IF NOT EXISTS block so the
+// new shapes/indexes can be created. Each is idempotent. Run whole (DO blocks
+// contain semicolons, so they must NOT be split on ';').
+const MIGRATIONS: string[] = [
+  // Legacy model_aliases (old shape eol_product_id/alias; was unused) -> drop so the
+  // new (eol_model_id, alias_raw, alias_normalized) shape is created below.
+  `DO $$ BEGIN
+     IF EXISTS (SELECT 1 FROM information_schema.columns
+                WHERE table_name = 'model_aliases' AND column_name = 'eol_product_id') THEN
+       DROP TABLE model_aliases CASCADE;
+     END IF;
+   END $$;`,
+  // Retired tables (live-query log + scraper work queue).
+  `DROP TABLE IF EXISTS api_queries CASCADE`,
+  `DROP TABLE IF EXISTS cisco_eol_queue CASCADE`,
+  // vendors gains feed-era columns on databases created before them.
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS lifecycle_source_url TEXT`,
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS notes TEXT`,
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW()`,
 ];
 
 export async function runInit(): Promise<void> {
+  // Migrations first (whole statements — do NOT split on ';').
+  for (const stmt of MIGRATIONS) {
+    await rawQuery(stmt);
+  }
   // Statement-by-statement so a single failure is easy to diagnose.
   for (const stmt of SCHEMA_SQL.split(';')) {
     const trimmed = stmt.trim();
-    if (trimmed) {
-      await rawQuery(trimmed);
-    }
+    if (trimmed) await rawQuery(trimmed);
   }
-  await rawQuery(CONSTRAINT_SQL.trim());
-  await rawQuery(ALTER_SQL.trim());
-
+  for (const stmt of CONSTRAINT_SQL.split(';')) {
+    const trimmed = stmt.trim();
+    if (trimmed) await rawQuery(trimmed);
+  }
   await seedVendors();
-  await reconcileManualOnly();
-  await reconcileVendorSources();
   await seedAdmin();
-}
-
-// seedVendors uses ON CONFLICT DO NOTHING, so vendor source config must be
-// reconciled separately for databases seeded before these scrapers existed.
-async function reconcileVendorSources(): Promise<void> {
-  // Sangfor publishes a plain-HTML EOS table -> scrapeable.
-  await rawQuery(
-    `UPDATE vendors
-        SET manual_only = false,
-            scrape_url = $1,
-            scrape_method = 'html_table'
-      WHERE slug = 'sangfor'`,
-    [SANGFOR_EOS_URL]
-  );
-
-  // Cisco: public EOL index crawl (lib/cisco.ts), wired via scrape_method.
-  await rawQuery(
-    `UPDATE vendors
-        SET manual_only = false,
-            scrape_url = $1,
-            scrape_method = 'cisco_eol_index'
-      WHERE slug = 'cisco'`,
-    ['https://www.cisco.com/c/en/us/support/eol/index.html']
-  );
-
-  // Palo Alto: public hardware EOL table.
-  await rawQuery(
-    `UPDATE vendors
-        SET manual_only = false,
-            scrape_url = $1,
-            scrape_method = 'paloalto_eol'
-      WHERE slug = 'paloalto'`,
-    [
-      'https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates',
-    ]
-  );
-
-  // Fortinet: lifecycle page is auth-gated; firmware via endoflife.date fallback.
-  await rawQuery(
-    `UPDATE vendors
-        SET manual_only = false,
-            scrape_url = $1,
-            scrape_method = 'fortinet_lifecycle'
-      WHERE slug = 'fortinet'`,
-    ['https://support.fortinet.com/Information/ProductLifeCycle.aspx']
-  );
-
-  // Juniper / HP-Aruba / Ruckus / SonicWall / CheckPoint scraped from eol.network.
-  const eolNetwork: Array<[string, string]> = [
-    ['juniper', 'https://www.eol.network/juniper/'],
-    ['hp', 'https://www.eol.network/aruba/'],
-    ['ruckus', 'https://www.eol.network/ruckus/'],
-    ['sonicwall', 'https://www.eol.network/sonicwall/'],
-    ['checkpoint', 'https://www.eol.network/checkpoint/'],
-  ];
-  for (const [slug, url] of eolNetwork) {
-    await rawQuery(
-      `UPDATE vendors
-          SET manual_only = false,
-              scrape_url = $2,
-              scrape_method = 'eol_network'
-        WHERE slug = $1`,
-      [slug, url]
-    );
-  }
-
-  // Forcepoint is a JS-rendered Salesforce shell -> not scrapeable; keep manual.
-  await rawQuery(
-    `UPDATE vendors
-        SET manual_only = true,
-            scrape_url = $1,
-            scrape_status = 'js_rendered',
-            description = $2
-      WHERE slug = 'forcepoint'`,
-    [FORCEPOINT_LIFECYCLE_URL, FORCEPOINT_NOTE]
-  );
-}
-
-// seedVendors uses ON CONFLICT DO NOTHING, so it never updates existing rows.
-// Flip vendors that have no automated source to manual_only on existing DBs too.
-async function reconcileManualOnly(): Promise<void> {
-  await rawQuery(
-    `UPDATE vendors
-       SET manual_only = true,
-           scrape_status = 'manual_only'
-     WHERE slug = ANY($1) AND manual_only = false`,
-    [MANUAL_ONLY_SLUGS]
-  );
 }
 
 async function seedVendors(): Promise<void> {
@@ -248,7 +167,6 @@ async function seedAdmin(): Promise<void> {
   );
   if (Number(rows[0]?.count ?? 0) > 0) return;
 
-  // Fall back to hashing a plaintext ADMIN_PASSWORD if no hash supplied.
   if (!hash && process.env.ADMIN_PASSWORD) {
     hash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
   }

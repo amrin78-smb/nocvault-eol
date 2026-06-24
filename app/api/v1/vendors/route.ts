@@ -5,8 +5,8 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const { rows } = await query<{ slug: string; name: string }>(
-      'SELECT slug, name FROM vendors ORDER BY name'
+    const { rows } = await query<{ id: number; slug: string; name: string }>(
+      'SELECT id, slug, name FROM vendors ORDER BY name'
     );
     return NextResponse.json({ vendors: rows });
   } catch (err) {

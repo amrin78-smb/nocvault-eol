@@ -2,48 +2,29 @@
 
 import { useState } from 'react';
 
-type Vendor = { slug: string; name: string };
-
-type ApiExplorerProps = {
-  vendors: Vendor[];
-};
-
-type ApiResult = {
-  matched?: boolean;
-  vendor?: string;
-  model_normalized?: string;
-  model_raw?: string | null;
-  eol_date?: string | null;
-  eos_date?: string | null;
-  confidence?: string | null;
-  verified?: boolean;
-  source_url?: string | null;
-  similarity_score?: number;
+type FeedResult = {
+  feed_version?: string;
+  generated_at?: string;
+  row_count?: number;
   error?: string;
   [key: string]: unknown;
 };
 
-export default function ApiExplorer({ vendors }: ApiExplorerProps) {
-  const [vendor, setVendor] = useState('');
-  const [model, setModel] = useState('');
-  const [licenseKey, setLicenseKey] = useState('');
+export default function ApiExplorer() {
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<ApiResult | null>(null);
+  const [result, setResult] = useState<FeedResult | null>(null);
   const [status, setStatus] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleTest() {
+  async function handleLoad() {
     setLoading(true);
     setError(null);
     setResult(null);
     setStatus(null);
     try {
-      const url = `/api/v1/eol?vendor=${encodeURIComponent(vendor)}&model=${encodeURIComponent(
-        model
-      )}&license_key=${encodeURIComponent(licenseKey)}`;
-      const res = await fetch(url);
+      const res = await fetch('/api/v1/feed/latest');
       setStatus(res.status);
-      const data: ApiResult = await res.json();
+      const data: FeedResult = await res.json();
       setResult(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Request failed');
@@ -52,66 +33,26 @@ export default function ApiExplorer({ vendors }: ApiExplorerProps) {
     }
   }
 
-  const hasMatch = result != null && typeof result.matched === 'boolean';
-  const hasSimilarity = result != null && typeof result.similarity_score === 'number';
-
   return (
     <>
       <div className="card">
-        <div className="card-title">Query EOL API</div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="vendor">Vendor</label>
-            <select
-              id="vendor"
-              value={vendor}
-              onChange={(e) => setVendor(e.target.value)}
-            >
-              <option value="">Select a vendor</option>
-              {vendors.map((v) => (
-                <option key={v.slug} value={v.slug}>
-                  {v.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="model">Model</label>
-            <input
-              id="model"
-              type="text"
-              value={model}
-              onChange={(e) => setModel(e.target.value)}
-              placeholder="Cisco ISR 4321/K9"
-            />
-          </div>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="licenseKey">License Key</label>
-          <input
-            id="licenseKey"
-            type="text"
-            value={licenseKey}
-            onChange={(e) => setLicenseKey(e.target.value)}
-            placeholder="API secret key"
-          />
-        </div>
-
+        <div className="card-title">Published Feed Preview</div>
+        <p style={{ opacity: 0.75 }}>
+          Live per-device lookup is retired — matching now happens locally in the
+          consuming app (NetVault). This page previews the published feed.
+        </p>
         <button
           type="button"
           className="btn btn-primary"
-          onClick={handleTest}
+          onClick={handleLoad}
           disabled={loading}
         >
-          {loading ? 'Testing...' : 'Test'}
+          {loading ? 'Loading...' : 'Load Latest Feed'}
         </button>
       </div>
 
       <div className="card">
-        <div className="card-title">Response</div>
+        <div className="card-title">Latest Feed</div>
 
         {error ? (
           <div className="alert alert-error">{error}</div>
@@ -119,14 +60,22 @@ export default function ApiExplorer({ vendors }: ApiExplorerProps) {
           <>
             <p>
               {status != null && <span>HTTP {status}</span>}
-              {hasMatch && <span> &middot; Match: {result.matched ? 'Yes' : 'No'}</span>}
-              {hasSimilarity && <span> &middot; Similarity: {result.similarity_score}</span>}
-              {hasSimilarity && <span> &middot; Method: pg_trgm similarity</span>}
+              {result.feed_version && (
+                <span> &middot; Version: {result.feed_version}</span>
+              )}
+              {typeof result.row_count === 'number' && (
+                <span> &middot; Rows: {result.row_count}</span>
+              )}
+              {result.generated_at && (
+                <span> &middot; Generated: {result.generated_at}</span>
+              )}
             </p>
             <pre className="json">{JSON.stringify(result, null, 2)}</pre>
           </>
         ) : (
-          <p style={{ opacity: 0.6 }}>Run a query to see the response.</p>
+          <p style={{ opacity: 0.6 }}>
+            Load the latest feed to preview the published version.
+          </p>
         )}
       </div>
     </>

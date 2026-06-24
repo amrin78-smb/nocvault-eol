@@ -6,24 +6,22 @@ import { useRouter } from 'next/navigation';
 export interface RecordRow {
   id: number;
   model_raw: string;
-  category: string | null;
-  eol_date: string | null;
-  eos_date: string | null;
-  eosl_date: string | null;
-  source_url: string | null;
+  support_end_date: string | null;
+  end_of_sale: string | null;
+  os_eol_date: string | null;
   confidence: string;
   verified: boolean;
-  entry_method: string;
+  source_url: string | null;
 }
 
 interface FormState {
   model_raw: string;
-  category: string;
-  eol_date: string;
-  eos_date: string;
-  eosl_date: string;
-  source_url: string;
+  support_end_date: string;
+  end_of_sale: string;
+  os_eol_date: string;
   confidence: string;
+  source_url: string;
+  note: string;
   verified: boolean;
 }
 
@@ -41,12 +39,12 @@ interface RecordFormProps {
 function emptyForm(): FormState {
   return {
     model_raw: '',
-    category: '',
-    eol_date: '',
-    eos_date: '',
-    eosl_date: '',
-    source_url: '',
+    support_end_date: '',
+    end_of_sale: '',
+    os_eol_date: '',
     confidence: 'high',
+    source_url: '',
+    note: '',
     verified: false,
   };
 }
@@ -75,37 +73,40 @@ function RecordForm(props: RecordFormProps) {
             />
           </div>
           <div className="form-group">
-            <label>Category</label>
-            <input
-              type="text"
-              value={form.category}
-              onChange={(e) => onChange({ ...form, category: e.target.value })}
-            />
+            <label>Confidence</label>
+            <select
+              value={form.confidence}
+              onChange={(e) => onChange({ ...form, confidence: e.target.value })}
+            >
+              <option value="high">high</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
           </div>
         </div>
         <div className="form-row">
           <div className="form-group">
-            <label>EOL Date</label>
+            <label>Support End Date</label>
             <input
               type="date"
-              value={form.eol_date}
-              onChange={(e) => onChange({ ...form, eol_date: e.target.value })}
+              value={form.support_end_date}
+              onChange={(e) => onChange({ ...form, support_end_date: e.target.value })}
             />
           </div>
           <div className="form-group">
-            <label>EOS Date</label>
+            <label>End of Sale</label>
             <input
               type="date"
-              value={form.eos_date}
-              onChange={(e) => onChange({ ...form, eos_date: e.target.value })}
+              value={form.end_of_sale}
+              onChange={(e) => onChange({ ...form, end_of_sale: e.target.value })}
             />
           </div>
           <div className="form-group">
-            <label>EOSL Date</label>
+            <label>OS EOL Date</label>
             <input
               type="date"
-              value={form.eosl_date}
-              onChange={(e) => onChange({ ...form, eosl_date: e.target.value })}
+              value={form.os_eol_date}
+              onChange={(e) => onChange({ ...form, os_eol_date: e.target.value })}
             />
           </div>
         </div>
@@ -119,15 +120,12 @@ function RecordForm(props: RecordFormProps) {
             />
           </div>
           <div className="form-group">
-            <label>Confidence</label>
-            <select
-              value={form.confidence}
-              onChange={(e) => onChange({ ...form, confidence: e.target.value })}
-            >
-              <option value="high">high</option>
-              <option value="medium">medium</option>
-              <option value="low">low</option>
-            </select>
+            <label>Note</label>
+            <input
+              type="text"
+              value={form.note}
+              onChange={(e) => onChange({ ...form, note: e.target.value })}
+            />
           </div>
           {showVerified ? (
             <div className="form-group">
@@ -182,13 +180,12 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
         body: JSON.stringify({
           vendor_id: vendorId,
           model_raw: addForm.model_raw,
-          category: addForm.category,
-          eol_date: addForm.eol_date,
-          eos_date: addForm.eos_date,
-          eosl_date: addForm.eosl_date,
-          source_url: addForm.source_url,
+          support_end_date: addForm.support_end_date,
+          end_of_sale: addForm.end_of_sale,
+          os_eol_date: addForm.os_eol_date,
           confidence: addForm.confidence,
-          entry_method: 'manual',
+          source_url: addForm.source_url,
+          note: addForm.note,
         }),
       });
       if (!res.ok) {
@@ -209,12 +206,12 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
     setEditError('');
     setEditForm({
       model_raw: row.model_raw,
-      category: row.category ?? '',
-      eol_date: row.eol_date ?? '',
-      eos_date: row.eos_date ?? '',
-      eosl_date: row.eosl_date ?? '',
-      source_url: row.source_url ?? '',
+      support_end_date: row.support_end_date ?? '',
+      end_of_sale: row.end_of_sale ?? '',
+      os_eol_date: row.os_eol_date ?? '',
       confidence: row.confidence,
+      source_url: row.source_url ?? '',
+      note: '',
       verified: row.verified,
     });
   }
@@ -228,12 +225,12 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model_raw: editForm.model_raw,
-          category: editForm.category,
-          eol_date: editForm.eol_date,
-          eos_date: editForm.eos_date,
-          eosl_date: editForm.eosl_date,
-          source_url: editForm.source_url,
+          support_end_date: editForm.support_end_date,
+          end_of_sale: editForm.end_of_sale,
+          os_eol_date: editForm.os_eol_date,
           confidence: editForm.confidence,
+          source_url: editForm.source_url,
+          note: editForm.note,
           verified: editForm.verified,
         }),
       });
@@ -319,12 +316,12 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
           <thead>
             <tr>
               <th>Model</th>
-              <th>Category</th>
-              <th>EOL Date</th>
-              <th>EOS Date</th>
+              <th>Support End</th>
+              <th>End of Sale</th>
+              <th>OS EOL</th>
               <th>Confidence</th>
               <th>Verified</th>
-              <th>Entry Method</th>
+              <th>Source</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -332,9 +329,9 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
             {filtered.map((row) => (
               <tr key={row.id}>
                 <td>{row.model_raw}</td>
-                <td>{row.category ?? '—'}</td>
-                <td>{row.eol_date ?? '—'}</td>
-                <td>{row.eos_date ?? '—'}</td>
+                <td>{row.support_end_date ?? '—'}</td>
+                <td>{row.end_of_sale ?? '—'}</td>
+                <td>{row.os_eol_date ?? '—'}</td>
                 <td>
                   <span className={`badge badge-${row.confidence}`}>
                     {row.confidence}
@@ -347,7 +344,20 @@ export default function VendorRecords({ vendorId, vendorName, records }: VendorR
                     <span className="badge badge-no">No</span>
                   )}
                 </td>
-                <td>{row.entry_method}</td>
+                <td>
+                  {row.source_url ? (
+                    <a
+                      className="source-link"
+                      href={row.source_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source ↗
+                    </a>
+                  ) : (
+                    '—'
+                  )}
+                </td>
                 <td>
                   <div className="row-actions">
                     <button className="btn btn-sm" onClick={() => startEdit(row)}>

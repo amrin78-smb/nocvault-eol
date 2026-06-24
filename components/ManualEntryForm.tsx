@@ -9,11 +9,13 @@ export default function ManualEntryForm({ vendors }: { vendors: Vendor[] }) {
     vendors.length > 0 ? String(vendors[0].id) : ''
   );
   const [model, setModel] = useState('');
-  const [category, setCategory] = useState('');
-  const [eolDate, setEolDate] = useState('');
-  const [eosDate, setEosDate] = useState('');
-  const [eoslDate, setEoslDate] = useState('');
+  const [endOfSale, setEndOfSale] = useState('');
+  const [supportEndDate, setSupportEndDate] = useState('');
+  const [osEolDate, setOsEolDate] = useState('');
+  const [confidence, setConfidence] = useState('high');
   const [sourceUrl, setSourceUrl] = useState('');
+  const [note, setNote] = useState('');
+  const [aliases, setAliases] = useState('');
 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -37,13 +39,13 @@ export default function ManualEntryForm({ vendors }: { vendors: Vendor[] }) {
         body: JSON.stringify({
           vendor_id: Number(vendorId),
           model_raw: model,
-          category,
-          eol_date: eolDate,
-          eos_date: eosDate,
-          eosl_date: eoslDate,
+          end_of_sale: endOfSale,
+          support_end_date: supportEndDate,
+          os_eol_date: osEolDate,
+          confidence,
           source_url: sourceUrl,
-          entry_method: 'manual',
-          confidence: 'high',
+          note,
+          aliases,
         }),
       });
 
@@ -53,11 +55,13 @@ export default function ManualEntryForm({ vendors }: { vendors: Vendor[] }) {
       } else {
         setSuccess('Record saved.');
         setModel('');
-        setCategory('');
-        setEolDate('');
-        setEosDate('');
-        setEoslDate('');
+        setEndOfSale('');
+        setSupportEndDate('');
+        setOsEolDate('');
+        setConfidence('high');
         setSourceUrl('');
+        setNote('');
+        setAliases('');
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save record.');
@@ -104,47 +108,47 @@ export default function ManualEntryForm({ vendors }: { vendors: Vendor[] }) {
 
       <div className="form-row">
         <div className="form-group">
-          <label htmlFor="category">Category</label>
+          <label htmlFor="end_of_sale">End of Sale</label>
           <input
-            id="category"
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            id="end_of_sale"
+            type="date"
+            value={endOfSale}
+            onChange={(e) => setEndOfSale(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="eol_date">EOL Date</label>
+          <label htmlFor="support_end_date">Support End Date</label>
           <input
-            id="eol_date"
+            id="support_end_date"
             type="date"
-            value={eolDate}
-            onChange={(e) => setEolDate(e.target.value)}
+            value={supportEndDate}
+            onChange={(e) => setSupportEndDate(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="os_eol_date">OS EOL Date</label>
+          <input
+            id="os_eol_date"
+            type="date"
+            value={osEolDate}
+            onChange={(e) => setOsEolDate(e.target.value)}
           />
         </div>
       </div>
 
       <div className="form-row">
         <div className="form-group">
-          <label htmlFor="eos_date">EOS Date</label>
-          <input
-            id="eos_date"
-            type="date"
-            value={eosDate}
-            onChange={(e) => setEosDate(e.target.value)}
-          />
+          <label htmlFor="confidence">Confidence</label>
+          <select
+            id="confidence"
+            value={confidence}
+            onChange={(e) => setConfidence(e.target.value)}
+          >
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+          </select>
         </div>
-        <div className="form-group">
-          <label htmlFor="eosl_date">EOSL Date</label>
-          <input
-            id="eosl_date"
-            type="date"
-            value={eoslDate}
-            onChange={(e) => setEoslDate(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className="form-row">
         <div className="form-group">
           <label htmlFor="source_url">Source URL</label>
           <input
@@ -152,6 +156,28 @@ export default function ManualEntryForm({ vendors }: { vendors: Vendor[] }) {
             type="text"
             value={sourceUrl}
             onChange={(e) => setSourceUrl(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="note">Note</label>
+          <input
+            id="note"
+            type="text"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="aliases">Aliases (comma-separated)</label>
+          <input
+            id="aliases"
+            type="text"
+            value={aliases}
+            onChange={(e) => setAliases(e.target.value)}
+            placeholder="alias-1, alias-2"
           />
         </div>
       </div>
