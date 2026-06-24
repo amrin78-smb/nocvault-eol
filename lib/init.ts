@@ -106,7 +106,33 @@ const SEED_VENDORS: SeedVendor[] = [
   { slug: 'alliedtelesis', name: 'Allied Telesis' },
 ];
 
+// One-time migrations from the OLD nocvault-eol schema (scraper/live-query era) to
+// the feed-builder schema. Run BEFORE the CREATE TABLE IF NOT EXISTS block so the
+// new shapes/indexes can be created. Each is idempotent. Run whole (DO blocks
+// contain semicolons, so they must NOT be split on ';').
+const MIGRATIONS: string[] = [
+  // Legacy model_aliases (old shape eol_product_id/alias; was unused) -> drop so the
+  // new (eol_model_id, alias_raw, alias_normalized) shape is created below.
+  `DO $$ BEGIN
+     IF EXISTS (SELECT 1 FROM information_schema.columns
+                WHERE table_name = 'model_aliases' AND column_name = 'eol_product_id') THEN
+       DROP TABLE model_aliases CASCADE;
+     END IF;
+   END $$;`,
+  // Retired tables (live-query log + scraper work queue).
+  `DROP TABLE IF EXISTS api_queries CASCADE`,
+  `DROP TABLE IF EXISTS cisco_eol_queue CASCADE`,
+  // vendors gains feed-era columns on databases created before them.
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS lifecycle_source_url TEXT`,
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS notes TEXT`,
+  `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW()`,
+];
+
 export async function runInit(): Promise<void> {
+  // Migrations first (whole statements — do NOT split on ';').
+  for (const stmt of MIGRATIONS) {
+    await rawQuery(stmt);
+  }
   // Statement-by-statement so a single failure is easy to diagnose.
   for (const stmt of SCHEMA_SQL.split(';')) {
     const trimmed = stmt.trim();

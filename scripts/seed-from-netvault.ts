@@ -42,6 +42,14 @@ async function ensureSchema(pool: Pool): Promise<void> {
     verified BOOLEAN DEFAULT false, verified_at TIMESTAMPTZ,
     entry_method TEXT DEFAULT 'manual',
     created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW())`);
+  // Migrate a LEGACY model_aliases table (old repo shape: eol_product_id/alias;
+  // it was unused/empty) so the new (eol_model_id, alias_raw) shape can be created.
+  await pool.query(`DO $$ BEGIN
+    IF EXISTS (SELECT 1 FROM information_schema.columns
+               WHERE table_name = 'model_aliases' AND column_name = 'eol_product_id') THEN
+      DROP TABLE model_aliases CASCADE;
+    END IF;
+  END $$;`);
   await pool.query(`CREATE TABLE IF NOT EXISTS model_aliases (
     id SERIAL PRIMARY KEY,
     eol_model_id INTEGER REFERENCES eol_models(id) ON DELETE CASCADE,
