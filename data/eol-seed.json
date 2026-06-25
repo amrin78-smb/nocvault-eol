@@ -737,6 +737,19 @@
     "note": "HPE 5130 HI (JH323A) — End-of-Sale 2022-06-30 (HPE/Aruba EoS, 2022). https://asp-documents.arubanetworks.com/portals/0/el/EOS_HPE-FlexNetwork-5130-HI-Switch-Series.pdf"
   },
   {
+    "key": "BROCADE 300",
+    "vendor": "Brocade",
+    "matches": [
+      "Brocade 300",
+      "Brocade 300 Fibre Channel Switch"
+    ],
+    "support_end_date": "2023-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.broadcom.com/support/fibre-channel-networking/eol-products",
+    "note": "Brocade 300 Fibre Channel Switch — End of Support 2023-04-30 (Broadcom Brocade product lifecycle bulletin)"
+  },
+  {
     "key": "CISCO AIRONET 3802I",
     "vendor": "Cisco",
     "matches": [
