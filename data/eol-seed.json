@@ -827,112 +827,33 @@
     "note": "EOL15537 (India -IN models); EoS 2025-04-30, LDoS 2030-04-30"
   },
   {
-    "key": "CISCO C1000-16FP-2G-L",
+    "key": "CISCO C1000",
     "vendor": "Cisco",
     "matches": [
-      "C1000-16FP-2G-L"
+      "C1000-24FP-4G-L",
+      "Cisco C1000-48FP-4G-L PoE",
+      "C1000-16FP-2G-L",
+      "C1000-16P-2G-L",
+      "C1000-16P-E-2G-L",
+      "C1000-16T-2G-L",
+      "C1000-16T-E-2G-L",
+      "C1000-24FP-4X-L",
+      "C1000-24P-4G-L",
+      "C1000-24P-4X-L",
+      "C1000-24T-4G-L",
+      "C1000-24T-4X-L",
+      "C1000-48FP-4G-L",
+      "C1000-48FP-4X-L",
+      "C1000-48P-4G-L",
+      "C1000-48P-4X-L",
+      "C1000-48T-4G-L",
+      "C1000-48T-4X-L"
     ],
     "support_end_date": "2030-04-30",
     "os_eol_date": null,
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-16P-2G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-16P-2G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-16P-E-2G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-16P-E-2G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-16T-2G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-16T-2G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-16T-E-2G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-16T-E-2G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-24FP-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24FP-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-24FP-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24FP-4X-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-24P-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24P-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-24P-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24P-4X-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
+    "note": "Cisco Catalyst 1000 Series — End-of-Sale 2025-04-30, Last Date of Support 2030-04-30 (Cisco EoL bulletin EOL15390; End of SW maintenance 2026-04-30)"
   },
   {
     "key": "CISCO C1000-24PP-4G-L",
@@ -947,106 +868,10 @@
     "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
   },
   {
-    "key": "CISCO C1000-24T-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24T-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-24T-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-24T-4X-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48FP-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48FP-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48FP-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48FP-4X-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48P-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48P-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48P-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48P-4X-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
     "key": "CISCO C1000-48PP-4G-L",
     "vendor": "Cisco",
     "matches": [
       "C1000-48PP-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48T-4G-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48T-4G-L"
-    ],
-    "support_end_date": "2030-04-30",
-    "os_eol_date": null,
-    "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-1000-series-switches/catalyst-1000-series-switches-eol.html",
-    "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
-  },
-  {
-    "key": "CISCO C1000-48T-4X-L",
-    "vendor": "Cisco",
-    "matches": [
-      "C1000-48T-4X-L"
     ],
     "support_end_date": "2030-04-30",
     "os_eol_date": null,
