@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS eol_models (
   support_end_date DATE,                    -- end-of-support / LDOS  (apps key on this)
   os_eol_date DATE,                         -- software/firmware EOL, if separate
   confidence TEXT DEFAULT 'medium',         -- 'high' | 'medium' | 'low'
+  lifecycle TEXT,
   source_url TEXT,
   note TEXT,
   verified BOOLEAN DEFAULT false,
@@ -126,6 +127,7 @@ const MIGRATIONS: string[] = [
   `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS lifecycle_source_url TEXT`,
   `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS notes TEXT`,
   `ALTER TABLE IF EXISTS vendors ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW()`,
+  `ALTER TABLE IF EXISTS eol_models ADD COLUMN IF NOT EXISTS lifecycle TEXT`,
 ];
 
 export async function runInit(): Promise<void> {

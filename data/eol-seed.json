@@ -414,6 +414,95 @@
     "note": "Official EoS announcement (2915/2920). Latest End-of-Sale 2018-08-31. No LDoS published, so EoS date used."
   },
   {
+    "key": "Aruba Aruba 2930F-24G-4SFP",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-24G-4SFP",
+      "Aruba 2930F-24G-4SFP+"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-24G-4SFP+ — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-24G-4SFP+ Switch (JL253A)",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-24G-4SFP+ Switch (JL253A)"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-24G-4SFP+ Switch (JL253A) — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-24G-PoE+ 4SFP",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-24G-PoE+ 4SFP",
+      "Aruba 2930F-24G-PoE+ 4SFP+",
+      "Aruba-2930F-24G-PoE+-4SFP"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba-2930F-24G-PoE+-4SFP — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-24G-PoE+-4SFP+ Switch (JL255A)",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-24G-PoE+-4SFP+ Switch (JL255A)"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-24G-PoE+-4SFP+ Switch (JL255A) — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-48G-4SFP",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-48G-4SFP",
+      "Aruba 2930F-48G-4SFP+"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-48G-4SFP+ — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-48G-PoE+ 4SFP+",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-48G-PoE+ 4SFP+",
+      "Aruba 2930F-48G PoE+ 4SFP"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-48G PoE+ 4SFP — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
+    "key": "Aruba Aruba 2930F-48G-PoE+-4SFP+ Switch (JL256A)",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 2930F-48G-PoE+-4SFP+ Switch (JL256A)"
+    ],
+    "support_end_date": "2026-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Aruba 2930F-48G-PoE+-4SFP+ Switch (JL256A) — End of Support 2026-12-31 (Aruba Central Managed Hardware Lifecycle Bulletin)."
+  },
+  {
     "key": "ARUBA AP-300",
     "vendor": "Aruba",
     "matches": [
@@ -743,11 +832,11 @@
       "Brocade 300",
       "Brocade 300 Fibre Channel Switch"
     ],
-    "support_end_date": "2023-04-30",
+    "support_end_date": "2024-04-16",
     "os_eol_date": null,
     "confidence": "high",
     "source": "https://www.broadcom.com/support/fibre-channel-networking/eol-products",
-    "note": "Brocade 300 Fibre Channel Switch — End of Support 2023-04-30 (Broadcom Brocade product lifecycle bulletin)"
+    "note": "Brocade 300 — End of Support 2024-04-16 (Brocade SAN Switch Lifecycle Archive)."
   },
   {
     "key": "CISCO AIRONET 3802I",
@@ -1167,6 +1256,18 @@
     "note": "Cisco Business CBS350 series (select models) — Last Date of Support 2029-10-31 (Cisco EoL bulletin; EoS 2024-10-29). https://www.cisco.com/c/en/us/products/collateral/switches/business-350-series-managed-switches/business-cbs350-series-managed-switch-mod-eol.html"
   },
   {
+    "key": "Cisco Cisco 2504 Wireless Controller",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco 2504 Wireless Controller"
+    ],
+    "support_end_date": "2022-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Cisco 2504 Wireless Controller — End of Support 2022-07-31 (Cisco Bulletin EOL12232)."
+  },
+  {
     "key": "CISCO AIRONET 1242AG",
     "vendor": "Cisco",
     "matches": [
@@ -1448,6 +1549,18 @@
     "note": "ASA 5508-X/5516-X EoL c51-744798; EoS 2021-08-02, LDoS 2026-08-31."
   },
   {
+    "key": "Cisco Cisco C1000-48FP-4G-L PoE",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco C1000-48FP-4G-L PoE"
+    ],
+    "support_end_date": "2030-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Cisco C1000-48FP-4G-L PoE — End of Support 2030-04-30 (Cisco Bulletin EOL15537)."
+  },
+  {
     "key": "CISCO Catalyst 2960",
     "vendor": "Cisco",
     "matches": [
@@ -1473,6 +1586,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-series-switches/eos-eol-notice-c51-730121.html",
     "note": "Cisco Catalyst 2960 (classic) 24-port — LDoS 2019-10-31 (Cisco EoL c51-730121); end-of-life. https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-series-switches/eos-eol-notice-c51-730121.html"
+  },
+  {
+    "key": "Cisco Cisco Catalyst 2960 48p",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco Catalyst 2960 48p"
+    ],
+    "support_end_date": "2020-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Cisco Catalyst 2960 48p — End of Support 2020-10-31 (Cisco Legacy Catalyst Lifecycle Archive)."
   },
   {
     "key": "CISCO Catalyst 2960-C",
@@ -2142,6 +2267,19 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9500-series-switches/c9500-16x-switch-nm-c9500-nm-8x-nm-2q-eol.html",
     "note": "Network module; EoS 2026-04-30, LDoS 2031-04-30"
+  },
+  {
+    "key": "Cisco Cisco ESW 520 24p",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco ESW 520 24p"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Cisco ESW 520 24p — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
   },
   {
     "key": "CISCO 1921",
@@ -3112,6 +3250,32 @@
     "note": "c51-739494; EoS 2017-08-11, LDoS 2023-02-28"
   },
   {
+    "key": "Cisco SF200-18",
+    "vendor": "Cisco",
+    "matches": [
+      "SF200-18"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SF200-18 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
+    "key": "Cisco SF300-24P(PoE)",
+    "vendor": "Cisco",
+    "matches": [
+      "SF300-24P(PoE)"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SF300-24P(PoE) — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
     "key": "Cisco SF300-24PP",
     "vendor": "Cisco",
     "matches": [
@@ -3151,6 +3315,46 @@
     "note": "c51-738079 (500 Series China); EoS 2017-01-20, LDoS 2022-01-31"
   },
   {
+    "key": "Cisco SF950D-08",
+    "vendor": "Cisco",
+    "matches": [
+      "SF950D-08"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SF950D-08 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
+    "key": "Cisco SF95D-08",
+    "vendor": "Cisco",
+    "matches": [
+      "SF95D-08"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SF95D-08 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
+    "key": "Cisco SG 200-26",
+    "vendor": "Cisco",
+    "matches": [
+      "SG 200-26",
+      "SG200-26"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG200-26 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
     "key": "Cisco SG200-26",
     "vendor": "Cisco",
     "matches": [
@@ -3173,6 +3377,19 @@
     "confidence": "medium",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-smart-switches/eos-eol-notice-c51-740541.html",
     "note": "Cisco SB 200 Series Smart Switches (SG200-50) — LDoS 2020-10-31 (Cisco EoL c51-740541; series-level). https://www.cisco.com/c/en/us/products/collateral/switches/small-business-smart-switches/eos-eol-notice-c51-740541.html"
+  },
+  {
+    "key": "Cisco SG200-50 50-Port Gigabit Smart Switch",
+    "vendor": "Cisco",
+    "matches": [
+      "SG200-50 50-Port Gigabit Smart Switch"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG200-50 50-Port Gigabit Smart Switch — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
   },
   {
     "key": "CISCO SG250-08HP",
@@ -3305,6 +3522,19 @@
     "note": "Cisco SG300-28 (300 Series Managed) — Last Date of Support 2023-11-30 (Cisco EoL bulletin c51-740542); end-of-life. https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-740542.html"
   },
   {
+    "key": "Cisco SG300-28PP",
+    "vendor": "Cisco",
+    "matches": [
+      "SG300-28PP"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG300-28PP — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
     "key": "CISCO SG350-28",
     "vendor": "Cisco",
     "matches": [
@@ -3316,6 +3546,19 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/350-series-managed-switches/eos-eol-notice-c51-2442364.html",
     "note": "Cisco SG350-28 (350 Series) — LDoS 2026-10-31 (Cisco EoL c51-2442364). https://www.cisco.com/c/en/us/products/collateral/switches/350-series-managed-switches/eos-eol-notice-c51-2442364.html"
+  },
+  {
+    "key": "Cisco SG350-52",
+    "vendor": "Cisco",
+    "matches": [
+      "SG350-52"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG350-52 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
   },
   {
     "key": "CISCO SG350XG Stackable",
@@ -3358,6 +3601,45 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-500-series-stackable-managed-switches/eos-eol-notice-c51-739827.html",
     "note": "c51-739827 / EOL12082; EoS 2018-04-12, LDoS 2023-04-30. SG500/SG500X/SF500"
+  },
+  {
+    "key": "Cisco SG95-16",
+    "vendor": "Cisco",
+    "matches": [
+      "SG95-16"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG95-16 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
+    "key": "Cisco SG95-24",
+    "vendor": "Cisco",
+    "matches": [
+      "SG95-24"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG95-24 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+  },
+  {
+    "key": "Cisco SG95-8 8-Port Gigabit Switch",
+    "vendor": "Cisco",
+    "matches": [
+      "SG95-8 8-Port Gigabit Switch"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SG95-8 8-Port Gigabit Switch — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
   },
   {
     "key": "CISCO SG95D-08",
@@ -3472,6 +3754,54 @@
     "note": "Catalyst 2960-X family EoL c51-744432; EoS 2022-10-31, LDoS 2027-10-31."
   },
   {
+    "key": "Cisco WS-C2960X-24TS-LL",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960X-24TS-LL"
+    ],
+    "support_end_date": "2027-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "WS-C2960X-24TS-LL — End of Support 2027-10-31 (Cisco Bulletin EOL13603)."
+  },
+  {
+    "key": "Cisco WS-C2960X-48FPS-L",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960X-48FPS-L"
+    ],
+    "support_end_date": "2027-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "WS-C2960X-48FPS-L — End of Support 2027-10-31 (Cisco Bulletin EOL13603)."
+  },
+  {
+    "key": "Cisco WS-C2960X-48LPS-L",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960X-48LPS-L"
+    ],
+    "support_end_date": "2027-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "WS-C2960X-48LPS-L — End of Support 2027-10-31 (Cisco Bulletin EOL13603)."
+  },
+  {
+    "key": "Cisco WS-C2960X-48TS-LL",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960X-48TS-LL"
+    ],
+    "support_end_date": "2027-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "WS-C2960X-48TS-LL — End of Support 2027-10-31 (Cisco Bulletin EOL13603)."
+  },
+  {
     "key": "CISCO C3750X",
     "vendor": "Cisco",
     "matches": [
@@ -3521,6 +3851,146 @@
     "note": "D-Link DGS-1100-24P — end of technical support 2026-02-28 (D-Link official support page). https://support.dlink.com/ProductInfo.aspx?m=DGS-1100-24P"
   },
   {
+    "key": "D-Link DGS 1224-TP",
+    "vendor": "D-Link",
+    "matches": [
+      "DGS 1224-TP"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "DGS 1224-TP — vendor-confirmed end-of-life, no concrete published date (status: End of Sale / Legacy; EOSL: —; D-Link Product Lifecycle Support Archive)."
+  },
+  {
+    "key": "D-Link DGS-1216T",
+    "vendor": "D-Link",
+    "matches": [
+      "DGS-1216T"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "DGS-1216T — vendor-confirmed end-of-life, no concrete published date (status: End of Sale / Legacy; EOSL: —; D-Link Product Lifecycle Support Archive)."
+  },
+  {
+    "key": "D-Link DGS-1500 Series",
+    "vendor": "D-Link",
+    "matches": [
+      "DGS-1500 Series"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "DGS-1500 Series — vendor-confirmed end-of-life, no concrete published date (status: End of Sale / Legacy; EOSL: —; D-Link Product Lifecycle Support Archive)."
+  },
+  {
+    "key": "D-Link Dlink DGS-3120-24p",
+    "vendor": "D-Link",
+    "matches": [
+      "Dlink DGS-3120-24p"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Dlink DGS-3120-24p — vendor-confirmed end-of-life, no concrete published date (status: End of Sale / Legacy; EOSL: —; D-Link Product Lifecycle Support Archive)."
+  },
+  {
+    "key": "D-Link Dlink DIR-842",
+    "vendor": "D-Link",
+    "matches": [
+      "Dlink DIR-842"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Dlink DIR-842 — vendor-confirmed end-of-life, no concrete published date (status: End of Sale / Legacy; EOSL: —; D-Link Product Lifecycle Support Archive)."
+  },
+  {
+    "key": "Europa Europa Vega 50",
+    "vendor": "Europa",
+    "matches": [
+      "Europa Vega 50",
+      "Vega 50"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Vega 50 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
+  },
+  {
+    "key": "Forcepoint Forcepoint 115 NGFW Appliance",
+    "vendor": "Forcepoint",
+    "matches": [
+      "Forcepoint 115 NGFW Appliance"
+    ],
+    "support_end_date": "2029-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Forcepoint 115 NGFW Appliance — End of Support 2029-01-01 (Forcepoint NGFW Hardware Lifecycle Matrix)."
+  },
+  {
+    "key": "Forcepoint Forcepoint NGFW 120",
+    "vendor": "Forcepoint",
+    "matches": [
+      "Forcepoint NGFW 120",
+      "Forcepoint NGFW 120 Appliance"
+    ],
+    "support_end_date": "2029-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Forcepoint NGFW 120 Appliance — End of Support 2029-01-01 (Forcepoint NGFW Hardware Lifecycle Matrix)."
+  },
+  {
+    "key": "Forcepoint Forcepoint NGFW 120W Appliance",
+    "vendor": "Forcepoint",
+    "matches": [
+      "Forcepoint NGFW 120W Appliance"
+    ],
+    "support_end_date": "2029-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Forcepoint NGFW 120W Appliance — End of Support 2029-01-01 (Forcepoint NGFW Hardware Lifecycle Matrix)."
+  },
+  {
+    "key": "Forcepoint Forcepoint NGFW 330 Appliance",
+    "vendor": "Forcepoint",
+    "matches": [
+      "Forcepoint NGFW 330 Appliance"
+    ],
+    "support_end_date": "2029-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Forcepoint NGFW 330 Appliance — End of Support 2029-01-01 (Forcepoint NGFW Hardware Lifecycle Matrix)."
+  },
+  {
+    "key": "Forcepoint Forcepoint NGFW 352 Appliance",
+    "vendor": "Forcepoint",
+    "matches": [
+      "Forcepoint NGFW 352 Appliance"
+    ],
+    "support_end_date": "2029-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Forcepoint NGFW 352 Appliance — End of Support 2029-01-01 (Forcepoint NGFW Hardware Lifecycle Matrix)."
+  },
+  {
     "key": "FORTINET FG-1000D",
     "vendor": "Fortinet",
     "matches": [
@@ -3545,6 +4015,18 @@
     "confidence": "medium",
     "source": "https://community.fortinet.com/t5/Support-Forum/Fortigate-E-and-F-series-EOL/m-p/229273",
     "note": "Fortinet staff stated official EOS is 08/2026 (month/year only; first of month used as placeholder day)"
+  },
+  {
+    "key": "Fortinet Fortigate 200E",
+    "vendor": "Fortinet",
+    "matches": [
+      "Fortigate 200E"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Fortigate 200E — End of Support 2030-10-13 (Fortinet Hardware Lifecycle Tool)."
   },
   {
     "key": "FORTINET FG-300E",
@@ -3573,6 +4055,31 @@
     "note": "EOS 2027-04-16, last license renewal 2026-04-16 per Product Life Cycle; quoted by Fortinet SuperUser (Toshi_Esumi) in official community thread; EOO was 2022"
   },
   {
+    "key": "Fortinet FortiGate 60E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FortiGate 60E"
+    ],
+    "support_end_date": "2026-12-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "FortiGate 60E — End of Support 2026-12-29 (Fortinet EOL Announcement 2021-09-30)."
+  },
+  {
+    "key": "HP ",
+    "vendor": "HP",
+    "matches": [
+      ""
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": " — vendor-confirmed end-of-life, no concrete published date (status: Unidentifiable Asset; EOSL: Passed; Requires physical verification or MAC OUI inspection)."
+  },
+  {
     "key": "HP 1910-8G-PoE+",
     "vendor": "HP",
     "matches": [
@@ -3583,6 +4090,45 @@
     "confidence": "high",
     "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/Product%20End%20of%20Sale%20announcement-%20HP%201910%20Gigabit%20Switch%20Series.pdf",
     "note": "EoS only (no LDoS published). HP 1910-8G-PoE+ JG349A/JG350A; target EoS 2015-07-31."
+  },
+  {
+    "key": "HP E2620-48-PoEP",
+    "vendor": "HP",
+    "matches": [
+      "E2620-48-PoEP"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "E2620-48-PoEP — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
+    "key": "HP H3C L2 Managed 8G PoE+ 125W 2SFP",
+    "vendor": "HP",
+    "matches": [
+      "H3C L2 Managed 8G PoE+ 125W 2SFP"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "H3C L2 Managed 8G PoE+ 125W 2SFP — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
+    "key": "HP H3C S5120 -28C EI",
+    "vendor": "HP",
+    "matches": [
+      "H3C S5120 -28C EI"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "H3C S5120 -28C EI — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
   },
   {
     "key": "HP 10500 32-port 10GbE SFP+ SF Module",
@@ -3609,6 +4155,32 @@
     "note": "EoS only (no LDoS published); SKU JG496A named, target EoS 2016-07-31."
   },
   {
+    "key": "HP HP 10504 880Gbps Type B Fabric Module",
+    "vendor": "HP",
+    "matches": [
+      "HP 10504 880Gbps Type B Fabric Module"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP 10504 880Gbps Type B Fabric Module — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
+    "key": "HP HP 1920-8G-2SFP+-2XGT-PoE+ 180W",
+    "vendor": "HP",
+    "matches": [
+      "HP 1920-8G-2SFP+-2XGT-PoE+ 180W"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP 1920-8G-2SFP+-2XGT-PoE+ 180W — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
     "key": "HP 5120-16G SI",
     "vendor": "HP",
     "matches": [
@@ -3633,6 +4205,32 @@
     "note": "EoS only (no LDoS published); JE074A named, EoS 2015-08-01."
   },
   {
+    "key": "HP HP A10504 Switch Chassis",
+    "vendor": "HP",
+    "matches": [
+      "HP A10504 Switch Chassis"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP A10504 Switch Chassis — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
+    "key": "HP HP A5120-24G EI",
+    "vendor": "HP",
+    "matches": [
+      "HP A5120-24G EI"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP A5120-24G EI — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
+  },
+  {
     "key": "HP A5120-24G-PoE+ SI",
     "vendor": "HP",
     "matches": [
@@ -3643,6 +4241,19 @@
     "confidence": "high",
     "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%20-HP%205120%20SI%20Switch%20series.pdf",
     "note": "EoS only; 5120 SI notice names HP 5120-24G-PoE+ SI JG091A/JG092A, EoS 2015-08-01 (list 'PPoE+' read as PoE+)."
+  },
+  {
+    "key": "HP HP A5120-48G EI",
+    "vendor": "HP",
+    "matches": [
+      "HP A5120-48G EI"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP A5120-48G EI — vendor-confirmed end-of-life, no concrete published date (status: End of Life / Obsolete; EOSL: Passed; HPE Comware / ProCurve Retirement Archive)."
   },
   {
     "key": "HP A5120-48G-PoE+ EI",
@@ -3693,6 +4304,19 @@
     "note": "EoS only (no LDoS published); J9420A MSM760 Premium Mobility Controller, EoS 2016-07-31."
   },
   {
+    "key": "HP HP MultiService Controllers MSM760",
+    "vendor": "HP",
+    "matches": [
+      "HP MultiService Controllers MSM760"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "HP MultiService Controllers MSM760 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed; HPE MSM Wireless Lifecycle End)."
+  },
+  {
     "key": "HP 1920-16G",
     "vendor": "HP",
     "matches": [
@@ -3717,6 +4341,30 @@
     "note": "EoS only (no LDoS published); SKU JE072A named, EoS 2015-08-01."
   },
   {
+    "key": "HP HPE 5130 24G 4SFP+ 2-slot HI",
+    "vendor": "HP",
+    "matches": [
+      "HPE 5130 24G 4SFP+ 2-slot HI"
+    ],
+    "support_end_date": "2028-11-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "HPE 5130 24G 4SFP+ 2-slot HI — End of Support 2028-11-01 (Aruba/HPE FlexNetwork 5130-HI Lifecycle)."
+  },
+  {
+    "key": "HP HPE 5130-48G-4SFP+ EI",
+    "vendor": "HP",
+    "matches": [
+      "HPE 5130-48G-4SFP+ EI"
+    ],
+    "support_end_date": "2028-11-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "HPE 5130-48G-4SFP+ EI — End of Support 2028-11-01 (Aruba/HPE FlexNetwork 5130-HI Lifecycle)."
+  },
+  {
     "key": "HP MSM720 Controller",
     "vendor": "HP",
     "matches": [
@@ -3727,6 +4375,19 @@
     "confidence": "high",
     "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPN%20Mobility%20Products%20-%20EoS%20Announcement%20-%20February%202016%20-%20External.pdf",
     "note": "EoS only (no LDoS published); J9694A MSM720 Premium Mobility Controller, EoS 2016-07-31."
+  },
+  {
+    "key": "HP MSM310-R",
+    "vendor": "HP",
+    "matches": [
+      "MSM310-R"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "MSM310-R — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed; HPE MSM Wireless Lifecycle End)."
   },
   {
     "key": "HP MSM430",
@@ -3751,6 +4412,19 @@
     "confidence": "high",
     "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/EoS%20Public%20Announcement%202810-2510G-2520-24G-PoE.pdf",
     "note": "EoS only (no LDoS published). HP 2510-24G J9279A; End-of-Sale announced 2012-12-04, Last Ship 2013-08-31."
+  },
+  {
+    "key": "HP ProCurve 2610-24-PWR",
+    "vendor": "HP",
+    "matches": [
+      "ProCurve 2610-24-PWR",
+      "2610 24-PWR"
+    ],
+    "support_end_date": "2020-07-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "2610 24-PWR — End of Support 2020-07-24 (HPE ProCurve Archive)."
   },
   {
     "key": "HP ProCurve 2910al-24G",
@@ -4334,6 +5008,82 @@
     "confidence": "high",
     "source": "https://kb.juniper.net/TSB16772",
     "note": "SSG-500 series in TSB16772; End of Support 01/31/2021 (SSG550 = SSG-550M)"
+  },
+  {
+    "key": "Kros RK600-BTWS",
+    "vendor": "Kros",
+    "matches": [
+      "RK600-BTWS"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "RK600-BTWS — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
+  },
+  {
+    "key": "Lenovo CE0128TB",
+    "vendor": "Lenovo",
+    "matches": [
+      "CE0128TB"
+    ],
+    "support_end_date": "2028-03-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "CE0128TB — End of Support 2028-03-31 (Lenovo Campus Switch Lifecycle)."
+  },
+  {
+    "key": "Lenovo Lenovo RackSwitch G8272",
+    "vendor": "Lenovo",
+    "matches": [
+      "Lenovo RackSwitch G8272"
+    ],
+    "support_end_date": "2025-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Lenovo RackSwitch G8272 — End of Support 2025-12-31 (Lenovo Networking Lifecycle Matrix)."
+  },
+  {
+    "key": "Lenovo ThinkSystem NE1032",
+    "vendor": "Lenovo",
+    "matches": [
+      "ThinkSystem NE1032"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "ThinkSystem NE1032 — vendor-confirmed end-of-life, no concrete published date (status: End of Life; EOSL: 2026/2027; Lenovo Withdrawn Hardware Lifecycle)."
+  },
+  {
+    "key": "Linksys Linksys E3000",
+    "vendor": "Linksys",
+    "matches": [
+      "Linksys E3000"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Linksys E3000 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
+  },
+  {
+    "key": "Linksys Linksys LGS116",
+    "vendor": "Linksys",
+    "matches": [
+      "Linksys LGS116"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Linksys LGS116 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
   },
   {
     "key": "MERAKI GR10",
@@ -10845,6 +11595,58 @@
     "confidence": "high",
     "source": "https://www.sonicwall.com/support/product-lifecycle-tables/TZ-Series/Hardware",
     "note": "EOS per TZ-series hardware lifecycle table"
+  },
+  {
+    "key": "TOTOLINK ",
+    "vendor": "TOTOLINK",
+    "matches": [
+      ""
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": " — vendor-confirmed end-of-life, no concrete published date (status: Unidentifiable Asset; EOSL: Passed; Requires physical verification or MAC OUI inspection)."
+  },
+  {
+    "key": "TOTOLINK TOTOLINK A3002RU AC1200 Wireless",
+    "vendor": "TOTOLINK",
+    "matches": [
+      "TOTOLINK A3002RU AC1200 Wireless"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "TOTOLINK A3002RU AC1200 Wireless — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
+  },
+  {
+    "key": "TOTOLINK Totolink N600R",
+    "vendor": "TOTOLINK",
+    "matches": [
+      "Totolink N600R"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Totolink N600R — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
+  },
+  {
+    "key": "TOTOLINK Totolink N9",
+    "vendor": "TOTOLINK",
+    "matches": [
+      "Totolink N9"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Totolink N9 — vendor-confirmed end-of-life, no concrete published date (status: Obsolete / Legacy; EOSL: Passed; Legacy Consumer / Specialized Asset)."
   },
   {
     "key": "TPLINK TL-SG1016",

@@ -19,6 +19,7 @@ type SeedEntry = {
   confidence: 'high' | 'medium' | 'low';
   source: string | null;
   note: string | null;
+  lifecycle?: string | null;
 };
 
 function vendorSlug(vendor: string): string {
@@ -56,6 +57,7 @@ export async function applyCuratedSeed(): Promise<SeedResult> {
     vendorId: number; vendor: string; raw: string; norm: string;
     sed: string | null; oed: string | null; conf: string; src: string | null;
     note: string | null; aliases: string[];
+    lifecycle: string | null;
   };
   const modelByKey = new Map<string, M>();
   for (const e of entries) {
@@ -71,6 +73,7 @@ export async function applyCuratedSeed(): Promise<SeedResult> {
         sed: e.support_end_date ?? null, oed: e.os_eol_date ?? null,
         conf: e.confidence ?? 'medium', src: e.source ?? null, note: e.note ?? null,
         aliases: e.matches.slice(1),
+        lifecycle: e.lifecycle ?? null,
       });
     } else {
       for (const a of e.matches.slice(1)) if (!existing.aliases.includes(a)) existing.aliases.push(a);
@@ -81,18 +84,19 @@ export async function applyCuratedSeed(): Promise<SeedResult> {
   const mres = await query<{ id: number; vendor_id: number; model_normalized: string }>(
     `INSERT INTO eol_models
        (vendor_id, model_raw, model_normalized, support_end_date, os_eol_date,
-        confidence, source_url, note, entry_method)
+        confidence, source_url, note, lifecycle, entry_method)
      SELECT vendor_id, model_raw, model_normalized, sed::date, oed::date,
-            confidence, source_url, note, 'seed'
+            confidence, source_url, note, lifecycle, 'seed'
        FROM unnest($1::int[], $2::text[], $3::text[], $4::text[], $5::text[],
-                   $6::text[], $7::text[], $8::text[])
-         AS t(vendor_id, model_raw, model_normalized, sed, oed, confidence, source_url, note)
+                   $6::text[], $7::text[], $8::text[], $9::text[])
+         AS t(vendor_id, model_raw, model_normalized, sed, oed, confidence, source_url, note, lifecycle)
      ON CONFLICT (vendor_id, model_normalized) DO UPDATE SET
         support_end_date = EXCLUDED.support_end_date,
         os_eol_date      = EXCLUDED.os_eol_date,
         confidence       = EXCLUDED.confidence,
         source_url       = EXCLUDED.source_url,
         note             = EXCLUDED.note,
+        lifecycle        = EXCLUDED.lifecycle,
         entry_method     = 'seed',
         updated_at       = now()
      RETURNING id, vendor_id, model_normalized`,
@@ -105,6 +109,7 @@ export async function applyCuratedSeed(): Promise<SeedResult> {
       models.map((m) => m.conf),
       models.map((m) => m.src),
       models.map((m) => m.note),
+      models.map((m) => m.lifecycle),
     ]
   );
   const modelIdByKey = new Map<string, number>(
@@ -147,6 +152,7 @@ type ModelRow = {
   confidence: 'high' | 'medium' | 'low';
   source_url: string | null;
   note: string | null;
+  lifecycle: string | null;
   aliases: string[] | null;
 };
 
@@ -159,6 +165,7 @@ type FeedModel = {
   confidence: 'high' | 'medium' | 'low';
   source: string | null;
   note: string | null;
+  lifecycle: string | null;
 };
 
 function canonicalFeedJson(feed: {
@@ -175,6 +182,7 @@ function canonicalFeedJson(feed: {
       vendor: m.vendor, matches: m.matches, end_of_sale: m.end_of_sale,
       support_end_date: m.support_end_date, os_eol_date: m.os_eol_date,
       confidence: m.confidence, source: m.source, note: m.note,
+      lifecycle: m.lifecycle,
     })),
   };
   return JSON.stringify(ordered, null, 2);
@@ -205,7 +213,7 @@ export async function buildAndPublishFeed(opts?: {
             m.end_of_sale::text AS end_of_sale,
             m.support_end_date::text AS support_end_date,
             m.os_eol_date::text AS os_eol_date,
-            m.confidence, m.source_url, m.note,
+            m.confidence, m.source_url, m.note, m.lifecycle,
             COALESCE(array_agg(a.alias_raw ORDER BY a.alias_raw)
                        FILTER (WHERE a.alias_raw IS NOT NULL), '{}') AS aliases
        FROM eol_models m
@@ -223,6 +231,7 @@ export async function buildAndPublishFeed(opts?: {
     confidence: r.confidence,
     source: r.source_url,
     note: r.note,
+    lifecycle: r.lifecycle,
   }));
   models.sort((a, b) => {
     const v = a.vendor.localeCompare(b.vendor);
