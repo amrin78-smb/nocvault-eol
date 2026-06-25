@@ -826,6 +826,19 @@
     "note": "HPE 5130 HI (JH323A) — End-of-Sale 2022-06-30 (HPE/Aruba EoS, 2022). https://asp-documents.arubanetworks.com/portals/0/el/EOS_HPE-FlexNetwork-5130-HI-Switch-Series.pdf"
   },
   {
+    "key": "Asus Asus RT-AC1200 V2",
+    "vendor": "Asus",
+    "matches": [
+      "Asus RT-AC1200 V2"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "Asus RT-AC1200 V2 — vendor-confirmed end-of-life, no concrete date (status: EOL Confirmed; Listed as EOL — no longer manufactured)."
+  },
+  {
     "key": "Asus Asus RT-AC86U",
     "vendor": "Asus",
     "matches": [
@@ -2300,12 +2313,11 @@
     "matches": [
       "Cisco CBS350 Managed 16-port GE, 2x1G SFP"
     ],
-    "support_end_date": null,
+    "support_end_date": "2029-10-31",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "Cisco CBS350 Managed 16-port GE, 2x1G SFP — vendor-confirmed end-of-life, no concrete date (status: EOL; End of Sale: Jan 31, 2025; Last Date of Support: Oct 31, 2029)."
+    "note": "Cisco CBS350 Managed 16-port GE, 2x1G SFP — EOL; End of Sale: Jan 31, 2025; Last Date of Support: Oct 31, 2029."
   },
   {
     "key": "Cisco Cisco ESW 520 24p",
@@ -3430,7 +3442,7 @@
     "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "SG200-26 — vendor-confirmed end-of-life, no concrete date (status: EOL; End of Sale circa 2015-2017)."
+    "note": "SG200-26 — vendor-confirmed end-of-life, no concrete date (status: EOL; End of Sale dates vary by model; generally EOL 2015-2018)."
   },
   {
     "key": "Cisco SG200-26",
@@ -3757,6 +3769,19 @@
     "note": "Catalyst 3560-G/3750-G EoL c51-696372; LDoS 2018-01-31 (past)."
   },
   {
+    "key": "Cisco SX350X-12",
+    "vendor": "Cisco",
+    "matches": [
+      "SX350X-12"
+    ],
+    "support_end_date": null,
+    "os_eol_date": null,
+    "lifecycle": "eol",
+    "confidence": "high",
+    "source": null,
+    "note": "SX350X-12 — vendor-confirmed end-of-life, no concrete date (status: EOL Confirmed; End of Sale: Jan 28, 2022; Last Support: varies by SKU)."
+  },
+  {
     "key": "Cisco Wireless Controller 25 AP Licenses",
     "vendor": "Cisco",
     "matches": [
@@ -3962,10 +3987,9 @@
     ],
     "support_end_date": "2009-07-15",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "DGS 1224-TP — EOL; EOL: July 15, 2008; EOS: July 15, 2009 (D-Link EOL/EOS List)."
+    "note": "DGS 1224-TP — EOL; EOL: July 15, 2008; EOS: July 15, 2009."
   },
   {
     "key": "D-Link DGS-1210-24",
@@ -3977,7 +4001,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "DGS-1210-24 — EOL; EOL: Nov 1, 2014; EOS: Dec 1, 2020 (D-Link EOL/EOS List (Russia) — DGS-1210 series)."
+    "note": "DGS-1210-24 — EOL; EOL: Nov 1, 2014; EOS: Dec 1, 2020."
   },
   {
     "key": "D-Link DGS-1210-28P",
@@ -3989,7 +4013,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "DGS-1210-28P — EOL; EOL: Aug 30, 2013; EOS: Aug 30, 2014 (D-Link EOL/EOS List — DGS-1210-28P/B)."
+    "note": "DGS-1210-28P — EOL; EOL: Aug 30, 2013; EOS: Aug 30, 2014."
   },
   {
     "key": "D-Link DGS-1210-52/C1",
@@ -4001,7 +4025,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "DGS-1210-52/C1 — EOL; EOL: Mar 3, 2021; EOS: Mar 3, 2023 (D-Link EOL/EOS List)."
+    "note": "DGS-1210-52/C1 — EOL; EOL: Mar 3, 2021; EOS: Mar 3, 2023."
   },
   {
     "key": "D-Link DGS-1216T",
@@ -4011,10 +4035,9 @@
     ],
     "support_end_date": "2012-01-24",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "DGS-1216T — EOL; EOL: Jan 24, 2011; EOS: Jan 24, 2012 (D-Link EOL/EOS List)."
+    "note": "DGS-1216T — EOL; EOL: Jan 24, 2011; EOS: Jan 24, 2012."
   },
   {
     "key": "D-Link DGS-1500 Series",
@@ -4024,10 +4047,9 @@
     ],
     "support_end_date": "2015-01-27",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "DGS-1500 Series — EOL; EOL: Jan 27, 2014; EOS: Jan 27, 2015 (D-Link EOL/EOS List)."
+    "note": "DGS-1500 Series — EOL; EOL: Jan 27, 2014; EOS: Jan 27, 2015."
   },
   {
     "key": "D-Link Dlink DGS-3120-24p",
@@ -4037,10 +4059,9 @@
     ],
     "support_end_date": "2023-12-01",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "Dlink DGS-3120-24p — EOL; EOL: Jan 1, 2022; EOS: Dec 1, 2023 (D-Link EOL/EOS List — DGS-3120-24TC/B)."
+    "note": "Dlink DGS-3120-24p — EOL; EOL: Jan 1, 2022; EOS: Dec 1, 2023."
   },
   {
     "key": "D-Link Dlink DIR-842",
@@ -4252,10 +4273,9 @@
     ],
     "support_end_date": "2023-11-30",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "H3C S5120 -28C EI — EOL; EOSL: Nov 30, 2023 (confirmed) (Datalive EOSL List — HPE 5120 series)."
+    "note": "H3C S5120 -28C EI — EOSL Confirmed; EOSL: Nov 30, 2023."
   },
   {
     "key": "HP 10500 32-port 10GbE SFP+ SF Module",
@@ -4292,7 +4312,7 @@
     "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "HP 10504 880Gbps Type B Fabric Module — vendor-confirmed end-of-life, no concrete date (status: EOL; No specific bulletin found; platform discontinued years ago)."
+    "note": "HP 10504 880Gbps Type B Fabric Module — vendor-confirmed end-of-life, no concrete date (status: EOL; Discontinued years ago; no active support)."
   },
   {
     "key": "HP HP 1920-8G-2SFP+-2XGT-PoE+ 180W",
@@ -4300,12 +4320,11 @@
     "matches": [
       "HP 1920-8G-2SFP+-2XGT-PoE+ 180W"
     ],
-    "support_end_date": null,
+    "support_end_date": "2024-09-30",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "HP 1920-8G-2SFP+-2XGT-PoE+ 180W — vendor-confirmed end-of-life, no concrete date (status: EOL; EOL: Sep 30, 2024 (confirmed))."
+    "note": "HP 1920-8G-2SFP+-2XGT-PoE+ 180W — EOL; EOL: Sep 30, 2024."
   },
   {
     "key": "HP 5120-16G SI",
@@ -4352,10 +4371,9 @@
     ],
     "support_end_date": "2023-11-30",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "HP A5120-24G EI — EOL; EOSL: Nov 30, 2023 (confirmed) (Same as H3C S5120-28C EI)."
+    "note": "HP A5120-24G EI — EOSL Confirmed; EOSL: Nov 30, 2023."
   },
   {
     "key": "HP A5120-24G-PoE+ SI",
@@ -4501,7 +4519,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "HPE 5140-24G 4SFP+ EI — EOSL Confirmed; EOSL: Nov 27, 2025 (confirmed) (Datalive EOSL List — HPE 5140 series)."
+    "note": "HPE 5140-24G 4SFP+ EI — EOSL Confirmed; EOSL: Nov 27, 2025."
   },
   {
     "key": "HP HPE 5140-48G 4SFP+ EI",
@@ -4513,7 +4531,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "HPE 5140-48G 4SFP+ EI — EOSL Confirmed; EOSL: Nov 27, 2025 (confirmed) (Datalive EOSL List — HPE 5140 series)."
+    "note": "HPE 5140-48G 4SFP+ EI — EOSL Confirmed; EOSL: Nov 27, 2025."
   },
   {
     "key": "HP HPE5140 JL828A",
@@ -4525,7 +4543,7 @@
     "os_eol_date": null,
     "confidence": "high",
     "source": null,
-    "note": "HPE5140 JL828A — EOSL Confirmed; EOSL: Nov 27, 2025 (confirmed) (Same as HPE 5140 series)."
+    "note": "HPE5140 JL828A — EOSL Confirmed; EOSL: Nov 27, 2025."
   },
   {
     "key": "HP MSM720 Controller",
@@ -6728,12 +6746,11 @@
     "matches": [
       "GS728TS"
     ],
-    "support_end_date": null,
+    "support_end_date": "2022-12-01",
     "os_eol_date": null,
-    "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "GS728TS — vendor-confirmed end-of-life, no concrete date (status: EOL; EOL: Dec 1, 2022)."
+    "note": "GS728TS — EOL; EOL: Dec 1, 2022."
   },
   {
     "key": "NETGEAR GS752TS",
@@ -11848,6 +11865,18 @@
     "note": "TP-Link TL-SG108 8-port gigabit switch (HW v6.6) — End-of-Service 2024-09-21 (TP-Link US business EOL list). https://static.tp-link.com/upload/manual/2025/202509/20250903/US%20EOL%20List%20Business.pdf"
   },
   {
+    "key": "TP-Link TP-Link Archer AX73",
+    "vendor": "TP-Link",
+    "matches": [
+      "TP-Link Archer AX73"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "TP-Link Archer AX73 — EOL Confirmed; EOL Notification: Oct 26, 2023; EOL: Apr 23, 2024."
+  },
+  {
     "key": "TPLINK EAP110",
     "vendor": "TP-Link",
     "matches": [
@@ -12695,6 +12724,30 @@
     "note": "TP-LINK TL-WA120 — vendor-confirmed end-of-life, no concrete date (status: EOL; Legacy product; check TP-Link EOL list for exact date)."
   },
   {
+    "key": "TP-Link Tplink Archer AX10",
+    "vendor": "TP-Link",
+    "matches": [
+      "Tplink Archer AX10"
+    ],
+    "support_end_date": "2024-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Tplink Archer AX10 — EOL Confirmed; EOL Notification: Dec 1, 2023; EOL: May 29, 2024."
+  },
+  {
+    "key": "TP-Link Tplink Archer C64",
+    "vendor": "TP-Link",
+    "matches": [
+      "Tplink Archer C64"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": null,
+    "note": "Tplink Archer C64 — EOL Confirmed; EOL Notification: Jul 1, 2024; EOL: Dec 31, 2024."
+  },
+  {
     "key": "TP-Link Tplink TL-WR740N",
     "vendor": "TP-Link",
     "matches": [
@@ -12705,7 +12758,7 @@
     "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "Tplink TL-WR740N — vendor-confirmed end-of-life, no concrete date (status: EOL; Likely EOL years ago)."
+    "note": "TL-WR740N — vendor-confirmed end-of-life, no concrete date (status: EOL; Likely EOL years ago)."
   },
   {
     "key": "TP-Link Tplink TL-WR841N",
@@ -12718,7 +12771,7 @@
     "lifecycle": "eol",
     "confidence": "high",
     "source": null,
-    "note": "Tplink TL-WR841N — vendor-confirmed end-of-life, no concrete date (status: EOL; Likely EOL years ago)."
+    "note": "TL-WR841N — vendor-confirmed end-of-life, no concrete date (status: EOL; Likely EOL years ago)."
   },
   {
     "key": "UBIQUITI UAP-PRO",
