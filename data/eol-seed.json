@@ -4207,19 +4207,6 @@
     "note": "FortiGate 60E — End of Support 2026-12-29 (Fortinet EOL Announcement 2021-09-30)."
   },
   {
-    "key": "HP ",
-    "vendor": "HP",
-    "matches": [
-      ""
-    ],
-    "support_end_date": null,
-    "os_eol_date": null,
-    "lifecycle": "eol",
-    "confidence": "high",
-    "source": null,
-    "note": " — vendor-confirmed end-of-life, no concrete published date (status: Unidentifiable Asset; EOSL: Passed; Requires physical verification or MAC OUI inspection)."
-  },
-  {
     "key": "HP 1910-8G-PoE+",
     "vendor": "HP",
     "matches": [
@@ -11784,19 +11771,6 @@
     "confidence": "high",
     "source": "https://www.sonicwall.com/support/product-lifecycle-tables/TZ-Series/Hardware",
     "note": "EOS per TZ-series hardware lifecycle table"
-  },
-  {
-    "key": "TOTOLINK ",
-    "vendor": "TOTOLINK",
-    "matches": [
-      ""
-    ],
-    "support_end_date": null,
-    "os_eol_date": null,
-    "lifecycle": "eol",
-    "confidence": "high",
-    "source": null,
-    "note": " — vendor-confirmed end-of-life, no concrete published date (status: Unidentifiable Asset; EOSL: Passed; Requires physical verification or MAC OUI inspection)."
   },
   {
     "key": "TOTOLINK TOTOLINK A3002RU AC1200 Wireless",
