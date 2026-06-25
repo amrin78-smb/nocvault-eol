@@ -137,9 +137,14 @@ export async function runInit(): Promise<void> {
   // existence check instead. NOTE: when a NEW migration is needed, add a version
   // marker check here (or temporarily bypass) so it actually runs.
   try {
+    // Gate the fast path on the LATEST migration too (the eol_models.lifecycle
+    // column) — otherwise a schema addition is silently skipped on an existing DB.
+    // Bump this check whenever a new migration must reach already-initialized DBs.
     const r = await rawQuery<{ present: boolean }>(
       `SELECT (to_regclass('public.eol_models') IS NOT NULL
-               AND to_regclass('public.feed_versions') IS NOT NULL) AS present`
+               AND to_regclass('public.feed_versions') IS NOT NULL
+               AND EXISTS (SELECT 1 FROM information_schema.columns
+                           WHERE table_name = 'eol_models' AND column_name = 'lifecycle')) AS present`
     );
     if (r.rows[0]?.present) return;
   } catch {
