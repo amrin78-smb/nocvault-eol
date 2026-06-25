@@ -24,6 +24,31 @@
     "note": "Allied Telesis AT-TQ5403e — End of SW Support 2021-06-09 (End of Life 2024-06-09); Allied Telesis official EoS list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
   },
   {
+    "key": "Aruba 2530-48G-PoE+",
+    "vendor": "Aruba",
+    "matches": [
+      "2530-48-PoEP"
+    ],
+    "support_end_date": "2022-01-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_2530-Switches-with-10G-Uplink.pdf",
+    "note": "LDoS. Aruba 2530-48G-PoE+-2SFP+ J9853A; End-of-Support 2022-01-30 (EoS 2017-09-30)."
+  },
+  {
+    "key": "Aruba 2620-48-PoE+",
+    "vendor": "Aruba",
+    "matches": [
+      "2620-PPoEP",
+      "E2620-48-PoEP"
+    ],
+    "support_end_date": "2018-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/Aruba%202620%20Switch%20-%20External%20-%20April%2030%202018.pdf",
+    "note": "EoS only (no LDoS published). Aruba 2620 48 PoE+ J9627A; planned EoS 2018-10-31."
+  },
+  {
     "key": "Aruba AP-203",
     "vendor": "Aruba",
     "matches": [
@@ -364,6 +389,18 @@
     "note": "Aruba AP-270-series Outdoor APs — End-of-Support 2024-08-01 (HPE Aruba EOS notice). https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice-AP-270.pdf"
   },
   {
+    "key": "Aruba 277",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 277"
+    ],
+    "support_end_date": "2024-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice-AP-270.pdf",
+    "note": "LDoS. AP-277/IAP-277 EOS notice: EoS 2019-08-01, End-of-Support 2024-08-01."
+  },
+  {
     "key": "Aruba 2920",
     "vendor": "Aruba",
     "matches": [
@@ -402,6 +439,18 @@
     "note": "Aruba 310-series AP — end-of-support 2026-12-30 (HPE Aruba EOS notice)"
   },
   {
+    "key": "Aruba 325",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 325"
+    ],
+    "support_end_date": "2027-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_AP-325-F1-Campus-AP.pdf",
+    "note": "LDoS. AP-325-F1 Campus AP EOS notice: EoS 2022-07-31, EOSL 2027-07-31."
+  },
+  {
     "key": "ARUBA AP-365",
     "vendor": "Aruba",
     "matches": [
@@ -412,6 +461,18 @@
     "confidence": "high",
     "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_360-Series-Outdoor-Access-Points.pdf",
     "note": "Aruba 360-series Outdoor APs — End of Support Life 2028-07-31 (HPE Aruba EOS notice). https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_360-Series-Outdoor-Access-Points.pdf"
+  },
+  {
+    "key": "Aruba 367",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 367"
+    ],
+    "support_end_date": "2028-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_360-Series-Outdoor-Access-Points.pdf",
+    "note": "LDoS. Aruba 360 Series Outdoor AP EOS notice: EoS 2023-07-31, EOSL 2028-07-31; AP-367 SKUs (JX970A-JX974A) named."
   },
   {
     "key": "Aruba 3810M",
@@ -426,6 +487,19 @@
     "confidence": "high",
     "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_3810-Switches.pdf",
     "note": "Official Aruba 3810 EoS announcement: End-of-Sale 2023-06-30, EoSL 2028-06-30. EoSL date used."
+  },
+  {
+    "key": "Aruba 3810M",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 3810M 24G",
+      "Aruba 3810M-16SFP+-2-slot Switch (JL075A)"
+    ],
+    "support_end_date": "2028-06-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_3810-Switches.pdf",
+    "note": "LDoS. Aruba 3810 Switches EOS notice: EoS 2023-06-30, EOSL 2028-06-30; JL075A and 3810M 24G SKUs named."
   },
   {
     "key": "Aruba 6200F",
@@ -479,6 +553,18 @@
     "confidence": "high",
     "source": "https://asp-documents.arubanetworks.com/portals/0/el/EOS_Notice_6400-Switches.pdf",
     "note": "Official Aruba EoS announcement for 6400 v1 chassis & v1 line cards only (6400 v2 is Active). EoSL Feb 28 2031; EoS Feb 28 2023."
+  },
+  {
+    "key": "Aruba 7010 Controller",
+    "vendor": "Aruba",
+    "matches": [
+      "Aruba 7010 Controller"
+    ],
+    "support_end_date": "2025-01-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://asp-documents.arubanetworks.com/portals/0/el/warranty-coverage-quick-reference.pdf",
+    "note": "EoS only (no formal EOSL notice yet). 7010 32-AP Branch Controller in EOS Planning; EoS 2025-01-31."
   },
   {
     "key": "ARUBA 7205",
@@ -697,6 +783,31 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-3600-series/eos-eol-notice-c51-737511.html",
     "note": "Cisco Aironet 3600 (AIR-CAP3602I) — LDoS 2021-12-31 (Cisco EoL c51-737511); end-of-life. https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-3600-series/eos-eol-notice-c51-737511.html"
+  },
+  {
+    "key": "Cisco AIR-CT2504-K9",
+    "vendor": "Cisco",
+    "matches": [
+      "AIR-CT2504-K9",
+      "Cisco 2504 Wireless Controller"
+    ],
+    "support_end_date": "2023-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/wireless/2504-wireless-controller/eos-eol-notice-c51-740645.html",
+    "note": "2504 WLC EoL c51-740645; PID named; LDoS 2023-04-30 (past)."
+  },
+  {
+    "key": "Cisco AIR-CT5508-K9",
+    "vendor": "Cisco",
+    "matches": [
+      "AIR-CT5508-K9"
+    ],
+    "support_end_date": "2023-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/wireless/5500-series-wireless-controllers/eos-eol-notice-c51-740221.html",
+    "note": "5508 WLC EoL c51-740221; PID named; LDoS 2023-07-31 (past)."
   },
   {
     "key": "CISCO C1000-IN-SERIES",
@@ -1064,6 +1175,18 @@
     "note": "EOL15390; EoS 2025-04-30, LDoS 2030-04-30"
   },
   {
+    "key": "Cisco C1111-8P",
+    "vendor": "Cisco",
+    "matches": [
+      "C1111-8P"
+    ],
+    "support_end_date": "2031-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/routers/1000-series-integrated-services-routers-isr/isr-1111-series-ethernet-routers-eol.html",
+    "note": "ISR 1111 Series EoL; C1111-8P named; EoS 2026-07-28, LDoS 2031-07-31."
+  },
+  {
     "key": "CISCO C9300L-STACK-KIT",
     "vendor": "Cisco",
     "matches": [
@@ -1149,6 +1272,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9400-series-switches/catalyst-9400-series-supervisor-module-eol.html",
     "note": "EOL15392; EoS 2025-04-30, LDoS 2030-04-30"
+  },
+  {
+    "key": "Cisco Catalyst 4506-E",
+    "vendor": "Cisco",
+    "matches": [
+      "Catalyst 4506E"
+    ],
+    "support_end_date": "2025-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-4500-series-switches/eos-eol-notice-c51-743088.html",
+    "note": "Catalyst 4500-E series EoL c51-743088; EoS 2020-10-30, LDoS 2025-10-31; WS-C4506-E chassis covered."
   },
   {
     "key": "CISCO Business 250 (CBS250) Series (Select Models)",
@@ -1463,6 +1598,18 @@
     "note": "EOL14529; EoS 2022-10-31, LDoS 2027-10-31"
   },
   {
+    "key": "Cisco ASA 5516",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco ASA 5516"
+    ],
+    "support_end_date": "2026-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/security/asa-5500-series-next-generation-firewalls/eos-eol-notice-c51-744798.html",
+    "note": "ASA 5508-X/5516-X EoL c51-744798; EoS 2021-08-02, LDoS 2026-08-31."
+  },
+  {
     "key": "CISCO Catalyst 2960",
     "vendor": "Cisco",
     "matches": [
@@ -1535,6 +1682,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-l-series-switches/eos-eol-notice-c51-744433.html",
     "note": "c51-744433; EoS 2021-10-31, LDoS 2026-10-31"
+  },
+  {
+    "key": "Cisco Catalyst 2960-L",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco Catalyst 2960-L 24 GigE PoE+, 2 x 1G SFP"
+    ],
+    "support_end_date": "2026-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-l-series-switches/eos-eol-notice-c51-744433.html",
+    "note": "Catalyst 2960-L HW EoL c51-744433; LDoS 2026-10-31."
   },
   {
     "key": "CISCO Catalyst 2960-Plus",
@@ -1908,6 +2067,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3560-x-series-switches/eos-eol-notice-c51-736139.html",
     "note": "EOL10623; EoS 2016-10-30, LDoS 2021-10-31. 3560-X/3750-X HW bulletin"
+  },
+  {
+    "key": "Cisco Catalyst 3750-X",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco Catalyst 375X"
+    ],
+    "support_end_date": "2021-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3560-x-series-switches/eos-eol-notice-c51-736139.html",
+    "note": "Catalyst 3560-X/3750-X HW EoL c51-736139; EoS 2016-10-30, LDoS 2021-10-31 (past)."
   },
   {
     "key": "CISCO Catalyst 3850",
@@ -2405,6 +2576,18 @@
     "note": "Cisco ISR 1941 router — LDoS 2023-09-30 (Cisco EoL c51-740520); end-of-life. https://www.cisco.com/c/en/us/products/collateral/routers/1900-series-integrated-services-routers-isr/eos-eol-notice-c51-740520.html"
   },
   {
+    "key": "Cisco SF300-48PP",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco SF300-48PP 48"
+    ],
+    "support_end_date": "2023-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-739973.html",
+    "note": "300 Series EoL c51-739973; SF300-48PP named; LDoS 2023-05-31 (past)."
+  },
+  {
     "key": "CISCO SF500",
     "vendor": "Cisco",
     "matches": [
@@ -2415,6 +2598,42 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-500-series-stackable-managed-switches/eos-eol-notice-c51-739827.html",
     "note": "Cisco SF500-24/24P (500 Series Stackable) — Last Date of Support 2023-04-30 (Cisco EoL bulletin c51-739827); end-of-life. https://www.cisco.com/c/en/us/products/collateral/switches/small-business-500-series-stackable-managed-switches/eos-eol-notice-c51-739827.html"
+  },
+  {
+    "key": "Cisco SF500-48P",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco SF500-48P 48-P"
+    ],
+    "support_end_date": "2023-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-500-series-stackable-managed-switches/eos-eol-notice-c51-739827.html",
+    "note": "500 Series EoL c51-739827; SF500-48P named; LDoS 2023-04-30 (past)."
+  },
+  {
+    "key": "Cisco SG200-08P",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco SG 200-08P 8-P"
+    ],
+    "support_end_date": "2023-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-smart-switches/eos-eol-notice-c51-740541.html",
+    "note": "200 Series EoL c51-740541; SG200-08P (SLM2008PT) named; LDoS 2023-10-31 (past)."
+  },
+  {
+    "key": "Cisco SG220-50",
+    "vendor": "Cisco",
+    "matches": [
+      "Cisco SG220-50 50-Port Gigabit Smart Switch"
+    ],
+    "support_end_date": "2027-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-220-series-smart-plus-switches/220-series-smart-switches-eol.html",
+    "note": "220 Series Smart Switches EoL; EoS 2022-07-30, LDoS 2027-07-31."
   },
   {
     "key": "CISCO N9K-C92160YC-X",
@@ -3055,6 +3274,18 @@
     "note": "c51-739494; EoS 2017-08-11, LDoS 2023-02-28"
   },
   {
+    "key": "Cisco SF300-24PP",
+    "vendor": "Cisco",
+    "matches": [
+      "SF300-24PP"
+    ],
+    "support_end_date": "2023-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-740542.html",
+    "note": "300 Series EoL c51-740542; SF300-24PP named; LDoS 2023-10-31 (past)."
+  },
+  {
     "key": "CISCO SF302-08PP",
     "vendor": "Cisco",
     "matches": [
@@ -3080,6 +3311,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-500-series-stackable-managed-switches/eos-eol-notice-c51-738079.html",
     "note": "c51-738079 (500 Series China); EoS 2017-01-20, LDoS 2022-01-31"
+  },
+  {
+    "key": "Cisco SG200-26",
+    "vendor": "Cisco",
+    "matches": [
+      "SG200-26 26-Port Gigabit Smart Switch"
+    ],
+    "support_end_date": "2023-05-31",
+    "os_eol_date": null,
+    "confidence": "medium",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-smart-switches/eos-eol-notice-c51-739974.html",
+    "note": "200 Series EoL c51-739974; base SG200-26 (SLM2024T); LDoS 2023-05-31 (past); series-level."
   },
   {
     "key": "CISCO SG200-50",
@@ -3122,6 +3365,18 @@
     "note": "c51-2440268 (Select Models); EoS 2021-10-30, LDoS 2026-10-31"
   },
   {
+    "key": "Cisco SG250-26",
+    "vendor": "Cisco",
+    "matches": [
+      "SG250-26"
+    ],
+    "support_end_date": "2026-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/250-series-smart-switches/eos-eol-notice-c51-2440268.html",
+    "note": "250 Series (Select Models) EoL c51-2440268; SG250-26 named; EoS 2021-10-30, LDoS 2026-10-31."
+  },
+  {
     "key": "CISCO Small Business 300 Series (EOL11633)",
     "vendor": "Cisco",
     "matches": [
@@ -3141,6 +3396,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-738667.html",
     "note": "c51-738667 / EOL11633; EoS 2017-05-31, LDoS 2022-05-31. Regional/PoE+/SFP select variants"
+  },
+  {
+    "key": "Cisco SG300-10PP",
+    "vendor": "Cisco",
+    "matches": [
+      "SG300-10PP (PoE)"
+    ],
+    "support_end_date": "2023-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-739973.html",
+    "note": "300 Series EoL c51-739973; SG300-10PP named; LDoS 2023-05-31 (past)."
   },
   {
     "key": "CISCO Small Business Stackable (SG300/SRW PoE)",
@@ -3267,6 +3534,18 @@
     "note": "Cisco SG95/SG110 Unmanaged Select Models (SG95D-08) — series-level LDoS 2026-10-31 (Cisco EoL c51-2440269; last order 2021-10-30). https://www.cisco.com/c/en/us/products/collateral/switches/110-series-unmanaged-switches/eos-eol-notice-c51-2440269.html"
   },
   {
+    "key": "Cisco Catalyst 3560-G",
+    "vendor": "Cisco",
+    "matches": [
+      "Switch Cisco Catalyst3560G"
+    ],
+    "support_end_date": "2018-01-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3750-series-switches/eol_c51-696372.html",
+    "note": "Catalyst 3560-G/3750-G EoL c51-696372; LDoS 2018-01-31 (past)."
+  },
+  {
     "key": "CISCO C2960",
     "vendor": "Cisco",
     "matches": [
@@ -3277,6 +3556,18 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-series-switches/eos-eol-notice-c51-730121.html",
     "note": "Cisco Catalyst 2960 (classic) — Last Date of Support 2019-10-31 (Cisco EoL bulletin c51-730121); end-of-life. https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-series-switches/eos-eol-notice-c51-730121.html"
+  },
+  {
+    "key": "Cisco WS-C2960+48PST-L",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960+48PST-L"
+    ],
+    "support_end_date": "2026-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-plus-series-switches/eos-eol-notice-c51-744423.html",
+    "note": "Catalyst 2960 Plus series EoL c51-744423; EoS 2021-10-31, LDoS 2026-10-31."
   },
   {
     "key": "CISCO C2960C",
@@ -3291,6 +3582,30 @@
     "note": "Cisco Catalyst 2960-C — LDoS 2025-10-31 (Cisco EoL c51-743071). https://www.cisco.com/c/en/us/products/switches/catalyst-2960-c-series-switches/eos-eol-notice-c51-743071.html"
   },
   {
+    "key": "Cisco WS-C2960CX-8TC-L",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960CX-8TC-L"
+    ],
+    "support_end_date": "2029-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-cx-series-switches/catalyst-2960-cx-series-switch-eol.html",
+    "note": "Catalyst 2960-CX series EoL; EoS 2024-04-30, LDoS 2029-04-30; PID named."
+  },
+  {
+    "key": "Cisco WS-C2960S-24TS-S",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960S-24TS-S"
+    ],
+    "support_end_date": "2020-11-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-series-switches/eos-eol-notice-c51-733348.html",
+    "note": "Catalyst 2960-S EoL c51-733348; EoS 2015-11-06, LDoS 2020-11-30 (past)."
+  },
+  {
     "key": "CISCO C2960X-24PS",
     "vendor": "Cisco",
     "matches": [
@@ -3303,6 +3618,22 @@
     "note": "Cisco Catalyst 2960-X — LDoS 2027-10-31 (Cisco EoL c51-744432). https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-x-series-switches/eos-eol-notice-c51-744432.html"
   },
   {
+    "key": "Cisco WS-C2960X",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C2960X-24TS-L",
+      "WS-C2960X-24TS-LL",
+      "WS-C2960X-48FPS-L",
+      "WS-C2960X-48LPS-L",
+      "WS-C2960X-48TS-LL"
+    ],
+    "support_end_date": "2027-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-x-series-switches/eos-eol-notice-c51-744432.html",
+    "note": "Catalyst 2960-X family EoL c51-744432; EoS 2022-10-31, LDoS 2027-10-31."
+  },
+  {
     "key": "CISCO C3750X",
     "vendor": "Cisco",
     "matches": [
@@ -3313,6 +3644,31 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3750-x-series-switches/catalyst-3750-x-series-switches-eol.html",
     "note": "Cisco Catalyst 3750-X — LDoS 2028-09-30 (Cisco EoL, 2023). https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3750-x-series-switches/catalyst-3750-x-series-switches-eol.html"
+  },
+  {
+    "key": "Cisco WS-C3850-12S (fiber)",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C3850-12S"
+    ],
+    "support_end_date": "2027-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3850-series-switches/catalyst-3850-series-switches-eol.html",
+    "note": "Catalyst 3850 EoL c51-743072; fiber/SFP SKUs (incl. WS-C3850-12S) LDoS 2027-04-30."
+  },
+  {
+    "key": "Cisco WS-C3850 (copper)",
+    "vendor": "Cisco",
+    "matches": [
+      "WS-C3850-48P",
+      "Cisco Catalyst 3850 24 Port Data IP Base"
+    ],
+    "support_end_date": "2025-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3850-series-switches/catalyst-3850-series-switches-eol.html",
+    "note": "Catalyst 3850 EoL c51-743072; copper SKUs LDoS 2025-10-31."
   },
   {
     "key": "DLINK DGS-1100-24P",
@@ -3377,6 +3733,198 @@
     "confidence": "high",
     "source": "https://community.fortinet.com/t5/Support-Forum/Fortinet-FG-3700D-Value/m-p/412969",
     "note": "EOS 2027-04-16, last license renewal 2026-04-16 per Product Life Cycle; quoted by Fortinet SuperUser (Toshi_Esumi) in official community thread; EOO was 2022"
+  },
+  {
+    "key": "HP 1910-8G-PoE+",
+    "vendor": "HP",
+    "matches": [
+      "1910-8-PoE+"
+    ],
+    "support_end_date": "2015-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/Product%20End%20of%20Sale%20announcement-%20HP%201910%20Gigabit%20Switch%20Series.pdf",
+    "note": "EoS only (no LDoS published). HP 1910-8G-PoE+ JG349A/JG350A; target EoS 2015-07-31."
+  },
+  {
+    "key": "HP 10500 32-port 10GbE SFP+ SF Module",
+    "vendor": "HP",
+    "matches": [
+      "HP 10500 32-port 10GbE SFP+ SF Module"
+    ],
+    "support_end_date": "2017-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPE%2010500%20Switches%20-%20March%202017%20-%20External.pdf",
+    "note": "EoS only (no LDoS published); SKU JC755A named, EoS 2017-12-31."
+  },
+  {
+    "key": "HP 10500 Type A MPU w/Comware v7 OS",
+    "vendor": "HP",
+    "matches": [
+      "HP 10500 Type A MPU w/Comware v7 OS"
+    ],
+    "support_end_date": "2016-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HP%2010500%20Module%20Series%20EOS%20Announcement%20-%20October%202015.pdf",
+    "note": "EoS only (no LDoS published); SKU JG496A named, target EoS 2016-07-31."
+  },
+  {
+    "key": "HP 5120-16G SI",
+    "vendor": "HP",
+    "matches": [
+      "HP 5120-16G SI"
+    ],
+    "support_end_date": "2015-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%20-HP%205120%20SI%20Switch%20series.pdf",
+    "note": "EoS only (no LDoS published); JE073A named in HP 5120 SI EoS notice, EoS 2015-08-01."
+  },
+  {
+    "key": "HP 5120-24G SI",
+    "vendor": "HP",
+    "matches": [
+      "HP 5120-24G SI"
+    ],
+    "support_end_date": "2015-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%20-HP%205120%20SI%20Switch%20series.pdf",
+    "note": "EoS only (no LDoS published); JE074A named, EoS 2015-08-01."
+  },
+  {
+    "key": "HP A5120-24G-PoE+ SI",
+    "vendor": "HP",
+    "matches": [
+      "HP A5120-24G-PPoE+ SI"
+    ],
+    "support_end_date": "2015-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%20-HP%205120%20SI%20Switch%20series.pdf",
+    "note": "EoS only; 5120 SI notice names HP 5120-24G-PoE+ SI JG091A/JG092A, EoS 2015-08-01 (list 'PPoE+' read as PoE+)."
+  },
+  {
+    "key": "HP A5120-48G-PoE+ EI",
+    "vendor": "HP",
+    "matches": [
+      "HP A5120-48G-PoE+ EI"
+    ],
+    "support_end_date": "2015-09-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HP%205120%20and%205500%20Switch%20Series%20EOS%20Announcement.pdf",
+    "note": "EoS only (no LDoS published); SKU JG237A named, EoS 2015-09-30."
+  },
+  {
+    "key": "HP A5500-24G-4SFP HI",
+    "vendor": "HP",
+    "matches": [
+      "HP A5500-24G-4SFP HI"
+    ],
+    "support_end_date": "2017-03-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HP%205500%20EI%20and%20HP%205500%20HI%20Switch%20Series%20-%20October%202016%20-%20External.pdf",
+    "note": "EoS only (no LDoS published); SKU JG311A named, EoS 2017-03-31."
+  },
+  {
+    "key": "HP A5820X-24XG-SFP+",
+    "vendor": "HP",
+    "matches": [
+      "HP A5820X-24XG-SFP+"
+    ],
+    "support_end_date": "2015-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement-HP%205820%20Switch%20Series.pdf",
+    "note": "EoS only; SKU JC102A named, EoS 2015-04-30."
+  },
+  {
+    "key": "HP MSM760",
+    "vendor": "HP",
+    "matches": [
+      "HP MSM760"
+    ],
+    "support_end_date": "2016-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPN%20Mobility%20Products%20-%20EoS%20Announcement%20-%20February%202016%20-%20External.pdf",
+    "note": "EoS only (no LDoS published); J9420A MSM760 Premium Mobility Controller, EoS 2016-07-31."
+  },
+  {
+    "key": "HP 1920-16G",
+    "vendor": "HP",
+    "matches": [
+      "HPE 1920-16G"
+    ],
+    "support_end_date": "2017-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPE%20OfficeConnect%201920%20Switches%20-%20March%202017%20-%20External.pdf",
+    "note": "EoS only (no LDoS published). HPE OfficeConnect 1920 16G JG923A; planned EoS 2017-08-31."
+  },
+  {
+    "key": "HPE 5120-48G SI",
+    "vendor": "HP",
+    "matches": [
+      "HPE 5120-48G SI"
+    ],
+    "support_end_date": "2015-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%20-HP%205120%20SI%20Switch%20series.pdf",
+    "note": "EoS only (no LDoS published); SKU JE072A named, EoS 2015-08-01."
+  },
+  {
+    "key": "HP MSM720 Controller",
+    "vendor": "HP",
+    "matches": [
+      "MSM 720 Controller"
+    ],
+    "support_end_date": "2016-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPN%20Mobility%20Products%20-%20EoS%20Announcement%20-%20February%202016%20-%20External.pdf",
+    "note": "EoS only (no LDoS published); J9694A MSM720 Premium Mobility Controller, EoS 2016-07-31."
+  },
+  {
+    "key": "HP MSM430",
+    "vendor": "HP",
+    "matches": [
+      "MSM430"
+    ],
+    "support_end_date": "2016-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/HPN%20Mobility%20Products%20-%20EoS%20Announcement%20-%20February%202016%20-%20External.pdf",
+    "note": "EoS only (no LDoS published); J9650A/J9651A MSM430 Dual Radio 802.11n AP, EoS 2016-07-31."
+  },
+  {
+    "key": "HP ProCurve 2510G-24G",
+    "vendor": "HP",
+    "matches": [
+      "Procurve 2510G-24G"
+    ],
+    "support_end_date": "2013-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/EoS%20Public%20Announcement%202810-2510G-2520-24G-PoE.pdf",
+    "note": "EoS only (no LDoS published). HP 2510-24G J9279A; End-of-Sale announced 2012-12-04, Last Ship 2013-08-31."
+  },
+  {
+    "key": "HP ProCurve 2910al-24G",
+    "vendor": "HP",
+    "matches": [
+      "ProCurve 2910al-24G"
+    ],
+    "support_end_date": "2014-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://support.hpe.com/docs/display/public/hpe-networking-eos/docs/products/eos/End%20of%20Sale%20Announcement%202910%20Switch%20Series.pdf",
+    "note": "EoS only (no LDoS published). HP 2910-24G al J9145A; EoS/Last Ship 2014-05-31."
   },
   {
     "key": "HPE 5130 EI",
@@ -4565,6 +5113,18 @@
     "note": "Cisco Meraki MS120 family (incl. MS120-24) — End-of-Support 2030-03-28 (Meraki official EOL page). https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates"
   },
   {
+    "key": "Meraki MS120-8",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS120-8"
+    ],
+    "support_end_date": "2030-03-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS120 Series EOL; EoS 2025-03-28, End-of-Support 2030-03-28."
+  },
+  {
     "key": "MERAKI MS120-8FP",
     "vendor": "Meraki",
     "matches": [
@@ -4575,6 +5135,18 @@
     "confidence": "high",
     "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
     "note": "Cisco Meraki MS120-8FP — End-of-Support 2030-03-28 (Meraki EOL page). https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates"
+  },
+  {
+    "key": "Meraki MS120-8LP",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS120-8LP"
+    ],
+    "support_end_date": "2030-03-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS120 Series EOL; EoS 2025-03-28, End-of-Support 2030-03-28."
   },
   {
     "key": "MERAKI MS125",
@@ -4613,6 +5185,18 @@
     "confidence": "high",
     "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
     "note": "Cisco Meraki MS210 — End-of-Support 2031-04-30 (Meraki EOL page). https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates"
+  },
+  {
+    "key": "Meraki MS210-24P",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS210-24P"
+    ],
+    "support_end_date": "2031-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS210 Series EOL; EoS 2026-04-30, End-of-Support 2031-04-30."
   },
   {
     "key": "MERAKI MS22",
@@ -4671,6 +5255,54 @@
     "note": "MS225 Series switch — End-of-Sale 2026-04-30, End-of-Support 2031-04-30"
   },
   {
+    "key": "Meraki MS225-24",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS225-24"
+    ],
+    "support_end_date": "2031-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS225 Series EOL; EoS 2026-04-30, End-of-Support 2031-04-30."
+  },
+  {
+    "key": "Meraki MS225-24P",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS225-24P"
+    ],
+    "support_end_date": "2031-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS225 Series EOL; EoS 2026-04-30, End-of-Support 2031-04-30."
+  },
+  {
+    "key": "Meraki MS225-48",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS225-48"
+    ],
+    "support_end_date": "2031-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS225 Series EOL; EoS 2026-04-30, End-of-Support 2031-04-30."
+  },
+  {
+    "key": "Meraki MS225-48LP",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS225-48LP"
+    ],
+    "support_end_date": "2031-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS225 Series EOL; EoS 2026-04-30, End-of-Support 2031-04-30."
+  },
+  {
     "key": "MERAKI MS22P",
     "vendor": "Meraki",
     "matches": [
@@ -4696,6 +5328,18 @@
     "confidence": "high",
     "source": "https://documentation.meraki.com/General_Administration/Other_Topics/Meraki_End-of-Life_(EOL)_Products_and_Dates",
     "note": "MS250 Series switch — End-of-Sale 2025-08-08, End-of-Support 2030-08-08"
+  },
+  {
+    "key": "Meraki MS250-24",
+    "vendor": "Meraki",
+    "matches": [
+      "Meraki MS250-24"
+    ],
+    "support_end_date": "2030-08-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://documentation.meraki.com/Platform_Management/Product_Information/End-of-Life_Notices/Meraki_End-of-Life_(EOL)_Products_and_Dates",
+    "note": "MS250 Series EOL; EoS 2025-08-08, End-of-Support 2030-08-08."
   },
   {
     "key": "MERAKI MS320",
