@@ -7,12 +7,14 @@
 // to compute the stored model_normalized. Keep this file in lockstep with NetVault's
 // normalizeForMatch / deriveVendor. Bump NORMALIZER_VERSION on any behavioural change.
 
-export const NORMALIZER_VERSION = 2;
+export const NORMALIZER_VERSION = 3;
 
 /**
  * Normalize a device/seed model into a flat matching key.
  *  - lowercase
  *  - strip a leading vendor prefix (also drops a redundant vendor baked into the model)
+ *  - strip curated product-line "noise" words (e.g. "Catalyst", "NGFW", "Series")
+ *  - strip common Cisco product-ID prefixes (WS-C / AIR-AP / AIR- ...)
  *  - strip region/series suffixes (-us/-ww/-row/series)
  *  - remove all punctuation & whitespace
  */
@@ -25,15 +27,9 @@ export function normalizeForMatch(
 
   // Strip leading vendor words (also drops a redundant vendor baked into model).
   const vendorWords = [
-    'hpe aruba networking',
-    'aruba',
-    'hpe',
-    'hp',
-    'cisco',
-    'grandstream',
-    'ruckus',
-    'meraki',
-    'sonicwall',
+    'hpe aruba networking', 'aruba', 'hpe', 'hp', 'cisco', 'grandstream',
+    'ruckus', 'meraki', 'sonicwall', 'palo alto', 'paloalto', 'netgear',
+    'tp-link', 'tplink', 'fortinet', 'juniper', 'forcepoint', 'dell',
   ];
   const v = (vendor ?? '').toLowerCase().trim();
   if (v) vendorWords.unshift(v);
@@ -48,6 +44,18 @@ export function normalizeForMatch(
       }
     }
   }
+
+  // Strip product-LINE "noise" words anywhere — marketing/line words that appear
+  // inconsistently between an inventory and a curated seed (e.g. "Catalyst",
+  // "NGFW"); the model number identifies the device. This list EXCLUDES
+  // model-DEFINING lines (SonicWave, AirEngine, Aironet, etc.), which are kept.
+  const noiseWords = ['catalyst', 'flexnetwork', 'procurve', 'powerconnect', 'ngfw', 'series', 'appliance'];
+  for (const w of noiseWords) {
+    s = s.replace(new RegExp('(^|[^a-z0-9])' + w + '([^a-z0-9]|$)', 'g'), '$1 $2');
+  }
+  // Strip common Cisco product-ID prefixes so a PID matches the friendly name
+  // (WS-C3750X / AIR-AP1242 -> 3750X / 1242).
+  s = s.replace(/\b(ws-c|air-cap|air-ap|air-)/g, '');
 
   // Strip trailing region/series suffixes.
   let suffixChanged = true;
