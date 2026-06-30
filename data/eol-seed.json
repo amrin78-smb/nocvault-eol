@@ -34486,5 +34486,833 @@
     "confidence": "low",
     "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
     "note": "Ruckus 901-3203-WW00 ZoneFlex T610c Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Allied Telesis TQ5403",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ5403"
+    ],
+    "support_end_date": "2028-05-31",
+    "os_eol_date": "2025-05-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ5403 — End of Life 2028-05-31; End of SW Support 2025-05-31; End of Sale 2023-05-31; recommended replacement: TQ6602 GEN2; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQm5403",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQm5403"
+    ],
+    "support_end_date": "2028-05-31",
+    "os_eol_date": "2025-05-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQm5403 — End of Life 2028-05-31; End of SW Support 2025-05-31; End of Sale 2023-05-31; recommended replacement: TQm6602 GEN2; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MWS2533AP",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MWS2533AP"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": "2022-06-28",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MWS2533AP — End of Life 2025-06-28; End of SW Support 2022-06-28; End of Sale 2020-06-28; recommended replacement: TQm1402; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQ4600",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ4600"
+    ],
+    "support_end_date": "2025-06-09",
+    "os_eol_date": "2022-06-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ4600 — End of Life 2025-06-09; End of SW Support 2022-06-09; End of Sale 2020-06-09; recommended replacement: TQ5403; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQ4400e",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ4400e"
+    ],
+    "support_end_date": "2024-06-09",
+    "os_eol_date": "2021-06-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ4400e — End of Life 2024-06-09; End of SW Support 2021-06-09; End of Sale 2019-06-09; recommended replacement: TQ5403e; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis UWC-60-APL",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "UWC-60-APL"
+    ],
+    "support_end_date": "2024-05-19",
+    "os_eol_date": "2021-05-19",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis UWC-60-APL — End of Life 2024-05-19; End of SW Support 2021-05-19; End of Sale 2019-05-20; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MWS600AP",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MWS600AP"
+    ],
+    "support_end_date": "2024-02-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MWS600AP — End of Life 2024-02-19; End of Sale 2019-02-19; recommended replacement: TQm1402; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MWS1750AP",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MWS1750AP"
+    ],
+    "support_end_date": "2024-02-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MWS1750AP — End of Life 2024-02-16; End of Sale 2019-02-16; recommended replacement: TQm1402; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RKMT-APL1",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RKMT-APL1"
+    ],
+    "support_end_date": "2020-07-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RKMT-APL1 — End of Life 2020-07-22; End of Sale 2018-07-23; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0001",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0001"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0001 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0003",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0003"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0003 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0041",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0041"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0041 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0045",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0045"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0045 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0051",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0051"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0051 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0053",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0053"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0053 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0201E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0201E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0201E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0202E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0202E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0202E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0211E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0211E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0211E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0221E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0221E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0221E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0222E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0222E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0222E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0223E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0223E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0223E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0261E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0261E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0261E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0262E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0262E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0262E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0292",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0292"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0292 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0500",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0500"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0500 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0501E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0501E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0501E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0502E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0502E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0502E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0521E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0521E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0521E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0522E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0522E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0522E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0561E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0561E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0561E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0562E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0562E"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0562E — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0591",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0591"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0591 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-TQ0592",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-TQ0592"
+    ],
+    "support_end_date": "2023-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-TQ0592 — End of Life 2023-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AT-X.21-DTE",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AT-X.21-DTE"
+    ],
+    "support_end_date": "2020-06-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AT-X.21-DTE — End of Life 2020-06-07; End of Sale 2018-06-08; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR441S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR441S"
+    ],
+    "support_end_date": "2022-08-30",
+    "os_eol_date": "2019-08-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR441S — End of Life 2022-08-30; End of SW Support 2019-08-31; End of Sale 2017-08-31; recommended replacement: AR2050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR415S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR415S"
+    ],
+    "support_end_date": "2022-08-14",
+    "os_eol_date": "2019-08-15",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR415S — End of Life 2022-08-14; End of SW Support 2019-08-15; End of Sale 2017-08-15; recommended replacement: AR2050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR2304N",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR2304N"
+    ],
+    "support_end_date": "2022-05-01",
+    "os_eol_date": "2019-05-01",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR2304N — End of Life 2022-05-01; End of SW Support 2019-05-01; End of Sale 2017-05-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis UWC-Install",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "UWC-Install"
+    ],
+    "support_end_date": "2022-04-12",
+    "os_eol_date": "2019-04-12",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis UWC-Install — End of Life 2022-04-12; End of SW Support 2019-04-12; End of Sale 2017-04-12; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR750S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR750S"
+    ],
+    "support_end_date": "2022-04-10",
+    "os_eol_date": "2019-04-11",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR750S — End of Life 2022-04-10; End of SW Support 2019-04-11; End of Sale 2017-04-11; recommended replacement: AR4050S; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RP-22En",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RP-22En"
+    ],
+    "support_end_date": "2022-02-10",
+    "os_eol_date": "2019-02-10",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RP-22En — End of Life 2022-02-10; End of SW Support 2019-02-10; End of Sale 2017-02-10; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RP-22n",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RP-22n"
+    ],
+    "support_end_date": "2022-02-10",
+    "os_eol_date": "2019-02-10",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RP-22n — End of Life 2022-02-10; End of SW Support 2019-02-10; End of Sale 2017-02-10; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MC-1000",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MC-1000"
+    ],
+    "support_end_date": "2022-01-31",
+    "os_eol_date": "2019-01-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MC-1000 — End of Life 2022-01-31; End of SW Support 2019-01-31; End of Sale 2017-01-31; recommended replacement: TQ3600 Series; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RE-1000",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RE-1000"
+    ],
+    "support_end_date": "2022-01-31",
+    "os_eol_date": "2019-01-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RE-1000 — End of Life 2022-01-31; End of SW Support 2019-01-31; End of Sale 2017-01-31; recommended replacement: TQ3600 Series; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RP-32EOn",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RP-32EOn"
+    ],
+    "support_end_date": "2022-01-31",
+    "os_eol_date": "2019-01-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RP-32EOn — End of Life 2022-01-31; End of SW Support 2019-01-31; End of Sale 2017-01-31; recommended replacement: TQ3600 Series; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis LS-3000",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "LS-3000"
+    ],
+    "support_end_date": "2022-01-09",
+    "os_eol_date": "2019-01-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis LS-3000 — End of Life 2022-01-09; End of SW Support 2019-01-09; End of Sale 2017-01-09; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis LV-2000",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "LV-2000"
+    ],
+    "support_end_date": "2022-01-09",
+    "os_eol_date": "2019-01-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis LV-2000 — End of Life 2022-01-09; End of SW Support 2019-01-09; End of Sale 2017-01-09; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MS-1000",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MS-1000"
+    ],
+    "support_end_date": "2022-01-09",
+    "os_eol_date": "2019-01-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MS-1000 — End of Life 2022-01-09; End of SW Support 2019-01-09; End of Sale 2017-01-09; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis MS-500",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "MS-500"
+    ],
+    "support_end_date": "2022-01-09",
+    "os_eol_date": "2019-01-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis MS-500 — End of Life 2022-01-09; End of SW Support 2019-01-09; End of Sale 2017-01-09; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis RP-32n",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "RP-32n"
+    ],
+    "support_end_date": "2022-01-09",
+    "os_eol_date": "2019-01-09",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis RP-32n — End of Life 2022-01-09; End of SW Support 2019-01-09; End of Sale 2017-01-09; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQ2450",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ2450"
+    ],
+    "support_end_date": "2021-12-15",
+    "os_eol_date": "2018-12-15",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ2450 — End of Life 2021-12-15; End of SW Support 2018-12-15; End of Sale 2016-12-15; recommended replacement: TQ1402; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR770S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR770S"
+    ],
+    "support_end_date": "2021-12-01",
+    "os_eol_date": "2018-12-02",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR770S — End of Life 2021-12-01; End of SW Support 2018-12-02; End of Sale 2016-12-02; recommended replacement: AR4050S; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR440S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR440S"
+    ],
+    "support_end_date": "2021-10-11",
+    "os_eol_date": "2018-10-12",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR440S — End of Life 2021-10-11; End of SW Support 2018-10-12; End of Sale 2016-10-12; recommended replacement: AR2050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR442S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR442S"
+    ],
+    "support_end_date": "2021-10-11",
+    "os_eol_date": "2018-10-12",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR442S — End of Life 2021-10-11; End of SW Support 2018-10-12; End of Sale 2016-10-12; recommended replacement: AR2050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR750S-DP",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR750S-DP"
+    ],
+    "support_end_date": "2021-08-31",
+    "os_eol_date": "2018-09-01",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR750S-DP — End of Life 2021-08-31; End of SW Support 2018-09-01; End of Sale 2016-09-01; recommended replacement: AR2050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR020",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR020"
+    ],
+    "support_end_date": "2021-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR020 — End of Life 2021-07-31; End of Sale 2016-08-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR021S",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR021S"
+    ],
+    "support_end_date": "2021-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR021S — End of Life 2021-07-31; End of Sale 2016-08-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR027",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR027"
+    ],
+    "support_end_date": "2021-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR027 — End of Life 2021-07-31; End of Sale 2016-08-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR023",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR023"
+    ],
+    "support_end_date": "2021-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR023 — End of Life 2021-04-30; End of Sale 2016-05-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQ2403",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ2403"
+    ],
+    "support_end_date": "2021-01-14",
+    "os_eol_date": "2018-01-14",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ2403 — End of Life 2021-01-14; End of SW Support 2018-01-14; End of Sale 2016-01-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis TQ3600",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "TQ3600"
+    ],
+    "support_end_date": "2021-01-14",
+    "os_eol_date": "2018-01-14",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis TQ3600 — End of Life 2021-01-14; End of SW Support 2018-01-14; End of Sale 2016-01-15; recommended replacement: TQ1402; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WNU300N",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WNU300N"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": "2017-12-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WNU300N — End of Life 2020-12-31; End of SW Support 2017-12-31; End of Sale 2016-01-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR024",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR024"
+    ],
+    "support_end_date": "2020-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR024 — End of Life 2020-12-30; End of Sale 2016-01-01; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis AR256E",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "AR256E"
+    ],
+    "support_end_date": "2020-12-30",
+    "os_eol_date": "2017-12-31",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis AR256E — End of Life 2020-12-30; End of SW Support 2017-12-31; End of Sale 2016-01-01; recommended replacement: AR1050V; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR4501",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR4501"
+    ],
+    "support_end_date": "2019-12-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR4501 — End of Life 2019-12-15; End of Sale 2014-12-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WNP300N",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WNP300N"
+    ],
+    "support_end_date": "2019-12-15",
+    "os_eol_date": "2016-12-14",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WNP300N — End of Life 2019-12-15; End of SW Support 2016-12-14; End of Sale 2014-12-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR4541a",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR4541a"
+    ],
+    "support_end_date": "2019-12-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR4541a — End of Life 2019-12-15; End of Sale 2014-12-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR4542",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR4542"
+    ],
+    "support_end_date": "2019-12-15",
+    "os_eol_date": "2016-12-14",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR4542 — End of Life 2019-12-15; End of SW Support 2016-12-14; End of Sale 2014-12-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR4662n",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR4662n"
+    ],
+    "support_end_date": "2019-12-15",
+    "os_eol_date": "2016-12-14",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR4662n — End of Life 2019-12-15; End of SW Support 2016-12-14; End of Sale 2014-12-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Allied Telesis WR4562",
+    "vendor": "Allied Telesis",
+    "matches": [
+      "WR4562"
+    ],
+    "support_end_date": "2019-01-15",
+    "os_eol_date": "2016-01-15",
+    "confidence": "high",
+    "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
+    "note": "Allied Telesis WR4562 — End of Life 2019-01-15; End of SW Support 2016-01-15; End of Sale 2014-01-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
   }
 ]
