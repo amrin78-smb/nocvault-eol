@@ -33563,5 +33563,928 @@
     "confidence": "high",
     "source": "Current Product",
     "note": "Palo Alto Networks PA-7000 Series Firewalls — End of Service Life 2029-08-01; End of Sale 2024-08-01; replacement: PA-7500; Palo Alto Networks Official source. Current Product"
+  },
+  {
+    "key": "Arista DCS-7010T-48",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7010T-48",
+      "Arista DCS-7010T-48 7010T 48-Port 100M/1G RJ45 Switch"
+    ],
+    "support_end_date": "2028-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7010T-48 7010T 48-Port 100M/1G RJ45 Switch — End of Service Life 2028-03-31; End of Sale 2023-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7010T-48-DC",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7010T-48-DC",
+      "Arista DCS-7010T-48-DC 7010T 48-Port 100M/1G RJ45 DC Switch"
+    ],
+    "support_end_date": "2028-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7010T-48-DC 7010T 48-Port 100M/1G RJ45 DC Switch — End of Service Life 2028-03-31; End of Sale 2023-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-64",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-64",
+      "Arista DCS-7050SX-64 7050SX 48-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-64 7050SX 48-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-64-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-64-F",
+      "Arista DCS-7050SX-64-F 7050SX 48-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-64-F 7050SX 48-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-72Q",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-72Q",
+      "Arista DCS-7050SX-72Q 7050SX 52-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-72Q 7050SX 52-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-72Q-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-72Q-F",
+      "Arista DCS-7050SX-72Q-F 7050SX 52-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-72Q-F 7050SX 52-Port 10GbE SFP+ & 4-Port 40GbE QSFP+ Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-96",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-96",
+      "Arista DCS-7050SX-96 7050SX 96-Port 10GbE SFP+ Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-96 7050SX 96-Port 10GbE SFP+ Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050SX-96-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050SX-96-F",
+      "Arista DCS-7050SX-96-F 7050SX 96-Port 10GbE SFP+ Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050SX-96-F 7050SX 96-Port 10GbE SFP+ Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-64",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-64",
+      "Arista DCS-7050TX-64 7050TX 48-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-64 7050TX 48-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-64-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-64-F",
+      "Arista DCS-7050TX-64-F 7050TX 48-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-64-F 7050TX 48-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-72Q",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-72Q",
+      "Arista DCS-7050TX-72Q 7050TX 52-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-72Q 7050TX 52-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-72Q-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-72Q-F",
+      "Arista DCS-7050TX-72Q-F 7050TX 52-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-72Q-F 7050TX 52-Port 1/10GbE RJ45 & 4-Port 40GbE QSFP+ Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-96",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-96",
+      "Arista DCS-7050TX-96 7050TX 96-Port 1/10GbE RJ45 Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-96 7050TX 96-Port 1/10GbE RJ45 Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Arista DCS-7050TX-96-F",
+    "vendor": "Arista",
+    "matches": [
+      "DCS-7050TX-96-F",
+      "Arista DCS-7050TX-96-F 7050TX 96-Port 1/10GbE RJ45 Front-to-Back Switch"
+    ],
+    "support_end_date": "2023-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/arista/",
+    "note": "Arista DCS-7050TX-96-F 7050TX 96-Port 1/10GbE RJ45 Front-to-Back Switch — End of Service Life 2023-03-31; End of Sale 2018-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/arista/"
+  },
+  {
+    "key": "Aruba AP-303",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-303",
+      "Aruba AP-303 Dual 2x2:2 802.11ac Access Point"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-303 Dual 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-303H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-303H",
+      "Aruba AP-303H Dual 2x2:2 802.11ac AP with 3 local GigE ports"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-303H Dual 2x2:2 802.11ac AP with 3 local GigE ports — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-303P",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-303P",
+      "Aruba AP-303P Dual 2x2:2 802.11ac AP with 2 local GigE ports and PoE out"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-303P Dual 2x2:2 802.11ac AP with 2 local GigE ports and PoE out — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-375",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-375",
+      "Aruba AP-375 Outdoor 2x2:2 802.11ac Access Point"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-375 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-377",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-377",
+      "Aruba AP-377 Outdoor 2x2:2 802.11ac Access Point"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-377 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-384",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-384",
+      "Aruba AP-384 Outdoor 2x2:2 802.11ac Access Point"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-384 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-387",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-387",
+      "Aruba AP-387 Outdoor 2x2:2 802.11ac Access Point"
+    ],
+    "support_end_date": "2025-07-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-387 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-504",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-504",
+      "Aruba AP-504 802.11ax 2x2:2 Dual Radio Integrated Antenna AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-504 802.11ax 2x2:2 Dual Radio Integrated Antenna AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-504H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-504H",
+      "Aruba AP-504H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-504H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-505",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-505",
+      "Aruba AP-505 802.11ax 2x2:2 Dual Radio Integrated Antenna AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-505 802.11ax 2x2:2 Dual Radio Integrated Antenna AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-505H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-505H",
+      "Aruba AP-505H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-505H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-514H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-514H",
+      "Aruba AP-514H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-514H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-515H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-515H",
+      "Aruba AP-515H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-515H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-534",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-534",
+      "Aruba AP-534 802.11ax 4x4:4 Dual Radio External Antenna AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-534 802.11ax 4x4:4 Dual Radio External Antenna AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-534H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-534H",
+      "Aruba AP-534H 802.11ax 4x4:4 Dual Radio External Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-534H 802.11ax 4x4:4 Dual Radio External Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-535",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-535",
+      "Aruba AP-535 802.11ax 4x4:4 Dual Radio Integrated Antenna AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-535 802.11ax 4x4:4 Dual Radio Integrated Antenna AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-535H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-535H",
+      "Aruba AP-535H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-535H 802.11ax 4x4:4 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-555",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-555",
+      "Aruba AP-555 802.11ax 4x4:4 Tri Radio Integrated Antenna AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-555 802.11ax 4x4:4 Tri Radio Integrated Antenna AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-555H",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-555H",
+      "Aruba AP-555H 802.11ax 4x4:4 Tri Radio Integrated Antenna Hospitality AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-555H 802.11ax 4x4:4 Tri Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-565",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-565",
+      "Aruba AP-565 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-565 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-575",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-575",
+      "Aruba AP-575 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-575 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-577",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-577",
+      "Aruba AP-577 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-577 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-584",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-584",
+      "Aruba AP-584 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-584 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-585",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-585",
+      "Aruba AP-585 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-585 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-587",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-587",
+      "Aruba AP-587 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-587 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-588",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-588",
+      "Aruba AP-588 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-588 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-589",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-589",
+      "Aruba AP-589 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-589 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-594",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-594",
+      "Aruba AP-594 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-594 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-595",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-595",
+      "Aruba AP-595 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-595 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-597",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-597",
+      "Aruba AP-597 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-597 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-598",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-598",
+      "Aruba AP-598 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-598 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Aruba AP-599",
+    "vendor": "Aruba",
+    "matches": [
+      "AP-599",
+      "Aruba AP-599 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
+    "note": "Aruba AP-599 802.11ax 4x4:4 Dual Radio Integrated Antenna Outdoor AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+  },
+  {
+    "key": "Dell 1000BASE-SX SFP 850nm 550m DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "1000BASE-SX SFP 850nm 550m DOM Transceiver",
+      "Dell 1000BASE-SX SFP 850nm 550m DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 1000BASE-SX SFP 850nm 550m DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 1000BASE-T SFP Copper RJ-45 100m Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "1000BASE-T SFP Copper RJ-45 100m Transceiver",
+      "Dell 1000BASE-T SFP Copper RJ-45 100m Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 1000BASE-T SFP Copper RJ-45 100m Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 100GBASE-LR4 QSFP28 1310nm 10km DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "100GBASE-LR4 QSFP28 1310nm 10km DOM Transceiver",
+      "Dell 100GBASE-LR4 QSFP28 1310nm 10km DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 100GBASE-LR4 QSFP28 1310nm 10km DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 100GBASE-SR4 QSFP28 850nm 100m DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "100GBASE-SR4 QSFP28 850nm 100m DOM Transceiver",
+      "Dell 100GBASE-SR4 QSFP28 850nm 100m DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 100GBASE-SR4 QSFP28 850nm 100m DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 10GBASE-LR SFP+ 1310nm 10km DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "10GBASE-LR SFP+ 1310nm 10km DOM Transceiver",
+      "Dell 10GBASE-LR SFP+ 1310nm 10km DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 10GBASE-LR SFP+ 1310nm 10km DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 10GBASE-SR SFP+ 850nm 300m DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "10GBASE-SR SFP+ 850nm 300m DOM Transceiver",
+      "Dell 10GBASE-SR SFP+ 850nm 300m DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 10GBASE-SR SFP+ 850nm 300m DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 10GBASE-T SFP+ Copper RJ-45 30m Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "10GBASE-T SFP+ Copper RJ-45 30m Transceiver",
+      "Dell 10GBASE-T SFP+ Copper RJ-45 30m Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 10GBASE-T SFP+ Copper RJ-45 30m Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 25GBASE-LR SFP28 1310nm 10km DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "25GBASE-LR SFP28 1310nm 10km DOM Transceiver",
+      "Dell 25GBASE-LR SFP28 1310nm 10km DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 25GBASE-LR SFP28 1310nm 10km DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 25GBASE-SR SFP28 850nm 100m DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "25GBASE-SR SFP28 850nm 100m DOM Transceiver",
+      "Dell 25GBASE-SR SFP28 850nm 100m DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 25GBASE-SR SFP28 850nm 100m DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 40GBASE-LR4 QSFP+ 1310nm 10km DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "40GBASE-LR4 QSFP+ 1310nm 10km DOM Transceiver",
+      "Dell 40GBASE-LR4 QSFP+ 1310nm 10km DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 40GBASE-LR4 QSFP+ 1310nm 10km DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Dell 40GBASE-SR4 QSFP+ 850nm 100m DOM Transceiver",
+    "vendor": "Dell",
+    "matches": [
+      "40GBASE-SR4 QSFP+ 850nm 100m DOM Transceiver",
+      "Dell 40GBASE-SR4 QSFP+ 850nm 100m DOM Transceiver"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/dell/",
+    "note": "Dell 40GBASE-SR4 QSFP+ 850nm 100m DOM Transceiver — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/dell/"
+  },
+  {
+    "key": "Ruckus 901-3101-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3101-US00",
+      "Ruckus 901-3101-US00 ZoneFlex T310c Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3101-US00 ZoneFlex T310c Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3101-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3101-WW00",
+      "Ruckus 901-3101-WW00 ZoneFlex T310c Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3101-WW00 ZoneFlex T310c Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3102-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3102-US00",
+      "Ruckus 901-3102-US00 ZoneFlex T310d Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3102-US00 ZoneFlex T310d Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3102-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3102-WW00",
+      "Ruckus 901-3102-WW00 ZoneFlex T310d Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3102-WW00 ZoneFlex T310d Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3103-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3103-US00",
+      "Ruckus 901-3103-US00 ZoneFlex T310n Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3103-US00 ZoneFlex T310n Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3103-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3103-WW00",
+      "Ruckus 901-3103-WW00 ZoneFlex T310n Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3103-WW00 ZoneFlex T310n Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3104-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3104-US00",
+      "Ruckus 901-3104-US00 ZoneFlex T310s Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3104-US00 ZoneFlex T310s Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3104-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3104-WW00",
+      "Ruckus 901-3104-WW00 ZoneFlex T310s Outdoor 802.11ac 2x2:2 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3104-WW00 ZoneFlex T310s Outdoor 802.11ac 2x2:2 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3201-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3201-US00",
+      "Ruckus 901-3201-US00 ZoneFlex T610 Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3201-US00 ZoneFlex T610 Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3201-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3201-WW00",
+      "Ruckus 901-3201-WW00 ZoneFlex T610 Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3201-WW00 ZoneFlex T610 Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3202-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3202-US00",
+      "Ruckus 901-3202-US00 ZoneFlex T610s Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3202-US00 ZoneFlex T610s Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3202-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3202-WW00",
+      "Ruckus 901-3202-WW00 ZoneFlex T610s Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3202-WW00 ZoneFlex T610s Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3203-US00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3203-US00",
+      "Ruckus 901-3203-US00 ZoneFlex T610c Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3203-US00 ZoneFlex T610c Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
+  },
+  {
+    "key": "Ruckus 901-3203-WW00",
+    "vendor": "Ruckus",
+    "matches": [
+      "901-3203-WW00",
+      "Ruckus 901-3203-WW00 ZoneFlex T610c Outdoor 802.11ac 4x4:4 Wi-Fi Access Point"
+    ],
+    "support_end_date": "2025-03-31",
+    "os_eol_date": null,
+    "confidence": "low",
+    "source": "https://www.layer23-switch.com/eol-eosl-tool/ruckus/",
+    "note": "Ruckus 901-3203-WW00 ZoneFlex T610c Outdoor 802.11ac 4x4:4 Wi-Fi Access Point — End of Service Life 2025-03-31; End of Sale 2020-03-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/ruckus/"
   }
 ]
