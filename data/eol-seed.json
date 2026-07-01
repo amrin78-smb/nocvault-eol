@@ -33753,11 +33753,11 @@
       "AP-303",
       "Aruba AP-303 Dual 2x2:2 802.11ac Access Point"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2030-02-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-303 Dual 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-303 Dual 2x2:2 802.11ac Access Point — End of Service Life 2030-02-01 (model-level date; latest of official Aruba SKU EOSL dates 2030-01-31, 2030-02-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-303H",
@@ -33766,11 +33766,11 @@
       "AP-303H",
       "Aruba AP-303H Dual 2x2:2 802.11ac AP with 3 local GigE ports"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2030-02-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-303H Dual 2x2:2 802.11ac AP with 3 local GigE ports — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-303H Dual 2x2:2 802.11ac AP with 3 local GigE ports — End of Service Life 2030-02-01 (model-level date; latest of official Aruba SKU EOSL dates 2024-08-01, 2030-02-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-303P",
@@ -33779,11 +33779,11 @@
       "AP-303P",
       "Aruba AP-303P Dual 2x2:2 802.11ac AP with 2 local GigE ports and PoE out"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2029-05-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-303P Dual 2x2:2 802.11ac AP with 2 local GigE ports and PoE out — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-303P Dual 2x2:2 802.11ac AP with 2 local GigE ports and PoE out — End of Service Life 2029-05-01 (model-level date; latest of official Aruba SKU EOSL dates 2029-05-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-375",
@@ -33792,11 +33792,11 @@
       "AP-375",
       "Aruba AP-375 Outdoor 2x2:2 802.11ac Access Point"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2030-01-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-375 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-375 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2030-01-01 (model-level date; latest of official Aruba SKU EOSL dates 2029-05-01, 2030-01-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-377",
@@ -33805,11 +33805,11 @@
       "AP-377",
       "Aruba AP-377 Outdoor 2x2:2 802.11ac Access Point"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2030-01-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-377 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-377 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2030-01-01 (model-level date; latest of official Aruba SKU EOSL dates 2028-08-01, 2030-01-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-384",
@@ -33831,11 +33831,11 @@
       "AP-387",
       "Aruba AP-387 Outdoor 2x2:2 802.11ac Access Point"
     ],
-    "support_end_date": "2025-07-31",
+    "support_end_date": "2029-01-01",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-387 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2025-07-31; End of Sale 2020-07-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-387 Outdoor 2x2:2 802.11ac Access Point — End of Service Life 2029-01-01 (model-level date; latest of official Aruba SKU EOSL dates 2028-12-31, 2029-01-01); reconciled from Layer23 estimate 2025-07-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-504",
@@ -33883,11 +33883,11 @@
       "AP-505H",
       "Aruba AP-505H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP"
     ],
-    "support_end_date": "2029-08-31",
+    "support_end_date": "2024-11-30",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/aruba/",
-    "note": "Aruba AP-505H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2029-08-31; End of Sale 2024-08-31; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/aruba/"
+    "confidence": "high",
+    "source": "https://www.arubanetworks.com/support-services/end-of-life/",
+    "note": "Aruba AP-505H 802.11ax 2x2:2 Dual Radio Integrated Antenna Hospitality AP — End of Service Life 2024-11-30 (model-level date; latest of official Aruba SKU EOSL dates 2024-11-30); reconciled from Layer23 estimate 2029-08-31 to Aruba/HPE official list. https://www.arubanetworks.com/support-services/end-of-life/"
   },
   {
     "key": "Aruba AP-514H",
