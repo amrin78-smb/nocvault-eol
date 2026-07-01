@@ -3371,11 +3371,11 @@
     "matches": [
       "SF300-24PP"
     ],
-    "support_end_date": "2023-10-31",
+    "support_end_date": "2023-11-30",
     "os_eol_date": null,
     "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-740542.html",
-    "note": "300 Series EoL c51-740542; SF300-24PP named; LDoS 2023-10-31 (past)."
+    "source": "https://www.cisco.com/c/en/us/products/eos-eol-listing.html",
+    "note": "SF300-24PP — End of Service Life 2023-11-30 (updated from 2023-10-31 to Cisco official EOL bulletin). https://www.cisco.com/c/en/us/products/eos-eol-listing.html"
   },
   {
     "key": "Cisco SF300-48PP",
@@ -3619,12 +3619,12 @@
     "matches": [
       "SG300-28PP"
     ],
-    "support_end_date": null,
+    "support_end_date": "2023-11-30",
     "os_eol_date": null,
     "lifecycle": "eol",
     "confidence": "high",
-    "source": null,
-    "note": "SG300-28PP — vendor-confirmed end-of-life, no concrete published date (status: Obsolete; EOSL: Passed (2019-2023); Cisco Small Business Support Lifecycle End)."
+    "source": "https://www.cisco.com/c/en/us/products/eos-eol-listing.html",
+    "note": "SG300-28PP — End of Service Life 2023-11-30 (updated from no date to Cisco official EOL bulletin). https://www.cisco.com/c/en/us/products/eos-eol-listing.html"
   },
   {
     "key": "CISCO SG350-28",
@@ -3731,11 +3731,11 @@
       "SRW208-K9-AU",
       "SRW248G4-K9-AU"
     ],
-    "support_end_date": "2022-05-31",
+    "support_end_date": "2023-05-31",
     "os_eol_date": null,
     "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-300-series-managed-switches/eos-eol-notice-c51-738667.html",
-    "note": "c51-738667 / EOL11633; EoS 2017-05-31, LDoS 2022-05-31. Regional/PoE+/SFP select variants"
+    "source": "https://www.cisco.com/c/en/us/products/eos-eol-listing.html",
+    "note": "SG300-28MP-K9-AU — End of Service Life 2023-05-31 (updated from 2022-05-31 to Cisco official EOL bulletin). https://www.cisco.com/c/en/us/products/eos-eol-listing.html"
   },
   {
     "key": "CISCO Small Business 300 Series (EOL12419)",
@@ -3817,11 +3817,11 @@
       "SRW224G4P-K9-NA",
       "SRW248G4P-K9-NA"
     ],
-    "support_end_date": "2020-04-30",
+    "support_end_date": "2023-05-31",
     "os_eol_date": null,
     "confidence": "high",
-    "source": "https://www.cisco.com/c/en/us/products/collateral/switches/small-business-stackable-managed-switches/eos-eol-notice-c51-733213.html",
-    "note": "c51-733213; EoS 2015-04-27, LDoS 2020-04-30. SG300/SRW PoE stackables"
+    "source": "https://www.cisco.com/c/en/us/products/eos-eol-listing.html",
+    "note": "SG300-10MPP-K9-NA — End of Service Life 2023-05-31 (updated from 2020-04-30 to Cisco official EOL bulletin). https://www.cisco.com/c/en/us/products/eos-eol-listing.html"
   },
   {
     "key": "Cisco SX350X-12",
