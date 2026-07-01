@@ -35314,5 +35314,720 @@
     "confidence": "high",
     "source": "https://www.alliedtelesis.com/us/en/products/end-of-sale-list",
     "note": "Allied Telesis WR4562 — End of Life 2019-01-15; End of SW Support 2016-01-15; End of Sale 2014-01-15; Allied Telesis official End-of-Sale list. https://www.alliedtelesis.com/us/en/products/end-of-sale-list"
+  },
+  {
+    "key": "Palo Alto D-1000",
+    "vendor": "Palo Alto",
+    "matches": [
+      "D-1000",
+      "Palo Alto Networks D-1000"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks D-1000 — End of Service Life 2020-12-31; End of Sale 2017-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto D-300",
+    "vendor": "Palo Alto",
+    "matches": [
+      "D-300",
+      "Palo Alto Networks D-300"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks D-300 — End of Service Life 2020-12-31; End of Sale 2017-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto D-500",
+    "vendor": "Palo Alto",
+    "matches": [
+      "D-500",
+      "Palo Alto Networks D-500"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks D-500 — End of Service Life 2020-12-31; End of Sale 2017-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto GP-100",
+    "vendor": "Palo Alto",
+    "matches": [
+      "GP-100",
+      "Palo Alto Networks GP-100"
+    ],
+    "support_end_date": "2021-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks GP-100 — End of Service Life 2021-04-30; End of Sale 2016-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto ION-1000",
+    "vendor": "Palo Alto",
+    "matches": [
+      "ION-1000",
+      "Palo Alto Networks ION 1000"
+    ],
+    "support_end_date": "2029-02-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks ION 1000 — End of Service Life 2029-02-01; End of Sale 2024-02-01; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto ION-2000",
+    "vendor": "Palo Alto",
+    "matches": [
+      "ION-2000",
+      "Palo Alto Networks ION 2000"
+    ],
+    "support_end_date": "2029-02-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks ION 2000 — End of Service Life 2029-02-01; End of Sale 2024-02-01; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto ION-3000",
+    "vendor": "Palo Alto",
+    "matches": [
+      "ION-3000",
+      "Palo Alto Networks ION 3000"
+    ],
+    "support_end_date": "2029-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks ION 3000 — End of Service Life 2029-08-01; End of Sale 2024-03-15; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto ION-9000",
+    "vendor": "Palo Alto",
+    "matches": [
+      "ION-9000",
+      "Palo Alto Networks ION 9000"
+    ],
+    "support_end_date": "2029-08-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks ION 9000 — End of Service Life 2029-08-01; End of Sale 2024-06-15; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto LIGHTCYBER-M-100",
+    "vendor": "Palo Alto",
+    "matches": [
+      "LIGHTCYBER-M-100",
+      "Palo Alto Networks LightCyber Magna Master (M-100)"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks LightCyber Magna Master (M-100) — End of Service Life 2020-12-31; End of Sale 2017-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto M-100",
+    "vendor": "Palo Alto",
+    "matches": [
+      "M-100",
+      "Palo Alto Networks M-100"
+    ],
+    "support_end_date": "2023-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks M-100 — End of Service Life 2023-10-31; End of Sale 2018-10-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto M-200",
+    "vendor": "Palo Alto",
+    "matches": [
+      "M-200",
+      "Palo Alto Networks M-200"
+    ],
+    "support_end_date": "2029-02-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks M-200 — End of Service Life 2029-02-15; End of Sale 2024-02-15; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto M-500",
+    "vendor": "Palo Alto",
+    "matches": [
+      "M-500",
+      "Palo Alto Networks M-500"
+    ],
+    "support_end_date": "2025-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks M-500 — End of Service Life 2025-02-28; End of Sale 2020-02-29; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto M-600",
+    "vendor": "Palo Alto",
+    "matches": [
+      "M-600",
+      "Palo Alto Networks M-600"
+    ],
+    "support_end_date": "2029-02-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks M-600 — End of Service Life 2029-02-15; End of Sale 2024-02-15; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto P-50T",
+    "vendor": "Palo Alto",
+    "matches": [
+      "P-50T",
+      "Palo Alto Networks P-50T"
+    ],
+    "support_end_date": "2020-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks P-50T — End of Service Life 2020-12-31; End of Sale 2017-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-2020",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-2020",
+      "Palo Alto Networks PA-2020"
+    ],
+    "support_end_date": "2020-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-2020 — End of Service Life 2020-04-30; End of Sale 2015-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-2050",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-2050",
+      "Palo Alto Networks PA-2050"
+    ],
+    "support_end_date": "2020-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-2050 — End of Service Life 2020-04-30; End of Sale 2015-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-3220-ZTP",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-3220-ZTP",
+      "Palo Alto Networks PA-3220-ZTP"
+    ],
+    "support_end_date": "2028-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-3220-ZTP — End of Service Life 2028-08-31; End of Sale 2023-08-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-3250-ZTP",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-3250-ZTP",
+      "Palo Alto Networks PA-3250-ZTP"
+    ],
+    "support_end_date": "2028-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-3250-ZTP — End of Service Life 2028-08-31; End of Sale 2023-08-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-3260-ZTP",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-3260-ZTP",
+      "Palo Alto Networks PA-3260-ZTP"
+    ],
+    "support_end_date": "2028-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-3260-ZTP — End of Service Life 2028-08-31; End of Sale 2023-08-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-4020",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-4020",
+      "Palo Alto Networks PA-4020"
+    ],
+    "support_end_date": "2019-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-4020 — End of Service Life 2019-04-30; End of Sale 2014-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-4050",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-4050",
+      "Palo Alto Networks PA-4050"
+    ],
+    "support_end_date": "2019-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-4050 — End of Service Life 2019-04-30; End of Sale 2014-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-4060",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-4060",
+      "Palo Alto Networks PA-4060"
+    ],
+    "support_end_date": "2019-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-4060 — End of Service Life 2019-04-30; End of Sale 2014-04-30; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-5200-AC-POWER",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-5200-AC-POWER",
+      "Palo Alto Networks PA-5200 Series AC Power Supply"
+    ],
+    "support_end_date": "2029-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-5200 Series AC Power Supply — End of Service Life 2029-07-31; End of Sale 2024-07-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-5200-DC-POWER",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-5200-DC-POWER",
+      "Palo Alto Networks PA-5200 Series DC Power Supply"
+    ],
+    "support_end_date": "2029-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-5200 Series DC Power Supply — End of Service Life 2029-07-31; End of Sale 2024-07-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-5280-K2",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-5280-K2",
+      "Palo Alto Networks PA-5280-K2"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-5280-K2 — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7000-20G-NPC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7000-20G-NPC",
+      "Palo Alto Networks PA-7000-20G-NPC"
+    ],
+    "support_end_date": "2024-01-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7000-20G-NPC — End of Service Life 2024-01-31; End of Sale 2019-01-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7000-20GQ-NPC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7000-20GQ-NPC",
+      "Palo Alto Networks PA-7000-20GQ-NPC"
+    ],
+    "support_end_date": "2024-01-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7000-20GQ-NPC — End of Service Life 2024-01-31; End of Sale 2019-01-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7000-20GQXM-NPC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7000-20GQXM-NPC",
+      "Palo Alto Networks PA-7000-20GQXM-NPC"
+    ],
+    "support_end_date": "2026-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7000-20GQXM-NPC — End of Service Life 2026-05-08; End of Sale 2021-05-08; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7000-20GXM-NPC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7000-20GXM-NPC",
+      "Palo Alto Networks PA-7000-20GXM-NPC"
+    ],
+    "support_end_date": "2026-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7000-20GXM-NPC — End of Service Life 2026-05-08; End of Sale 2021-05-08; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7000-LPC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7000-LPC",
+      "Palo Alto Networks PA-7000-LPC"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7000-LPC — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7050-DDR-UPG",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7050-DDR-UPG",
+      "Palo Alto Networks PA-7050-DDR-UPG"
+    ],
+    "support_end_date": "2029-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7050-DDR-UPG — End of Service Life 2029-07-31; End of Sale 2024-07-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7050-K2",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7050-K2",
+      "Palo Alto Networks PA-7050-K2"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7050-K2 — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7050-SMC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7050-SMC",
+      "Palo Alto Networks PA-7050-SMC"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7050-SMC — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7080-DDR-UPG",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7080-DDR-UPG",
+      "Palo Alto Networks PA-7080-DDR-UPG"
+    ],
+    "support_end_date": "2029-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7080-DDR-UPG — End of Service Life 2029-07-31; End of Sale 2024-07-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7080-K2",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7080-K2",
+      "Palo Alto Networks PA-7080-K2"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7080-K2 — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-7080-SMC",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-7080-SMC",
+      "Palo Alto Networks PA-7080-SMC"
+    ],
+    "support_end_date": "2026-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-7080-SMC — End of Service Life 2026-02-28; End of Sale 2021-02-28; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-820-ZTP",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-820-ZTP",
+      "Palo Alto Networks PA-820-ZTP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-820-ZTP — End of Service Life 2029-08-31; End of Sale 2024-08-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PA-850-ZTP",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PA-850-ZTP",
+      "Palo Alto Networks PA-850-ZTP"
+    ],
+    "support_end_date": "2029-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-850-ZTP — End of Service Life 2029-08-31; End of Sale 2024-08-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-2-5IN-HDD-2TB-PAIR",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-2-5IN-HDD-2TB-PAIR",
+      "Palo Alto Networks PAN-2.5IN-HDD-2TB-PAIR"
+    ],
+    "support_end_date": "2028-08-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-2.5IN-HDD-2TB-PAIR — End of Service Life 2028-08-31; End of Sale 2024-08-01; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-5200-FAN",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-5200-FAN",
+      "Palo Alto Networks PA-5200 Series Fan Tray"
+    ],
+    "support_end_date": "2029-07-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-5200 Series Fan Tray — End of Service Life 2029-07-31; End of Sale 2024-07-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7000-100G-NPC-A",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7000-100G-NPC-A",
+      "Palo Alto Networks PAN-PA-7000-100G-NPC-A"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7000-100G-NPC-A — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7000-DPC-A",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7000-DPC-A",
+      "Palo Alto Networks PAN-PA-7000-DPC-A"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7000-DPC-A — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7000-LFC-A",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7000-LFC-A",
+      "Palo Alto Networks PAN-PA-7000-LFC-A"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7000-LFC-A — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7000-LFC-A-SYS-UPG",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7000-LFC-A-SYS-UPG",
+      "Palo Alto Networks PAN-PA-7000-LFC-A-SYS-UPG"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7000-LFC-A-SYS-UPG — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7050-AC-SYS",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7050-AC-SYS",
+      "Palo Alto Networks PAN-PA-7050-AC-SYS"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7050-AC-SYS — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7050-DC-SYS",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7050-DC-SYS",
+      "Palo Alto Networks PAN-PA-7050-DC-SYS"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7050-DC-SYS — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7050-SMC-B",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7050-SMC-B",
+      "Palo Alto Networks PAN-PA-7050-SMC-B"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7050-SMC-B — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7050-SMC-B-SYS-UPG",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7050-SMC-B-SYS-UPG",
+      "Palo Alto Networks PAN-PA-7050-SMC-B-SYS-UPG"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7050-SMC-B-SYS-UPG — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7080-AC-SYS",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7080-AC-SYS",
+      "Palo Alto Networks PAN-PA-7080-AC-SYS"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7080-AC-SYS — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7080-DC-SYS",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7080-DC-SYS",
+      "Palo Alto Networks PAN-PA-7080-DC-SYS"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7080-DC-SYS — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7080-SMC-B",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7080-SMC-B",
+      "Palo Alto Networks PAN-PA-7080-SMC-B"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7080-SMC-B — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-7080-SMC-B-SYS-UPG",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-7080-SMC-B-SYS-UPG",
+      "Palo Alto Networks PAN-PA-7080-SMC-B-SYS-UPG"
+    ],
+    "support_end_date": "2030-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-PA-7080-SMC-B-SYS-UPG — End of Service Life 2030-12-31; End of Sale 2025-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-PA-800-DPA",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-PA-800-DPA",
+      "Palo Alto Networks PA-800 Series Dual Power Supply Adapter Tray"
+    ],
+    "support_end_date": "2028-05-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PA-800 Series Dual Power Supply Adapter Tray — End of Service Life 2028-05-02; End of Sale 2023-05-02; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto PAN-QSFP-40GBASE-LM4",
+    "vendor": "Palo Alto",
+    "matches": [
+      "PAN-QSFP-40GBASE-LM4",
+      "Palo Alto Networks PAN-QSFP-40GBASE-LM4"
+    ],
+    "support_end_date": "2029-05-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks PAN-QSFP-40GBASE-LM4 — End of Service Life 2029-05-16; End of Sale 2024-05-16; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
+  },
+  {
+    "key": "Palo Alto WF-500",
+    "vendor": "Palo Alto",
+    "matches": [
+      "WF-500",
+      "Palo Alto Networks WF-500"
+    ],
+    "support_end_date": "2028-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
+    "note": "Palo Alto Networks WF-500 — End of Service Life 2028-12-31; End of Sale 2023-12-31; Palo Alto Networks official hardware EOL dates. https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates"
   }
 ]
