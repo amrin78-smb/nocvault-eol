@@ -27854,9 +27854,9 @@
     ],
     "support_end_date": "2030-04-16",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3400E-USG — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3400E-USG — End of Service Life 2030-04-16; End of Sale 2025-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3401E",
@@ -27867,9 +27867,9 @@
     ],
     "support_end_date": "2030-04-16",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3401E — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3401E — End of Service Life 2030-04-16; End of Sale 2025-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3401E-DC",
@@ -27880,9 +27880,9 @@
     ],
     "support_end_date": "2030-04-16",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3401E-DC — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3401E-DC — End of Service Life 2030-04-16; End of Sale 2025-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3401E-LENC",
@@ -27893,9 +27893,9 @@
     ],
     "support_end_date": "2030-04-16",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3401E-LENC — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3401E-LENC — End of Service Life 2030-04-16; End of Sale 2025-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3401E-USG",
@@ -27906,9 +27906,9 @@
     ],
     "support_end_date": "2030-04-16",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3401E-USG — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3401E-USG — End of Service Life 2030-04-16; End of Sale 2025-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3600",
@@ -27919,9 +27919,9 @@
     ],
     "support_end_date": "2018-05-17",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3600 — End of Service Life 2018-05-17; End of Sale 2013-05-17; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600 — End of Service Life 2018-05-17; End of Sale 2013-05-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3600E",
@@ -27930,11 +27930,11 @@
       "FORTIGATE-3600E",
       "Fortinet FortiGate-3600E"
     ],
-    "support_end_date": "2030-04-16",
+    "support_end_date": "2029-04-15",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3600E — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600E — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3600E-DC",
@@ -27943,11 +27943,11 @@
       "FORTIGATE-3600E-DC",
       "Fortinet FortiGate-3600E-DC"
     ],
-    "support_end_date": "2030-04-16",
+    "support_end_date": "2029-04-15",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3600E-DC — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600E-DC — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "Fortinet FORTIGATE-3600E-LENC",
@@ -27969,11 +27969,11 @@
       "FORTIGATE-3600E-USG",
       "Fortinet FortiGate-3600E-USG"
     ],
-    "support_end_date": "2030-04-16",
+    "support_end_date": "2029-04-15",
     "os_eol_date": null,
-    "confidence": "low",
-    "source": "https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/",
-    "note": "Fortinet FortiGate-3600E-USG — End of Service Life 2030-04-16; End of Sale 2025-04-16; sourced via Layer23 (third-party EOSL aggregator — not vendor-confirmed). https://www.layer23-switch.com/eol-eosl-tool/fortinet/fortinet-fortigate/"
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600E-USG — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   },
   {
     "key": "H3C 3132A09X",
@@ -79841,5 +79841,3151 @@
     "confidence": "high",
     "source": "https://www.cisco.com/c/en/us/products/eos-eol-listing.html",
     "note": "Cisco Catalyst 6500 8 Port 10G Baseboard — End of Service Life 2021-04-30; End of Sale 2016-04-30; Cisco switch; Cisco official EOL bulletin. https://www.cisco.com/c/en/us/products/eos-eol-listing.html"
+  },
+  {
+    "key": "Fortinet FG-5060FA",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5060FA"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5060FA — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5060SAP",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5060SAP"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5060SAP — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5060SM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5060SM"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5060SM — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-ABF",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-ABF"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-ABF — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-ABR",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-ABR"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-ABR — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-AF",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-AF"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-AF — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-FAN",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-FAN"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-FAN — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-PEM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-PEM"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-PEM — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-SFRU",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-SFRU"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-SFRU — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FG-5144C-SM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FG-5144C-SM"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FG-5144C-SM — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600A"
+    ],
+    "support_end_date": "2018-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600A — End of Service Life 2018-05-17; End of Sale 2013-05-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600C"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600C — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600C-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600C-DC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600C-DC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600C-LENC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600C-LENC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600LX2",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600LX2"
+    ],
+    "support_end_date": "2016-06-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600LX2 — End of Service Life 2016-06-19; End of Sale 2011-06-19; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3600LX4",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3600LX4"
+    ],
+    "support_end_date": "2016-06-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3600LX4 — End of Service Life 2016-06-19; End of Sale 2011-06-19; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3601E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3601E"
+    ],
+    "support_end_date": "2029-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3601E — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3601E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3601E-LENC"
+    ],
+    "support_end_date": "2029-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3601E-LENC — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3601E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3601E-USG"
+    ],
+    "support_end_date": "2029-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3601E-USG — End of Service Life 2029-04-15; End of Sale 2024-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-DC"
+    ],
+    "support_end_date": "2028-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-DC — End of Service Life 2028-04-16; End of Sale 2023-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-DC-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-DC-NEBS"
+    ],
+    "support_end_date": "2024-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-DC-NEBS — End of Service Life 2024-02-28; End of Sale 2019-02-28; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-DC-NEBS-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-DC-NEBS-USG"
+    ],
+    "support_end_date": "2024-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-DC-NEBS-USG — End of Service Life 2024-02-28; End of Sale 2019-02-28; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-LENC"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-LENC — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-NEBS"
+    ],
+    "support_end_date": "2024-02-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-NEBS — End of Service Life 2024-02-28; End of Sale 2019-02-28; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700D-USG"
+    ],
+    "support_end_date": "2028-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700D-USG — End of Service Life 2028-01-14; End of Sale 2023-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3700DX",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3700DX"
+    ],
+    "support_end_date": "2023-11-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3700DX — End of Service Life 2023-11-22; End of Sale 2018-11-22; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3800D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3800D"
+    ],
+    "support_end_date": "2026-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3800D — End of Service Life 2026-01-14; End of Sale 2021-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3800D-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3800D-DC"
+    ],
+    "support_end_date": "2026-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3800D-DC — End of Service Life 2026-01-14; End of Sale 2021-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810A-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810A-DC"
+    ],
+    "support_end_date": "2020-07-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810A-DC — End of Service Life 2020-07-01; End of Sale 2015-07-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810A-DC-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810A-DC-G"
+    ],
+    "support_end_date": "2020-07-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810A-DC-G — End of Service Life 2020-07-01; End of Sale 2015-07-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810A-E4",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810A-E4"
+    ],
+    "support_end_date": "2020-07-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810A-E4 — End of Service Life 2020-07-01; End of Sale 2015-07-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810A-E4-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810A-E4-G"
+    ],
+    "support_end_date": "2020-07-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810A-E4-G — End of Service Life 2020-07-01; End of Sale 2015-07-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810A-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810A-LENC"
+    ],
+    "support_end_date": "2020-07-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810A-LENC — End of Service Life 2020-07-01; End of Sale 2015-07-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810D"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810D — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810D-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810D-DC"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810D-DC — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810D-DC-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810D-DC-NEBS"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810D-DC-NEBS — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810D-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810D-NEBS"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810D-NEBS — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3810D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3810D-USG"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3810D-USG — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3815D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3815D"
+    ],
+    "support_end_date": "2025-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3815D — End of Service Life 2025-01-14; End of Sale 2020-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3815D-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3815D-DC"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3815D-DC — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3815D-DC-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3815D-DC-NEBS"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3815D-DC-NEBS — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3815D-NEBS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3815D-NEBS"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3815D-NEBS — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3815D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3815D-USG"
+    ],
+    "support_end_date": "2026-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3815D-USG — End of Service Life 2026-01-14; End of Sale 2021-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-DC"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-DC — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-DC-R",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-DC-R"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-DC-R — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-G"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-G — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-LENC"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-LENC — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-R",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-R"
+    ],
+    "support_end_date": "2021-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-R — End of Service Life 2021-10-01; End of Sale 2016-10-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3950B-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3950B-USG"
+    ],
+    "support_end_date": "2025-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3950B-USG — End of Service Life 2025-07-15; End of Sale 2020-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3951B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3951B"
+    ],
+    "support_end_date": "2017-02-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3951B — End of Service Life 2017-02-17; End of Sale 2012-02-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3951B-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3951B-DC"
+    ],
+    "support_end_date": "2017-02-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3951B-DC — End of Service Life 2017-02-17; End of Sale 2012-02-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3960E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3960E"
+    ],
+    "support_end_date": "2028-12-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3960E — End of Service Life 2028-12-29; End of Sale 2023-12-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3960E-ACDC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3960E-ACDC"
+    ],
+    "support_end_date": "2028-12-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3960E-ACDC — End of Service Life 2028-12-29; End of Sale 2023-12-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3960E-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3960E-DC"
+    ],
+    "support_end_date": "2028-12-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3960E-DC — End of Service Life 2028-12-29; End of Sale 2023-12-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3960E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3960E-LENC"
+    ],
+    "support_end_date": "2030-06-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3960E-LENC — End of Service Life 2030-06-13; End of Sale 2025-06-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3960E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3960E-USG"
+    ],
+    "support_end_date": "2028-12-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3960E-USG — End of Service Life 2028-12-29; End of Sale 2023-12-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3980E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3980E"
+    ],
+    "support_end_date": "2029-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3980E — End of Service Life 2029-05-29; End of Sale 2024-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3980E-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3980E-DC"
+    ],
+    "support_end_date": "2029-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3980E-DC — End of Service Life 2029-05-29; End of Sale 2024-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3980E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3980E-LENC"
+    ],
+    "support_end_date": "2029-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3980E-LENC — End of Service Life 2029-05-29; End of Sale 2024-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-3980E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-3980E-USG"
+    ],
+    "support_end_date": "2029-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-3980E-USG — End of Service Life 2029-05-29; End of Sale 2024-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400"
+    ],
+    "support_end_date": "2011-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400 — End of Service Life 2011-12-31; End of Sale 2006-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-4000P",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-4000P"
+    ],
+    "support_end_date": "2011-02-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-4000P — End of Service Life 2011-02-03; End of Sale 2006-02-03; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-4000S",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-4000S"
+    ],
+    "support_end_date": "2011-02-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-4000S — End of Service Life 2011-02-03; End of Sale 2006-02-03; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400A"
+    ],
+    "support_end_date": "2016-11-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400A — End of Service Life 2016-11-17; End of Sale 2011-11-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400A-HD",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400A-HD"
+    ],
+    "support_end_date": "2016-09-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400A-HD — End of Service Life 2016-09-30; End of Sale 2011-09-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400D"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400D — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400D-LENC"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400D-LENC — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400D-USG"
+    ],
+    "support_end_date": "2023-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400D-USG — End of Service Life 2023-05-29; End of Sale 2018-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-400E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-400E"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-400E — End of Service Life 2030-10-13; End of Sale 2025-10-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-4010B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-4010B"
+    ],
+    "support_end_date": "2011-02-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-4010B — End of Service Life 2011-02-03; End of Sale 2006-02-03; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-401E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-401E"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-401E — End of Service Life 2030-10-13; End of Sale 2025-10-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-401E-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-401E-DC"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-401E-DC — End of Service Life 2030-10-13; End of Sale 2025-10-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-401E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-401E-LENC"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-401E-LENC — End of Service Life 2030-10-13; End of Sale 2025-10-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-401E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-401E-USG"
+    ],
+    "support_end_date": "2030-10-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-401E-USG — End of Service Life 2030-10-13; End of Sale 2025-10-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-40C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-40C"
+    ],
+    "support_end_date": "2023-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-40C — End of Service Life 2023-01-14; End of Sale 2018-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-40C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-40C-LENC"
+    ],
+    "support_end_date": "2021-06-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-40C-LENC — End of Service Life 2021-06-16; End of Sale 2016-06-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50"
+    ],
+    "support_end_date": "2009-06-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50 — End of Service Life 2009-06-01; End of Sale 2004-06-01; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500"
+    ],
+    "support_end_date": "2011-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500 — End of Service Life 2011-12-31; End of Sale 2006-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001-FA2",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001-FA2"
+    ],
+    "support_end_date": "2017-02-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001-FA2 — End of Service Life 2017-02-17; End of Sale 2012-02-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001-SX",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001-SX",
+      "FortiGate-5001 SX"
+    ],
+    "support_end_date": "2022-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001 SX — End of Service Life 2022-04-15; End of Sale 2017-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001-SX-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001-SX-G"
+    ],
+    "support_end_date": "2022-07-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001-SX-G — End of Service Life 2022-07-18; End of Sale 2017-07-18; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001A-DW",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001A-DW"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001A-DW — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001A-DW-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001A-DW-G"
+    ],
+    "support_end_date": "2022-07-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001A-DW-G — End of Service Life 2022-07-14; End of Sale 2017-07-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001A-DW-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001A-DW-LENC"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001A-DW-LENC — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001A-SW",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001A-SW"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001A-SW — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001A-SW-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001A-SW-G"
+    ],
+    "support_end_date": "2022-07-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001A-SW-G — End of Service Life 2022-07-14; End of Sale 2017-07-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001B"
+    ],
+    "support_end_date": "2021-09-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001B — End of Service Life 2021-09-13; End of Sale 2016-09-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001B-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001B-USG"
+    ],
+    "support_end_date": "2022-07-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001B-USG — End of Service Life 2022-07-14; End of Sale 2017-07-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001C"
+    ],
+    "support_end_date": "2025-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001C — End of Service Life 2025-04-15; End of Sale 2020-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001C-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001C-USG"
+    ],
+    "support_end_date": "2022-11-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001C-USG — End of Service Life 2022-11-29; End of Sale 2017-11-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001D"
+    ],
+    "support_end_date": "2025-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001D — End of Service Life 2025-10-14; End of Sale 2020-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001D-LENC"
+    ],
+    "support_end_date": "2025-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001D-LENC — End of Service Life 2025-10-14; End of Sale 2020-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001D-USG"
+    ],
+    "support_end_date": "2025-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001D-USG — End of Service Life 2025-10-14; End of Sale 2020-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001E"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001E — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001E1",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001E1"
+    ],
+    "support_end_date": "2027-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001E1 — End of Service Life 2027-04-16; End of Sale 2022-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001E1-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001E1-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001E1-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5001FA2-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5001FA2-LENC"
+    ],
+    "support_end_date": "2016-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5001FA2-LENC — End of Service Life 2016-12-30; End of Sale 2011-12-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5002FB2",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5002FB2"
+    ],
+    "support_end_date": "2012-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5002FB2 — End of Service Life 2012-12-31; End of Sale 2007-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5005FA2",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5005FA2"
+    ],
+    "support_end_date": "2017-06-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5005FA2 — End of Service Life 2017-06-13; End of Sale 2012-06-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500A"
+    ],
+    "support_end_date": "2016-11-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500A — End of Service Life 2016-11-17; End of Sale 2011-11-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500A-HD",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500A-HD"
+    ],
+    "support_end_date": "2016-09-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500A-HD — End of Service Life 2016-09-30; End of Sale 2011-09-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500D"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500D — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500D-LENC"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500D-LENC — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500D-USG"
+    ],
+    "support_end_date": "2026-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500D-USG — End of Service Life 2026-01-14; End of Sale 2021-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500E"
+    ],
+    "support_end_date": "2026-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500E — End of Service Life 2026-07-15; End of Sale 2021-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-500E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-500E-LENC"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-500E-LENC — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-501E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-501E"
+    ],
+    "support_end_date": "2026-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-501E — End of Service Life 2026-07-15; End of Sale 2021-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-501E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-501E-LENC"
+    ],
+    "support_end_date": "2028-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-501E-LENC — End of Service Life 2028-01-14; End of Sale 2023-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5050-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5050-DC"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5050-DC — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5050-DC-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5050-DC-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5050-DC-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5050FA",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5050FA"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5050FA — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5050SAP",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5050SAP"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5050SAP — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5050SM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5050SM"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5050SM — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50A"
+    ],
+    "support_end_date": "2012-04-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50A — End of Service Life 2012-04-17; End of Sale 2007-04-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50B"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50B — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50B-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50B-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50B-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50B-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50B-LENC"
+    ],
+    "support_end_date": "2016-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50B-LENC — End of Service Life 2016-12-30; End of Sale 2011-12-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50E"
+    ],
+    "support_end_date": "2027-03-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50E — End of Service Life 2027-03-31; End of Sale 2022-03-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-50E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-50E-USG"
+    ],
+    "support_end_date": "2026-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-50E-USG — End of Service Life 2026-04-16; End of Sale 2021-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5101C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5101C"
+    ],
+    "support_end_date": "2021-09-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5101C — End of Service Life 2021-09-13; End of Sale 2016-09-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5101C-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5101C-G"
+    ],
+    "support_end_date": "2022-07-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5101C-G — End of Service Life 2022-07-14; End of Sale 2017-07-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5101C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5101C-LENC"
+    ],
+    "support_end_date": "2021-09-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5101C-LENC — End of Service Life 2021-09-13; End of Sale 2016-09-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-5140-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-5140-DC"
+    ],
+    "support_end_date": "2017-02-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-5140-DC — End of Service Life 2017-02-17; End of Sale 2012-02-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-51B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-51B"
+    ],
+    "support_end_date": "2019-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-51B — End of Service Life 2019-12-31; End of Sale 2014-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-51B-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-51B-LENC"
+    ],
+    "support_end_date": "2016-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-51B-LENC — End of Service Life 2016-12-30; End of Sale 2011-12-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-51E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-51E"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-51E — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-52E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-52E"
+    ],
+    "support_end_date": "2025-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-52E — End of Service Life 2025-04-15; End of Sale 2020-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-52E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-52E-USG"
+    ],
+    "support_end_date": "2025-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-52E-USG — End of Service Life 2025-01-14; End of Sale 2020-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60"
+    ],
+    "support_end_date": "2013-11-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60 — End of Service Life 2013-11-21; End of Sale 2008-11-21; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600C"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600C — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600C-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600C-DC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600C-DC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600C-DC-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600C-DC-G"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600C-DC-G — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600C-LENC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600C-LENC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600C-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600C-USG"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600C-USG — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-600D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-600D"
+    ],
+    "support_end_date": "2024-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-600D — End of Service Life 2024-10-14; End of Sale 2019-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60ADSL",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60ADSL"
+    ],
+    "support_end_date": "2012-11-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60ADSL — End of Service Life 2012-11-29; End of Sale 2007-11-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60B"
+    ],
+    "support_end_date": "2015-10-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60B — End of Service Life 2015-10-06; End of Sale 2010-10-06; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60C"
+    ],
+    "support_end_date": "2020-01-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60C — End of Service Life 2020-01-21; End of Sale 2015-01-21; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60C-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60C-G"
+    ],
+    "support_end_date": "2021-06-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60C-G — End of Service Life 2021-06-16; End of Sale 2016-06-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60C-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60C-POE"
+    ],
+    "support_end_date": "2021-06-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60C-POE — End of Service Life 2021-06-16; End of Sale 2016-06-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D"
+    ],
+    "support_end_date": "2023-09-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D — End of Service Life 2023-09-23; End of Sale 2018-09-23; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D-3G4G-VZW",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D-3G4G-VZW"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D-3G4G-VZW — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D-LENC"
+    ],
+    "support_end_date": "2023-09-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D-LENC — End of Service Life 2023-09-27; End of Sale 2018-09-27; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D-POE"
+    ],
+    "support_end_date": "2023-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D-POE — End of Service Life 2023-05-29; End of Sale 2018-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D-POE-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D-POE-USG"
+    ],
+    "support_end_date": "2023-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D-POE-USG — End of Service Life 2023-05-29; End of Sale 2018-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60D-USG"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60D-USG — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-DSL",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-DSL"
+    ],
+    "support_end_date": "2028-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-DSL — End of Service Life 2028-05-17; End of Sale 2023-05-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-DSLJ",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-DSLJ"
+    ],
+    "support_end_date": "2027-05-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-DSLJ — End of Service Life 2027-05-02; End of Sale 2022-05-02; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-LENC"
+    ],
+    "support_end_date": "2028-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-LENC — End of Service Life 2028-01-14; End of Sale 2023-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-POE"
+    ],
+    "support_end_date": "2027-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-POE — End of Service Life 2027-10-14; End of Sale 2022-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-POE-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-POE-USG"
+    ],
+    "support_end_date": "2029-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-POE-USG — End of Service Life 2029-01-14; End of Sale 2024-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60E-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60E-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-60M",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-60M"
+    ],
+    "support_end_date": "2012-04-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-60M — End of Service Life 2012-04-17; End of Sale 2007-04-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-61E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-61E"
+    ],
+    "support_end_date": "2026-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-61E — End of Service Life 2026-07-15; End of Sale 2021-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-61E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-61E-USG"
+    ],
+    "support_end_date": "2028-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-61E-USG — End of Service Life 2028-07-15; End of Sale 2023-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-620B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-620B"
+    ],
+    "support_end_date": "2021-08-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-620B — End of Service Life 2021-08-02; End of Sale 2016-08-02; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-620B-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-620B-DC"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-620B-DC — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-620B-DC-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-620B-DC-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-620B-DC-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-620B-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-620B-G"
+    ],
+    "support_end_date": "2022-07-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-620B-G — End of Service Life 2022-07-18; End of Sale 2017-07-18; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-620B-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-620B-LENC"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-620B-LENC — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-621B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-621B"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-621B — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-621B-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-621B-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-621B-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-1",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-1"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-1 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-1-2-3-4-5-6-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-1-2-3-4-5-6-USG",
+      "FortiGate-7040E-1/2/3/4/5/6-USG"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-1/2/3/4/5/6-USG — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-2",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-2"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-2 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-3",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-3"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-3 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-4",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-4"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-4 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-5",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-5"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-5 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7040E-6",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7040E-6"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7040E-6 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7060E-1",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7060E-1"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7060E-1 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-7060E-3",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-7060E-3"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-7060E-3 — End of Service Life 2024-12-31; End of Sale 2023-12-31; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-70D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-70D"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-70D — End of Service Life 2022-07-16; End of Sale 2021-07-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-70D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-70D-LENC"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-70D-LENC — End of Service Life 2022-07-16; End of Sale 2021-07-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-70D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-70D-POE"
+    ],
+    "support_end_date": "2023-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-70D-POE — End of Service Life 2023-07-15; End of Sale 2022-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800 — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800C"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800C — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800C-DC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800C-DC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800C-DC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800C-LENC"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800C-LENC — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800C-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800C-USG"
+    ],
+    "support_end_date": "2022-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800C-USG — End of Service Life 2022-01-17; End of Sale 2017-01-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800D"
+    ],
+    "support_end_date": "2028-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800D — End of Service Life 2028-04-16; End of Sale 2023-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800D-LENC"
+    ],
+    "support_end_date": "2030-06-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800D-LENC — End of Service Life 2030-06-13; End of Sale 2025-06-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800D-USG"
+    ],
+    "support_end_date": "2028-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800D-USG — End of Service Life 2028-07-15; End of Sale 2023-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-800F",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-800F"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-800F — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80C"
+    ],
+    "support_end_date": "2023-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80C — End of Service Life 2023-01-14; End of Sale 2018-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80C-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80C-G"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80C-G — End of Service Life 2022-07-16; End of Sale 2017-07-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80C-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80C-LENC"
+    ],
+    "support_end_date": "2021-06-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80C-LENC — End of Service Life 2021-06-16; End of Sale 2016-06-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80CM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80CM"
+    ],
+    "support_end_date": "2023-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80CM — End of Service Life 2023-01-14; End of Sale 2018-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80CM-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80CM-G"
+    ],
+    "support_end_date": "2022-11-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80CM-G — End of Service Life 2022-11-23; End of Sale 2017-11-23; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80D"
+    ],
+    "support_end_date": "2023-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80D — End of Service Life 2023-04-16; End of Sale 2018-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80E"
+    ],
+    "support_end_date": "2026-08-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80E — End of Service Life 2026-08-17; End of Sale 2021-08-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80E-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80E-POE"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80E-POE — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80E-POE-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80E-POE-USG"
+    ],
+    "support_end_date": "2028-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80E-POE-USG — End of Service Life 2028-01-14; End of Sale 2023-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-80E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-80E-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-80E-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-81E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-81E"
+    ],
+    "support_end_date": "2026-11-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-81E — End of Service Life 2026-11-14; End of Sale 2021-11-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-81E-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-81E-POE"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-81E-POE — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-81E-POE-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-81E-POE-USG"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-81E-POE-USG — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-81E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-81E-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-81E-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-82C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-82C"
+    ],
+    "support_end_date": "2016-07-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-82C — End of Service Life 2016-07-17; End of Sale 2011-07-17; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-900D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-900D"
+    ],
+    "support_end_date": "2028-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-900D — End of Service Life 2028-04-16; End of Sale 2023-04-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-900D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-900D-LENC"
+    ],
+    "support_end_date": "2030-06-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-900D-LENC — End of Service Life 2030-06-13; End of Sale 2025-06-13; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-900D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-900D-USG"
+    ],
+    "support_end_date": "2028-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-900D-USG — End of Service Life 2028-07-15; End of Sale 2023-07-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-90D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-90D"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-90D — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-90D-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-90D-LENC"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-90D-LENC — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-90D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-90D-POE"
+    ],
+    "support_end_date": "2025-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-90D-POE — End of Service Life 2025-04-30; End of Sale 2020-04-30; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-90D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-90D-USG"
+    ],
+    "support_end_date": "2022-11-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-90D-USG — End of Service Life 2022-11-29; End of Sale 2017-11-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-90E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-90E"
+    ],
+    "support_end_date": "2025-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-90E — End of Service Life 2025-04-15; End of Sale 2020-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-91E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-91E"
+    ],
+    "support_end_date": "2023-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-91E — End of Service Life 2023-05-29; End of Sale 2018-05-29; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-91E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-91E-USG"
+    ],
+    "support_end_date": "2025-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-91E-USG — End of Service Life 2025-01-14; End of Sale 2020-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-92D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-92D"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-92D — End of Service Life 2022-07-16; End of Sale 2017-07-16; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-94D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-94D-POE"
+    ],
+    "support_end_date": "2024-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-94D-POE — End of Service Life 2024-01-14; End of Sale 2019-01-14; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIGATE-98D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIGATE-98D-POE"
+    ],
+    "support_end_date": "2025-04-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiGate-98D-POE — End of Service Life 2025-04-15; End of Sale 2020-04-15; FortiGate firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-20C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-20C"
+    ],
+    "support_end_date": "2019-08-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-20C — End of Service Life 2019-08-16; End of Sale 2014-08-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-20C-ADSL-A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-20C-ADSL-A"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-20C-ADSL-A — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30B"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-30B — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30D"
+    ],
+    "support_end_date": "2021-11-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWifi-30D — End of Service Life 2021-11-30; End of Sale 2016-11-30; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30D-POE"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-30D-POE — End of Service Life 2022-07-16; End of Sale 2017-07-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30E"
+    ],
+    "support_end_date": "2026-10-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-30E — End of Service Life 2026-10-15; End of Sale 2021-10-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30E-3G4G-INTL",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30E-3G4G-INTL"
+    ],
+    "support_end_date": "2024-07-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-30E-3G4G-INTL — End of Service Life 2024-07-18; End of Sale 2019-07-18; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-30E-3G4G-NAM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-30E-3G4G-NAM"
+    ],
+    "support_end_date": "2023-11-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-30E-3G4G-NAM — End of Service Life 2023-11-22; End of Sale 2018-11-22; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-40C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-40C"
+    ],
+    "support_end_date": "2023-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-40C — End of Service Life 2023-04-16; End of Sale 2018-04-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-40F-3G4G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-40F-3G4G"
+    ],
+    "support_end_date": "2030-08-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-40F-3G4G — End of Service Life 2030-08-13; End of Sale 2025-08-13; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-40F-3G4G-TAA-FGDUS",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-40F-3G4G-TAA-FGDUS"
+    ],
+    "support_end_date": "2030-08-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-40F-3G4G-TAA-FGDUS — End of Service Life 2030-08-13; End of Sale 2025-08-13; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-50B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-50B"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-50B — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-50B-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-50B-G"
+    ],
+    "support_end_date": "2019-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-50B-G — End of Service Life 2019-07-09; End of Sale 2014-07-09; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-50E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-50E"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-50E — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-50E-2R",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-50E-2R"
+    ],
+    "support_end_date": "2025-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-50E-2R — End of Service Life 2025-10-14; End of Sale 2020-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-50E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-50E-USG"
+    ],
+    "support_end_date": "2026-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-50E-USG — End of Service Life 2026-04-16; End of Sale 2021-04-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-51E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-51E"
+    ],
+    "support_end_date": "2027-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-51E — End of Service Life 2027-07-15; End of Sale 2022-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-51E-LENC",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-51E-LENC"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-51E-LENC — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60"
+    ],
+    "support_end_date": "2012-07-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60 — End of Service Life 2012-07-17; End of Sale 2007-07-17; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60A"
+    ],
+    "support_end_date": "2012-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60A — End of Service Life 2012-12-31; End of Sale 2007-11-29; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60AM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60AM"
+    ],
+    "support_end_date": "2012-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60AM — End of Service Life 2012-12-31; End of Sale 2007-10-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60B"
+    ],
+    "support_end_date": "2015-10-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60B — End of Service Life 2015-10-06; End of Sale 2010-10-06; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60C",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60C"
+    ],
+    "support_end_date": "2020-01-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60C — End of Service Life 2020-01-21; End of Sale 2015-01-21; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60C-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60C-G"
+    ],
+    "support_end_date": "2022-07-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60C-G — End of Service Life 2022-07-18; End of Sale 2017-07-18; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60CM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60CM"
+    ],
+    "support_end_date": "2022-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60CM — End of Service Life 2022-05-29; End of Sale 2017-05-29; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60CM-3G4G-B",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60CM-3G4G-B"
+    ],
+    "support_end_date": "2019-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60CM-3G4G-B — End of Service Life 2019-12-31; End of Sale 2014-12-31; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60CM-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60CM-G"
+    ],
+    "support_end_date": "2022-11-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60CM-G — End of Service Life 2022-11-23; End of Sale 2017-11-23; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60CX-ADSL-A",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60CX-ADSL-A"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60CX-ADSL-A — End of Service Life 2022-07-16; End of Sale 2017-07-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60CX-ADSL-A-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60CX-ADSL-A-G"
+    ],
+    "support_end_date": "2022-07-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60CX-ADSL-A-G — End of Service Life 2022-07-16; End of Sale 2017-07-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60D"
+    ],
+    "support_end_date": "2023-05-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60D — End of Service Life 2023-05-08; End of Sale 2018-05-08; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60D-3G4G-VZW",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60D-3G4G-VZW"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60D-3G4G-VZW — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60D-3G4G-VZW-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60D-3G4G-VZW-USG"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60D-3G4G-VZW-USG — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60D-USG"
+    ],
+    "support_end_date": "2023-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60D-USG — End of Service Life 2023-05-29; End of Sale 2018-05-29; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60E"
+    ],
+    "support_end_date": "2026-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60E — End of Service Life 2026-07-15; End of Sale 2021-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60E-DSL",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60E-DSL"
+    ],
+    "support_end_date": "2028-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWifi-60E-DSL — End of Service Life 2028-05-17; End of Sale 2023-05-17; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60E-DSLJ",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60E-DSLJ"
+    ],
+    "support_end_date": "2027-05-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWifi-60E-DSLJ — End of Service Life 2027-05-02; End of Sale 2022-05-02; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-60E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-60E-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-60E-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-61E",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-61E"
+    ],
+    "support_end_date": "2026-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-61E — End of Service Life 2026-07-15; End of Sale 2021-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-61E-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-61E-USG"
+    ],
+    "support_end_date": "2027-05-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-61E-USG — End of Service Life 2027-05-30; End of Sale 2022-05-30; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-80CM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-80CM"
+    ],
+    "support_end_date": "2023-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-80CM — End of Service Life 2023-04-16; End of Sale 2018-04-16; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-80CM-G",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-80CM-G"
+    ],
+    "support_end_date": "2022-11-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-80CM-G — End of Service Life 2022-11-23; End of Sale 2017-11-23; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-81CM",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-81CM"
+    ],
+    "support_end_date": "2017-02-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-81CM — End of Service Life 2017-02-17; End of Sale 2012-02-17; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D-I",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D-I"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D-I — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D-J",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D-J"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D-J — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D-K",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D-K"
+    ],
+    "support_end_date": "2023-10-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D-K — End of Service Life 2023-10-14; End of Sale 2018-10-14; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D-POE",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D-POE"
+    ],
+    "support_end_date": "2028-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D-POE — End of Service Life 2028-07-15; End of Sale 2023-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-90D-USG",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-90D-USG"
+    ],
+    "support_end_date": "2022-11-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-90D-USG — End of Service Life 2022-11-29; End of Sale 2017-11-29; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
+  },
+  {
+    "key": "Fortinet FORTIWIFI-92D",
+    "vendor": "Fortinet",
+    "matches": [
+      "FORTIWIFI-92D"
+    ],
+    "support_end_date": "2023-07-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://docs.fortinet.com/document/fortigate/hardware-eol",
+    "note": "FortiWiFi-92D — End of Service Life 2023-07-15; End of Sale 2018-07-15; FortiWiFi firewall; Fortinet official hardware EOL. https://docs.fortinet.com/document/fortigate/hardware-eol"
   }
 ]
