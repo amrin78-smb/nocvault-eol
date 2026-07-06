@@ -97050,5 +97050,3845 @@
     "confidence": "high",
     "source": "https://www.netgear.com/about/end-of-life-products/",
     "note": "Netgear BR200-100UKS (BR200) — End of Service 2022-03-31; Last Sale 2022-03-31; Business Router; NETGEAR Enterprise Products EOL List (official). https://www.netgear.com/about/end-of-life-products/"
+  },
+  {
+    "key": "TP-Link ER7212PC",
+    "vendor": "TP-Link",
+    "matches": [
+      "ER7212PC"
+    ],
+    "support_end_date": "2026-03-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "ER7212PC (Omada Gigabit VPN Router with PoE+ Ports and Controller Ability) — End of Support 2026-03-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link ER712-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "ER712-M2"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "ER712-M2 (Omada Multi-Gigabit VPN Router) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link ER605",
+    "vendor": "TP-Link",
+    "matches": [
+      "ER605"
+    ],
+    "support_end_date": "2026-02-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "ER605 (Omada Gigabit VPN Gateway) — End of Support 2026-02-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link DS105X",
+    "vendor": "TP-Link",
+    "matches": [
+      "DS105X"
+    ],
+    "support_end_date": "2026-03-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "DS105X (Omada 5-Port 10G Multi-Gigabit Desktop Switch) — End of Support 2026-03-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link DS108G-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "DS108G-M2"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "DS108G-M2 (Omada 8-Port 2.5G Multi-Gigabit Desktop Switch) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link SL2428P",
+    "vendor": "TP-Link",
+    "matches": [
+      "SL2428P"
+    ],
+    "support_end_date": "2026-02-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "SL2428P — End of Support 2026-02-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link SG2210MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "SG2210MP"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "SG2210MP (Omada 10-Port Gigabit Smart Switch with 8-Port PoE+) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link SG3428MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "SG3428MP"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "SG3428MP (Omada 28-Port Gigabit L2+ Managed Switch with 24-Port PoE+) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link SG3452",
+    "vendor": "TP-Link",
+    "matches": [
+      "SG3452"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "SG3452 (Omada 48-Port Gigabit L2+ Managed Switch with 4 SFP Slots) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link OC200",
+    "vendor": "TP-Link",
+    "matches": [
+      "OC200"
+    ],
+    "support_end_date": "2026-02-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "OC200 (Omada Hardware Controller) — End of Support 2026-02-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link OC300",
+    "vendor": "TP-Link",
+    "matches": [
+      "OC300"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "OC300 (Omada) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link POE160S",
+    "vendor": "TP-Link",
+    "matches": [
+      "POE160S"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "POE160S (Omada) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link POE260S",
+    "vendor": "TP-Link",
+    "matches": [
+      "POE260S"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "POE260S (Omada) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link POE4824G",
+    "vendor": "TP-Link",
+    "matches": [
+      "POE4824G"
+    ],
+    "support_end_date": "2026-01-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "POE4824G (Omada) — End of Support 2026-01-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link MC230L",
+    "vendor": "TP-Link",
+    "matches": [
+      "MC230L"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "MC230L (Gigabit) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link MC420L",
+    "vendor": "TP-Link",
+    "matches": [
+      "MC420L"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "MC420L (Omada) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link MC1400",
+    "vendor": "TP-Link",
+    "matches": [
+      "MC1400"
+    ],
+    "support_end_date": "2026-02-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "MC1400 (Omada) — End of Support 2026-02-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link POE150S",
+    "vendor": "TP-Link",
+    "matches": [
+      "POE150S"
+    ],
+    "support_end_date": "2026-01-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "POE150S (Omada) — End of Support 2026-01-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link SM321A",
+    "vendor": "TP-Link",
+    "matches": [
+      "SM321A"
+    ],
+    "support_end_date": "2026-01-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "SM321A (Omada) — End of Support 2026-01-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link G36",
+    "vendor": "TP-Link",
+    "matches": [
+      "G36"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "G36 (Omada Pro Gigabit VPN Gateway) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link G36W-4G",
+    "vendor": "TP-Link",
+    "matches": [
+      "G36W-4G"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "G36W-4G (Omada Pro 4G+ Cat6 AX3000 Gigabit VPN Router) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link S5500-24F4XF",
+    "vendor": "TP-Link",
+    "matches": [
+      "S5500-24F4XF"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "S5500-24F4XF (Omada Pro 24-Port SFP L2+ Managed Switch with 4 SFP+ Slots) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link S5500-24GP4F",
+    "vendor": "TP-Link",
+    "matches": [
+      "S5500-24GP4F"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "S5500-24GP4F — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Festa FS318G",
+    "vendor": "TP-Link",
+    "matches": [
+      "Festa FS318G"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Festa FS318G (16-Port Gigabit Smart Switch with 2 SFP Slots) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Festa FS318GP",
+    "vendor": "TP-Link",
+    "matches": [
+      "Festa FS318GP"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Festa FS318GP (18-Port Gigabit Smart Switch with 16-Port PoE+) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Festa F41-Outdoor",
+    "vendor": "TP-Link",
+    "matches": [
+      "Festa F41-Outdoor"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Festa F41-Outdoor (300Mbps Wireless N Outdoor Access Point) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Festa F52",
+    "vendor": "TP-Link",
+    "matches": [
+      "Festa F52"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Festa F52 (AC1350 Wireless Dual Band Ceiling Mount Access Point) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108S-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108S-M2"
+    ],
+    "support_end_date": "2026-03-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108S-M2 (8-Port 2.5G Multi-Gigabit Desktop Switch) — End of Support 2026-03-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG105S-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG105S-M2"
+    ],
+    "support_end_date": "2026-01-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG105S-M2 (5-Port 2.5G Multi-Gigabit Desktop Switch) — End of Support 2026-01-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108E",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108E"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108E (8-Port Gigabit Easy Smart Switch) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 9 hardware versions, latest supported to 2026-02-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG608",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG608"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG608 (8-Port Gigabit Desktop Switch) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link LS1005G",
+    "vendor": "TP-Link",
+    "matches": [
+      "LS1005G"
+    ],
+    "support_end_date": "2024-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "LS1005G (5-Port Gigabit Desktop Switch) — End of Support 2024-06-21 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2026-01-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1016PE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1016PE"
+    ],
+    "support_end_date": "2021-01-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1016PE (16-Port Gigabit Easy Smart Switch with 8-Port PoE+) — End of Support 2021-01-06 (earliest of TP-Link hardware versions; 12 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1006P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1006P"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1006P (6-Port) — End of Support 2026-01-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG105PP-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG105PP-M2"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG105PP-M2 (5-Port) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108-M2"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108-M2 (8-Port) — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link T1500G-8T(TL-SG2008)",
+    "vendor": "TP-Link",
+    "matches": [
+      "T1500G-8T(TL-SG2008)"
+    ],
+    "support_end_date": "2021-03-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "T1500G-8T(TL-SG2008) (JetStream 8-Port Gigabit Smart Switch) — End of Support 2021-03-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1005D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1005D"
+    ],
+    "support_end_date": "2020-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1005D (5-Port) — End of Support 2020-01-01 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1005P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1005P"
+    ],
+    "support_end_date": "2021-05-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1005P (5-Port) — End of Support 2021-05-16 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2024-06-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1008D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1008D"
+    ],
+    "support_end_date": "2020-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1008D (8-Port) — End of Support 2020-01-01 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2020-05-15); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1008P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1008P"
+    ],
+    "support_end_date": "2022-12-20",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1008P (8-Port 10/100Mbps Desktop Switch with) — End of Support 2022-12-20 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-01-28); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1009P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1009P"
+    ],
+    "support_end_date": "2023-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1009P (9-Port 10/100Mbps Desktop Switch with) — End of Support 2023-06-21 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1016D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1016D"
+    ],
+    "support_end_date": "2021-01-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1016D (16-Port 10/100Mbps Desktop Switch) — End of Support 2021-01-06 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SF1048",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SF1048"
+    ],
+    "support_end_date": "2023-04-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SF1048 (48-Port 10/100Mbps Switch) — End of Support 2023-04-08 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1005D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1005D"
+    ],
+    "support_end_date": "2020-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1005D (5-Port Gigabit Desktop Switch) — End of Support 2020-01-01 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-08-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1005P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1005P"
+    ],
+    "support_end_date": "2022-05-10",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1005P (5-Port) — End of Support 2022-05-10 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2024-03-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1008D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1008D"
+    ],
+    "support_end_date": "2020-05-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1008D (8-Port) — End of Support 2020-05-15 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2025-03-12); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1008MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1008MP"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1008MP (8-Port) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2024-09-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1008P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1008P"
+    ],
+    "support_end_date": "2021-05-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1008P (8-Port Gigabit Desktop Switch with 4-Port PoE+) — End of Support 2021-05-16 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1016",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1016"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1016 (16-Port Gigabit Switch) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2024-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1016D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1016D"
+    ],
+    "support_end_date": "2020-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1016D (16-Port Gigabit Desktop/Rackmount Switch) — End of Support 2020-07-09 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2024-09-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1016DE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1016DE"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1016DE (16-Port Gigabit Easy Smart Switch) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2024-09-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1024",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1024"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1024 (24-Port) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 10 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1024D",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1024D"
+    ],
+    "support_end_date": "2020-07-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1024D (24-Port) — End of Support 2020-07-09 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1024DE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1024DE"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1024DE (24-Port) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1024S",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1024S"
+    ],
+    "support_end_date": "2019-07-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1024S (24-Port) — End of Support 2019-07-21 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1048",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1048"
+    ],
+    "support_end_date": "2023-08-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1048 (48-Port Gigabit Rackmount Switch) — End of Support 2023-08-15 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2026-03-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG105",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG105"
+    ],
+    "support_end_date": "2020-01-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG105 (5-Port Gigabit Desktop Switch) — End of Support 2020-01-01 (earliest of TP-Link hardware versions; 10 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG105E",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG105E"
+    ],
+    "support_end_date": "2020-10-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG105E (5-Port Gigabit Unmanaged Pro Switch) — End of Support 2020-10-30 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-12-20); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG105S",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG105S"
+    ],
+    "support_end_date": "2023-08-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG105S (5-Port Gigabit Desktop Switch) — End of Support 2023-08-15 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2024-09-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108"
+    ],
+    "support_end_date": "2020-05-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108 (8-Port) — End of Support 2020-05-15 (earliest of TP-Link hardware versions; 10 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108PE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108PE"
+    ],
+    "support_end_date": "2021-05-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108PE (8-Port) — End of Support 2021-05-16 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG108S",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG108S"
+    ],
+    "support_end_date": "2023-08-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG108S (8-Port Gigabit Desktop Switch) — End of Support 2023-08-15 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2026-02-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG116",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG116"
+    ],
+    "support_end_date": "2023-08-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG116 (16-Port Gigabit Desktop Switch) — End of Support 2023-08-15 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG116E",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG116E"
+    ],
+    "support_end_date": "2020-06-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG116E (16-Port Gigabit Unmanaged Pro Switch) — End of Support 2020-06-24 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1210MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1210MP"
+    ],
+    "support_end_date": "2023-10-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1210MP (10-Port Gigabit Desktop Switch with 8-Port PoE+) — End of Support 2023-10-31 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1210MPE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1210MPE"
+    ],
+    "support_end_date": "2023-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1210MPE (10-Port) — End of Support 2023-06-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2026-01-28); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1218MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1218MP"
+    ],
+    "support_end_date": "2023-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1218MP (18-Port) — End of Support 2023-06-21 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1218MPE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1218MPE"
+    ],
+    "support_end_date": "2021-03-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1218MPE (18-Port Gigabit Easy Smart Switch with 16-Port PoE+) — End of Support 2021-03-04 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-02-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SG1428PE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SG1428PE"
+    ],
+    "support_end_date": "2023-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SG1428PE (28-Port Gigabit Easy Smart Switch with 24-Port PoE+) — End of Support 2023-06-21 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2025-10-28); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SL1218MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SL1218MP"
+    ],
+    "support_end_date": "2021-06-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SL1218MP — End of Support 2021-06-14 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SL1218P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SL1218P"
+    ],
+    "support_end_date": "2023-03-13",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SL1218P — End of Support 2023-03-13 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-01-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SL1226P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SL1226P"
+    ],
+    "support_end_date": "2022-12-20",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SL1226P (24-Port 10/100Mbps + 2-Port Gigabit Unmanaged PoE+ Switch) — End of Support 2022-12-20 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-01-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-SL1311MP",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-SL1311MP"
+    ],
+    "support_end_date": "2023-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-SL1311MP — End of Support 2023-06-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2024-03-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link LS1008G",
+    "vendor": "TP-Link",
+    "matches": [
+      "LS1008G"
+    ],
+    "support_end_date": "2022-12-20",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "LS1008G (8-Port Gigabit Desktop Switch) — End of Support 2022-12-20 (earliest of TP-Link hardware versions; 9 hardware versions, latest supported to 2025-10-28); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link LS105G",
+    "vendor": "TP-Link",
+    "matches": [
+      "LS105G"
+    ],
+    "support_end_date": "2023-04-08",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "LS105G (5-Port Gigabit Desktop Switch) — End of Support 2023-04-08 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link LS108G",
+    "vendor": "TP-Link",
+    "matches": [
+      "LS108G"
+    ],
+    "support_end_date": "2021-12-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "LS108G (8-Port Gigabit Desktop Switch) — End of Support 2021-12-18 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PD30G-M2",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PD30G-M2"
+    ],
+    "support_end_date": "2026-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PD30G-M2 (2.5G PoE+ Splitter) — End of Support 2026-01-05 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2026-01-06); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link EAP225-Wall",
+    "vendor": "TP-Link",
+    "matches": [
+      "EAP225-Wall"
+    ],
+    "support_end_date": "2023-12-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "EAP225-Wall (AC1200) — End of Support 2023-12-16 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link CPE210",
+    "vendor": "TP-Link",
+    "matches": [
+      "CPE210"
+    ],
+    "support_end_date": "2023-08-25",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "CPE210 (2.4GHz 300Mbps 9dBi Outdoor CPE) — End of Support 2023-08-25 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2026-02-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link CPE510",
+    "vendor": "TP-Link",
+    "matches": [
+      "CPE510"
+    ],
+    "support_end_date": "2021-01-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "CPE510 (5GHz 300Mbps 13dBi Outdoor CPE) — End of Support 2021-01-06 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link CPE710",
+    "vendor": "TP-Link",
+    "matches": [
+      "CPE710"
+    ],
+    "support_end_date": "2023-08-25",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "CPE710 (5GHz 867Mbps 23dBi Outdoor CPE) — End of Support 2023-08-25 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2026-03-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX1500",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX1500"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX1500 (AX1500 Wi-Fi 6 Router) — End of Support 2024-04-23 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-12-01); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX1800",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX1800"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX1800 (AX1800 Wi-Fi 6 Router) — End of Support 2024-04-23 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-07-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer Air E5",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer Air E5"
+    ],
+    "support_end_date": "2026-03-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer Air E5 — End of Support 2026-03-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer Air R5",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer Air R5"
+    ],
+    "support_end_date": "2026-01-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer Air R5 — End of Support 2026-01-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX20",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX20"
+    ],
+    "support_end_date": "2022-06-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX20 (AX1800 Gigabit Wi-Fi Router) — End of Support 2022-06-29 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2024-05-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX21",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX21"
+    ],
+    "support_end_date": "2024-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX21 (AX1800 Wi-Fi 6 Router) — End of Support 2024-05-29 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2024-11-30); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX5400 Pro",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX5400 Pro"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX5400 Pro (AX5400 Multi-Gigabit Wi-Fi 6) — End of Support 2025-12-03 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX55 Pro",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX55 Pro"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX55 Pro — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX55",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX55"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX55 — End of Support 2025-07-23 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-08-22); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX3000",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX3000"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX3000 (AX3000 Gigabit Wi-Fi Router) — End of Support 2024-04-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX3200",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX3200"
+    ],
+    "support_end_date": "2023-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX3200 — End of Support 2023-05-17 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2024-04-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX4200",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX4200"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX4200 — End of Support 2024-04-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX4400",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX4400"
+    ],
+    "support_end_date": "2025-10-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX4400 — End of Support 2025-10-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX50",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX50"
+    ],
+    "support_end_date": "2024-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX50 — End of Support 2024-05-29 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX6000",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX6000"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX6000 — End of Support 2024-04-23 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-09-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX90",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX90"
+    ],
+    "support_end_date": "2024-12-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX90 — End of Support 2024-12-31 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A10",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A10"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A10 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2023-05-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A20",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A20"
+    ],
+    "support_end_date": "2020-12-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A20 — End of Support 2020-12-05 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2023-05-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A2300",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A2300"
+    ],
+    "support_end_date": "2019-01-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A2300 — End of Support 2019-01-18 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A54",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A54"
+    ],
+    "support_end_date": "2026-03-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A54 — End of Support 2026-03-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A5",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A5"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A5 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-12-04); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A6",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A6"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A6 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 11 hardware versions, latest supported to 2026-03-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A7",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A7"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A7 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2024-05-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A8",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A8"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A8 — End of Support 2025-07-23 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2026-01-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer A9",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer A9"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer A9 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-12-04); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C1200",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C1200"
+    ],
+    "support_end_date": "2022-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C1200 — End of Support 2022-12-04 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-12-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C1900",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C1900"
+    ],
+    "support_end_date": "2019-07-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C1900 — End of Support 2019-07-07 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2019-11-30); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C2",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C2"
+    ],
+    "support_end_date": "2018-11-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C2 — End of Support 2018-11-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C20",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C20"
+    ],
+    "support_end_date": "2020-04-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C20 (Router) — End of Support 2020-04-21 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-02-18); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C2600",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C2600"
+    ],
+    "support_end_date": "2017-11-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C2600 — End of Support 2017-11-09 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C2300",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C2300"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C2300 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2022-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C2700",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C2700"
+    ],
+    "support_end_date": "2020-12-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C2700 — End of Support 2020-12-05 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C3150",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C3150"
+    ],
+    "support_end_date": "2017-12-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C3150 — End of Support 2017-12-22 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2022-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C4000",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C4000"
+    ],
+    "support_end_date": "2020-12-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C4000 (Wi-Fi Router) — End of Support 2020-12-05 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-02-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C50",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C50"
+    ],
+    "support_end_date": "2019-07-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C50 — End of Support 2019-07-06 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2023-05-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C5400",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C5400"
+    ],
+    "support_end_date": "2022-06-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C5400 — End of Support 2022-06-29 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C59",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C59"
+    ],
+    "support_end_date": "2019-07-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C59 — End of Support 2019-07-07 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2024-05-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C7",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C7"
+    ],
+    "support_end_date": "2018-07-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C7 (Gigabit Router) — End of Support 2018-07-21 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2024-05-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C8",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C8"
+    ],
+    "support_end_date": "2019-07-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C8 (Gigabit Router) — End of Support 2019-07-07 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2019-12-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C80",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C80"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C80 (Router) — End of Support 2024-04-23 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-05-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C9",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C9"
+    ],
+    "support_end_date": "2018-06-25",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C9 — End of Support 2018-06-25 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C90",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C90"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C90 — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C900",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C900"
+    ],
+    "support_end_date": "2019-12-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C900 — End of Support 2019-12-02 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Touch P5",
+    "vendor": "TP-Link",
+    "matches": [
+      "Touch P5"
+    ],
+    "support_end_date": "2019-11-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Touch P5 — End of Support 2019-11-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AC1900",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AC1900"
+    ],
+    "support_end_date": "2024-10-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AC1900 — End of Support 2024-10-07 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-06-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C20i",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C20i"
+    ],
+    "support_end_date": "2019-06-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C20i — End of Support 2019-06-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C3200",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C3200"
+    ],
+    "support_end_date": "2021-02-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C3200 — End of Support 2021-02-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C5",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C5"
+    ],
+    "support_end_date": "2020-02-10",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C5 (Gigabit Router) — End of Support 2020-02-10 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2023-02-01); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C6",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C6"
+    ],
+    "support_end_date": "2023-04-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C6 (Gigabit Router) — End of Support 2023-04-28 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2023-06-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR940N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR940N"
+    ],
+    "support_end_date": "2020-11-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR940N (450Mbps Wireless N Router) — End of Support 2020-11-30 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2024-04-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR1043ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR1043ND"
+    ],
+    "support_end_date": "2019-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR1043ND — End of Support 2019-10-01 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR802N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR802N"
+    ],
+    "support_end_date": "2026-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR802N — End of Support 2026-03-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AX11000",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AX11000"
+    ],
+    "support_end_date": "2024-05-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AX11000 — End of Support 2024-05-29 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2026-01-18); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Gaming Router",
+    "vendor": "TP-Link",
+    "matches": [
+      "Gaming Router"
+    ],
+    "support_end_date": "2021-11-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Gaming Router — End of Support 2021-11-07 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2025-07-20); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer C5400X",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer C5400X"
+    ],
+    "support_end_date": "2022-05-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer C5400X — End of Support 2022-05-07 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2023-05-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer GX90",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer GX90"
+    ],
+    "support_end_date": "2022-10-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer GX90 — End of Support 2022-10-28 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2024-12-09); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR902AC",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR902AC"
+    ],
+    "support_end_date": "2026-01-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR902AC (AC750 Wi-Fi Travel Router) — End of Support 2026-01-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR702N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR702N"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR702N (Router) — End of Support 2021-08-11 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2023-06-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WR710N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WR710N"
+    ],
+    "support_end_date": "2019-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WR710N (Adapter/Repeater) — End of Support 2019-12-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "pack)"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "pack) (Wi-Fi 7 System) — End of Support 2025-12-03 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2026-03-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco BE75(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco BE75(2-pack)"
+    ],
+    "support_end_date": "2025-09-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco BE75(2-pack) (Wi-Fi 7 System) — End of Support 2025-09-23 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-09-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco BE16000(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco BE16000(3-pack)"
+    ],
+    "support_end_date": "2025-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco BE16000(3-pack) — End of Support 2025-05-31 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco BE63(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco BE63(1-pack)"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco BE63(1-pack) — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco BE63(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco BE63(2-pack)"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco BE63(2-pack) — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco BE63(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco BE63(3-pack)"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco BE63(3-pack) — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco W3600(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco W3600(2-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco W3600(2-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-07-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X5400 Pro(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X5400 Pro(3-pack)"
+    ],
+    "support_end_date": "2025-09-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X5400 Pro(3-pack) — End of Support 2025-09-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Wi-Fi 6 Unit with PoE",
+    "vendor": "TP-Link",
+    "matches": [
+      "Wi-Fi 6 Unit with PoE"
+    ],
+    "support_end_date": "2025-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Wi-Fi 6 Unit with PoE — End of Support 2025-12-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Home Mesh Wi-Fi 6 Unit",
+    "vendor": "TP-Link",
+    "matches": [
+      "Home Mesh Wi-Fi 6 Unit"
+    ],
+    "support_end_date": "2025-12-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Home Mesh Wi-Fi 6 Unit — End of Support 2025-12-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Wi-Fi 6 Unit",
+    "vendor": "TP-Link",
+    "matches": [
+      "Wi-Fi 6 Unit"
+    ],
+    "support_end_date": "2025-08-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Wi-Fi 6 Unit — End of Support 2025-08-22 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-12-30); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco W6000(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco W6000(2-pack)"
+    ],
+    "support_end_date": "2025-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco W6000(2-pack) — End of Support 2025-05-31 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X50-PoE(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X50-PoE(1-pack)"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X50-PoE(1-pack) — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco PX50(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco PX50(3-pack)"
+    ],
+    "support_end_date": "2025-08-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco PX50(3-pack) (Home Powerline Mesh WiFi 6) — End of Support 2025-08-22 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Wi-Fi 6 System",
+    "vendor": "TP-Link",
+    "matches": [
+      "Wi-Fi 6 System"
+    ],
+    "support_end_date": "2025-08-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Wi-Fi 6 System — End of Support 2025-08-22 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2026-03-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X20(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X20(1-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X20(1-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-12-01); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X20(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X20(2-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X20(2-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-07-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X20(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X20(3-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X20(3-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-08-22); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X25(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X25(3-pack)"
+    ],
+    "support_end_date": "2024-06-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X25(3-pack) — End of Support 2024-06-17 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco W7200(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco W7200(2-pack)"
+    ],
+    "support_end_date": "2026-03-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco W7200(2-pack) — End of Support 2026-03-29 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X3600(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X3600(3-pack)"
+    ],
+    "support_end_date": "2024-01-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X3600(3-pack) — End of Support 2024-01-09 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X5700(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X5700(2-pack)"
+    ],
+    "support_end_date": "2023-01-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X5700(2-pack) — End of Support 2023-01-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X60(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X60(2-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X60(2-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X60(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X60(3-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X60(3-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X68(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X68(2-pack)"
+    ],
+    "support_end_date": "2024-01-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X68(2-pack) — End of Support 2024-01-09 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X90(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X90(1-pack)"
+    ],
+    "support_end_date": "2024-04-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X90(1-pack) — End of Support 2024-04-17 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco XE75 Pro(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco XE75 Pro(2-pack)"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco XE75 Pro(2-pack) — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco XE75 Pro(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco XE75 Pro(3-pack)"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco XE75 Pro(3-pack) — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AXE300",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AXE300"
+    ],
+    "support_end_date": "2026-03-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AXE300 (Stream Wi-Fi 6E Router with) — End of Support 2026-03-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer AXE95",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer AXE95"
+    ],
+    "support_end_date": "2026-03-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer AXE95 — End of Support 2026-03-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Fi 6E System",
+    "vendor": "TP-Link",
+    "matches": [
+      "Fi 6E System"
+    ],
+    "support_end_date": "2025-08-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Fi 6E System — End of Support 2025-08-22 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-09-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco XE5300(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco XE5300(3-pack)"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco XE5300(3-pack) — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X90(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X90(2-pack)"
+    ],
+    "support_end_date": "2025-05-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X90(2-pack) — End of Support 2025-05-19 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X95(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X95(1-pack)"
+    ],
+    "support_end_date": "2025-08-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X95(1-pack) — End of Support 2025-08-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco X95(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco X95(2-pack)"
+    ],
+    "support_end_date": "2025-06-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco X95(2-pack) — End of Support 2025-06-16 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco E3(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco E3(2-pack)"
+    ],
+    "support_end_date": "2022-06-22",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco E3(2-pack) — End of Support 2022-06-22 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2023-01-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M3(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M3(3-pack)"
+    ],
+    "support_end_date": "2021-08-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M3(3-pack) — End of Support 2021-08-23 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2023-06-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M3W",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M3W"
+    ],
+    "support_end_date": "2021-11-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M3W — End of Support 2021-11-01 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2023-01-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M4(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M4(1-pack)"
+    ],
+    "support_end_date": "2020-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M4(1-pack) — End of Support 2020-12-03 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2023-07-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M4(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M4(3-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M4(3-pack) — End of Support 2020-12-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-08-04); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link System",
+    "vendor": "TP-Link",
+    "matches": [
+      "System"
+    ],
+    "support_end_date": "2023-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "System — End of Support 2023-07-23 (earliest of TP-Link hardware versions; 12 hardware versions, latest supported to 2026-01-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M5(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M5(1-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M5(1-pack) — End of Support 2020-12-21 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2026-03-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M5(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M5(2-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M5(2-pack) — End of Support 2020-12-21 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2025-09-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M5(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M5(3-pack)"
+    ],
+    "support_end_date": "2026-03-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M5(3-pack) — End of Support 2026-03-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco P7(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco P7(3-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco P7(3-pack) (Home Hybrid Mesh Wi-Fi) — End of Support 2020-12-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco P9(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco P9(3-pack)"
+    ],
+    "support_end_date": "2023-01-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco P9(3-pack) (Home Powerline Mesh Wi-Fi) — End of Support 2023-01-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco W2400(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco W2400(2-pack)"
+    ],
+    "support_end_date": "2023-03-15",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco W2400(2-pack) — End of Support 2023-03-15 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2026-03-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Wi-Fi Add-On",
+    "vendor": "TP-Link",
+    "matches": [
+      "Wi-Fi Add-On"
+    ],
+    "support_end_date": "2021-05-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Wi-Fi Add-On — End of Support 2021-05-01 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Home Powerline Mesh",
+    "vendor": "TP-Link",
+    "matches": [
+      "Home Powerline Mesh"
+    ],
+    "support_end_date": "2023-06-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Home Powerline Mesh — End of Support 2023-06-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M9 Plus(1-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M9 Plus(1-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M9 Plus(1-pack) — End of Support 2020-12-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-12-22); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M9 Plus(2-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M9 Plus(2-pack)"
+    ],
+    "support_end_date": "2020-12-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M9 Plus(2-pack) — End of Support 2020-12-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-03-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Deco M9 Plus(3-pack)",
+    "vendor": "TP-Link",
+    "matches": [
+      "Deco M9 Plus(3-pack)"
+    ],
+    "support_end_date": "2020-04-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Deco M9 Plus(3-pack) — End of Support 2020-04-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2024-11-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE815XE",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE815XE"
+    ],
+    "support_end_date": "2025-09-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE815XE — End of Support 2025-09-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link AC750 Wi-Fi Range Extender",
+    "vendor": "TP-Link",
+    "matches": [
+      "AC750 Wi-Fi Range Extender"
+    ],
+    "support_end_date": "2020-06-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "AC750 Wi-Fi Range Extender — End of Support 2020-06-17 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-03-25); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE750C",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE750C"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE750C — End of Support 2025-12-03 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE603X",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE603X"
+    ],
+    "support_end_date": "2024-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE603X — End of Support 2024-05-17 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2024-05-27); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE605X",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE605X"
+    ],
+    "support_end_date": "2024-05-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE605X — End of Support 2024-05-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE600X",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE600X"
+    ],
+    "support_end_date": "2023-06-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE600X — End of Support 2023-06-27 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2025-08-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE200",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE200"
+    ],
+    "support_end_date": "2019-09-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE200 (AC750 Wi-Fi Range Extender) — End of Support 2019-09-30 (earliest of TP-Link hardware versions; 11 hardware versions, latest supported to 2025-08-07); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE205",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE205"
+    ],
+    "support_end_date": "2019-11-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE205 (AC750 Wi-Fi Range Extender) — End of Support 2019-11-26 (earliest of TP-Link hardware versions; 13 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE220",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE220"
+    ],
+    "support_end_date": "2022-03-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE220 (AC750 Wi-Fi Range Extender) — End of Support 2022-03-28 (earliest of TP-Link hardware versions; 11 hardware versions, latest supported to 2026-03-26); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE230",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE230"
+    ],
+    "support_end_date": "2023-05-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE230 (AC750 Wi-Fi Range Extender) — End of Support 2023-05-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2023-11-06); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE300",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE300"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE300 — End of Support 2022-03-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE305",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE305"
+    ],
+    "support_end_date": "2020-12-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE305 — End of Support 2020-12-16 (earliest of TP-Link hardware versions; 8 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE450",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE450"
+    ],
+    "support_end_date": "2022-03-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE450 — End of Support 2022-03-28 (earliest of TP-Link hardware versions; 10 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE500X",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE500X"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE500X — End of Support 2025-12-03 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE505X",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE505X"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE505X — End of Support 2025-12-03 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE580D",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE580D"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE580D — End of Support 2019-08-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE590T",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE590T"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE590T — End of Support 2019-08-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE650",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE650"
+    ],
+    "support_end_date": "2022-05-09",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE650 — End of Support 2022-05-09 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2023-05-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE350",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE350"
+    ],
+    "support_end_date": "2023-02-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE350 — End of Support 2023-02-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE355",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE355"
+    ],
+    "support_end_date": "2019-05-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE355 — End of Support 2019-05-17 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-08-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Extender with Power Outlet",
+    "vendor": "TP-Link",
+    "matches": [
+      "Extender with Power Outlet"
+    ],
+    "support_end_date": "2022-12-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Extender with Power Outlet — End of Support 2022-12-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link RE360",
+    "vendor": "TP-Link",
+    "matches": [
+      "RE360"
+    ],
+    "support_end_date": "2023-06-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "RE360 — End of Support 2023-06-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA850RE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA850RE"
+    ],
+    "support_end_date": "2019-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA850RE — End of Support 2019-04-16 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2025-07-21); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA855RE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA855RE"
+    ],
+    "support_end_date": "2019-12-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA855RE — End of Support 2019-12-26 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2023-03-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Extender with AC",
+    "vendor": "TP-Link",
+    "matches": [
+      "Extender with AC"
+    ],
+    "support_end_date": "2019-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Extender with AC — End of Support 2019-12-04 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-02-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA860RE",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA860RE"
+    ],
+    "support_end_date": "2020-06-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA860RE — End of Support 2020-06-04 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2025-08-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA8010 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA8010 KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA8010 KIT — End of Support 2019-08-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2020-07-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA8010P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA8010P KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA8010P KIT — End of Support 2019-08-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA9020 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA9020 KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA9020 KIT — End of Support 2019-08-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA9020P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA9020P KIT"
+    ],
+    "support_end_date": "2020-11-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA9020P KIT (Passthrough Powerline) — End of Support 2020-11-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-02-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA8630 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA8630 KIT"
+    ],
+    "support_end_date": "2020-01-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA8630 KIT (Extender, AV1300 Powerline) — End of Support 2020-01-21 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-02-12); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA8631P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA8631P KIT"
+    ],
+    "support_end_date": "2026-01-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA8631P KIT — End of Support 2026-01-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA9610 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA9610 KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA9610 KIT (Extender, AV2000 Powerline) — End of Support 2019-08-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link AV1300 Gigabit Pass-",
+    "vendor": "TP-Link",
+    "matches": [
+      "AV1300 Gigabit Pass-"
+    ],
+    "support_end_date": "2019-10-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "AV1300 Gigabit Pass- — End of Support 2019-10-01 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA8030P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA8030P KIT"
+    ],
+    "support_end_date": "2020-04-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA8030P KIT — End of Support 2020-04-01 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA8630P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA8630P KIT"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA8630P KIT (through Powerline ac Wi-Fi) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA8730 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA8730 KIT"
+    ],
+    "support_end_date": "2021-06-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA8730 KIT — End of Support 2021-06-18 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA7017P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA7017P KIT"
+    ],
+    "support_end_date": "2026-02-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA7017P KIT — End of Support 2026-02-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA7010 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA7010 KIT"
+    ],
+    "support_end_date": "2020-11-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA7010 KIT — End of Support 2020-11-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-05-09); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA7010P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA7010P KIT"
+    ],
+    "support_end_date": "2018-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA7010P KIT — End of Support 2018-12-04 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-02-12); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA7020 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA7020 KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA7020 KIT — End of Support 2019-08-21 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2020-07-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA4220",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA4220"
+    ],
+    "support_end_date": "2021-08-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA4220 — End of Support 2021-08-18 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-08-09); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA4220 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA4220 KIT"
+    ],
+    "support_end_date": "2021-08-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA4220 KIT (AV600 Powerline Wi-Fi Kit) — End of Support 2021-08-18 (earliest of TP-Link hardware versions; 6 hardware versions, latest supported to 2022-12-28); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA7510 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA7510 KIT"
+    ],
+    "support_end_date": "2019-08-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA7510 KIT (Extender, AV1000 Powerline) — End of Support 2019-08-21 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-06-13); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA7517 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA7517 KIT"
+    ],
+    "support_end_date": "2022-10-25",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA7517 KIT — End of Support 2022-10-25 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2023-12-09); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA4010 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA4010 KIT"
+    ],
+    "support_end_date": "2020-08-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA4010 KIT — End of Support 2020-08-03 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-08-13); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA4010P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA4010P KIT"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA4010P KIT — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA4020P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA4020P KIT"
+    ],
+    "support_end_date": "2020-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA4020P KIT — End of Support 2020-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link AV1000 Gigabit Passthrough",
+    "vendor": "TP-Link",
+    "matches": [
+      "AV1000 Gigabit Passthrough"
+    ],
+    "support_end_date": "2018-06-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "AV1000 Gigabit Passthrough — End of Support 2018-06-04 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2019-11-18); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Passthrough Powerline",
+    "vendor": "TP-Link",
+    "matches": [
+      "Passthrough Powerline"
+    ],
+    "support_end_date": "2018-07-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Passthrough Powerline — End of Support 2018-07-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PA7020P KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PA7020P KIT"
+    ],
+    "support_end_date": "2019-01-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PA7020P KIT — End of Support 2019-01-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Extender AV500 Powerline",
+    "vendor": "TP-Link",
+    "matches": [
+      "Extender AV500 Powerline"
+    ],
+    "support_end_date": "2019-06-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Extender AV500 Powerline — End of Support 2019-06-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA4220NET",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA4220NET"
+    ],
+    "support_end_date": "2019-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA4220NET — End of Support 2019-12-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA4226 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA4226 KIT"
+    ],
+    "support_end_date": "2019-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA4226 KIT (AV600 Powerline Wi-Fi Kit) — End of Support 2019-12-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WPA4530 KIT",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WPA4530 KIT"
+    ],
+    "support_end_date": "2019-08-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WPA4530 KIT — End of Support 2019-08-16 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA3001",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA3001"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA3001 (AX3000 Gigabit Wi-Fi 6) — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA1201",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA1201"
+    ],
+    "support_end_date": "2024-04-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA1201 — End of Support 2024-04-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA801ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA801ND"
+    ],
+    "support_end_date": "2022-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA801ND (Point) — End of Support 2022-03-26 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2023-06-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA901ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA901ND"
+    ],
+    "support_end_date": "2020-10-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA901ND (Point) — End of Support 2020-10-29 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2022-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link AP300",
+    "vendor": "TP-Link",
+    "matches": [
+      "AP300"
+    ],
+    "support_end_date": "2019-06-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "AP300 (Access Point) — End of Support 2019-06-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link AP500",
+    "vendor": "TP-Link",
+    "matches": [
+      "AP500"
+    ],
+    "support_end_date": "2018-12-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "AP500 — End of Support 2018-12-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA701ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA701ND"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA701ND (Point) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WA901N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WA901N"
+    ],
+    "support_end_date": "2023-04-06",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WA901N (Point) — End of Support 2023-04-06 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2024-01-19); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T2U",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T2U"
+    ],
+    "support_end_date": "2020-02-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T2U — End of Support 2020-02-02 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2020-05-18); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T2UHP",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T2UHP"
+    ],
+    "support_end_date": "2021-01-17",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T2UHP — End of Support 2021-01-17 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T1U",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T1U"
+    ],
+    "support_end_date": "2021-05-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T1U (Adapter) — End of Support 2021-05-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T2UH",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T2UH"
+    ],
+    "support_end_date": "2020-02-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T2UH (Adapter) — End of Support 2020-02-29 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-08-04); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T4U",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T4U"
+    ],
+    "support_end_date": "2020-09-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T4U (Adapter) — End of Support 2020-09-21 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-08-11); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T4UH",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T4UH"
+    ],
+    "support_end_date": "2019-12-04",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T4UH (Adapter) — End of Support 2019-12-04 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T9UH",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T9UH"
+    ],
+    "support_end_date": "2022-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T9UH (Adapter) — End of Support 2022-06-21 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN725N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN725N"
+    ],
+    "support_end_date": "2026-01-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN725N — End of Support 2026-01-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN722N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN722N"
+    ],
+    "support_end_date": "2019-04-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN722N — End of Support 2019-04-16 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2024-04-09); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN822N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN822N"
+    ],
+    "support_end_date": "2019-09-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN822N — End of Support 2019-09-27 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-01-17); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN823N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN823N"
+    ],
+    "support_end_date": "2022-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN823N — End of Support 2022-05-31 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-06-29); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN723N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN723N"
+    ],
+    "support_end_date": "2021-07-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN723N — End of Support 2021-07-29 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN8200ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN8200ND"
+    ],
+    "support_end_date": "2021-05-24",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN8200ND — End of Support 2021-05-24 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN821N",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN821N"
+    ],
+    "support_end_date": "2019-08-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN821N — End of Support 2019-08-30 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-05-24); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE300",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE300"
+    ],
+    "support_end_date": "2020-02-02",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE300 — End of Support 2020-02-02 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-08-22); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE300C",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE300C"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE300C — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE306",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE306"
+    ],
+    "support_end_date": "2025-10-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE306 — End of Support 2025-10-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE305",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE305"
+    ],
+    "support_end_date": "2023-05-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE305 — End of Support 2023-05-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE330",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE330"
+    ],
+    "support_end_date": "2026-01-27",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE330 — End of Support 2026-01-27 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UE200",
+    "vendor": "TP-Link",
+    "matches": [
+      "UE200"
+    ],
+    "support_end_date": "2020-06-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UE200 — End of Support 2020-06-19 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T2E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T2E"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T2E — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T5E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T5E"
+    ],
+    "support_end_date": "2024-01-12",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T5E (PCIe Adapter) — End of Support 2024-01-12 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-08-05); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T6E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T6E"
+    ],
+    "support_end_date": "2020-04-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T6E (Adapter) — End of Support 2020-04-21 (earliest of TP-Link hardware versions; 5 hardware versions, latest supported to 2024-01-25); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T9E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T9E"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T9E — End of Support 2019-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TXE5100UH",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TXE5100UH"
+    ],
+    "support_end_date": "2025-12-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TXE5100UH — End of Support 2025-12-03 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TXE72E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TXE72E"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TXE72E — End of Support 2025-06-28 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-12-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TXE75E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TXE75E"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TXE75E — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TX3000E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TX3000E"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TX3000E — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TX55E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TX55E"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TX55E — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TG-3468",
+    "vendor": "TP-Link",
+    "matches": [
+      "TG-3468"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TG-3468 — End of Support 2019-08-14 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2023-05-23); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TX401",
+    "vendor": "TP-Link",
+    "matches": [
+      "TX401"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TX401 — End of Support 2025-06-28 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2025-08-22); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN881ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN881ND"
+    ],
+    "support_end_date": "2020-05-18",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN881ND (Express Adapter) — End of Support 2020-05-18 (earliest of TP-Link hardware versions; 7 hardware versions, latest supported to 2025-06-13); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T4U Plus",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T4U Plus"
+    ],
+    "support_end_date": "2025-07-23",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T4U Plus — End of Support 2025-07-23 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer T4E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer T4E"
+    ],
+    "support_end_date": "2020-09-03",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer T4E (Bluetooth PCIe Adapter) — End of Support 2020-09-03 (earliest of TP-Link hardware versions; 4 hardware versions, latest supported to 2025-06-12); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer TX50E",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer TX50E"
+    ],
+    "support_end_date": "2022-01-05",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer TX50E (5.3 PCIe Adapter) — End of Support 2022-01-05 (earliest of TP-Link hardware versions; 3 hardware versions, latest supported to 2022-10-25); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WDN4800",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WDN4800"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WDN4800 (Adapter) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-WN851ND",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-WN851ND"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-WN851ND (Adapter) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UB400",
+    "vendor": "TP-Link",
+    "matches": [
+      "UB400"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UB400 — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UB500",
+    "vendor": "TP-Link",
+    "matches": [
+      "UB500"
+    ],
+    "support_end_date": "2025-06-28",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UB500 — End of Support 2025-06-28 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UH400",
+    "vendor": "TP-Link",
+    "matches": [
+      "UH400"
+    ],
+    "support_end_date": "2025-03-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UH400 (USB 3.0 4-Port Portable Hub) — End of Support 2025-03-26 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UH700",
+    "vendor": "TP-Link",
+    "matches": [
+      "UH700"
+    ],
+    "support_end_date": "2021-01-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UH700 (USB 3.0 7-Port Hub) — End of Support 2021-01-19 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2023-11-07); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UH720",
+    "vendor": "TP-Link",
+    "matches": [
+      "UH720"
+    ],
+    "support_end_date": "2023-11-07",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UH720 — End of Support 2023-11-07 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UC430",
+    "vendor": "TP-Link",
+    "matches": [
+      "UC430"
+    ],
+    "support_end_date": "2021-01-19",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UC430 (USB-C 4-Port Portable Hub) — End of Support 2021-01-19 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UP220",
+    "vendor": "TP-Link",
+    "matches": [
+      "UP220"
+    ],
+    "support_end_date": "2019-09-16",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UP220 (20W 2 Port USB Charger) — End of Support 2019-09-16 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UP525",
+    "vendor": "TP-Link",
+    "matches": [
+      "UP525"
+    ],
+    "support_end_date": "2019-11-26",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UP525 (25W 5 Port USB Charger) — End of Support 2019-11-26 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-01-19); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link UP540",
+    "vendor": "TP-Link",
+    "matches": [
+      "UP540"
+    ],
+    "support_end_date": "2021-06-21",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "UP540 (40W 5 Port USB Charger) — End of Support 2021-06-21 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link BS1001",
+    "vendor": "TP-Link",
+    "matches": [
+      "BS1001"
+    ],
+    "support_end_date": "2020-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "BS1001 (Bluetooth Speaker) — End of Support 2020-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link CP230",
+    "vendor": "TP-Link",
+    "matches": [
+      "CP230"
+    ],
+    "support_end_date": "2019-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "CP230 — End of Support 2019-04-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link HA100",
+    "vendor": "TP-Link",
+    "matches": [
+      "HA100"
+    ],
+    "support_end_date": "2020-05-31",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "HA100 (Bluetooth Music Receiver) — End of Support 2020-05-31 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2020-08-31); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link PB50",
+    "vendor": "TP-Link",
+    "matches": [
+      "PB50"
+    ],
+    "support_end_date": "2019-11-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "PB50 (10000mAh Power Bank) — End of Support 2019-11-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-AC210",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-AC210"
+    ],
+    "support_end_date": "2018-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-AC210 — End of Support 2018-04-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-EC515EF",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-EC515EF"
+    ],
+    "support_end_date": "2018-04-30",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-EC515EF — End of Support 2018-04-30 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-PS110P",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-PS110P"
+    ],
+    "support_end_date": "2021-02-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-PS110P — End of Support 2021-02-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer CR500",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer CR500"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer CR500 (DOCSIS 3.0 Cable Modem) — End of Support 2019-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link Archer CR700",
+    "vendor": "TP-Link",
+    "matches": [
+      "Archer CR700"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "Archer CR700 (DOCSIS 3.0 Cable Modem) — End of Support 2019-08-14 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-11-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link CR1900",
+    "vendor": "TP-Link",
+    "matches": [
+      "CR1900"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "CR1900 (DOCSIS 3.0 Cable Modem) — End of Support 2019-08-14 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2019-10-01); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TC-W7960",
+    "vendor": "TP-Link",
+    "matches": [
+      "TC-W7960"
+    ],
+    "support_end_date": "2019-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TC-W7960 (DOCSIS 3.0 Cable Modem) — End of Support 2019-08-14 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2021-11-03); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link DOCSIS 3.0 Cable Modem",
+    "vendor": "TP-Link",
+    "matches": [
+      "DOCSIS 3.0 Cable Modem"
+    ],
+    "support_end_date": "2020-04-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "DOCSIS 3.0 Cable Modem — End of Support 2020-04-01 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TC-7610",
+    "vendor": "TP-Link",
+    "matches": [
+      "TC-7610"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TC-7610 (DOCSIS 30Cable Modem) — End of Support 2021-08-11 (earliest of TP-Link hardware versions; 2 hardware versions, latest supported to 2023-07-06); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TC-7620",
+    "vendor": "TP-Link",
+    "matches": [
+      "TC-7620"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TC-7620 (Modem) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TC7650",
+    "vendor": "TP-Link",
+    "matches": [
+      "TC7650"
+    ],
+    "support_end_date": "2019-02-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TC7650 (Cable Modem) — End of Support 2019-02-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TGR1900BLK",
+    "vendor": "TP-Link",
+    "matches": [
+      "TGR1900BLK"
+    ],
+    "support_end_date": "2021-08-11",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TGR1900BLK (On Hub) — End of Support 2021-08-11 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TGR1900BLU",
+    "vendor": "TP-Link",
+    "matches": [
+      "TGR1900BLU"
+    ],
+    "support_end_date": "2021-09-29",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TGR1900BLU (On Hub) — End of Support 2021-09-29 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "TP-Link TL-R860",
+    "vendor": "TP-Link",
+    "matches": [
+      "TL-R860"
+    ],
+    "support_end_date": "2020-08-14",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.tp-link.com/us/support/end-of-life/",
+    "note": "TL-R860 (Cable/DSL Router) — End of Support 2020-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
   }
 ]
