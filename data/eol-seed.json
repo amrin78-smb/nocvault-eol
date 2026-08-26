@@ -100890,5 +100890,82 @@
     "confidence": "high",
     "source": "https://www.tp-link.com/us/support/end-of-life/",
     "note": "TL-R860 (Cable/DSL Router) — End of Support 2020-08-14 (earliest of TP-Link hardware versions); TP-Link official US EOL list. https://www.tp-link.com/us/support/end-of-life/"
+  },
+  {
+    "key": "Netgear GS110TP-300INS",
+    "vendor": "Netgear",
+    "matches": [
+      "GS110TP-300INS"
+    ],
+    "support_end_date": "2021-05-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2021-05-01; Smart Managed Pro Switch (GS110TP family, -300 revision). NETGEAR official EOL Product List (5Aug2021)."
+  },
+  {
+    "key": "Netgear GS116PP-100PRS",
+    "vendor": "Netgear",
+    "matches": [
+      "GS116PP-100PRS",
+      "GS116PP"
+    ],
+    "support_end_date": "2021-03-01",
+    "os_eol_date": null,
+    "confidence": "high",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2021-03-01; PoE+ Unmanaged Switch. NETGEAR official EOL Product List (5Aug2021)."
+  },
+  {
+    "key": "NETGEAR UTM10",
+    "vendor": "Netgear",
+    "matches": [
+      "Netgear UTM10",
+      "UTM10"
+    ],
+    "support_end_date": "2013-04-10",
+    "os_eol_date": null,
+    "confidence": "medium",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2013-04-10; ProSecure UTM firewall — family row, both listed SKUs (UTM10EW-100EUS/-100NAS) share this date. NETGEAR official EOL Product List (5Aug2021)."
+  },
+  {
+    "key": "NETGEAR UTM9S",
+    "vendor": "Netgear",
+    "matches": [
+      "Netgear UTM9S",
+      "UTM9S"
+    ],
+    "support_end_date": "2014-01-24",
+    "os_eol_date": null,
+    "confidence": "medium",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2014-01-24; ProSecure UTM firewall — family row, from the single listed SKU (UTM9EWDA-100E1S). NETGEAR official EOL Product List (5Aug2021)."
+  },
+  {
+    "key": "NETGEAR GS728TPS",
+    "vendor": "Netgear",
+    "matches": [
+      "Netgear GS728TPS",
+      "GS728TPS"
+    ],
+    "support_end_date": "2015-03-29",
+    "os_eol_date": null,
+    "confidence": "medium",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2015-03-29; Smart Managed Pro Switch — family row, all three listed SKUs (GS728TPSB-100AJS/-100EUS/-100NAS) share this date. NETGEAR official EOL Product List (5Aug2021)."
+  },
+  {
+    "key": "NETGEAR GS752TPS",
+    "vendor": "Netgear",
+    "matches": [
+      "Netgear GS752TPS",
+      "GS752TPS"
+    ],
+    "support_end_date": "2015-09-06",
+    "os_eol_date": null,
+    "confidence": "medium",
+    "source": "https://www.netgear.com/about/end-of-life-products/",
+    "note": "EOL date 2015-09-06; Smart Managed Pro Switch — family row, from the single listed SKU (GS752TPSB-100AJS). NETGEAR official EOL Product List (5Aug2021)."
   }
 ]
