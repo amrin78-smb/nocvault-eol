@@ -1127,11 +1127,11 @@
     "matches": [
       "AIR-CAP2602E-E-K9"
     ],
-    "support_end_date": "2022-09-30",
+    "support_end_date": "2021-12-31",
     "os_eol_date": null,
     "confidence": "high",
-    "source": null,
-    "note": "Cisco Aironet 2600 series — Last Date of Support 2022-09-30 (Cisco EoL bulletin). os_eol_date deliberately null: the bulletin publishes ONE date (LDoS) and it was previously duplicated into os_eol_date, which made consumers report a software/OS end-of-life that no source states. Only populate os_eol_date when a vendor publishes a software EOL distinct from hardware support-end."
+    "source": "https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-2600-series/eos-eol-notice-c51-737512.html",
+    "note": "Cisco Aironet 2600 Series (EOL11045 / c51-737512). Milestones as published: EoL announced 2016-06-30, End-of-Sale 2016-12-29, End of SW Maintenance / Routine Failure Analysis / New Service Attachment 2017-12-29, End of Service Contract Renewal 2021-03-26, Last Date of Support 2021-12-31. CORRECTED 2026-08: this entry previously carried support_end_date 2022-09-30 with NO source; that date appears nowhere in the bulletin and contradicted the sourced series entry. It won anyway because it matches the full SKU exactly while the series entry matches the shorter PID. os_eol_date stays null - the bulletin publishes no software EOL distinct from hardware support-end."
   },
   {
     "key": "Cisco AIR-CT2504-K9",
