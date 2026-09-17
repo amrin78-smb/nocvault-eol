@@ -33,6 +33,12 @@ type Status = {
 
 const MAX_STEPS = 200;          // hard stop: ~32 targets × a few pages each
 const MAX_CONSECUTIVE_FAILS = 5; // stop sweeping if NVD is simply refusing
+// ⛔ Its own budget, separate from MAX_STEPS. A throttled call does not consume
+// a step (nothing was done), so without this the loop is unbounded — and it
+// would wait ~6s per iteration rather than spinning hot, which is exactly what
+// would stop anyone noticing. 400 x ~6.2s is generously past a full unkeyed
+// sweep, so hitting it means the window genuinely is not advancing.
+const MAX_THROTTLE_WAITS = 400;
 
 export default function CveActions() {
   const [status, setStatus] = useState<Status | null>(null);
@@ -57,6 +63,7 @@ export default function CveActions() {
     setMsg(null);
     let steps = 0;
     let fails = 0;
+    let throttleWaits = 0;
     let inserted = 0;
     let updated = 0;
     try {
@@ -64,6 +71,31 @@ export default function CveActions() {
         const r = await fetch('/api/admin/ingest-cve', { method: 'POST' });
         const d = await r.json();
         if (!r.ok) throw new Error(d.error || `HTTP ${r.status}`);
+
+        // ⛔ HONOUR THE SERVER'S THROTTLE. It refused to call NVD because the
+        // rate-limit window has not elapsed; hammering through that earns 403s
+        // from NVD that look like an outage. The step is not counted, because
+        // nothing was done.
+        if (d.throttled) {
+          const waitMs = Math.max(250, Math.min(30000, d.waitMs || 1000));
+          setProgress(`rate limit — waiting ${(waitMs / 1000).toFixed(1)}s (${d.targetsRemaining} target(s) left)`);
+          await new Promise((res) => setTimeout(res, waitMs));
+          // ⛔ A refused call is not progress, so it does not consume a step —
+          // but it MUST consume something, or the loop is unbounded. `steps--`
+          // exactly cancels the `steps++` in the for-header, so without this
+          // separate budget a server that always throttles would sweep for
+          // ever. It would not spin hot (it waits ~6s each time), which is
+          // precisely what would make it hard to notice.
+          throttleWaits++;
+          if (throttleWaits > MAX_THROTTLE_WAITS) {
+            throw new Error(
+              `still rate-limited after ${MAX_THROTTLE_WAITS} waits — stopping. `
+              + 'Another sweep may be running, or the window is not advancing.'
+            );
+          }
+          steps--;
+          continue;
+        }
 
         inserted += d.inserted || 0;
         updated += d.updated || 0;
@@ -143,9 +175,11 @@ export default function CveActions() {
               {status.byVendor.map((v) => `${v.vendor} ${v.advisories}`).join(' · ')}
             </div>
           )}
-          {/* ⛔ The API key is the single biggest reason to centralise: it takes
-              NVD from one request per six seconds to five per thirty. Without it
-              a full sweep is ~192s of pure waiting. Say so where it is actioned. */}
+          {/* ⛔ The API key is the single biggest reason to centralise: NVD
+              allows 5 requests per rolling 30s without one and 50 with — a 10x
+              difference, not the 2x an earlier draft of this comment implied.
+              Unkeyed, a full sweep is ~200s of pure waiting. Say so where it is
+              actioned, not only in a config file nobody opens. */}
           {!status.hasApiKey && (
             <div style={{ color: '#b54708' }}>
               No NVD_API_KEY set — rate limited to one request per {Math.round(status.rateLimitMs / 1000)}s.

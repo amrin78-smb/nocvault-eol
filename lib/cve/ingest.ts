@@ -64,6 +64,9 @@ export type IngestStepResult = {
   moreForThisTarget: boolean;
   targetsRemaining: number;
   error?: string;
+  /** Set when the call was refused to respect NVD's rate limit. Wait this long. */
+  throttled?: boolean;
+  waitMs?: number;
 };
 
 /** Make sure every (vendor, cpe) pair has a state row. Idempotent. */
@@ -250,8 +253,32 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
   };
   if (!target) return base;
 
+  // ⛔ THE RATE LIMIT IS ENFORCED HERE, ON THE SERVER, AND THAT IS DELIBERATE.
+  //
+  // An earlier version of this file computed rateLimitMs() and never applied it
+  // — a guard that cannot fire, which reads as handled in every review. Pacing
+  // in the CLIENT alone would be worse than nothing: a cron, a retry and a
+  // second browser tab would each pace themselves correctly and together sail
+  // straight past the limit, and NVD answers that with 403s that look like an
+  // outage rather than like our own fault.
+  //
+  // The clock is max(last_attempt_at) across ALL targets, because NVD rate
+  // limits the CALLER, not the query.
+  const gap = rateLimitMs();
+  const lastRow = await rawQuery<{ ms: string | null }>(
+    'SELECT EXTRACT(EPOCH FROM (NOW() - MAX(last_attempt_at))) * 1000 AS ms FROM cve_ingest_state'
+  );
+  const sinceLast = lastRow.rows[0]?.ms;
+  if (sinceLast !== null && sinceLast !== undefined && Number(sinceLast) < gap) {
+    const waitMs = Math.ceil(gap - Number(sinceLast));
+    // ⛔ Returns WITHOUT marking an attempt. Stamping last_attempt_at on a call
+    // that never reached NVD would push the window forward every time, so a
+    // caller polling faster than the limit would starve itself for ever.
+    return { ...base, throttled: true, waitMs };
+  }
+
   const prefixes = cpePrefixes(VENDOR_CPES[target.vendor] || []);
-  await rawQuery(`UPDATE cve_ingest_state SET last_attempt_at = NOW() WHERE id = $1`, [target.id]);
+  await rawQuery('UPDATE cve_ingest_state SET last_attempt_at = NOW() WHERE id = $1', [target.id]);
 
   try {
     const data = await fetchNvdPage(target.cpe_string, target.next_start_index);
