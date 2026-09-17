@@ -28,8 +28,28 @@ import {
 import { VENDOR_CPES } from './vendor-cpes';
 
 const NVD_BASE = 'https://services.nvd.nist.gov/rest/json/cves/2.0';
-const RESULTS_PER_PAGE = 2000;
-const FETCH_TIMEOUT_MS = 20000;
+// ⛔ 200, NOT NVD'S MAXIMUM OF 2000. The page size is an INVOCATION BUDGET
+// here, not a throughput knob: every record in a page is upserted inside the
+// same function call, so a 2000-record page asks one 10s Netlify invocation to
+// do 2000 sequential round-trips to Neon. Measured 2026-09-17, the largest
+// targets are fortios (279 records, 1,748 KB) and pan-os (238, 2,324 KB) — so
+// 200 costs at most two pages for the worst target and the state machine
+// already resumes across pages.
+const RESULTS_PER_PAGE = 200;
+// ⛔ A 20s FETCH TIMEOUT INSIDE A 10s INVOCATION IS A GUARD THAT CANNOT FIRE.
+// It was 20000, so Netlify killed the function at 10s and the timeout never
+// ran. A killed invocation never reaches the catch below, so consecutive_failures
+// was never incremented and last_error was never written — the target looked
+// untouched, the browser reported a bare "Failed to fetch", and nothing anywhere
+// recorded a reason. That is this codebase's failed-read-as-a-fact rule applied
+// to its own error path: the failure was real and left no evidence.
+//
+// Every bound below is now derived from ONE deadline, so the invocation always
+// returns a response rather than dying.
+const HARD_DEADLINE_MS = 8500;   // must stay under Netlify's 10s synchronous budget
+const WRITE_RESERVE_MS = 2500;   // kept back for the upserts after the fetch
+const FINALISE_RESERVE_MS = 800; // kept back for the progress UPDATE and the response
+const MIN_FETCH_MS = 2000;       // never abort a fetch before it has a fair chance
 
 /**
  * ⛔ NVD's PUBLISHED RATE LIMITS, and the API key is the single biggest reason
@@ -111,7 +131,11 @@ async function nextTarget(): Promise<{
   return r.rows[0] ?? null;
 }
 
-async function fetchNvdPage(cpeString: string, startIndex: number): Promise<any> {
+async function fetchNvdPage(
+  cpeString: string,
+  startIndex: number,
+  budgetMs: number
+): Promise<any> {
   const url =
     `${NVD_BASE}?virtualMatchString=${encodeURIComponent(cpeString)}`
     + `&resultsPerPage=${RESULTS_PER_PAGE}&startIndex=${startIndex}`;
@@ -123,9 +147,24 @@ async function fetchNvdPage(cpeString: string, startIndex: number): Promise<any>
   if (apiKey) headers.apiKey = apiKey;
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), budgetMs);
   try {
-    const res = await fetch(url, { headers, signal: controller.signal });
+    let res: Response;
+    try {
+      res = await fetch(url, { headers, signal: controller.signal });
+    } catch (err: any) {
+      // ⛔ NAME THE ABORT. Left as a bare AbortError this reads as an NVD
+      // outage, when it is our own deadline doing exactly its job.
+      if (err?.name === 'AbortError') {
+        throw new Error(
+          `NVD did not respond within ${budgetMs}ms, the time this invocation could `
+          + 'give it. NVD latency on identical requests has been measured between '
+          + '1.5s and 14.4s, so this is expected occasionally — the target keeps its '
+          + 'progress and the next sweep resumes it.'
+        );
+      }
+      throw err;
+    }
     if (!res.ok) {
       // ⛔ NVD ANSWERS A BAD API KEY WITH 404 AND AN EMPTY BODY — not 401, not
       // 403, and with nothing in the response naming the key. Proved by
@@ -260,6 +299,13 @@ async function upsertAdvisory(
  */
 export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestStepResult> {
   const startedAt = Date.now();
+  // ⛔ ONE DEADLINE GOVERNS THE WHOLE INVOCATION. Previously `startedAt` was
+  // stamped here and then compared against budgetMs only INSIDE the upsert
+  // loop — so the schema check, the target query, the rate-limit query and the
+  // NVD fetch all spent the budget before the first comparison ran. On a slow
+  // fetch the budget was already gone, and on the largest targets the whole
+  // invocation was killed before it could write anything at all.
+  const deadlineAt = startedAt + Math.min(HARD_DEADLINE_MS, Math.max(2000, budgetMs + 1500));
   await ensureCveSchema();
   await ensureTargets();
 
@@ -312,7 +358,9 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
   await rawQuery('UPDATE cve_ingest_state SET last_attempt_at = NOW() WHERE id = $1', [target.id]);
 
   try {
-    const data = await fetchNvdPage(target.cpe_string, target.next_start_index);
+    // Whatever is left after the work already done, minus what the writes need.
+    const fetchBudget = Math.max(MIN_FETCH_MS, deadlineAt - Date.now() - WRITE_RESERVE_MS);
+    const data = await fetchNvdPage(target.cpe_string, target.next_start_index, fetchBudget);
     const vulns = data.vulnerabilities || [];
     const totalResults = typeof data.totalResults === 'number' ? data.totalResults : null;
 
@@ -324,9 +372,13 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
       else base.skippedOtherProduct++;
       base.fetched++;
 
-      // ⛔ Stop writing before the invocation is killed. Progress recorded below
-      // is what the next invocation resumes from.
-      if (Date.now() - startedAt > budgetMs) break;
+      // ⛔ Stop writing before the invocation is killed, leaving room for the
+      // progress UPDATE below and for the response itself. Progress recorded
+      // below is what the next invocation resumes from. ⛔ Measured against the
+      // SHARED deadline, not against time-since-start compared to a separate
+      // budget — the two drifted apart and the old form could already be
+      // exceeded before the first record was written.
+      if (Date.now() > deadlineAt - FINALISE_RESERVE_MS) break;
     }
 
     const consumed = target.next_start_index + base.fetched;
@@ -442,13 +494,27 @@ export async function probeApiKey(): Promise<{
     + encodeURIComponent('cpe:2.3:a:forcepoint:next_generation_firewall:*:*:*:*:*:*:*:*')
     + '&resultsPerPage=1';
 
+  // ⛔ THE PROBE MUST FIT IN THE SAME 10s INVOCATION IT IS DIAGNOSING. Its
+  // first draft made two requests with a 6.5s sleep between them — 6.5s of
+  // sleep plus two unbounded fetches — so the Netlify function was killed and
+  // the button returned the bare "Failed to fetch" it exists to explain. A
+  // diagnostic that fails in the same way as the fault it diagnoses is worse
+  // than none: it produces a second mystery on top of the first.
+  const PROBE_FETCH_MS = 3000;
+  // Enough to clear NVD's keyed window (~0.7s) without spending the budget. The
+  // unkeyed control is one request, which no rolling window can refuse.
+  const PROBE_GAP_MS = 1200;
+
   async function once(headers: Record<string, string>) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    const timer = setTimeout(() => controller.abort(), PROBE_FETCH_MS);
     try {
       const res = await fetch(url, { headers, signal: controller.signal });
       return { status: res.status, error: null as string | null };
-    } catch (err) {
+    } catch (err: any) {
+      if (err?.name === 'AbortError') {
+        return { status: null, error: `no response within ${PROBE_FETCH_MS}ms` };
+      }
       return { status: null, error: err instanceof Error ? err.message : 'request failed' };
     } finally {
       clearTimeout(timer);
@@ -456,9 +522,7 @@ export async function probeApiKey(): Promise<{
   }
 
   const keyed = apiKey ? await once({ apiKey }) : { status: null, error: 'no key configured' };
-  // ⛔ Spaced past the unkeyed rate limit, or the control request fails for a
-  // reason that has nothing to do with the key and reads as though it does.
-  await new Promise((r) => setTimeout(r, 6500));
+  await new Promise((r) => setTimeout(r, PROBE_GAP_MS));
   const unkeyed = await once({});
 
   let verdict: string;

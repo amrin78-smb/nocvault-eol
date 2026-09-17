@@ -68,9 +68,34 @@ export default function CveActions() {
     let updated = 0;
     try {
       for (; steps < MAX_STEPS; steps++) {
-        const r = await fetch('/api/admin/ingest-cve', { method: 'POST' });
-        const d = await r.json();
-        if (!r.ok) throw new Error(d.error || `HTTP ${r.status}`);
+        // ⛔ A TRANSPORT FAILURE IS A STEP FAILURE, NOT THE END OF THE SWEEP.
+        // `fetch` REJECTS (rather than resolving non-ok) when the server never
+        // answers — which is what a killed serverless invocation looks like
+        // from here, reported as a bare "Failed to fetch". Letting that throw
+        // out of the loop ended the whole sweep on one bad target, and because
+        // the server died before its own catch, nothing was recorded anywhere
+        // either. It now counts against MAX_CONSECUTIVE_FAILS like any other
+        // failure, so one unreachable target costs a step, not the run.
+        let d: any;
+        try {
+          const r = await fetch('/api/admin/ingest-cve', { method: 'POST' });
+          d = await r.json();
+          if (!r.ok) throw new Error(d?.error || `HTTP ${r.status}`);
+        } catch (err) {
+          fails++;
+          const why = err instanceof Error ? err.message : 'request failed';
+          setProgress(`step failed (${why}) — continuing`);
+          if (fails >= MAX_CONSECUTIVE_FAILS) {
+            throw new Error(
+              `${fails} consecutive failures — stopping. Last: ${why}. `
+              + 'A "Failed to fetch" here means the server never answered, so the '
+              + 'step was not recorded server-side either.'
+            );
+          }
+          // Give a struggling backend a moment rather than retrying instantly.
+          await new Promise((res) => setTimeout(res, 1500));
+          continue;
+        }
 
         // ⛔ HONOUR THE SERVER'S THROTTLE. It refused to call NVD because the
         // rate-limit window has not elapsed; hammering through that earns 403s
@@ -115,6 +140,12 @@ export default function CveActions() {
             + `${d.fetched} records, ${d.targetsRemaining} target(s) left`
           );
         }
+
+        // ⛔ REFRESH THE COUNTERS MID-SWEEP. They used to update only on mount
+        // and in the finally block, so for the length of a long run the panel
+        // showed the PRE-SWEEP totals directly above a live progress line —
+        // which reads as "it is storing nothing" while it is working fine.
+        if (steps > 0 && steps % 10 === 0) refresh();
 
         if (d.targetsRemaining === 0 && !d.moreForThisTarget) break;
       }
