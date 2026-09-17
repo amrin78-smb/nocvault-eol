@@ -424,6 +424,7 @@ export async function ingestStatus(): Promise<{
   byVendor: Array<{ vendor: string; advisories: number }>;
   rateLimitMs: number;
   hasApiKey: boolean;
+  build: string;
 }> {
   await ensureCveSchema();
   await ensureTargets();
@@ -448,6 +449,14 @@ export async function ingestStatus(): Promise<{
     byVendor: v.rows,
     rateLimitMs: rateLimitMs(),
     hasApiKey: !!process.env.NVD_API_KEY,
+    // ⛔ WHICH BUILD IS ACTUALLY SERVING THIS. Netlify bakes env vars in at
+    // BUILD time, so "I pushed a fix" and "the fix is running" are different
+    // facts — and this session spent three separate rounds guessing at the gap
+    // between them, because nothing the site serves publicly identifies a
+    // deploy. COMMIT_REF is set by Netlify's build; locally it is absent.
+    // Reading a symptom to infer a deploy is the same mistake as reading the
+    // Netlify dashboard to infer what key the function holds.
+    build: (process.env.COMMIT_REF || 'local').slice(0, 7),
   };
 }
 

@@ -29,6 +29,7 @@ type Status = {
   byVendor: Array<{ vendor: string; advisories: number }>;
   rateLimitMs: number;
   hasApiKey: boolean;
+  build: string;
 };
 
 const MAX_STEPS = 200;          // hard stop: ~32 targets × a few pages each
@@ -232,6 +233,9 @@ export default function CveActions() {
             <strong>{status.advisories.toLocaleString()}</strong> advisories ·{' '}
             {status.targets} targets · {status.neverRun} never run · {status.staleOver24h} stale
             {status.failing > 0 && <> · <span style={{ color: '#b42318' }}>{status.failing} failing</span></>}
+          </div>
+          <div style={{ opacity: 0.55, fontSize: '0.78rem' }}>
+            build {status.build}
           </div>
           {status.byVendor.length > 0 && (
             <div style={{ opacity: 0.75 }}>
