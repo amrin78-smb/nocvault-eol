@@ -115,15 +115,46 @@ async function fetchNvdPage(cpeString: string, startIndex: number): Promise<any>
   const url =
     `${NVD_BASE}?virtualMatchString=${encodeURIComponent(cpeString)}`
     + `&resultsPerPage=${RESULTS_PER_PAGE}&startIndex=${startIndex}`;
+  // ⛔ TRIMMED. A key pasted into a Netlify env field with a trailing space or
+  // surrounding quotes is sent verbatim, NVD rejects it, and the failure looks
+  // nothing like a formatting problem (see the 404 note below).
+  const apiKey = (process.env.NVD_API_KEY || '').trim().replace(/^["']|["']$/g, '');
   const headers: Record<string, string> = {};
-  if (process.env.NVD_API_KEY) headers.apiKey = process.env.NVD_API_KEY;
+  if (apiKey) headers.apiKey = apiKey;
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
     const res = await fetch(url, { headers, signal: controller.signal });
     if (!res.ok) {
-      const err: any = new Error(`NVD responded HTTP ${res.status}`);
+      // ⛔ NVD ANSWERS A BAD API KEY WITH 404 AND AN EMPTY BODY — not 401, not
+      // 403, and with nothing in the response naming the key. Proved by
+      // experiment 2026-09-17: the identical request returns 200 with no key and
+      // 404 the moment a bogus `apiKey` header is added.
+      //
+      // That is the most confusing failure this integration can produce: every
+      // target 404s, it reads exactly like "NVD is down" or "that product does
+      // not exist", and the real cause is a key that was never activated or was
+      // pasted with a stray quote. So the diagnosis is spelled out here rather
+      // than left to whoever next sees a wall of 404s.
+      //
+      // ⛔ It also proves the HEADER NAME is right: if NVD were ignoring
+      // `apiKey` the request would have succeeded unkeyed.
+      let message = `NVD responded HTTP ${res.status}`;
+      if (res.status === 404 && apiKey) {
+        message =
+          'NVD responded HTTP 404, which is what it returns for an INVALID API KEY '
+          + '(it does not use 401 or 403). The request itself is fine — the same call '
+          + 'succeeds with no key at all. Check NVD_API_KEY: it must be activated via the '
+          + 'single-use link NIST emails, and must carry no quotes or trailing spaces. '
+          + 'Clearing NVD_API_KEY entirely also works, just nine times slower.';
+      } else if (res.status === 404) {
+        message =
+          'NVD responded HTTP 404 with no API key set — the request URL is likely malformed.';
+      } else if (res.status === 403 || res.status === 429) {
+        message = `NVD responded HTTP ${res.status} — rate limited. The sweep will retry this target.`;
+      }
+      const err: any = new Error(message);
       err.status = res.status;
       throw err;
     }
