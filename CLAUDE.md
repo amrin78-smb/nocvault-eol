@@ -100,6 +100,45 @@ Netgear, TP-Link, Check Point, Grandstream, D-Link, Ubiquiti, Allied Telesis, Hu
 - **Monthly auto-publish:** `netlify/functions/scheduled-publish.mjs` (cron `0 6 1 * *`
   → POSTs the publish route with `CRON_SECRET`).
 
+## CVE feed (Phase 1 — ingestion only, 2026-09-17)
+
+A SECOND corpus alongside EOL: NVD advisories for the firewall vendors SecVault
+manages. **Ingestion only so far — nothing is published and there is no public route yet.**
+
+- `lib/cve/vendor-cpes.ts` — 32 CPE strings, each probed against live NVD with its
+  `totalResults` recorded. ⛔ The vendor-level wildcard (`cpe:2.3:a:checkpoint`) was tested,
+  works, returns 129 more CVEs that are ZoneAlarm/Harmony/SmartConsole, and is **refused** —
+  filing an endpoint-agent CVE against a firewall from a CENTRAL feed does it to every customer
+  at once. Do not "simplify" the list into a wildcard.
+- `lib/cve/extract.ts` — ⛔ **ported VERBATIM from SecVault's lib/feeds/nvd.js**, not re-derived.
+  Verified against 243 real NVD records: **zero divergence** in affected ranges, fixed versions and
+  matchability. It already contains three hard-won fixes — a wildcard `10.0.*` must expand to a
+  bounded branch range (not collapse to one point), a `vulnerable:true` entry with no range fields
+  must pin to its own version (not become unbounded), and `versionEndExcluding` must not be
+  confused with `versionEndIncluding` (which marks PATCHED devices vulnerable).
+- `lib/cve/schema.ts` — ⛔ **its own gate, separate from runInit()'s.** Widening the EOL fast-path
+  check would make the next request after deploy re-run ~25 EOL DDL/seed statements (~9s measured)
+  on a live service, to create tables unrelated to EOL. This checks only for the CVE tables.
+- `lib/cve/ingest.ts` — ⛔ **a state machine, not a job.** NVD is one request per six seconds
+  without a key and there are 32 targets: ~192s minimum against a 10s function budget. Each call
+  works the least-recently-attempted target within a time budget and records where it got to, so a
+  cut-off run RESUMES. `ORDER BY … last_attempt_at ASC NULLS FIRST` is load-bearing: Postgres puts
+  NULLs last by default, which would park every never-run target behind every already-run one.
+- `app/api/admin/ingest-cve` + `components/CveActions.tsx` — session or `x-cron-secret`, same
+  shape as publish-feed. The button loops until the sweep reports nothing left.
+
+⛔ **Set `NVD_API_KEY` in Netlify env.** It takes NVD from 1 req/6s to 5 req/30s — roughly nine
+times faster — and being able to hold ONE key for every customer is a large part of why a central
+feed is worth building.
+
+⛔ **NO DEVICE DATA EVER REACHES THIS SERVICE**, exactly as for EOL: consumers pull the corpus and
+match locally. This repo already deleted a live query API once because it "leaked device data".
+
+⛔ **`cve_advisories` is keyed `(cve_id, vendor)`, NOT `cve_id`.** SecVault made it unique on
+`cve_id` with a single vendor, and the consequence is in its own CLAUDE.md: a CVE affecting two
+vendors stays with whichever feed ingested it first, permanently. This is the one place that is
+still fixable.
+
 ## Signing keys
 - **Ed25519.** Generate with `npm run gen:keys` (native `node scripts/gen-keys.ts`).
 - **Private key** → `FEED_SIGNING_KEY` (Netlify env, base64 pkcs8). **Never commit.**

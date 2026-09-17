@@ -1,5 +1,6 @@
 import AppLayout from '@/components/AppLayout';
 import AdminActions from '@/components/AdminActions';
+import CveActions from '@/components/CveActions';
 import { query } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -71,6 +72,9 @@ export default async function DashboardPage() {
         </div>
       </div>
       <AdminActions />
+      {/* Separate panel, separate tables, separate feed — the CVE corpus shares
+          nothing with the EOL catalogue above it. */}
+      <CveActions />
     </AppLayout>
   );
 }
