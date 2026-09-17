@@ -20,88 +20,103 @@
 
 import { rawQuery } from '../db';
 
-const CVE_SCHEMA_SQL = `
--- The advisory corpus. Generic vendor/product facts only:
--- ⛔ NO DEVICE DATA EVER REACHES THIS SERVICE. Consumers pull the corpus and
--- match locally, exactly as they do for EOL. This repo already deleted a live
--- query API once because it "leaked device data" — do not reintroduce one.
-CREATE TABLE IF NOT EXISTS cve_advisories (
-  id SERIAL PRIMARY KEY,
-  cve_id TEXT NOT NULL,
-  -- The consuming product's vendor slug ('paloalto', 'fortinet', …). A CVE can
-  -- legitimately affect two vendors, so the key is (cve_id, vendor) and NOT
-  -- cve_id alone.
-  -- ⛔ SecVault's own advisories table made cve_id UNIQUE with a single vendor,
-  -- and the consequence is recorded in its CLAUDE.md: a CVE affecting two
-  -- vendors stays with whichever feed ingested it first, permanently. This is
-  -- the one place that mistake can still be fixed, so it is fixed here.
-  vendor TEXT NOT NULL,
-  title TEXT,
-  description TEXT,
-  cvss_score NUMERIC(3,1),
-  cvss_vector TEXT,
-  cvss_version TEXT,
-  cvss_source TEXT,
-  published_at TIMESTAMPTZ,
-  -- JSONB arrays, same shape the consumers already parse.
-  affected_version_ranges JSONB,
-  fixed_in_versions JSONB,
-  advisory_url TEXT,
-  cwe_ids TEXT[],
-  -- ⛔ 'matched' | 'unmatchable' | 'other_product'. An advisory that declares
-  -- itself affected but whose version range could NOT be extracted must never
-  -- be stored with an empty range array: downstream, an empty array reads as
-  -- "this device is not affected". Recording WHY it has no ranges is what keeps
-  -- that distinction alive across the feed.
-  matchability TEXT,
-  source TEXT NOT NULL DEFAULT 'nvd',
-  first_seen_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  UNIQUE (cve_id, vendor)
-);
+// ⛔ AN ARRAY OF WHOLE STATEMENTS — NEVER ONE STRING SPLIT ON ';'.
+//
+// lib/init.ts's own MIGRATIONS array says "whole statements — do NOT split on
+// ';'". This file ignored that on its first draft and broke immediately in
+// production with `syntax error at end of input`, because COMMENTS CONTAIN
+// SEMICOLONS:
+//
+//     -- NVD pages 2000 at a time; this is where the next invocation resumes.
+//     -- ...must sort to the FRONT of the queue; one that ran and returned zero…
+//
+// Splitting there cut CREATE TABLE cve_ingest_state into three fragments, each
+// of which is a syntax error — and the error message names none of that. The
+// comments are worth keeping, so the STATEMENTS are separated structurally
+// instead, and prose can never again decide where a statement ends.
+const CVE_SCHEMA_STATEMENTS: string[] = [
+  // The advisory corpus. Generic vendor/product facts only:
+  // ⛔ NO DEVICE DATA EVER REACHES THIS SERVICE. Consumers pull the corpus and
+  // match locally, exactly as they do for EOL. This repo already deleted a live
+  // query API once because it "leaked device data" — do not reintroduce one.
+  //
+  // ⛔ KEYED (cve_id, vendor), NOT cve_id. SecVault's own advisories table made
+  // cve_id UNIQUE with a single vendor, and its CLAUDE.md records the
+  // consequence: a CVE affecting two vendors stays with whichever feed ingested
+  // it first, permanently. This is the one place that is still fixable.
+  //
+  // ⛔ `matchability` is 'matched' | 'unmatchable' | 'other_product'. An
+  // advisory that declares itself affected but whose version range could NOT be
+  // extracted must never be stored with an empty range array: downstream, an
+  // empty array reads as "this device is not affected". Recording WHY it has no
+  // ranges is what keeps that distinction alive across the feed.
+  `CREATE TABLE IF NOT EXISTS cve_advisories (
+     id SERIAL PRIMARY KEY,
+     cve_id TEXT NOT NULL,
+     vendor TEXT NOT NULL,
+     title TEXT,
+     description TEXT,
+     cvss_score NUMERIC(3,1),
+     cvss_vector TEXT,
+     cvss_version TEXT,
+     cvss_source TEXT,
+     published_at TIMESTAMPTZ,
+     affected_version_ranges JSONB,
+     fixed_in_versions JSONB,
+     advisory_url TEXT,
+     cwe_ids TEXT[],
+     matchability TEXT,
+     source TEXT NOT NULL DEFAULT 'nvd',
+     first_seen_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     UNIQUE (cve_id, vendor)
+   )`,
 
-CREATE INDEX IF NOT EXISTS idx_cve_advisories_vendor ON cve_advisories (vendor);
+  `CREATE INDEX IF NOT EXISTS idx_cve_advisories_vendor ON cve_advisories (vendor)`,
 
--- ⛔ RESUMABLE INGESTION STATE — this is what makes the whole thing possible.
---
--- A Netlify function invocation is bounded (10s by default, 26s at most), and
--- NVD is rate-limited to one request per six seconds without a key. The six
--- supported vendors span 32 verified CPE strings, so a full sweep is 192s of
--- waiting AT MINIMUM — an order of magnitude past any invocation budget.
---
--- So ingestion is a STATE MACHINE, not a job: each invocation takes the least
--- recently attempted CPE string, works it, records where it got to, and returns
--- how much is left. A run that is cut off resumes instead of restarting, which
--- also means a transient NVD outage costs one string rather than the sweep.
-CREATE TABLE IF NOT EXISTS cve_ingest_state (
-  id SERIAL PRIMARY KEY,
-  vendor TEXT NOT NULL,
-  cpe_string TEXT NOT NULL,
-  -- NVD pages 2000 at a time; this is where the next invocation resumes.
-  next_start_index INTEGER NOT NULL DEFAULT 0,
-  total_results INTEGER,
-  last_attempt_at TIMESTAMPTZ,
-  last_success_at TIMESTAMPTZ,
-  -- ⛔ NULL means never attempted, which is NOT the same as "attempted and found
-  -- nothing". A string that has never run must sort to the FRONT of the queue;
-  -- one that ran and returned zero must not be retried ahead of it.
-  last_error TEXT,
-  consecutive_failures INTEGER NOT NULL DEFAULT 0,
-  advisories_seen INTEGER,
-  UNIQUE (vendor, cpe_string)
-);
+  // ⛔ RESUMABLE INGESTION STATE — this is what makes the whole thing possible.
+  //
+  // A Netlify function invocation is bounded (10s by default, 26s at most), and
+  // NVD allows 5 requests per rolling 30s without an API key. The six supported
+  // vendors span 32 verified CPE strings, so a full sweep is ~200s of waiting AT
+  // MINIMUM — an order of magnitude past any invocation budget.
+  //
+  // So ingestion is a STATE MACHINE, not a job: each invocation takes the least
+  // recently attempted CPE string, works it, records where it got to, and
+  // returns how much is left. A run that is cut off resumes instead of
+  // restarting, which also means a transient NVD outage costs one string rather
+  // than the sweep.
+  //
+  // `next_start_index` is where the next invocation resumes NVD's paging.
+  // `last_error` NULL means never attempted, which is NOT the same as
+  // "attempted and found nothing" — a string that has never run must sort to the
+  // FRONT of the queue, and one that ran and returned zero must not be retried
+  // ahead of it.
+  `CREATE TABLE IF NOT EXISTS cve_ingest_state (
+     id SERIAL PRIMARY KEY,
+     vendor TEXT NOT NULL,
+     cpe_string TEXT NOT NULL,
+     next_start_index INTEGER NOT NULL DEFAULT 0,
+     total_results INTEGER,
+     last_attempt_at TIMESTAMPTZ,
+     last_success_at TIMESTAMPTZ,
+     last_error TEXT,
+     consecutive_failures INTEGER NOT NULL DEFAULT 0,
+     advisories_seen INTEGER,
+     UNIQUE (vendor, cpe_string)
+   )`,
 
--- Audit log for each published CVE feed. Deliberately NOT feed_versions.
-CREATE TABLE IF NOT EXISTS cve_feed_versions (
-  id SERIAL PRIMARY KEY,
-  feed_version TEXT UNIQUE NOT NULL,
-  generated_at TIMESTAMPTZ DEFAULT NOW(),
-  row_count INTEGER,
-  content_sha256 TEXT,
-  signature TEXT,
-  published_by TEXT
-);
-`;
+  // Audit log for each published CVE feed. Deliberately NOT feed_versions.
+  `CREATE TABLE IF NOT EXISTS cve_feed_versions (
+     id SERIAL PRIMARY KEY,
+     feed_version TEXT UNIQUE NOT NULL,
+     generated_at TIMESTAMPTZ DEFAULT NOW(),
+     row_count INTEGER,
+     content_sha256 TEXT,
+     signature TEXT,
+     published_by TEXT
+   )`,
+];
 
 /**
  * Create the CVE schema if it is absent.
@@ -125,8 +140,8 @@ export async function ensureCveSchema(): Promise<void> {
     // Fall through and attempt the DDL; every statement is IF NOT EXISTS.
   }
 
-  for (const stmt of CVE_SCHEMA_SQL.split(';')) {
-    const trimmed = stmt.trim();
-    if (trimmed) await rawQuery(trimmed);
+  // Whole statements, in order. Nothing splits on ';'.
+  for (const stmt of CVE_SCHEMA_STATEMENTS) {
+    await rawQuery(stmt);
   }
 }
