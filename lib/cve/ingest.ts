@@ -33,7 +33,10 @@ const FETCH_TIMEOUT_MS = 20000;
 
 /**
  * ⛔ NVD's PUBLISHED RATE LIMITS, and the API key is the single biggest reason
- * to centralise at all: 1 request / 6s without a key, 5 requests / 30s with one.
+ * to centralise at all. ⛔ VERIFIED 2026-09-17, because an earlier draft of this
+ * comment had it wrong: **5 requests / rolling 30s WITHOUT a key, 50 / 30s WITH
+ * one** — a key is worth 10x, not the 5/30s an earlier note claimed (that is the
+ * UNKEYED rate). The throttle values below were already right; the prose was not.
  * Every SecVault install pays the unkeyed rate separately today; here one key
  * serves the whole customer base.
  */

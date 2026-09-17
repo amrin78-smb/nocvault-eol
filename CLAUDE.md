@@ -127,7 +127,8 @@ manages. **Ingestion only so far — nothing is published and there is no public
 - `app/api/admin/ingest-cve` + `components/CveActions.tsx` — session or `x-cron-secret`, same
   shape as publish-feed. The button loops until the sweep reports nothing left.
 
-⛔ **Set `NVD_API_KEY` in Netlify env.** It takes NVD from 1 req/6s to 5 req/30s — roughly nine
+⛔ **Set `NVD_API_KEY` in Netlify env.** ⛔ Verified 2026-09-17: **5 requests / rolling 30s without
+a key, 50 / 30s with one** — so ~6.2s between requests becomes ~0.7s, roughly nine
 times faster — and being able to hold ONE key for every customer is a large part of why a central
 feed is worth building.
 
