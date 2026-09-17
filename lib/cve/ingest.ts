@@ -398,3 +398,96 @@ export async function ingestStatus(): Promise<{
     hasApiKey: !!process.env.NVD_API_KEY,
   };
 }
+
+/**
+ * Does the key THIS RUNNING FUNCTION holds actually work?
+ *
+ * ⛔ EXISTS BECAUSE A NETLIFY ENV EDIT DOES NOT REACH A DEPLOYED FUNCTION.
+ * Environment variables are baked in at BUILD time, so changing NVD_API_KEY in
+ * the Netlify UI leaves every already-deployed function holding the old value
+ * until the next build. On 2026-09-17 that produced a full sweep of 404s while
+ * the Netlify dashboard displayed a key that was verified good against NVD from
+ * a laptop the same minute. Nothing in the failure pointed at staleness: the UI
+ * showed the right key, NVD accepted the right key, and the function used a
+ * different one. This endpoint closes that gap by reporting what the FUNCTION
+ * has, not what the dashboard has.
+ *
+ * ⛔ THE KEY IS NEVER RETURNED, LOGGED OR ECHOED. `fingerprint` is first four +
+ * last four characters plus the length — enough to tell a stale value from a
+ * current one at a glance, which is the entire job, and not enough to use.
+ *
+ * ⛔ TWO REQUESTS, KEYED AND UNKEYED, AND BOTH VERDICTS ARE REPORTED. One
+ * request cannot distinguish "the key is rejected" from "NVD is unreachable",
+ * and those have opposite remedies — clear the key, versus wait. Guessing
+ * between them is how the last three hours were spent.
+ */
+export async function probeApiKey(): Promise<{
+  hasApiKey: boolean;
+  fingerprint: string | null;
+  rawLength: number;
+  trimmedLength: number;
+  keyed: { status: number | null; error: string | null };
+  unkeyed: { status: number | null; error: string | null };
+  verdict: string;
+}> {
+  const raw = process.env.NVD_API_KEY || '';
+  const apiKey = raw.trim().replace(/^["']|["']$/g, '');
+  const fingerprint =
+    apiKey.length >= 10 ? `${apiKey.slice(0, 4)}…${apiKey.slice(-4)}` : apiKey ? '(too short)' : null;
+
+  // A CPE that is known to exist and to return a small result set, so the probe
+  // is cheap and a 404 can only mean the key.
+  const url =
+    `${NVD_BASE}?virtualMatchString=`
+    + encodeURIComponent('cpe:2.3:a:forcepoint:next_generation_firewall:*:*:*:*:*:*:*:*')
+    + '&resultsPerPage=1';
+
+  async function once(headers: Record<string, string>) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    try {
+      const res = await fetch(url, { headers, signal: controller.signal });
+      return { status: res.status, error: null as string | null };
+    } catch (err) {
+      return { status: null, error: err instanceof Error ? err.message : 'request failed' };
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  const keyed = apiKey ? await once({ apiKey }) : { status: null, error: 'no key configured' };
+  // ⛔ Spaced past the unkeyed rate limit, or the control request fails for a
+  // reason that has nothing to do with the key and reads as though it does.
+  await new Promise((r) => setTimeout(r, 6500));
+  const unkeyed = await once({});
+
+  let verdict: string;
+  if (!apiKey) {
+    verdict =
+      unkeyed.status === 200
+        ? 'No key configured. NVD is reachable unkeyed — ingestion works, at one request per 6.2s.'
+        : 'No key configured, and NVD is not answering unkeyed either.';
+  } else if (keyed.status === 200) {
+    verdict = 'The key this function holds is VALID and accepted by NVD.';
+  } else if (keyed.status === 404 && unkeyed.status === 200) {
+    verdict =
+      `The key this function holds (${fingerprint}) is REJECTED by NVD, while the same request `
+      + 'succeeds with no key. If that fingerprint does not match what Netlify shows, the '
+      + 'function is running a STALE value — redeploy to pick up the new one. If it does '
+      + 'match, the key itself is not activated at NIST.';
+  } else {
+    verdict =
+      `Keyed request returned ${keyed.status ?? keyed.error}, unkeyed returned `
+      + `${unkeyed.status ?? unkeyed.error}. Not a key problem on its face.`;
+  }
+
+  return {
+    hasApiKey: !!apiKey,
+    fingerprint,
+    rawLength: raw.length,
+    trimmedLength: apiKey.length,
+    keyed,
+    unkeyed,
+    verdict,
+  };
+}

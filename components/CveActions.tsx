@@ -128,6 +128,38 @@ export default function CveActions() {
     }
   }
 
+  // ⛔ ASKS THE FUNCTION WHAT KEY IT HAS, not what Netlify shows. A Netlify env
+  // edit is baked in at BUILD time and does not reach an already-deployed
+  // function, so the dashboard can display a working key while the running code
+  // uses the previous one — which is exactly the state that produced a full
+  // sweep of 404s on 2026-09-17. The fingerprint is masked; comparing it against
+  // the first and last four characters in Netlify settles it in one look.
+  async function testKey() {
+    setBusy(true);
+    setMsg(null);
+    setProgress('probing NVD with and without the key (~7s)…');
+    try {
+      const r = await fetch('/api/admin/ingest-cve?probe=1');
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || `HTTP ${r.status}`);
+      const p = d.probe;
+      const ok = p.keyed.status === 200 || (!p.hasApiKey && p.unkeyed.status === 200);
+      setMsg({
+        kind: ok ? 'ok' : 'err',
+        text:
+          `${p.verdict} `
+          + `[key ${p.fingerprint ?? 'none'}, ${p.trimmedLength} chars`
+          + `${p.rawLength !== p.trimmedLength ? `, ${p.rawLength - p.trimmedLength} trimmed` : ''}; `
+          + `keyed ${p.keyed.status ?? p.keyed.error}, unkeyed ${p.unkeyed.status ?? p.unkeyed.error}]`,
+      });
+    } catch (err) {
+      setMsg({ kind: 'err', text: err instanceof Error ? err.message : 'Probe failed.' });
+    } finally {
+      setProgress('');
+      setBusy(false);
+    }
+  }
+
   async function oneStep() {
     setBusy(true);
     setMsg(null);
@@ -199,6 +231,9 @@ export default function CveActions() {
         </button>
         <button style={btn} disabled={busy} onClick={oneStep}>
           One step
+        </button>
+        <button style={btn} disabled={busy} onClick={testKey}>
+          Test NVD key
         </button>
         <button style={btn} disabled={busy} onClick={refresh}>
           Refresh

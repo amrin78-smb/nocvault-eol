@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import { ingestStep, ingestStatus } from '@/lib/cve/ingest';
+import { ingestStep, ingestStatus, probeApiKey } from '@/lib/cve/ingest';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -17,8 +17,14 @@ export const runtime = 'nodejs';
 // Same authorisation shape as publish-feed: an admin session OR a matching
 // x-cron-secret, so automating it later needs no change here.
 
-/** Progress, for the dashboard. Safe to poll. */
-export async function GET() {
+/**
+ * Progress, for the dashboard. Safe to poll.
+ *
+ * `?probe=1` instead runs the API-key probe. ⛔ It is deliberately NOT part of
+ * the normal status payload: it makes two live NVD requests with a 6.5s pause
+ * between them, and the dashboard polls status on mount.
+ */
+export async function GET(req: Request) {
   const session = await getServerSession(authOptions);
   const cronSecret = process.env.CRON_SECRET;
   if (!session && !cronSecret) {
@@ -26,6 +32,9 @@ export async function GET() {
   }
   if (!session) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   try {
+    if (new URL(req.url).searchParams.get('probe') === '1') {
+      return NextResponse.json({ ok: true, probe: await probeApiKey() });
+    }
     return NextResponse.json({ ok: true, ...(await ingestStatus()) });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Internal error';
