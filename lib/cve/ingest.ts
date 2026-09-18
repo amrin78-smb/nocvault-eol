@@ -425,6 +425,13 @@ export async function ingestStatus(): Promise<{
   rateLimitMs: number;
   hasApiKey: boolean;
   build: string;
+  failures: Array<{
+    vendor: string;
+    cpeString: string;
+    consecutiveFailures: number;
+    lastError: string | null;
+    lastAttemptAt: string | null;
+  }>;
 }> {
   await ensureCveSchema();
   await ensureTargets();
@@ -436,6 +443,18 @@ export async function ingestStatus(): Promise<{
        FROM cve_ingest_state`
   );
   const a = await rawQuery<{ n: number }>(`SELECT count(*)::int AS n FROM cve_advisories`);
+  // ⛔ THE RECORDED REASON, SURFACED. Every failure has been writing last_error
+  // to cve_ingest_state and nothing ever read it back, so each stall was
+  // debugged by inference from a counter — which is how a killed function
+  // (recording nothing) and a caught error (recording a reason) came to look
+  // identical from the dashboard. They are opposite situations.
+  const f = await rawQuery<any>(
+    `SELECT vendor, cpe_string, consecutive_failures, last_error, last_attempt_at
+       FROM cve_ingest_state
+      WHERE consecutive_failures > 0
+      ORDER BY consecutive_failures DESC, last_attempt_at DESC NULLS LAST
+      LIMIT 8`
+  );
   const v = await rawQuery<{ vendor: string; advisories: number }>(
     `SELECT vendor, count(*)::int AS advisories FROM cve_advisories GROUP BY vendor ORDER BY 2 DESC`
   );
@@ -456,7 +475,20 @@ export async function ingestStatus(): Promise<{
     // deploy. COMMIT_REF is set by Netlify's build; locally it is absent.
     // Reading a symptom to infer a deploy is the same mistake as reading the
     // Netlify dashboard to infer what key the function holds.
-    build: (process.env.COMMIT_REF || 'local').slice(0, 7),
+    // ⛔ READ FROM next.config.js, NOT process.env DIRECTLY. COMMIT_REF is a
+    // Netlify BUILD-time variable and is absent from the function's RUNTIME
+    // environment, so the first version of this marker printed "local" in
+    // production — a deploy indicator that could not indicate a deploy, which
+    // is the same defect as the 20s timeout inside a 10s budget. next.config
+    // inlines it at build time, which is the only moment it exists.
+    build: (process.env.BUILD_COMMIT || 'unknown').slice(0, 7),
+    failures: f.rows.map((r: any) => ({
+      vendor: r.vendor,
+      cpeString: r.cpe_string,
+      consecutiveFailures: r.consecutive_failures,
+      lastError: r.last_error,
+      lastAttemptAt: r.last_attempt_at ? new Date(r.last_attempt_at).toISOString() : null,
+    })),
   };
 }
 

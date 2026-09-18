@@ -30,6 +30,13 @@ type Status = {
   rateLimitMs: number;
   hasApiKey: boolean;
   build: string;
+  failures: Array<{
+    vendor: string;
+    cpeString: string;
+    consecutiveFailures: number;
+    lastError: string | null;
+    lastAttemptAt: string | null;
+  }>;
 };
 
 const MAX_STEPS = 200;          // hard stop: ~32 targets × a few pages each
@@ -254,6 +261,39 @@ export default function CveActions() {
             </div>
           )}
         </div>
+      )}
+
+      {/* ⛔ THE RECORDED REASON, ON SCREEN. A failing COUNT with no reason beside
+          it is what turned every stall in this feature into guesswork — a killed
+          invocation (which records nothing) and a caught error (which records a
+          reason) are opposite problems and looked identical here. */}
+      {status && status.failures.length > 0 && (
+        <details style={{ marginBottom: '0.9rem', fontSize: '0.82rem' }}>
+          <summary style={{ cursor: 'pointer', color: '#b42318' }}>
+            Why {status.failing} target(s) are failing
+          </summary>
+          <div style={{ marginTop: '0.5rem', display: 'grid', gap: '0.5rem' }}>
+            {status.failures.map((f) => (
+              <div
+                key={`${f.vendor}:${f.cpeString}`}
+                style={{ padding: '0.5rem 0.6rem', background: '#fef3f2', borderRadius: 6 }}
+              >
+                <div style={{ fontWeight: 600 }}>
+                  {f.vendor} / {f.cpeString.split(':').slice(3, 5).join(':')}{' '}
+                  <span style={{ fontWeight: 400, opacity: 0.7 }}>
+                    × {f.consecutiveFailures}
+                  </span>
+                </div>
+                {/* ⛔ NULL IS NOT "no error" — it means the invocation DIED before
+                    it could record one. Those are the two cases that must never
+                    read the same, so they are worded differently. */}
+                <div style={{ opacity: 0.85 }}>
+                  {f.lastError ?? 'no reason recorded — the invocation was killed before it could write one'}
+                </div>
+              </div>
+            ))}
+          </div>
+        </details>
       )}
 
       <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
