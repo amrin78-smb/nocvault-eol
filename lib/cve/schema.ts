@@ -149,10 +149,29 @@ export async function ensureCveSchema(): Promise<void> {
   // fetch of its budget. Tables cannot un-exist within one container.
   if (schemaReady) return;
   try {
+    // ⛔ THE GATE MUST DESCRIBE THE WHOLE EXPECTED SHAPE, NOT JUST THE TABLES.
+    // It checked only to_regclass on the three tables, so on an already-
+    // initialised database it returned early and the `ALTER TABLE ... ADD COLUMN
+    // IF NOT EXISTS advisories_sha256` below was NEVER REACHED. Live consequence:
+    // every publish failed with `column "advisories_sha256" does not exist`, the
+    // feed's checked_at never updated, and the scheduled publish 500'd silently
+    // for hours. This repo's own rule already says CREATE TABLE IF NOT EXISTS
+    // guards table creation and never a column change — the companion ALTER was
+    // written and then put behind a gate that skipped it.
+    //
+    // ⛔ WHEN A MIGRATION MUST REACH AN INITIALISED DATABASE, WIDEN THIS CHECK IN
+    // THE SAME COMMIT. A statement that cannot run is indistinguishable from one
+    // that ran: the DDL is present in the diff and the gate is silent.
     const r = await rawQuery<{ present: boolean }>(
       `SELECT (to_regclass('public.cve_advisories') IS NOT NULL
                AND to_regclass('public.cve_ingest_state') IS NOT NULL
-               AND to_regclass('public.cve_feed_versions') IS NOT NULL) AS present`
+               AND to_regclass('public.cve_feed_versions') IS NOT NULL
+               AND EXISTS (
+                 SELECT 1 FROM information_schema.columns
+                  WHERE table_schema = 'public'
+                    AND table_name = 'cve_feed_versions'
+                    AND column_name = 'advisories_sha256'
+               )) AS present`
     );
     if (r.rows[0]?.present) {
       schemaReady = true;
