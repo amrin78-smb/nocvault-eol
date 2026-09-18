@@ -279,3 +279,35 @@ own pointer said it was current.
 a hub refreshing less often would leave it faithfully importing a stale corpus —
 worse than an obvious failure, because every signal stays green.
 
+### Licence gate (`lib/cve/license.ts`)
+
+`CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the
+label names which customer pulled, which is the point of metering.
+
+⛔ **THIS GATE IS COMMERCIAL, NOT SECURITY, AND FAILS OPEN WHEN UNCONFIGURED.**
+Same call the rest of the range makes — SecVault's own rule is "the licence guard
+fails open; the RBAC guard fails closed", because a configuration gap must never
+cut a paying customer off from data their security posture depends on. With
+`CVE_FEED_KEYS` unset every non-empty key is accepted, exactly as before the file
+existed.
+
+⛔ **BUT IT IS NEVER SILENT ABOUT IT.** Every response carries
+`X-Feed-License: enforced | unenforced` and an unenforced serve logs a warning.
+Code that merely mentions licences reads as metered; only the header says whether
+it actually is.
+
+⛔ **IT IS NOT AUTHENTICATION AND MUST NOT BE MISTAKEN FOR IT.** The keys are
+bearer strings in an env var. What the corpus contains is PUBLIC vulnerability
+data — NVD's own records — so the gate meters distribution, it does not protect
+content. **Do not add device data to this feed and then rely on this gate.** This
+repo already deleted a live query API once for leaking device data.
+
+⛔ **`timingSafeEqual` THROWS ON A LENGTH MISMATCH** rather than returning false,
+so length is compared separately first. A bare call would leak length through an
+exception and crash the route on the first wrong-sized key.
+
+⛔ **`/api/v1/feed` (EOL) IS DELIBERATELY NOT TOUCHED.** NetVault consumes it in
+production with an unvalidated key today; tightening it from here would risk a
+live outage in a different product for no gain in this one. Metering the EOL feed
+is its own change, made with NetVault in view.
+
