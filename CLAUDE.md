@@ -186,3 +186,59 @@ are stamped in every feed so consumers can detect drift.
 `/api/v1/feed`, **verifies the Ed25519 signature with the bundled public key**, and
 upserts into NetVault's local `eol_seed` via its existing `migrateLegacySeed`, with the
 embedded `lib/eolSeed.ts` as the offline fallback.
+
+## The CVE feed (Phase 2) — `/api/v1/cve-feed`
+
+A SECOND signed feed beside the EOL one, built from `cve_advisories` by
+`lib/cve/feed.ts`. It deliberately mirrors `lib/feed-core.ts`: same Ed25519
+detached signature over canonical-JSON bytes, same `X-Feed-Signature` /
+`X-Feed-Sha256` headers, same `latest.json` pointer — so a consumer that can
+already verify the EOL feed needs no new verification code.
+
+⛔ **ITS OWN BLOB STORE, `cve-feed`, NEVER `eol-feed`.** The EOL feed is live and
+NetVault reads it in production. Writing `feed.json` into the same store would
+replace the EOL feed with CVE data, and the first symptom would be NetVault
+silently matching ZERO devices — a failure with no error anywhere. Two products,
+two stores, no shared key names. Same reason `cve_feed_versions` is its own audit
+log rather than a `kind` column on `feed_versions`.
+
+⛔ **`raw_data` IS NOT CARRIED.** Measured at Phase 0: ~84% of each row, and no
+consumer reads it — matching runs off the extracted ranges. Shipping it would
+multiply every customer's download for data none of them use.
+
+⛔ **KEY ORDER AND ROW ORDER ARE BOTH FIXED, AND BOTH ARE LOAD-BEARING.** The
+signature covers exact bytes. `jsonb` does not preserve key order (keys come back
+sorted by length then bytes), and Postgres may return the same rows in a
+different sequence without a total `ORDER BY` — either one changes the hash for
+UNCHANGED data, and every consumer re-downloads a feed that did not change.
+`canonicalCveFeedJson` names every key explicitly and the query sorts
+`vendor, cve_id`.
+
+⛔ **`matchability` TRAVELS WITH EVERY ADVISORY.** An empty
+`affected_version_ranges` means two opposite things — "this product is not
+affected" and "we could not extract a range" — and from a CENTRAL feed that
+ambiguity is multiplied across every customer at once. The field is what keeps
+them apart downstream.
+
+### Why this exists (measured 2026-09-18, on the reference SecVault deployment)
+
+Not convenience. The consuming sites cannot reach NVD at all: they use internal
+public IP ranges that OVERLAP NVD's own address space, so traffic to
+`services.nvd.nist.gov` routes to an internal host. That is not fixable with a
+firewall rule — you cannot permit egress to a range your own network claims.
+SecVault therefore falls through to its CIRCL fallback on every string, every
+run, and CIRCL's records carry no parseable version bounds:
+
+| vendor | usable ranges today (CIRCL) | usable from NVD |
+|---|---|---|
+| `cisco_asa` | 70 / 353 (20%) | **332 / 369 (90%)** |
+| `checkpoint` | 0 / 7 (0%) | **68 / 80 (85%)** |
+
+Fleet-wide, **439 of 1,006 advisories on that deployment can never match a
+device**. Vendors with a working PSIRT feed are healthy (paloalto 98%, fortinet
+67%); the ones that depend on NVD are gutted. Both figures above were scored with
+SecVault's OWN extractor, so the difference is the DATA SOURCE and nothing else.
+
+⛔ The transport is already proven: `eol_catalogue` pulls 2,770 rows from this
+service into that same SecVault box on schedule while every NVD call fails. The
+address overlap does not touch this path.

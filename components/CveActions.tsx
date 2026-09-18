@@ -235,6 +235,32 @@ export default function CveActions() {
     }
   }
 
+  // ⛔ PUBLISHES TO THE 'cve-feed' BLOB STORE, NEVER 'eol-feed'. The EOL feed is
+  // live and NetVault reads it; the two publishers are deliberately separate
+  // functions writing separate stores, so this button cannot reach it.
+  async function publishFeed() {
+    setBusy(true);
+    setMsg(null);
+    setProgress('building, signing and publishing the CVE feed…');
+    try {
+      const r = await fetch('/api/admin/publish-cve-feed', { method: 'POST' });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || `HTTP ${r.status}`);
+      setMsg({
+        kind: 'ok',
+        text:
+          `Published ${d.feed_version}: ${d.row_count} advisories, `
+          + `${(d.bytes / 1024).toFixed(0)} KB, sha256 ${String(d.sha256).slice(0, 12)}…`
+          + (d.published ? '' : ` (blob write FAILED: ${d.publish_note})`),
+      });
+    } catch (err) {
+      setMsg({ kind: 'err', text: err instanceof Error ? err.message : 'Publish failed.' });
+    } finally {
+      setProgress('');
+      setBusy(false);
+    }
+  }
+
   async function oneStep() {
     setBusy(true);
     setMsg(null);
@@ -342,6 +368,13 @@ export default function CveActions() {
         </button>
         <button style={btn} disabled={busy} onClick={oneStep}>
           One step
+        </button>
+        <button
+          style={{ ...btn, background: '#067647', color: '#fff', borderColor: '#067647' }}
+          disabled={busy}
+          onClick={publishFeed}
+        >
+          Publish CVE feed
         </button>
         <button style={btn} disabled={busy} onClick={testKey}>
           Test NVD key
