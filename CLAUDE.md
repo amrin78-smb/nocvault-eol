@@ -154,6 +154,17 @@ still fixable.
 | `CRON_SECRET` | shared secret for the scheduled-publish function |
 | `NEXTAUTH_SECRET`, `NEXTAUTH_URL` | NextAuth admin login |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` | seeds the admin user on first init |
+| `NVD_API_KEY` | raises NVD's limit from 5 to 50 requests / rolling 30s. Sent as an `apiKey` REQUEST HEADER, not a query param |
+| `CVE_FEED_KEYS` | who may pull `/api/v1/cve-feed`. Comma-separated `key` or `key:label`; the label names the customer in the log line. **Unset = the gate fails OPEN** (any non-empty key accepted) and every response says so via `X-Feed-License: unenforced` |
+
+⛔ **AN ENV CHANGE DOES NOT REACH A DEPLOYED FUNCTION UNTIL THE NEXT BUILD.**
+Netlify bakes these in at BUILD time. Editing a value in the UI leaves every
+running function on the previous one, and nothing in the failure points at it —
+the dashboard shows the new value, the upstream service accepts the new value, and
+the function uses the old one. This cost hours on 2026-09-17 with `NVD_API_KEY`
+(every target returned HTTP 404, which is what NVD returns for an invalid key —
+not 401, not 403). **After changing any variable here, trigger a deploy**, then
+confirm with the dashboard's `build <sha>` marker or `X-Feed-License`.
 
 No Netlify token / GitHub secrets needed (Blobs is ambient inside functions).
 
