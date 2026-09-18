@@ -33,9 +33,10 @@ const NVD_BASE = 'https://services.nvd.nist.gov/rest/json/cves/2.0';
 // same function call, so a 2000-record page asks one 10s Netlify invocation to
 // do 2000 sequential round-trips to Neon. Measured 2026-09-17, the largest
 // targets are fortios (279 records, 1,748 KB) and pan-os (238, 2,324 KB) — so
-// 200 costs at most two pages for the worst target and the state machine
-// already resumes across pages.
-const RESULTS_PER_PAGE = 200;
+// 100 costs three pages for the worst target and the state machine already
+// resumes across pages. Lowered from 200 once the body read was found to be
+// where the deadline actually lands on the large vendors.
+const RESULTS_PER_PAGE = 100;
 // ⛔ A 20s FETCH TIMEOUT INSIDE A 10s INVOCATION IS A GUARD THAT CANNOT FIRE.
 // It was 20000, so Netlify killed the function at 10s and the timeout never
 // ran. A killed invocation never reaches the catch below, so consecutive_failures
@@ -89,16 +90,31 @@ export type IngestStepResult = {
   waitMs?: number;
 };
 
-/** Make sure every (vendor, cpe) pair has a state row. Idempotent. */
+/**
+ * Make sure every (vendor, cpe) pair has a state row. Idempotent.
+ *
+ * ⛔ ONE ROUND TRIP, NOT ONE PER TARGET. This looped `allCpeTargets()` issuing a
+ * separate INSERT per CPE string — 32 sequential round trips to Neon on EVERY
+ * invocation, before a single byte was fetched from NVD. Measured effect: the
+ * fetch budget, computed as "whatever is left", collapsed to its 2000ms floor
+ * and every target then failed with "NVD did not respond within 2000ms". The
+ * error blamed NVD; the time had already been spent here.
+ *
+ * ⛔ MEMOISED FOR THE LIFE OF THE CONTAINER. Warm invocations skip it entirely.
+ * It is only a safety net for a new CPE string, and a row that exists cannot
+ * stop existing.
+ */
+let targetsReady = false;
 async function ensureTargets(): Promise<void> {
-  for (const t of allCpeTargets()) {
-    await rawQuery(
-      `INSERT INTO cve_ingest_state (vendor, cpe_string)
-       VALUES ($1, $2)
-       ON CONFLICT (vendor, cpe_string) DO NOTHING`,
-      [t.vendor, t.cpeString]
-    );
-  }
+  if (targetsReady) return;
+  const targets = allCpeTargets();
+  await rawQuery(
+    `INSERT INTO cve_ingest_state (vendor, cpe_string)
+     SELECT * FROM unnest($1::text[], $2::text[])
+     ON CONFLICT (vendor, cpe_string) DO NOTHING`,
+    [targets.map((t) => t.vendor), targets.map((t) => t.cpeString)]
+  );
+  targetsReady = true;
   // ⛔ A target REMOVED from vendor-cpes.ts leaves its state row behind on
   // purpose. Deleting it would also delete the record that it was ever ingested,
   // and the advisories it produced stay in the corpus regardless — history, not
@@ -123,9 +139,30 @@ async function nextTarget(): Promise<{
   const r = await rawQuery<{
     id: number; vendor: string; cpe_string: string; next_start_index: number; total_results: number | null;
   }>(
-    `SELECT id, vendor, cpe_string, next_start_index, total_results
-       FROM cve_ingest_state
-      ORDER BY consecutive_failures ASC, last_attempt_at ASC NULLS FIRST
+    // ⛔ ROUND-ROBIN ACROSS VENDORS FIRST. A flat ordering let ONE vendor
+    // monopolise the queue: checkpoint owns 22 of the 32 CPE strings (69%),
+    // fortinet and paloalto one each. Every sweep therefore walked a 22-entry
+    // checkpoint block, and because a run stops after MAX_CONSECUTIVE_FAILS it
+    // never reached the two vendors with the largest real CVE history. Live
+    // proof: 23 advisories, all checkpoint and sangfor, across several sweeps.
+    //
+    // MAX(last_attempt_at) per vendor, NULLS FIRST: a vendor never attempted
+    // goes first, and a vendor just attempted goes to the BACK — so all six
+    // vendors are reached within six steps regardless of how many strings each
+    // one owns. ⛔ MAX, not MIN: MIN stays pinned at NULL until every one of a
+    // vendor's strings has been tried, which reproduces the exact monopoly this
+    // replaces.
+    `WITH vendor_rank AS (
+       SELECT vendor, MAX(last_attempt_at) AS vendor_last
+         FROM cve_ingest_state
+        GROUP BY vendor
+     )
+     SELECT s.id, s.vendor, s.cpe_string, s.next_start_index, s.total_results
+       FROM cve_ingest_state s
+       JOIN vendor_rank v ON v.vendor = s.vendor
+      ORDER BY v.vendor_last ASC NULLS FIRST,
+               s.consecutive_failures ASC,
+               s.last_attempt_at ASC NULLS FIRST
       LIMIT 1`
   );
   return r.rows[0] ?? null;
@@ -197,7 +234,23 @@ async function fetchNvdPage(
       err.status = res.status;
       throw err;
     }
-    return await res.json();
+    // ⛔ THE BODY READ IS INSIDE THE TIMEOUT TOO. Naming the abort only around
+    // fetch() left res.json() to throw a bare "This operation was aborted" —
+    // which is what the panel showed for the LARGE responses, where reading
+    // 1-2 MB is exactly where the deadline lands. Same failure, unrecognisable
+    // wording.
+    try {
+      return await res.json();
+    } catch (err: any) {
+      if (err?.name === 'AbortError') {
+        throw new Error(
+          `NVD began responding but the body (${res.headers.get('content-length') || 'unknown'} bytes) `
+          + `did not finish within ${budgetMs}ms. This is a LARGE target — its progress is kept `
+          + 'and the next sweep resumes it.'
+        );
+      }
+      throw err;
+    }
   } finally {
     clearTimeout(timer);
   }

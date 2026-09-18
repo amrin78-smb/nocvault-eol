@@ -128,14 +128,24 @@ const CVE_SCHEMA_STATEMENTS: string[] = [
  * tables already exist. The EOL init learned this the expensive way (~9s per
  * cold start before its fast path existed).
  */
+let schemaReady = false;
+
 export async function ensureCveSchema(): Promise<void> {
+  // ⛔ MEMOISED FOR THE LIFE OF THE CONTAINER. The to_regclass probe is cheap
+  // but it is not free: it is a network round trip to Neon on the hot path of
+  // every ingest step, and those round trips were collectively starving the NVD
+  // fetch of its budget. Tables cannot un-exist within one container.
+  if (schemaReady) return;
   try {
     const r = await rawQuery<{ present: boolean }>(
       `SELECT (to_regclass('public.cve_advisories') IS NOT NULL
                AND to_regclass('public.cve_ingest_state') IS NOT NULL
                AND to_regclass('public.cve_feed_versions') IS NOT NULL) AS present`
     );
-    if (r.rows[0]?.present) return;
+    if (r.rows[0]?.present) {
+      schemaReady = true;
+      return;
+    }
   } catch {
     // Fall through and attempt the DDL; every statement is IF NOT EXISTS.
   }
@@ -144,4 +154,5 @@ export async function ensureCveSchema(): Promise<void> {
   for (const stmt of CVE_SCHEMA_STATEMENTS) {
     await rawQuery(stmt);
   }
+  schemaReady = true;
 }
