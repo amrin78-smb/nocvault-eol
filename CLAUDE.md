@@ -254,22 +254,32 @@ SecVault's OWN extractor, so the difference is the DATA SOURCE and nothing else.
 service into that same SecVault box on schedule while every NVD call fails. The
 address overlap does not touch this path.
 
-### Scheduling (`netlify/functions/scheduled-cve.mjs`, every 6h at :20)
+### Scheduling — TWO functions, and that split is a fix not a preference
 
-⛔ **THE LOOP LIVES IN THE SCHEDULED FUNCTION BECAUSE ONLY IT HAS THE BUDGET.** A
-Netlify SCHEDULED function gets ~15 minutes; the synchronous route it calls gets
-~10 seconds. `/api/admin/ingest-cve` does exactly ONE bounded step per call and
-the scheduler drives it repeatedly. Sweeping inside the route is what produced a
-wall of killed invocations that recorded nothing.
+⛔ **A NETLIFY SCHEDULED FUNCTION IS NOT A BACKGROUND FUNCTION.** It is capped at
+roughly **30 seconds**, not the 15 minutes a background function gets. This file
+originally claimed ~15 minutes and the function was written to match: an
+11-MINUTE wall clock with the publish call at the END. It was killed long before
+reaching it, so ingest crept forward while `latest.json` never moved and
+`checked_at` stayed empty through TWO scheduled windows — visible only because
+the consumer's freshness check had just been built. ⛔ Registration was never the
+problem and the 403 on a direct HTTP call proves it: that is what Netlify returns
+for a function it HAS registered as scheduled.
 
-⛔ **A RUN DOES NOT HAVE TO FINISH.** Ingestion is a resumable state machine, so a
-run that stops on its wall clock has still made progress and the next continues.
-What it must never do is overrun its budget and be killed mid-write, which is why
-it stops itself at 11 minutes.
+⛔ **SO INGEST AND PUBLISH ARE SEPARATE FUNCTIONS ON SEPARATE SCHEDULES.**
+`scheduled-cve-ingest` (hourly at :10) spends ~20s stepping the state machine;
+`scheduled-cve-publish` (every 2h at :45) does one call with its own fresh budget.
+A second thing queued behind a first thing is hostage to it, which is exactly how
+this failed.
 
-⛔ **IT PUBLISHES EVERY RUN, EVEN AN INCOMPLETE ONE.** Gating publication on a
-complete sweep would mean a feed that never refreshes on a site where one
-stubborn CPE string always times out.
+⛔ **A SLICE DOES NOT HAVE TO FINISH.** Ingestion is a resumable state machine, so
+20 seconds of progress an hour converges on a corpus that changes a few times a
+week. ⛔ It only waits out a rate-limit throttle if the wait FITS in the remaining
+budget — sleeping 6s inside 20s spends a third of the slice doing nothing.
+
+⛔ **PUBLISH RUNS EVERY TIME, EVEN WHEN NOTHING CHANGED**, because an unchanged
+corpus still has to refresh `checked_at`. A quiet corpus and a dead hub must not
+look the same.
 
 ⛔ **PUBLISHING IS IDEMPOTENT ON A PAYLOAD DIGEST, AND THE OBVIOUS VERSION OF
 THAT CHECK CANNOT WORK.** `content_sha256` covers the whole SIGNED body, which
