@@ -339,3 +339,37 @@ reach the function). The hole is real — that feed is currently readable by any
 who knows the URL — but the fix belongs in a change made with NetVault in view,
 not as a side effect of CVE work.
 
+## Vendor PSIRT on the hub — MEASURED AND REFUSED (2026-09-18)
+
+"Move PSIRT to the hub, because Netlify will not get the Cloudflare bot check" was
+an assumption. It is **false**, and `/api/admin/probe-psirt` is how that was
+settled — probed from the SecVault server, an office connection and a Netlify
+function:
+
+| target | all three hosts |
+|---|---|
+| `fortiguard.com/rss/ir.xml` | 200 `text/xml`, 38 KB — works everywhere |
+| `filestore.fortinet.com/fortiguard/rss/ir.xml` | 200, ~46 ms, not Cloudflare-fronted |
+| `fortiguard.com/psirt/<id>` | **byte-identical 19,751-byte "Just a moment" challenge** |
+| `advisories.checkpoint.com/` | 200, 147 KB HTML, **no challenge** |
+| `sec.cloudapps.cisco.com/.../psirtrss20` | 200 `application/xml`, 146 KB |
+| `api.cisco.com/security/advisories/v2/all` | **403 "Developer Inactive"** |
+
+⛔ **THE CHALLENGE IS ON THE ADVISORY PAGE, NOT THE FEED, AND IT IS A JAVASCRIPT
+CHALLENGE** — not IP-dependent and not UA-dependent (a Chrome user-agent gets the
+same page as a bot one). No plain server-side `fetch` solves it wherever it runs,
+and a datacenter IP is typically treated more harshly than an office one. **Moving
+the fetch here would relocate the failure, not fix it.**
+
+⛔ **Check Point's recorded reason was STALE.** SecVault's CLAUDE.md said
+`advisories.checkpoint.com` answers a 202 bot challenge; it answers 200 with
+ordinary HTML from every host tested, and `/feed/` 404s. Still refused — HTML is
+not a machine-readable source — but for the right reason now. A stale reason sends
+the next session hunting a workaround for a problem that no longer exists.
+
+⛔ **The one source centralisation genuinely unlocks is Cisco openVuln**, because
+its 403 is about REGISTERED CREDENTIALS rather than about bot detection: a hub can
+hold one credential and serve every customer, which no per-site install can do.
+That is capability, not convenience — the only test worth applying before moving a
+feed here.
+
