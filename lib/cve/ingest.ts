@@ -47,7 +47,16 @@ const RESULTS_PER_PAGE = 100;
 //
 // Every bound below is now derived from ONE deadline, so the invocation always
 // returns a response rather than dying.
-const HARD_DEADLINE_MS = 8500;   // must stay under Netlify's 10s synchronous budget
+// The DEFAULT deadline, for a caller that asks for nothing: safe under a 10s
+// synchronous budget.
+const HARD_DEADLINE_MS = 8500;
+// ⛔ AND THE CEILING A CALLER MAY RAISE IT TO. Without this, budgetMs was inert
+// (any value >= 7000 produced the identical 8500ms deadline) and the route's
+// `maxDuration = 26` allocated 26 seconds the code refused to use — a knob whose
+// value is discarded and an allocation nothing can reach, which is the same
+// defect class as a 20s timeout inside a 10s invocation, failing safe. 22s keeps
+// a margin under maxDuration for the response itself.
+const MAX_DEADLINE_MS = 22000;
 const WRITE_RESERVE_MS = 2500;   // kept back for the upserts after the fetch
 const FINALISE_RESERVE_MS = 800; // kept back for the progress UPDATE and the response
 const MIN_FETCH_MS = 2000;       // never abort a fetch before it has a fair chance
@@ -424,7 +433,8 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
   // NVD fetch all spent the budget before the first comparison ran. On a slow
   // fetch the budget was already gone, and on the largest targets the whole
   // invocation was killed before it could write anything at all.
-  const deadlineAt = startedAt + Math.min(HARD_DEADLINE_MS, Math.max(2000, budgetMs + 1500));
+  const deadlineAt = startedAt
+    + Math.min(MAX_DEADLINE_MS, Math.max(2000, (budgetMs || DEFAULT_BUDGET_MS) + 1500));
   await ensureCveSchema();
   await ensureTargets();
 
@@ -486,7 +496,23 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
 
   try {
     // Whatever is left after the work already done, minus what the writes need.
-    const fetchBudget = Math.max(MIN_FETCH_MS, deadlineAt - Date.now() - WRITE_RESERVE_MS);
+    // ⛔ THE FLOOR MAY NOT OUTLIVE THE DEADLINE. Math.max(MIN_FETCH_MS, …) was
+    // applied after the subtraction, so once the preamble had consumed more than
+    // (deadline - WRITE_RESERVE) the expression went negative and the floor
+    // granted 2000ms anyway — pushing the invocation past the one deadline the
+    // header promises governs it. If there is genuinely no room left, stop and
+    // let the next step resume rather than overrun.
+    const remaining = deadlineAt - Date.now() - WRITE_RESERVE_MS;
+    if (remaining <= 0) {
+      return {
+        ...base,
+        ok: false,
+        retryable: true,
+        error: 'the invocation budget was consumed before NVD could be called; '
+          + 'the target keeps its progress and the next step resumes it',
+      };
+    }
+    const fetchBudget = Math.max(MIN_FETCH_MS, Math.min(remaining, MAX_DEADLINE_MS));
     const data = await fetchNvdPage(target.cpe_string, target.next_start_index, fetchBudget);
 
     // ⛔ A 200 WHOSE BODY IS NOT NVD'S SHAPE IS A FAILURE, NOT AN EMPTY RESULT.
@@ -528,6 +554,29 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
 
     const consumed = target.next_start_index + base.fetched;
     const more = totalResults !== null && consumed < totalResults;
+
+    // ⛔ ZERO FORWARD PROGRESS IS A FAILURE, NOT A PAGE. If NVD reports more
+    // results than we have consumed but returns an EMPTY page — which happens
+    // when the upstream result set shrinks under a resumed startIndex — then
+    // next_start_index is written back unchanged, consecutive_failures is reset
+    // to 0, and the target stays permanently outstanding while monopolising its
+    // vendor's rotation slot. Every subsequent step re-fetches the same empty
+    // page for ever. Nothing else detects it, because each step looks like a
+    // success.
+    if (more && vulns.length === 0) {
+      const e: any = new Error(
+        `NVD reports ${totalResults} results for this string but returned an empty page at `
+        + `startIndex ${target.next_start_index}. The result set has probably shrunk upstream; `
+        + 'resetting to the start rather than re-fetching the same empty page for ever.'
+      );
+      e.retryable = true;
+      // Wind the cursor back so the retry actually reads something different.
+      await rawQuery(
+        'UPDATE cve_ingest_state SET next_start_index = 0 WHERE id = $1',
+        [target.id]
+      );
+      throw e;
+    }
 
     await rawQuery(
       `UPDATE cve_ingest_state
@@ -719,6 +768,16 @@ export async function probeApiKey(): Promise<{
       clearTimeout(timer);
     }
   }
+
+  // ⛔ THE PROBE'S REQUESTS COUNT AGAINST THE SAME NVD LIMIT AS THE SWEEP'S.
+  // It stamped nothing, and ingestStep's throttle clock is
+  // MAX(last_attempt_at) across all targets — so pressing this button and then
+  // triggering a step fired three requests in ~2 seconds into a 5-per-30s
+  // unkeyed limit, earning 403s from a diagnostic. The stamp makes the sweep
+  // wait for the window the probe just used.
+  try {
+    await rawQuery('UPDATE cve_ingest_state SET last_attempt_at = NOW() WHERE id = (SELECT id FROM cve_ingest_state ORDER BY id LIMIT 1)');
+  } catch { /* the probe must still run if the table is unavailable */ }
 
   const keyed = apiKey ? await once({ apiKey }) : { status: null, error: 'no key configured' };
   await new Promise((r) => setTimeout(r, PROBE_GAP_MS));

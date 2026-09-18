@@ -171,6 +171,19 @@ export async function ensureCveSchema(): Promise<void> {
                   WHERE table_schema = 'public'
                     AND table_name = 'cve_feed_versions'
                     AND column_name = 'advisories_sha256'
+               )
+               -- ⛔ THE CONSTRAINT IS PART OF THE SHAPE, NOT JUST THE COLUMNS.
+               -- The gate proved only that three tables EXIST. A cve_advisories
+               -- created by an earlier draft without UNIQUE (cve_id, vendor)
+               -- would satisfy it, and then every upsert fails at runtime with
+               -- "no unique or exclusion constraint matching the ON CONFLICT
+               -- specification" — with no repair path, because the gate says the
+               -- schema is already current.
+               AND EXISTS (
+                 SELECT 1 FROM pg_constraint
+                  WHERE conrelid = 'public.cve_advisories'::regclass
+                    AND contype = 'u'
+                    AND array_length(conkey, 1) = 2
                )) AS present`
     );
     if (r.rows[0]?.present) {

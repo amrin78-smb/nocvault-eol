@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { ingestStep, ingestStatus, probeApiKey } from '@/lib/cve/ingest';
+import { secretMatches } from '@/lib/cve/license';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -33,10 +34,8 @@ export const maxDuration = 26;
  */
 export async function GET(req: Request) {
   const session = await getServerSession(authOptions);
-  const cronSecret = process.env.CRON_SECRET;
-  if (!session && !cronSecret) {
-    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
+  // The first of the two checks here was dead: `!session && !cronSecret` is
+  // fully subsumed by the `!session` on the next line.
   if (!session) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   try {
     if (new URL(req.url).searchParams.get('probe') === '1') {
@@ -53,7 +52,10 @@ export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
   const cronSecret = process.env.CRON_SECRET;
   const provided = req.headers.get('x-cron-secret');
-  const authorized = !!session || (!!cronSecret && provided === cronSecret);
+  // ⛔ CONSTANT TIME, like the licence key. CRON_SECRET authorises WRITES, and
+  // comparing it with === while a bearer key to public data gets timingSafeEqual
+  // is the asymmetry backwards.
+  const authorized = !!session || secretMatches(provided, cronSecret);
   if (!authorized) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
 
   // A caller on a longer-lived runtime (a background or scheduled function) can

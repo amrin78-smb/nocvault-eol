@@ -295,17 +295,29 @@ export async function buildAndPublishCveFeed(opts?: {
     };
   }
 
+  // ⛔ TWO PLAIN STATEMENTS, NOT A CONDITIONAL ON CONFLICT CLAUSE. An
+  // auto-allocated version must never overwrite an existing row: the sequence is
+  // read and then inserted with no lock, so the admin button and the scheduled
+  // function interleaving both compute the same n — and DO UPDATE would rewrite
+  // the audit row for a version whose bytes a consumer may already hold,
+  // breaking the "a version identifies bytes" invariant this file declares.
+  // An explicit opts.feedVersion is a deliberate re-publish and still updates.
+  const conflictClause = opts?.feedVersion
+    ? `ON CONFLICT (feed_version) DO UPDATE SET
+         generated_at = EXCLUDED.generated_at, row_count = EXCLUDED.row_count,
+         content_sha256 = EXCLUDED.content_sha256,
+         advisories_sha256 = EXCLUDED.advisories_sha256,
+         signature = EXCLUDED.signature,
+         published_by = EXCLUDED.published_by`
+    : 'ON CONFLICT (feed_version) DO NOTHING';
+
   await rawQuery(
     `INSERT INTO cve_feed_versions
        (feed_version, generated_at, row_count, content_sha256, advisories_sha256, signature, published_by)
      VALUES ($1, $2, $3, $4, $5, $6, $7)
-     ON CONFLICT (feed_version) DO UPDATE SET
-        generated_at = EXCLUDED.generated_at, row_count = EXCLUDED.row_count,
-        content_sha256 = EXCLUDED.content_sha256,
-        advisories_sha256 = EXCLUDED.advisories_sha256,
-        signature = EXCLUDED.signature,
-        published_by = EXCLUDED.published_by`,
-    [feedVersion, generatedAt, feed.row_count, sha256, advisoriesSha, sigB64, opts?.publishedBy || 'app']
+     ${conflictClause}`,
+    [feedVersion, generatedAt, feed.row_count, sha256, advisoriesSha, sigB64,
+     opts?.publishedBy || 'app']
   );
 
 

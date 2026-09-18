@@ -25,7 +25,7 @@
 import { timingSafeEqual } from 'node:crypto';
 
 export type LicenseVerdict =
-  | { ok: true; enforced: false; label: 'unenforced' }
+  | { ok: true; enforced: false; label: 'unenforced' | 'unenforced-unparseable' }
   | { ok: true; enforced: true; label: string }
   | { ok: false; enforced: boolean; reason: string };
 
@@ -61,6 +61,34 @@ function keyMatches(provided: string, expected: string): boolean {
   return timingSafeEqual(a, b);
 }
 
+/**
+ * ⛔ "NOT CONFIGURED" AND "CONFIGURED BUT UNREADABLE" ARE OPPOSITE INSTRUCTIONS.
+ * configuredKeys() returns [] for an unset variable AND for one that is set but
+ * yields nothing usable — `","`, `" "`, `":label"`, or a semicolon-separated
+ * paste. Both landed on enforced:false, accepting every key. The fail-open on
+ * UNSET is deliberate; silently failing open on a value the operator believes is
+ * metering the feed is not. This is the same distinction the vendor-PSIRT gate
+ * draws between an empty inventory and an unreadable one.
+ */
+function keysConfiguredButUnusable(): boolean {
+  const raw = (process.env.CVE_FEED_KEYS || '').trim();
+  return raw.length > 0 && configuredKeys().length === 0;
+}
+
+/**
+ * Constant-time comparison for a shared secret, for callers outside this file.
+ *
+ * ⛔ AN ABSENT OR EMPTY EXPECTED SECRET NEVER MATCHES. Returning true when
+ * CRON_SECRET is unset would turn a missing configuration into open access to
+ * the admin routes — the opposite call from the licence gate one function below,
+ * which is a COMMERCIAL boundary and fails open on purpose. This one is
+ * authorisation and fails closed.
+ */
+export function secretMatches(provided: string | null, expected: string | undefined): boolean {
+  if (!expected || !provided) return false;
+  return keyMatches(provided, expected);
+}
+
 export function checkLicense(provided: string | null): LicenseVerdict {
   const key = (provided || '').trim();
   if (!key) {
@@ -71,7 +99,11 @@ export function checkLicense(provided: string | null): LicenseVerdict {
   const allowed = configuredKeys();
   if (allowed.length === 0) {
     // ⛔ UNCONFIGURED. See the header — open, loudly, never silently.
-    return { ok: true, enforced: false, label: 'unenforced' };
+    return {
+      ok: true,
+      enforced: false,
+      label: keysConfiguredButUnusable() ? 'unenforced-unparseable' : 'unenforced',
+    };
   }
 
   for (const entry of allowed) {
