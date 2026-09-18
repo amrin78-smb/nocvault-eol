@@ -236,9 +236,22 @@ async function fetchNvdPage(
           'NVD responded HTTP 404 with no API key set — the request URL is likely malformed.';
       } else if (res.status === 403 || res.status === 429) {
         message = `NVD responded HTTP ${res.status} — rate limited. The sweep will retry this target.`;
+      } else if (res.status >= 500) {
+        message =
+          `NVD responded HTTP ${res.status} — NVD's own error, not a problem with this target `
+          + 'or this request. Its progress is kept and the next sweep resumes it.';
       }
       const err: any = new Error(message);
       err.status = res.status;
+      // ⛔ A TRANSIENT NVD-SIDE CONDITION IS RETRYABLE, EXACTLY LIKE A TIMEOUT.
+      // 429 and every 5xx say something about NVD's minute, not about this CPE
+      // string — so they must not increment consecutive_failures and must not
+      // count against the refusal budget. Treating a 503 as a refusal
+      // deprioritised a perfectly good target for someone else's outage, which
+      // is the same failed-read-as-a-fact error as counting our own deadline
+      // against the target. Only 400/404 are genuine refusals: those say the
+      // REQUEST or the KEY is wrong, and retrying cannot help.
+      err.retryable = res.status === 429 || res.status >= 500;
       throw err;
     }
     // ⛔ THE BODY READ IS INSIDE THE TIMEOUT TOO. Naming the abort only around
