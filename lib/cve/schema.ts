@@ -116,6 +116,18 @@ const CVE_SCHEMA_STATEMENTS: string[] = [
      signature TEXT,
      published_by TEXT
    )`,
+
+  // ⛔ A SECOND DIGEST, OVER THE ADVISORIES ALONE — and it is not redundant.
+  // content_sha256 covers the WHOLE signed body, which includes feed_version and
+  // generated_at, so it changes on every publish by construction. Comparing it
+  // to decide "has anything actually changed?" is a guard that CANNOT FIRE.
+  // advisories_sha256 covers only the payload, so two runs over an unchanged
+  // corpus produce the same value and the republish can be skipped.
+  //
+  // ⛔ CREATE TABLE IF NOT EXISTS guards the TABLE, never a new column — an
+  // already-deployed database keeps the old shape and the first query naming
+  // this column fails at runtime. Hence the companion ALTER.
+  `ALTER TABLE cve_feed_versions ADD COLUMN IF NOT EXISTS advisories_sha256 TEXT`,
 ];
 
 /**

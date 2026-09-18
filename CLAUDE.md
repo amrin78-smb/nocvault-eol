@@ -242,3 +242,40 @@ SecVault's OWN extractor, so the difference is the DATA SOURCE and nothing else.
 ⛔ The transport is already proven: `eol_catalogue` pulls 2,770 rows from this
 service into that same SecVault box on schedule while every NVD call fails. The
 address overlap does not touch this path.
+
+### Scheduling (`netlify/functions/scheduled-cve.mjs`, every 6h at :20)
+
+⛔ **THE LOOP LIVES IN THE SCHEDULED FUNCTION BECAUSE ONLY IT HAS THE BUDGET.** A
+Netlify SCHEDULED function gets ~15 minutes; the synchronous route it calls gets
+~10 seconds. `/api/admin/ingest-cve` does exactly ONE bounded step per call and
+the scheduler drives it repeatedly. Sweeping inside the route is what produced a
+wall of killed invocations that recorded nothing.
+
+⛔ **A RUN DOES NOT HAVE TO FINISH.** Ingestion is a resumable state machine, so a
+run that stops on its wall clock has still made progress and the next continues.
+What it must never do is overrun its budget and be killed mid-write, which is why
+it stops itself at 11 minutes.
+
+⛔ **IT PUBLISHES EVERY RUN, EVEN AN INCOMPLETE ONE.** Gating publication on a
+complete sweep would mean a feed that never refreshes on a site where one
+stubborn CPE string always times out.
+
+⛔ **PUBLISHING IS IDEMPOTENT ON A PAYLOAD DIGEST, AND THE OBVIOUS VERSION OF
+THAT CHECK CANNOT WORK.** `content_sha256` covers the whole SIGNED body, which
+includes `feed_version` and `generated_at` — so it changes on every publish by
+construction, and comparing it to detect "nothing changed" is a guard that cannot
+fire. `advisories_sha256` (its own column, added by an `ALTER TABLE ... ADD COLUMN
+IF NOT EXISTS`, since `CREATE TABLE IF NOT EXISTS` never guards a new column)
+covers the payload alone, so an unchanged corpus republishes NOTHING and keeps its
+version. Changed content gets a NEW version — the date plus the next free
+sequence.
+
+⛔ **A VERSION IDENTIFIES BYTES.** Republishing one version with different content
+breaks the only cheap thing a consumer can do: read `latest.json` and skip a
+download it already has. It would fetch nothing and run on stale data while its
+own pointer said it was current.
+
+⛔ **6-HOURLY MATCHES THE CONSUMER.** SecVault syncs its feeds on a 6-hourly cycle;
+a hub refreshing less often would leave it faithfully importing a stale corpus —
+worse than an obvious failure, because every signal stays green.
+

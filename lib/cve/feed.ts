@@ -78,6 +78,8 @@ function canonicalCveFeedJson(feed: {
 
 export type CvePublishResult = {
   feed_version: string;
+  /** True when the corpus was byte-identical to the last publish and nothing was written. */
+  unchanged?: boolean;
   row_count: number;
   sha256: string;
   bytes: number;
@@ -97,7 +99,7 @@ export async function buildAndPublishCveFeed(opts?: {
 
   await ensureCveSchema();
 
-  const feedVersion = opts?.feedVersion || `${new Date().toISOString().slice(0, 10)}.1`;
+  const today = new Date().toISOString().slice(0, 10);
   const generatedAt = opts?.generatedAt || new Date().toISOString();
 
   // ⛔ raw_data IS NOT CARRIED. Measured at Phase 0: it is ~84% of each row and
@@ -118,6 +120,52 @@ export async function buildAndPublishCveFeed(opts?: {
       ORDER BY vendor ASC, cve_id ASC`
   );
 
+  // ⛔ DIGEST THE PAYLOAD ALONE, BEFORE A VERSION EXISTS. The signed body
+  // includes feed_version and generated_at, so its sha256 changes on EVERY
+  // publish by construction — comparing that to detect "nothing changed" is a
+  // guard that cannot fire. This digest covers only the advisories, so an
+  // unchanged corpus produces an unchanged value.
+  const advisoriesSha = createHash('sha256')
+    .update(canonicalCveFeedJson({
+      schema_version: CVE_SCHEMA_VERSION,
+      feed_version: '', generated_at: '', row_count: rows.length, advisories: rows,
+    }))
+    .digest('hex');
+
+  const prior = await rawQuery<{ feed_version: string; advisories_sha256: string | null }>(
+    `SELECT feed_version, advisories_sha256 FROM cve_feed_versions
+      ORDER BY generated_at DESC LIMIT 1`
+  );
+
+  // ⛔ AN UNCHANGED CORPUS PUBLISHES NOTHING AND KEEPS ITS VERSION. A version
+  // identifies bytes; republishing the same version with different bytes breaks
+  // the one cheap thing a consumer can do — read latest.json and skip a download
+  // it already has. It would fetch nothing and run on stale data while its own
+  // pointer said it was current. Matters only now that this runs on a schedule:
+  // four runs a day would otherwise rewrite one version four times.
+  if (!opts?.feedVersion && prior.rows[0] && prior.rows[0].advisories_sha256 === advisoriesSha) {
+    return {
+      feed_version: prior.rows[0].feed_version,
+      unchanged: true,
+      row_count: rows.length,
+      sha256: '',
+      bytes: 0,
+      by_vendor: [],
+      by_matchability: [],
+      published: false,
+      publish_note: 'corpus identical to the last published feed — nothing republished',
+    };
+  }
+
+  // Next free sequence for today, so a same-day republish never collides.
+  const seqRow = await rawQuery<{ n: number }>(
+    `SELECT COALESCE(MAX(NULLIF(split_part(feed_version, '.', 2), '')::int), 0) + 1 AS n
+       FROM cve_feed_versions
+      WHERE feed_version LIKE $1 || '.%'`,
+    [today]
+  );
+  const feedVersion = opts?.feedVersion || `${today}.${seqRow.rows[0]?.n ?? 1}`;
+
   const feed = {
     schema_version: CVE_SCHEMA_VERSION,
     feed_version: feedVersion,
@@ -137,13 +185,15 @@ export async function buildAndPublishCveFeed(opts?: {
 
   await rawQuery(
     `INSERT INTO cve_feed_versions
-       (feed_version, generated_at, row_count, content_sha256, signature, published_by)
-     VALUES ($1, $2, $3, $4, $5, $6)
+       (feed_version, generated_at, row_count, content_sha256, advisories_sha256, signature, published_by)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)
      ON CONFLICT (feed_version) DO UPDATE SET
         generated_at = EXCLUDED.generated_at, row_count = EXCLUDED.row_count,
-        content_sha256 = EXCLUDED.content_sha256, signature = EXCLUDED.signature,
+        content_sha256 = EXCLUDED.content_sha256,
+        advisories_sha256 = EXCLUDED.advisories_sha256,
+        signature = EXCLUDED.signature,
         published_by = EXCLUDED.published_by`,
-    [feedVersion, generatedAt, feed.row_count, sha256, sigB64, opts?.publishedBy || 'app']
+    [feedVersion, generatedAt, feed.row_count, sha256, advisoriesSha, sigB64, opts?.publishedBy || 'app']
   );
 
   const latestJson = JSON.stringify(
