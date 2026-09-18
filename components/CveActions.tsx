@@ -39,7 +39,15 @@ type Status = {
   }>;
 };
 
-const MAX_STEPS = 200;          // hard stop: ~32 targets × a few pages each
+// ⛔ SIZED FOR VENDOR ROUND-ROBIN, NOT FOR 32 FLAT TARGETS. This was 200, set
+// when a sweep meant "32 targets, a few pages each". Selection now rotates
+// across vendors, and checkpoint owns 22 of the 32 strings — so each of its
+// strings gets a turn roughly every 132 steps, and the vendor needs well over
+// 200 steps to converge on its own. Measured 2026-09-18 against NVD:
+// cisco_asa 392 CVEs, fortinet 279, paloalto 238, checkpoint 107, forcepoint 6,
+// sangfor 5 — about 1,027 records at up to 100 per page, on top of the rotation
+// cost. 200 would have stopped a healthy sweep short and read as a stall.
+const MAX_STEPS = 1200;
 const MAX_CONSECUTIVE_FAILS = 5; // stop sweeping if NVD is simply REFUSING
 // ⛔ ITS OWN, MUCH LARGER BUDGET. A timeout is not a refusal: NVD answers
 // identical requests between 1.5s and 14.4s, and one request can exceed the
