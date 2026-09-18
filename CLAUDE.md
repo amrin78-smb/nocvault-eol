@@ -311,3 +311,20 @@ production with an unvalidated key today; tightening it from here would risk a
 live outage in a different product for no gain in this one. Metering the EOL feed
 is its own change, made with NetVault in view.
 
+⛔ **`Cache-Control` ON A LICENSED RESPONSE IS THE CONTROL, NOT THE CODE BELOW
+IT.** `/api/v1/cve-feed` shipped with `public, max-age=3600`, copied from the EOL
+feed, and that made the licence gate decorative: Netlify's CDN cached the body,
+its cache key does **not** vary on `x-license-key`, and one authorised fetch
+populated the edge — after which a request with no key, a bogus key, or a
+cache-busted query was served the full 3.4 MB corpus **without the function ever
+running**. Verified live 2026-09-18. It is now `private, no-store, max-age=0`
+plus `Vary: x-license-key`. No validation in a route can fire if the edge answers
+first.
+
+⚠️ **`/api/v1/feed` (EOL) STILL CARRIES `public, max-age=3600` AND HAS THE SAME
+HOLE.** Left as-is deliberately pending a decision: NetVault consumes it in
+production, and removing CDN caching changes its fetch cost (every pull would
+reach the function). The hole is real — that feed is currently readable by anyone
+who knows the URL — but the fix belongs in a change made with NetVault in view,
+not as a side effect of CVE work.
+
