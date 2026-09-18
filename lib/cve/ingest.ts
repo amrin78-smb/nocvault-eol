@@ -160,13 +160,34 @@ async function nextTarget(): Promise<{
     // vendor's strings has been tried, which reproduces the exact monopoly this
     // replaces.
     `WITH vendor_rank AS (
-       SELECT vendor, MAX(last_attempt_at) AS vendor_last
-         FROM cve_ingest_state
-        GROUP BY vendor
+       -- ⛔ Ranked over OUTSTANDING rows only, matching the filter below. Ranking
+     -- over every row lets a vendor with nothing left to do keep its place in
+     -- the rotation and starve one that still has work.
+     SELECT vendor, MAX(last_attempt_at) AS vendor_last
+       FROM cve_ingest_state
+      WHERE last_success_at IS NULL
+         OR last_success_at < NOW() - INTERVAL '24 hours'
+         OR next_start_index > 0
+      GROUP BY vendor
      )
      SELECT s.id, s.vendor, s.cpe_string, s.next_start_index, s.total_results
        FROM cve_ingest_state s
        JOIN vendor_rank v ON v.vendor = s.vendor
+      -- ⛔ ONLY OUTSTANDING WORK. Without this the rotation kept handing steps
+      -- to targets that were already COMPLETE and CURRENT: fortinet finished at
+      -- 279 and then, owning one string, collected one step in six for ever
+      -- re-fetching what was already stored — while checkpoint's 22 never-run
+      -- strings shared a single turn between them. The sweep spent most of its
+      -- budget re-ingesting data it already had, which from outside looked
+      -- exactly like a stall.
+      --
+      -- ⛔ The three clauses are the same definition of "outstanding" that
+      -- targetsRemaining already used. They had drifted apart, so the counter
+      -- said 14 remaining while selection ignored that entirely — the stop
+      -- condition and the work queue disagreeing about what work is.
+      WHERE s.last_success_at IS NULL
+         OR s.last_success_at < NOW() - INTERVAL '24 hours'
+         OR s.next_start_index > 0
       ORDER BY v.vendor_last ASC NULLS FIRST,
                s.consecutive_failures ASC,
                s.last_attempt_at ASC NULLS FIRST
