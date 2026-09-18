@@ -40,7 +40,15 @@ type Status = {
 };
 
 const MAX_STEPS = 200;          // hard stop: ~32 targets × a few pages each
-const MAX_CONSECUTIVE_FAILS = 5; // stop sweeping if NVD is simply refusing
+const MAX_CONSECUTIVE_FAILS = 5; // stop sweeping if NVD is simply REFUSING
+// ⛔ ITS OWN, MUCH LARGER BUDGET. A timeout is not a refusal: NVD answers
+// identical requests between 1.5s and 14.4s, and one request can exceed the
+// whole 10s function budget, so a slow response is EXPECTED and clears on
+// retry. Counting it against MAX_CONSECUTIVE_FAILS stopped a working sweep
+// five slow responses in — at 350 advisories with every vendor still paging.
+// Kept separate rather than merged so a genuine refusal (a 404 wall, an NVD
+// outage) still stops the run after five, which is the case that budget is for.
+const MAX_RETRYABLE_FAILS = 60;
 // ⛔ Its own budget, separate from MAX_STEPS. A throttled call does not consume
 // a step (nothing was done), so without this the loop is unbounded — and it
 // would wait ~6s per iteration rather than spinning hot, which is exactly what
@@ -71,6 +79,7 @@ export default function CveActions() {
     setMsg(null);
     let steps = 0;
     let fails = 0;
+    let retryables = 0;
     let throttleWaits = 0;
     let inserted = 0;
     let updated = 0;
@@ -134,12 +143,31 @@ export default function CveActions() {
         updated += d.updated || 0;
 
         if (d.ok === false) {
-          fails++;
-          setProgress(`${d.vendor ?? '?'} / ${d.cpeString ?? '?'} failed (${d.error ?? 'unknown'}) — continuing`);
-          // ⛔ Keep going: the server has already deprioritised that target, and
-          // one unreachable CPE string must not stop the sweep.
-          if (fails >= MAX_CONSECUTIVE_FAILS) {
-            throw new Error(`${fails} consecutive failures — stopping. Last: ${d.error ?? 'unknown'}`);
+          // ⛔ A TIMEOUT AND A REFUSAL ARE DIFFERENT OUTCOMES AND ARE COUNTED
+          // SEPARATELY. The server says which. Merging them meant five slow NVD
+          // responses ended a sweep that was working — and slow is the NORMAL
+          // state of the largest, most valuable targets.
+          if (d.retryable) {
+            retryables++;
+            fails = 0;
+            setProgress(
+              `${d.vendor ?? '?'} / ${d.cpeString ?? '?'} timed out (ours, not theirs) — `
+              + `retrying later (${retryables}/${MAX_RETRYABLE_FAILS})`
+            );
+            if (retryables >= MAX_RETRYABLE_FAILS) {
+              throw new Error(
+                `${retryables} timeouts — stopping. NVD is consistently slower than one `
+                + 'invocation allows. Progress is kept; run the sweep again.'
+              );
+            }
+          } else {
+            fails++;
+            setProgress(`${d.vendor ?? '?'} / ${d.cpeString ?? '?'} failed (${d.error ?? 'unknown'}) — continuing`);
+            // ⛔ Keep going: the server has already deprioritised that target, and
+            // one unreachable CPE string must not stop the sweep.
+            if (fails >= MAX_CONSECUTIVE_FAILS) {
+              throw new Error(`${fails} consecutive failures — stopping. Last: ${d.error ?? 'unknown'}`);
+            }
           }
         } else {
           fails = 0;

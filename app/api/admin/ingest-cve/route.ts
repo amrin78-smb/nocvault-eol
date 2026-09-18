@@ -5,6 +5,13 @@ import { ingestStep, ingestStatus, probeApiKey } from '@/lib/cve/ingest';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
+// ⛔ ASK FOR THE LONGEST SYNCHRONOUS INVOCATION THE PLATFORM WILL GIVE. The
+// default is 10s and a single NVD request has been measured at 14.4s, so the
+// default cannot fit the worst case at all. If the plan does not allow 26s this
+// is simply capped — it is a request, not a guarantee, which is why the
+// deadline logic in lib/cve/ingest.ts still assumes the short budget and the
+// client still treats a timeout as retryable.
+export const maxDuration = 26;
 
 // ⛔ ONE STEP PER CALL, NOT A SWEEP.
 //

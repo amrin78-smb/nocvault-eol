@@ -88,6 +88,13 @@ export type IngestStepResult = {
   /** Set when the call was refused to respect NVD's rate limit. Wait this long. */
   throttled?: boolean;
   waitMs?: number;
+  /**
+   * The step failed because OUR deadline expired, not because the target is
+   * bad. Measured: NVD answers identical requests between 1.5s and 14.4s, and
+   * a single request can exceed the whole function budget — so this is an
+   * expected, transient outcome that the next attempt usually clears.
+   */
+  retryable?: boolean;
 };
 
 /**
@@ -193,7 +200,7 @@ async function fetchNvdPage(
       // ⛔ NAME THE ABORT. Left as a bare AbortError this reads as an NVD
       // outage, when it is our own deadline doing exactly its job.
       if (err?.name === 'AbortError') {
-        throw new Error(
+        const e: any = new Error(
           `NVD did not respond within ${budgetMs}ms, the time this invocation could `
           + 'give it. NVD latency on identical requests has been measured between '
           + '1.5s and 14.4s, so this is expected occasionally — the target keeps its '
@@ -243,11 +250,13 @@ async function fetchNvdPage(
       return await res.json();
     } catch (err: any) {
       if (err?.name === 'AbortError') {
-        throw new Error(
+        const e: any = new Error(
           `NVD began responding but the body (${res.headers.get('content-length') || 'unknown'} bytes) `
           + `did not finish within ${budgetMs}ms. This is a LARGE target — its progress is kept `
           + 'and the next sweep resumes it.'
         );
+        e.retryable = true;
+        throw e;
       }
       throw err;
     }
@@ -457,13 +466,26 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
     base.targetsRemaining = more ? targetsRemaining : Math.max(0, targetsRemaining - 1);
     return base;
   } catch (err: any) {
+    // ⛔ OUR DEADLINE EXPIRING IS NOT EVIDENCE ABOUT THE TARGET, so it must not
+    // be recorded as one. consecutive_failures is what DEPRIORITISES a target in
+    // nextTarget(); incrementing it on our own timeout pushed the biggest, most
+    // valuable targets (fortios, pan-os — the two with real CVE history) to the
+    // back of the queue precisely BECAUSE they are big. That is this codebase's
+    // failed-read-as-a-fact rule: an inability to measure, filed as a negative
+    // fact about the thing being measured.
+    //
+    // The reason is still RECORDED — last_error is written either way, so a
+    // stalling target is never silent — but only a genuine refusal from NVD
+    // (a 404, a 500, a malformed body) counts against the target itself.
+    const retryable = err?.retryable === true;
     await rawQuery(
       `UPDATE cve_ingest_state
-          SET last_error = $2, consecutive_failures = consecutive_failures + 1
+          SET last_error = $2,
+              consecutive_failures = consecutive_failures + $3::int
         WHERE id = $1`,
-      [target.id, String(err?.message || err).slice(0, 500)]
+      [target.id, String(err?.message || err).slice(0, 500), retryable ? 0 : 1]
     );
-    return { ...base, ok: false, error: String(err?.message || err) };
+    return { ...base, ok: false, retryable, error: String(err?.message || err) };
   }
 }
 
