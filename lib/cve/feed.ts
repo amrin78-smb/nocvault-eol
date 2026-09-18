@@ -169,27 +169,53 @@ export async function buildAndPublishCveFeed(opts?: {
     // unchanged run has to report. Returning early without touching it would
     // leave the one liveness signal frozen precisely when the hub is healthy and
     // the corpus is quiet — the case this field exists for.
+    // ⛔ "UNCHANGED" MUST MEAN "STILL PUBLISHED AND UNCHANGED". The corpus digest
+    // lives in the DATABASE and the artefacts live in BLOBS, so they can disagree:
+    // an empty blob store with an intact database made every publish take this
+    // path for ever, writing a pointer that contained only checked_at (no
+    // feed_version, no sha256 — `{}` merged with the new field) while feed.json
+    // was NEVER written again. /latest returned 200 with a version-less pointer,
+    // /cve-feed returned 503, and the route reported ok:true throughout: a
+    // healthy-looking service serving nothing, self-sustaining.
+    let artefactsPresent = false;
     try {
       const { getStore } = await import('@netlify/blobs');
       const store = getStore('cve-feed');
-      const existing = await store.get('latest.json', { type: 'text' });
-      const parsed = existing ? JSON.parse(existing) : {};
-      await store.set('latest.json', JSON.stringify({ ...parsed, checked_at: checkedAt }, null, 2));
+      const [existing, feedBlob, sigBlob] = await Promise.all([
+        store.get('latest.json', { type: 'text' }),
+        store.get('feed.json', { type: 'text' }),
+        store.get('feed.json.sig', { type: 'text' }),
+      ]);
+      let parsed: any = null;
+      try { parsed = existing ? JSON.parse(existing) : null; } catch { parsed = null; }
+      // ⛔ A MISSING pointer and an UNPARSEABLE one are both "we cannot confirm",
+      // and neither may be merged into. Only a pointer that already names a
+      // version is safe to refresh in place.
+      artefactsPresent = !!(feedBlob && sigBlob && parsed && parsed.feed_version);
+      if (artefactsPresent) {
+        await store.set('latest.json', JSON.stringify({ ...parsed, checked_at: checkedAt }, null, 2));
+      }
     } catch {
-      // A pointer refresh failing must not fail the run; the feed is unchanged.
+      artefactsPresent = false;
     }
-    return {
-      feed_version: prior.rows[0].feed_version,
-      checked_at: checkedAt,
-      unchanged: true,
-      row_count: rows.length,
-      sha256: '',
-      bytes: 0,
-      by_vendor: [],
-      by_matchability: [],
-      published: false,
-      publish_note: 'corpus identical to the last published feed — nothing republished',
-    };
+
+    // ⛔ FALL THROUGH AND REPUBLISH when the artefacts are not confirmed. The
+    // idempotence guard exists to stop version churn, not to make a broken
+    // publish permanent.
+    if (artefactsPresent) {
+      return {
+        feed_version: prior.rows[0].feed_version,
+        checked_at: checkedAt,
+        unchanged: true,
+        row_count: rows.length,
+        sha256: '',
+        bytes: 0,
+        by_vendor: [],
+        by_matchability: [],
+        published: false,
+        publish_note: 'corpus identical to the last published feed — nothing republished',
+      };
+    }
   }
 
   // Next free sequence for today, so a same-day republish never collides.
@@ -218,6 +244,57 @@ export async function buildAndPublishCveFeed(opts?: {
   });
   const sigB64 = cryptoSign(null, bytes, keyObject).toString('base64');
 
+  const latestJson = JSON.stringify(
+    {
+      feed_version: feedVersion,
+      sha256,
+      generated_at: generatedAt,
+      checked_at: checkedAt,
+      row_count: feed.row_count,
+    },
+    null,
+    2
+  );
+
+  // ⛔ THE BLOBS ARE WRITTEN FIRST, AND THE AUDIT ROW ONLY IF THEY ALL LAND.
+  // The row used to be inserted BEFORE three non-atomic blob writes, so a
+  // partial publish (new feed.json, old feed.json.sig) left a row whose
+  // advisories_sha256 already matched the corpus — and the idempotence guard
+  // above then refused to republish, making a broken signature permanent until
+  // the corpus happened to change. Every consumer's verification would fail for
+  // as long as that lasted, which on a quiet week is days.
+  let published = false;
+  let publish_note: string | undefined;
+  try {
+    const { getStore } = await import('@netlify/blobs');
+    // ⛔ 'cve-feed', NOT 'eol-feed'. See the header.
+    const store = getStore('cve-feed');
+    // Signature first: a feed.json without a matching .sig is the state that
+    // breaks consumers, so it is the one that must never exist on its own.
+    await store.set('feed.json.sig', sigB64);
+    await store.set('feed.json', canonical);
+    await store.set('latest.json', latestJson);
+    published = true;
+  } catch (err) {
+    publish_note = err instanceof Error ? err.message : String(err);
+  }
+
+  if (!published) {
+    // ⛔ NO AUDIT ROW FOR A PUBLISH THAT DID NOT HAPPEN. Recording it would make
+    // the next run treat this corpus as already shipped.
+    return {
+      feed_version: feedVersion,
+      checked_at: checkedAt,
+      row_count: feed.row_count,
+      sha256,
+      bytes: bytes.length,
+      by_vendor: [],
+      by_matchability: [],
+      published: false,
+      publish_note: `blob write FAILED, no version recorded so the next run retries: ${publish_note}`,
+    };
+  }
+
   await rawQuery(
     `INSERT INTO cve_feed_versions
        (feed_version, generated_at, row_count, content_sha256, advisories_sha256, signature, published_by)
@@ -231,31 +308,6 @@ export async function buildAndPublishCveFeed(opts?: {
     [feedVersion, generatedAt, feed.row_count, sha256, advisoriesSha, sigB64, opts?.publishedBy || 'app']
   );
 
-  const latestJson = JSON.stringify(
-    {
-      feed_version: feedVersion,
-      sha256,
-      generated_at: generatedAt,
-      checked_at: checkedAt,
-      row_count: feed.row_count,
-    },
-    null,
-    2
-  );
-
-  let published = false;
-  let publish_note: string | undefined;
-  try {
-    const { getStore } = await import('@netlify/blobs');
-    // ⛔ 'cve-feed', NOT 'eol-feed'. See the header.
-    const store = getStore('cve-feed');
-    await store.set('feed.json', canonical);
-    await store.set('feed.json.sig', sigB64);
-    await store.set('latest.json', latestJson);
-    published = true;
-  } catch (err) {
-    publish_note = err instanceof Error ? err.message : String(err);
-  }
 
   const byVendor = new Map<string, number>();
   const byMatch = new Map<string, number>();

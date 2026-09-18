@@ -61,8 +61,20 @@ const MIN_FETCH_MS = 2000;       // never abort a fetch before it has a fair cha
  * Every SecVault install pays the unkeyed rate separately today; here one key
  * serves the whole customer base.
  */
+/** The configured key, trimmed and unquoted — the ONE definition. */
+function nvdApiKey(): string {
+  return (process.env.NVD_API_KEY || '').trim().replace(/^["']|["']$/g, '');
+}
+
 function rateLimitMs(): number {
-  return process.env.NVD_API_KEY ? 700 : 6200;
+  // ⛔ TRIMMED, BECAUSE fetchNvdPage IS. This read the raw env var, so a value
+  // that is whitespace or empty quotes — the exact paste error this file already
+  // trims for — is TRUTHY here and empty there: the sweep would pace at the
+  // keyed rate of 700ms while sending UNKEYED requests, i.e. ~1.4/sec against
+  // NVD's 5-per-30s unkeyed limit. NVD answers 403/429, which is classified
+  // retryable, so nothing is counted against any target and the sweep stalls
+  // with no diagnosis anywhere.
+  return nvdApiKey() ? 700 : 6200;
 }
 
 /**
@@ -207,7 +219,7 @@ async function fetchNvdPage(
   // ⛔ TRIMMED. A key pasted into a Netlify env field with a trailing space or
   // surrounding quotes is sent verbatim, NVD rejects it, and the failure looks
   // nothing like a formatting problem (see the 404 note below).
-  const apiKey = (process.env.NVD_API_KEY || '').trim().replace(/^["']|["']$/g, '');
+  const apiKey = nvdApiKey();
   const headers: Record<string, string> = {};
   if (apiKey) headers.apiKey = apiKey;
 
@@ -221,12 +233,23 @@ async function fetchNvdPage(
       // ⛔ NAME THE ABORT. Left as a bare AbortError this reads as an NVD
       // outage, when it is our own deadline doing exactly its job.
       if (err?.name === 'AbortError') {
+        // ⛔ THIS BUILT THE NAMED ERROR AND THEN THREW THE ORIGINAL. `e` was
+        // constructed, never marked retryable and never thrown, so a fetch-phase
+        // timeout surfaced as the bare "This operation was aborted" — the exact
+        // unrecognisable wording the comment above claims to have fixed — and,
+        // because `retryable` was undefined, ingestStep counted OUR OWN deadline
+        // as a refusal by the target and incremented consecutive_failures. That
+        // deprioritises precisely the biggest CPE strings (fortios, pan-os),
+        // which are the slowest and the most valuable. The body-read handler
+        // below always did this correctly; only this branch was broken.
         const e: any = new Error(
           `NVD did not respond within ${budgetMs}ms, the time this invocation could `
           + 'give it. NVD latency on identical requests has been measured between '
           + '1.5s and 14.4s, so this is expected occasionally — the target keeps its '
           + 'progress and the next sweep resumes it.'
         );
+        e.retryable = true;
+        throw e;
       }
       throw err;
     }
@@ -406,9 +429,17 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
   await ensureTargets();
 
   const target = await nextTarget();
+  // ⛔ THE SAME THREE CLAUSES AS nextTarget(). The drift was only half-repaired:
+  // this counter omitted `next_start_index > 0`, so a target mid-pagination was
+  // invisible to it. With every target succeeded inside 24h but three still
+  // paging, targetsRemaining read 0 and the scheduled function stopped with
+  // "nothing outstanding" while pages were unfetched — the stop condition and
+  // the work queue disagreeing again, in the other direction.
   const remainingRow = await rawQuery<{ n: number }>(
     `SELECT count(*)::int AS n FROM cve_ingest_state
-      WHERE last_success_at IS NULL OR last_success_at < NOW() - INTERVAL '24 hours'`
+      WHERE last_success_at IS NULL
+         OR last_success_at < NOW() - INTERVAL '24 hours'
+         OR next_start_index > 0`
   );
   const targetsRemaining = remainingRow.rows[0]?.n ?? 0;
 
@@ -457,8 +488,26 @@ export async function ingestStep(budgetMs = DEFAULT_BUDGET_MS): Promise<IngestSt
     // Whatever is left after the work already done, minus what the writes need.
     const fetchBudget = Math.max(MIN_FETCH_MS, deadlineAt - Date.now() - WRITE_RESERVE_MS);
     const data = await fetchNvdPage(target.cpe_string, target.next_start_index, fetchBudget);
-    const vulns = data.vulnerabilities || [];
-    const totalResults = typeof data.totalResults === 'number' ? data.totalResults : null;
+
+    // ⛔ A 200 WHOSE BODY IS NOT NVD'S SHAPE IS A FAILURE, NOT AN EMPTY RESULT.
+    // `data.vulnerabilities || []` plus a null totalResults turned an error
+    // envelope, a JSON maintenance page or a renamed field into "this CPE string
+    // genuinely has no CVEs, target complete, current" — clearing last_error,
+    // zeroing consecutive_failures, destroying a previously-known total_results
+    // and dropping targetsRemaining. Byte-for-byte indistinguishable from
+    // success, which is this repo's most-repeated bug.
+    if (!data || !Array.isArray(data.vulnerabilities) || typeof data.totalResults !== 'number') {
+      const e: any = new Error(
+        'NVD returned HTTP 200 but the body did not carry the expected shape '
+        + '(vulnerabilities[] and a numeric totalResults). Recorded as a FAILURE rather than '
+        + 'as an empty result, because "we did not understand the answer" is not "there is nothing there".'
+      );
+      e.retryable = true;
+      throw e;
+    }
+
+    const vulns = data.vulnerabilities;
+    const totalResults = data.totalResults;
 
     for (const v of vulns) {
       if (!v || !v.cve) continue;
@@ -576,7 +625,7 @@ export async function ingestStatus(): Promise<{
     advisories: a.rows[0]?.n ?? 0,
     byVendor: v.rows,
     rateLimitMs: rateLimitMs(),
-    hasApiKey: !!process.env.NVD_API_KEY,
+    hasApiKey: !!nvdApiKey(),
     // ⛔ WHICH BUILD IS ACTUALLY SERVING THIS. Netlify bakes env vars in at
     // BUILD time, so "I pushed a fix" and "the fix is running" are different
     // facts — and this session spent three separate rounds guessing at the gap
