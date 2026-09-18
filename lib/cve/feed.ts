@@ -78,6 +78,8 @@ function canonicalCveFeedJson(feed: {
 
 export type CvePublishResult = {
   feed_version: string;
+  /** When ingestion last succeeded — the liveness signal, distinct from generated_at. */
+  checked_at: string | null;
   /** True when the corpus was byte-identical to the last publish and nothing was written. */
   unchanged?: boolean;
   row_count: number;
@@ -132,6 +134,25 @@ export async function buildAndPublishCveFeed(opts?: {
     }))
     .digest('hex');
 
+  // ⛔ LIVENESS IS NOT FRESHNESS, AND generated_at CANNOT CARRY BOTH.
+  //
+  // Publishing is idempotent: an unchanged corpus republishes nothing and keeps
+  // its version, so generated_at only advances when the CONTENT changes. On a
+  // quiet week at NVD that is entirely correct and entirely useless as a health
+  // signal — a hub that has been dead for six days looks exactly like a hub
+  // whose vendors simply had no new CVEs.
+  //
+  // checked_at is MAX(cve_ingest_state.last_success_at): the last time this
+  // service actually reached NVD and completed a target. It advances on every
+  // healthy run whether or not anything changed, and it STOPS the moment
+  // ingestion stops — which is the thing a consumer needs to know. No new column:
+  // the state machine already records it per target.
+  const checkedRow = await rawQuery<{ checked_at: string | null }>(
+    `SELECT to_char(MAX(last_success_at) AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS checked_at
+       FROM cve_ingest_state`
+  );
+  const checkedAt = checkedRow.rows[0]?.checked_at ?? null;
+
   const prior = await rawQuery<{ feed_version: string; advisories_sha256: string | null }>(
     `SELECT feed_version, advisories_sha256 FROM cve_feed_versions
       ORDER BY generated_at DESC LIMIT 1`
@@ -144,8 +165,22 @@ export async function buildAndPublishCveFeed(opts?: {
   // pointer said it was current. Matters only now that this runs on a schedule:
   // four runs a day would otherwise rewrite one version four times.
   if (!opts?.feedVersion && prior.rows[0] && prior.rows[0].advisories_sha256 === advisoriesSha) {
+    // ⛔ THE POINTER IS STILL REWRITTEN, because checked_at is exactly what an
+    // unchanged run has to report. Returning early without touching it would
+    // leave the one liveness signal frozen precisely when the hub is healthy and
+    // the corpus is quiet — the case this field exists for.
+    try {
+      const { getStore } = await import('@netlify/blobs');
+      const store = getStore('cve-feed');
+      const existing = await store.get('latest.json', { type: 'text' });
+      const parsed = existing ? JSON.parse(existing) : {};
+      await store.set('latest.json', JSON.stringify({ ...parsed, checked_at: checkedAt }, null, 2));
+    } catch {
+      // A pointer refresh failing must not fail the run; the feed is unchanged.
+    }
     return {
       feed_version: prior.rows[0].feed_version,
+      checked_at: checkedAt,
       unchanged: true,
       row_count: rows.length,
       sha256: '',
@@ -197,7 +232,13 @@ export async function buildAndPublishCveFeed(opts?: {
   );
 
   const latestJson = JSON.stringify(
-    { feed_version: feedVersion, sha256, generated_at: generatedAt, row_count: feed.row_count },
+    {
+      feed_version: feedVersion,
+      sha256,
+      generated_at: generatedAt,
+      checked_at: checkedAt,
+      row_count: feed.row_count,
+    },
     null,
     2
   );
@@ -226,6 +267,7 @@ export async function buildAndPublishCveFeed(opts?: {
 
   return {
     feed_version: feedVersion,
+    checked_at: checkedAt,
     row_count: feed.row_count,
     sha256,
     bytes: bytes.length,
