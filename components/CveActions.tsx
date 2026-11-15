@@ -64,6 +64,28 @@ const MAX_RETRYABLE_FAILS = 60;
 // sweep, so hitting it means the window genuinely is not advancing.
 const MAX_THROTTLE_WAITS = 400;
 
+// ⛔ THE BROWSER MUST STATE A BUDGET, AND IT NEVER DID — the same defect
+// 5f5e410 fixed for the SCHEDULED caller, left standing in this one.
+//
+// CLAUDE.md records it verbatim: "the per-step budget knob existed, was clamped,
+// was honoured, and the only production caller never sent it". There were TWO
+// callers. The scheduled function was taught to send `budgetMs`; this sweep was
+// not, so every step it drove ran on the route's DEFAULT_BUDGET_MS of 7000 and,
+// after the write and finalise reserves, handed NVD about 5.1 SECONDS against a
+// service this repo measures at 1.5-14.4s.
+//
+// ⛔ OBSERVED, NOT THEORISED: a full sweep on 2026-11-15 stopped with "60
+// timeouts — NVD is consistently slower than one invocation allows", and the
+// per-target reasons read "NVD did not respond within 5174ms" and "5173ms".
+// That is this constant, not NVD being unusable — the scheduled path was
+// completing steps against the same NVD in the same minutes.
+//
+// ⛔ A BROWSER IS NOT A SCHEDULED FUNCTION AND IS NOT CAPPED AT ~30s. Each step
+// is its own HTTP request, bounded by the route's `maxDuration = 26`, so the
+// honest ceiling here is the server's own MAX_DEADLINE_MS (22000) less the
+// 1500ms the deadline adds, less margin for the response itself.
+const STEP_BUDGET_MS = 20000;
+
 // ⛔ THE VERDICT NEEDS A SURFACE THAT IS NOT EMAIL. Email is the component most
 // likely to be broken at the moment you need it — an unset key, an unverified
 // sender domain, a provider outage — and the whole defect being fixed is a
@@ -178,7 +200,11 @@ export default function CveActions() {
         // failure, so one unreachable target costs a step, not the run.
         let d: any;
         try {
-          const r = await fetch('/api/admin/ingest-cve', { method: 'POST' });
+          const r = await fetch('/api/admin/ingest-cve', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ budgetMs: STEP_BUDGET_MS }),
+          });
           d = await r.json();
           if (!r.ok) throw new Error(d?.error || `HTTP ${r.status}`);
         } catch (err) {
@@ -340,7 +366,11 @@ export default function CveActions() {
     setBusy(true);
     setMsg(null);
     try {
-      const r = await fetch('/api/admin/ingest-cve', { method: 'POST' });
+      const r = await fetch('/api/admin/ingest-cve', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ budgetMs: STEP_BUDGET_MS }),
+      });
       const d = await r.json();
       setMsg(
         d.ok === false
