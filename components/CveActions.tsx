@@ -64,8 +64,34 @@ const MAX_RETRYABLE_FAILS = 60;
 // sweep, so hitting it means the window genuinely is not advancing.
 const MAX_THROTTLE_WAITS = 400;
 
+// ⛔ THE VERDICT NEEDS A SURFACE THAT IS NOT EMAIL. Email is the component most
+// likely to be broken at the moment you need it — an unset key, an unverified
+// sender domain, a provider outage — and the whole defect being fixed is a
+// failure nobody was told about. So the recorded verdict is shown here and on
+// /api/health, and `notifyStatus` says whether alerting could actually deliver,
+// which is the one thing an email can never tell you.
+type Health = {
+  checkedAt: string;
+  state: string;
+  severity: 'ok' | 'info' | 'alert';
+  summary: string;
+  remedy: string | null;
+  notifyStatus: string | null;
+  notifyDetail: string | null;
+  openEpisode: { id: number; state: string; firstSeenAt: string; notifyCount: number } | null;
+  facts: any;
+};
+
+const HEALTH_COLOURS: Record<string, { bg: string; fg: string; border: string }> = {
+  ok: { bg: '#ecfdf3', fg: '#067647', border: '#abefc6' },
+  info: { bg: '#fffaeb', fg: '#b54708', border: '#fedf89' },
+  alert: { bg: '#fef3f2', fg: '#b42318', border: '#fecdca' },
+};
+
 export default function CveActions() {
   const [status, setStatus] = useState<Status | null>(null);
+  const [health, setHealth] = useState<Health | null>(null);
+  const [healthLoaded, setHealthLoaded] = useState(false);
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<string>('');
   const [msg, setMsg] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null);
@@ -80,7 +106,56 @@ export default function CveActions() {
     }
   }, []);
 
-  useEffect(() => { refresh(); }, [refresh]);
+  // ⛔ READS THE RECORDED VERDICT, IT DOES NOT EVALUATE. GET is cheap and
+  // write-free; evaluating on mount would fire the NVD key probe from a page
+  // load and stamp last_attempt_at on a state row every time the dashboard is
+  // opened, which is the throttle-clock mistake probeApiKey's own comment
+  // records. The "Check health now" button is the deliberate path.
+  const refreshHealth = useCallback(async () => {
+    try {
+      const r = await fetch('/api/admin/cve-health');
+      const d = await r.json();
+      if (r.ok) setHealth(d.status ?? null);
+    } catch {
+      // Leave the panel blank rather than claiming health we have not read.
+    } finally {
+      setHealthLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => { refresh(); refreshHealth(); }, [refresh, refreshHealth]);
+
+  async function checkHealth() {
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await fetch('/api/admin/cve-health', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ trigger: 'dashboard', probe: true }),
+      });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d?.error || `HTTP ${r.status}`);
+      // The POST returns the verdict it just made; the panel is re-read from the
+      // recorded singleton so what is displayed is what was STORED, not what was
+      // returned. Those differ if the write failed, and the stored one is the
+      // one the operator will see on every later page load.
+      await refreshHealth();
+      const notify = d.notify
+        ? d.notify.sent ? 'alert email sent' : `alert NOT sent (${d.notify.skipped}: ${d.notify.detail})`
+        : d.action === 'suppressed_cooldown'
+          ? 'inside the 24h cooldown, so no email was sent'
+          : 'no email was required';
+      setMsg({
+        kind: d.verdict.severity === 'alert' ? 'err' : 'ok',
+        text: `${d.verdict.state}: ${d.verdict.summary} — action: ${d.action}; ${notify}`,
+      });
+    } catch (e) {
+      setMsg({ kind: 'err', text: e instanceof Error ? e.message : String(e) });
+    } finally {
+      setBusy(false);
+    }
+  }
 
   async function sweep() {
     setBusy(true);
@@ -329,6 +404,62 @@ export default function CveActions() {
           it is what turned every stall in this feature into guesswork — a killed
           invocation (which records nothing) and a caught error (which records a
           reason) are opposite problems and looked identical here. */}
+      {/* ⛔ "NEVER CHECKED" IS NOT "HEALTHY", AND THE PANEL MUST SAY SO. An
+          absent verdict reads as fine to anyone scanning for a red box, which is
+          how 23 days passed with every signal individually available. */}
+      {healthLoaded && !health && (
+        <div
+          style={{
+            marginBottom: '0.9rem', padding: '0.7rem 0.8rem', borderRadius: 8,
+            background: HEALTH_COLOURS.alert.bg, border: `1px solid ${HEALTH_COLOURS.alert.border}`,
+            color: HEALTH_COLOURS.alert.fg, fontSize: '0.85rem',
+          }}
+        >
+          <strong>Ingest health: never checked.</strong> No verdict has ever been recorded.
+          The hourly scheduled-cve-health function may not be deployed yet — press
+          “Check health now”.
+        </div>
+      )}
+      {health && (
+        <div
+          style={{
+            marginBottom: '0.9rem', padding: '0.7rem 0.8rem', borderRadius: 8,
+            background: (HEALTH_COLOURS[health.severity] ?? HEALTH_COLOURS.alert).bg,
+            border: `1px solid ${(HEALTH_COLOURS[health.severity] ?? HEALTH_COLOURS.alert).border}`,
+            color: (HEALTH_COLOURS[health.severity] ?? HEALTH_COLOURS.alert).fg,
+            fontSize: '0.85rem',
+          }}
+        >
+          <div style={{ fontWeight: 700 }}>
+            Ingest health: {health.state}
+            <span style={{ fontWeight: 400, opacity: 0.75 }}>
+              {' '}· checked {new Date(health.checkedAt).toLocaleString()}
+            </span>
+          </div>
+          <div style={{ marginTop: '0.25rem' }}>{health.summary}</div>
+          {health.remedy && (
+            <details style={{ marginTop: '0.4rem' }}>
+              <summary style={{ cursor: 'pointer' }}>What to do</summary>
+              <div style={{ marginTop: '0.35rem', whiteSpace: 'pre-wrap', opacity: 0.9 }}>
+                {health.remedy}
+              </div>
+            </details>
+          )}
+          {health.openEpisode && (
+            <div style={{ marginTop: '0.35rem', opacity: 0.85 }}>
+              Open since {new Date(health.openEpisode.firstSeenAt).toLocaleString()} ·{' '}
+              {health.openEpisode.notifyCount} notification(s) sent
+            </div>
+          )}
+          {/* ⛔ WHETHER THE ALERT COULD ACTUALLY BE DELIVERED. A configured-looking
+              alerting feature that cannot send is the same silence it replaced. */}
+          <div style={{ marginTop: '0.35rem', opacity: 0.85 }}>
+            Alert delivery: {health.notifyStatus ?? 'unknown'}
+            {health.notifyDetail ? ` — ${health.notifyDetail}` : ''}
+          </div>
+        </div>
+      )}
+
       {status && status.failures.length > 0 && (
         <details style={{ marginBottom: '0.9rem', fontSize: '0.82rem' }}>
           <summary style={{ cursor: 'pointer', color: '#b42318' }}>
@@ -378,6 +509,9 @@ export default function CveActions() {
         </button>
         <button style={btn} disabled={busy} onClick={testKey}>
           Test NVD key
+        </button>
+        <button style={btn} disabled={busy} onClick={checkHealth}>
+          Check health now
         </button>
         <button style={btn} disabled={busy} onClick={refresh}>
           Refresh

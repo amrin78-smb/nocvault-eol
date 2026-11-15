@@ -128,6 +128,60 @@ const CVE_SCHEMA_STATEMENTS: string[] = [
   // already-deployed database keeps the old shape and the first query naming
   // this column fails at runtime. Hence the companion ALTER.
   `ALTER TABLE cve_feed_versions ADD COLUMN IF NOT EXISTS advisories_sha256 TEXT`,
+
+  // ⛔ THE LATEST HEALTH VERDICT — A SINGLETON, READ BY /api/health AND THE
+  // DASHBOARD. It exists because email is the component most likely to be broken
+  // at the moment you need it, so the verdict must be readable without it. Every
+  // evaluation writes here, INCLUDING a healthy one and including one that could
+  // not notify: "ran and found nothing wrong" and "never ran" must not look the
+  // same, which is the whole defect being fixed.
+  //
+  // ⛔ ONE ROW, ENFORCED BY A CHECK RATHER THAN BY CONVENTION. A second row would
+  // make "the current state" a query that can return two answers.
+  `CREATE TABLE IF NOT EXISTS cve_health_status (
+     id INTEGER PRIMARY KEY,
+     checked_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     state TEXT NOT NULL,
+     severity TEXT NOT NULL,
+     summary TEXT NOT NULL,
+     remedy TEXT,
+     facts JSONB,
+     notify_status TEXT,
+     notify_detail TEXT,
+     CONSTRAINT cve_health_status_singleton CHECK (id = 1)
+   )`,
+
+  // ⛔ THE ALERT EPISODE LOG — THIS IS WHAT MAKES THE ALERT SURVIVABLE.
+  // The outage it was built for ran 23 days; alerting per evaluation would have
+  // sent ~552 emails, and an operator who filters the channel has effectively
+  // uninstalled the feature. So an EPISODE opens on a state transition, is
+  // reminded about at most once per cooldown, and is RESOLVED with an all-clear.
+  //
+  // ⛔ THE RECOVERY MESSAGE IS NOT A COURTESY. Without it the operator cannot
+  // distinguish "fixed" from "still broken, stopped emailing" — and a cooldown
+  // makes those two look identical by design.
+  `CREATE TABLE IF NOT EXISTS cve_health_alerts (
+     id SERIAL PRIMARY KEY,
+     state TEXT NOT NULL,
+     severity TEXT NOT NULL,
+     summary TEXT NOT NULL,
+     first_seen_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     last_seen_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     notified_at TIMESTAMPTZ,
+     notify_count INTEGER NOT NULL DEFAULT 0,
+     last_notify_result TEXT,
+     resolved_at TIMESTAMPTZ,
+     recovery_notified_at TIMESTAMPTZ,
+     detail JSONB
+   )`,
+
+  // ⛔ AT MOST ONE OPEN EPISODE, AS A DATABASE INVARIANT. The dedup logic reads
+  // "the open episode" and two of them would make that read ambiguous — and the
+  // health check can be fired concurrently by its own schedule and by the
+  // dashboard button. The indexed expression is constant across matching rows,
+  // so the partial unique index permits exactly one unresolved row.
+  `CREATE UNIQUE INDEX IF NOT EXISTS idx_cve_health_alerts_one_open
+     ON cve_health_alerts ((resolved_at IS NULL)) WHERE resolved_at IS NULL`,
 ];
 
 /**
@@ -184,7 +238,16 @@ export async function ensureCveSchema(): Promise<void> {
                   WHERE conrelid = 'public.cve_advisories'::regclass
                     AND contype = 'u'
                     AND array_length(conkey, 1) = 2
-               )) AS present`
+               )
+               -- ⛔ WIDENED IN THE SAME COMMIT AS THE MIGRATION IT GUARDS, which
+               -- is what the note above demands and what the advisories_sha256
+               -- incident proved the cost of skipping. Without these two the
+               -- gate reports the schema current on every already-initialised
+               -- database, the health tables are never created, and the first
+               -- health check fails with "relation cve_health_status does not
+               -- exist" — a DDL present in the diff and a gate silent about it.
+               AND to_regclass('public.cve_health_status') IS NOT NULL
+               AND to_regclass('public.cve_health_alerts') IS NOT NULL) AS present`
     );
     if (r.rows[0]?.present) {
       schemaReady = true;

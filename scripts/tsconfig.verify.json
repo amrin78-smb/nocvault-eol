@@ -1,0 +1,28 @@
+{
+  // ⛔ THE VERIFY HARNESS IS COMPILED, NOT RUN NATIVELY.
+  //
+  // CLAUDE.md's "scripts run with native node on Node >= 22" holds for
+  // gen-keys.ts, which imports nothing local. verify-cve-health.ts imports the
+  // lib/ tree, and lib/ uses EXTENSIONLESS relative imports ('../db') because
+  // the Next bundler resolves them. Native Node reparses a .ts file containing
+  // ESM syntax as ESM, where './schema' does not resolve to './schema.ts' — so
+  // importing lib/ natively fails with "Cannot find module .../lib/db".
+  //
+  // Compiling to CommonJS first restores extensionless resolution. The root
+  // tsconfig cannot do this: it is noEmit, module esnext, and EXCLUDES scripts/.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "resolveJsonModule": true,
+    "noEmit": false,
+    "outDir": "../.verify-build",
+    "rootDir": "..",
+    "types": ["node"]
+  },
+  "include": ["verify-cve-health.ts"]
+}

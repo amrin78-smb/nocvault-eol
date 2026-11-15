@@ -156,6 +156,10 @@ still fixable.
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` | seeds the admin user on first init |
 | `NVD_API_KEY` | raises NVD's limit from 5 to 50 requests / rolling 30s. Sent as an `apiKey` REQUEST HEADER, not a query param |
 | `CVE_FEED_KEYS` | who may pull `/api/v1/cve-feed`. Comma-separated `key` or `key:label`; the label names the customer in the log line. **Unset = the gate fails OPEN** (any non-empty key accepted) and every response says so via `X-Feed-License: unenforced` |
+| `ALERT_EMAIL_API_KEY` | HTTP email API key (Resend-shaped: `POST {base}/emails`, bearer auth) for ingest health alerts. **Unset = the health check still RUNS and still RECORDS**; it reports `no_api_key` and the verdict stays readable on `/api/health` and the dashboard |
+| `ALERT_EMAIL_TO` | comma-separated alert recipients. Unset behaves exactly as above (`no_recipient`) |
+| `ALERT_EMAIL_FROM` | sender; defaults to `onboarding@resend.dev`, which only delivers to the provider account owner. Set a verified-domain sender for real use |
+| `ALERT_EMAIL_API_BASE` | optional, defaults to `https://api.resend.com`. Exists so `npm run verify:cve-health` can point the mailer at a local capture server and PROVE a send |
 
 ⛔ **AN ENV CHANGE DOES NOT REACH A DEPLOYED FUNCTION UNTIL THE NEXT BUILD.**
 Netlify bakes these in at BUILD time. Editing a value in the UI leaves every
@@ -336,6 +340,79 @@ own pointer said it was current.
 ⛔ **6-HOURLY MATCHES THE CONSUMER.** SecVault syncs its feeds on a 6-hourly cycle;
 a hub refreshing less often would leave it faithfully importing a stale corpus —
 worse than an obvious failure, because every signal stays green.
+
+### Ingest health alerting (`lib/cve/health.ts`, `health-alerts.ts`, `notify.ts`)
+
+Built 2026-11-15, after the 23-day silent outage above. `scheduled-cve-health`
+(hourly at **:25** — clear of ingest at :10 and publish at :45) POSTs
+`/api/admin/cve-health`, which classifies, deduplicates and alerts.
+
+⛔ **SIX STATES, NEVER COLLAPSED**, because they send the operator to four
+different places: `key_invalid` (replace the key **and redeploy**), `stalled`
+(the pipeline is dead), `corpus_frozen` (ingest succeeds and stores nothing),
+`upstream_degraded` (NVD's bad hour — **recorded and displayed, never emailed**),
+`unknown` (an unrecognised condition — fails toward alert, never toward healthy),
+`healthy`.
+
+⛔ **DO NOT ALERT ON "A RUN FAILED".** Measured on a HEALTHY tick 2026-11-15:
+four of seven targets returned HTTP 503 while three succeeded. Per-target failure
+is the normal state of this pipeline, 429/5xx/timeouts are already classified
+`retryable`, and an alert that fires on them trains the operator to filter the
+channel — at which point the next real alert is silent again.
+
+⛔ **THE 404 SIGNATURE MUST BE FRESHNESS-QUALIFIED OR IT LIES AFTER EVERY
+RECOVERY.** `last_error` is cleared to NULL on success, so a non-null error IS
+that target's latest outcome — but the fleet sweeps ~7 targets an hour, so for
+hours after a key is fixed most targets still carry their pre-fix 404. Measured
+at 15:11Z on 2026-11-15, minutes after the real recovery: 16 targets holding
+`HTTP 404` beside three fresh successes. The rule is `404 whose last_attempt_at
+>= MAX(last_success_at)`: a 404 at T proves the key was bad at T; a success at
+S > T proves it is good at S.
+
+⛔ **A PROBE HAS THREE OUTCOMES AND THE THIRD IS THE DANGEROUS ONE.**
+`probeApiKey()` bounds each fetch at 3000ms while this file measures NVD at
+1.5-14.4s, so losing the UNKEYED CONTROL is ordinary — observed twice on the
+first live runs of the verifier (keyed 404 / unkeyed timeout, then 503/503). An
+inconclusive probe proves nothing and must fall back to the recorded signature;
+an early draft branched on "a probe ran" and was about to report a provably dead
+key as healthy.
+
+⛔ **THE CORPUS CEILING IS THE ONLY OUTCOME CHECK, AND ITS THRESHOLD IS DERIVED.**
+`max(published_at)` ages on its own during quiet periods, so the threshold must
+clear the longest genuine one. Measured on the live corpus (955 advisories):
+gaps between publication days since 2024 are p50 **8d**, p90 **28d**, p95 **31d**,
+**max 42d** (2025-08-14 -> 2025-09-25); every 2026 gap is ≤28d. Hence
+`CORPUS_CEILING_DAYS = 45`. ⛔ **Do not tighten it below 42** to make it faster —
+that trades a real signal for routine false alarms. It is the BACKSTOP (it would
+have fired ~day 45 of this 54-day outage); `STALL_HOURS = 6` (six missed hourly
+ticks) is what catches a hard stop within the hour. The ceiling is the one check
+that catches "the key works, the requests return 200, and we store nothing".
+
+⛔ **`STALL_HOURS` REUSES `MAX(last_success_at)` — the SAME expression already
+published as `checked_at`**, not a second definition, so the operator's view and
+SecVault's freshness check can never disagree about whether the hub is alive.
+
+⛔ **ONE ALERT PER TRANSITION, A 24h COOLDOWN, AND AN ALL-CLEAR.** This outage ran
+23 days: per-evaluation alerting is ~552 emails, transition-plus-daily is ~24.
+⛔ `notified_at` advances **only on a real send**, so a broken mailer cannot start
+a day of deliberate silence. ⛔ The recovery message is load-bearing — a cooldown
+makes "fixed" and "still broken, stopped emailing" identical from the inbox.
+
+⛔ **NO MAILER IS NOT AN EXCUSE TO SKIP.** With `ALERT_EMAIL_API_KEY` unset the
+check still runs, still classifies and still records; it reports `no_api_key` and
+the verdict is readable on `/api/health` and the dashboard. A notifier that
+quietly no-ops when unconfigured reproduces the defect it was built to fix.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:cve-health` — 95 assertions.** It
+forces all six states, both probe directions plus the inconclusive one, the
+freshness qualifier against today's real production shape, dedup/cooldown/
+supersede/recovery, and every email outcome (sent, `no_api_key`, `provider_error`)
+against a local capture server. It refuses to run unless `DATABASE_URL` is local
+and contains `test`, because it seeds a frozen corpus and a wall of 404s.
+⛔ It found a `42P08 inconsistent types deduced for parameter $2` that fired
+**only on the recovery path** — open, remind and supersede all passed — which
+would have left every episode permanently open. Reading the query did not find
+it; running it did.
 
 ### Licence gate (`lib/cve/license.ts`)
 

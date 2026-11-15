@@ -75,6 +75,23 @@ function nvdApiKey(): string {
   return (process.env.NVD_API_KEY || '').trim().replace(/^["']|["']$/g, '');
 }
 
+/**
+ * First four + last four characters of the configured key, or null when unset.
+ *
+ * ⛔ ENOUGH TO TELL A STALE VALUE FROM A CURRENT ONE, AND NOT ENOUGH TO USE —
+ * which is the entire job. It exists as a named export because the health alert
+ * must name the fingerprint in an EMAIL without spending two NVD requests on a
+ * probe first, and because a second hand-rolled copy of this formatting would
+ * drift from probeApiKey's and quietly stop matching what the dashboard shows.
+ * Comparing two differently-formatted fingerprints is how an operator concludes
+ * a key is stale when it is not.
+ */
+export function nvdKeyFingerprint(): string | null {
+  const apiKey = nvdApiKey();
+  if (!apiKey) return null;
+  return apiKey.length >= 10 ? `${apiKey.slice(0, 4)}…${apiKey.slice(-4)}` : '(too short)';
+}
+
 function rateLimitMs(): number {
   // ⛔ TRIMMED, BECAUSE fetchNvdPage IS. This read the raw env var, so a value
   // that is whitespace or empty quotes — the exact paste error this file already
@@ -732,8 +749,10 @@ export async function probeApiKey(): Promise<{
 }> {
   const raw = process.env.NVD_API_KEY || '';
   const apiKey = raw.trim().replace(/^["']|["']$/g, '');
-  const fingerprint =
-    apiKey.length >= 10 ? `${apiKey.slice(0, 4)}…${apiKey.slice(-4)}` : apiKey ? '(too short)' : null;
+  // ⛔ THE SHARED HELPER, NOT A SECOND COPY. Identical output to the inline
+  // version this replaced; the health alert formats its fingerprint from the
+  // same function so the two can never disagree.
+  const fingerprint = nvdKeyFingerprint();
 
   // A CPE that is known to exist and to return a small result set, so the probe
   // is cheap and a 404 can only mean the key.
