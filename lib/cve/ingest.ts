@@ -234,14 +234,18 @@ async function nextTarget(): Promise<{
   return r.rows[0] ?? null;
 }
 
-async function fetchNvdPage(
-  cpeString: string,
-  startIndex: number,
-  budgetMs: number
-): Promise<any> {
-  const url =
-    `${NVD_BASE}?virtualMatchString=${encodeURIComponent(cpeString)}`
-    + `&resultsPerPage=${RESULTS_PER_PAGE}&startIndex=${startIndex}`;
+/**
+ * ⛔ ONE NVD CALLER, TAKING A URL — NOT TWO COPIES OF THIS ERROR HANDLING.
+ *
+ * Everything below the URL is load-bearing and was fixed the hard way: naming
+ * our own abort so it is not read as an NVD outage, marking it retryable so
+ * ingestStep does not count our deadline against the target, the 404-means-
+ * invalid-key diagnosis, 429/5xx as transient, and the body read being INSIDE
+ * the timeout. The RSS trigger needs the identical treatment for a different
+ * query, and a second hand-rolled fetch would drift from this one the first
+ * time any of it is corrected again.
+ */
+async function fetchNvdUrl(url: string, budgetMs: number): Promise<any> {
   // ⛔ TRIMMED. A key pasted into a Netlify env field with a trailing space or
   // surrounding quotes is sent verbatim, NVD rejects it, and the failure looks
   // nothing like a formatting problem (see the 404 note below).
@@ -349,6 +353,76 @@ async function fetchNvdPage(
 }
 
 /**
+ * How long a caller must wait before its next NVD request, in ms. 0 = go now.
+ *
+ * ⛔ NVD RATE LIMITS THE CALLER, NOT THE QUERY, so every NVD path in this
+ * service shares ONE window: the rotation sweep, the key probe and the RSS
+ * drain. A second path pacing itself independently would be correct in
+ * isolation and, together with the first, sail straight past the limit — and
+ * NVD answers that with 403s that read like an outage rather than like our own
+ * fault. probeApiKey's own comment records exactly that happening when it
+ * stamped nothing.
+ *
+ * ⛔ THE CLOCK IS max(cve_ingest_state.last_attempt_at). ingestStep applies the
+ * same rule inline rather than calling this, deliberately left alone today: it
+ * is the most load-bearing function here and was repaired twice in the last two
+ * months. Both readings must stay the same definition — change them together.
+ */
+export async function nvdThrottleWaitMs(): Promise<number> {
+  const gap = rateLimitMs();
+  const row = await rawQuery<{ ms: string | null }>(
+    'SELECT EXTRACT(EPOCH FROM (NOW() - MAX(last_attempt_at))) * 1000 AS ms FROM cve_ingest_state'
+  );
+  const since = row.rows[0]?.ms;
+  if (since === null || since === undefined) return 0;
+  const waited = Number(since);
+  return waited < gap ? Math.ceil(gap - waited) : 0;
+}
+
+/**
+ * Record that an NVD request was just made, so other callers wait for it.
+ *
+ * ⛔ CALLED ONLY WHEN A REQUEST IS ACTUALLY SENT. Stamping a call that never
+ * reached NVD pushes the window forward every time, and a caller polling faster
+ * than the limit would starve itself for ever — the reason ingestStep returns
+ * `throttled` WITHOUT marking an attempt.
+ */
+export async function stampNvdCall(): Promise<void> {
+  await rawQuery(
+    `UPDATE cve_ingest_state SET last_attempt_at = NOW()
+      WHERE id = (SELECT id FROM cve_ingest_state ORDER BY id LIMIT 1)`
+  );
+}
+
+/** A page of CVEs for one CPE string — the rotation sweep's query. */
+async function fetchNvdPage(
+  cpeString: string,
+  startIndex: number,
+  budgetMs: number
+): Promise<any> {
+  return fetchNvdUrl(
+    `${NVD_BASE}?virtualMatchString=${encodeURIComponent(cpeString)}`
+      + `&resultsPerPage=${RESULTS_PER_PAGE}&startIndex=${startIndex}`,
+    budgetMs
+  );
+}
+
+/**
+ * One CVE by its identifier — the RSS trigger's query.
+ *
+ * ⛔ ONE REQUEST PER ADVISORY INSTEAD OF PAGING A WHOLE CPE RESULT SET, which is
+ * the entire efficiency argument for discovering through a vendor feed: the CPE
+ * rotation re-reads everything a product has ever had to find what is new.
+ *
+ * ⛔ NVD ANSWERS 200 WITH totalResults: 0 FOR AN UNKNOWN ID. That is a real
+ * answer ("NVD does not have this CVE yet") and must not be confused with the
+ * 404 that means the API key is bad — which fetchNvdUrl already separates.
+ */
+export async function fetchNvdByCveId(cveId: string, budgetMs: number): Promise<any> {
+  return fetchNvdUrl(`${NVD_BASE}?cveId=${encodeURIComponent(cveId)}`, budgetMs);
+}
+
+/**
  * Store one NVD record for one vendor.
  *
  * ⛔ AN UNEXTRACTABLE RECORD IS STORED WITH matchability='unmatchable' AND NULL
@@ -363,7 +437,7 @@ async function fetchNvdPage(
  * storing those under this vendor would attribute another product's CVE to a
  * firewall.
  */
-async function upsertAdvisory(
+export async function upsertAdvisory(
   vendor: string,
   cve: any,
   prefixes: string[]

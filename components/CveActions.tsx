@@ -147,6 +147,76 @@ export default function CveActions() {
 
   useEffect(() => { refresh(); refreshHealth(); }, [refresh, refreshHealth]);
 
+  /**
+   * ⛔ POLL EVERY SOURCE, THEN DRAIN IN BOUNDED ROUNDS. A poll of Cisco's feed
+   * yields ~106 identifiers and resolving those against NVD is ~75 seconds at
+   * the keyed rate — far past one invocation — so the drain is called
+   * repeatedly until the queue stops shrinking, exactly like the CPE sweep.
+   *
+   * ⛔ IT STATES A BUDGET. The whole lesson of 5f5e410 and of the sweep fix
+   * above it: a caller that sends none gets a default sized for a 10s
+   * invocation and then starves NVD of the 1.5-14.4s it needs.
+   */
+  async function pollFeeds() {
+    setBusy(true);
+    setMsg(null);
+    try {
+      let found = 0;
+      let queued = 0;
+      const notes: string[] = [];
+      // One poll per configured source; the server rotates to the
+      // least-recently-fetched, so N calls cover all of them.
+      for (let i = 0; i < 4; i++) {
+        setProgress(`Polling vendor feeds… (${i + 1})`);
+        const r = await fetch('/api/admin/ingest-cve-rss', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'poll', budgetMs: 10000 }),
+        });
+        const d = await r.json();
+        if (d.vendor == null) break;
+        found += d.idsFound || 0;
+        queued += d.idsNew || 0;
+        if (!d.ok && d.error) notes.push(`${d.vendor}: ${d.error}`);
+      }
+
+      let inserted = 0;
+      let processed = 0;
+      let pending: number | null = null;
+      for (let round = 0; round < 40; round++) {
+        setProgress(`Resolving against NVD… ${processed} done, ${pending ?? '?'} pending`);
+        const r = await fetch('/api/admin/ingest-cve-rss', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'drain', budgetMs: STEP_BUDGET_MS }),
+        });
+        const d = await r.json();
+        processed += d.processed || 0;
+        inserted += d.inserted || 0;
+        pending = typeof d.pending === 'number' ? d.pending : pending;
+        if (d.error) { notes.push(d.error); break; }
+        // Nothing moved and nothing waiting -> done. Nothing moved but rows
+        // pending -> they are awaiting NVD publication, not stuck.
+        if ((d.processed || 0) === 0) break;
+      }
+
+      setProgress('');
+      setMsg({
+        kind: notes.length ? 'err' : 'ok',
+        text:
+          `Feeds: ${found} identifiers seen, ${queued} newly queued. `
+          + `NVD: ${processed} resolved, ${inserted} new advisories, ${pending ?? 0} pending.`
+          + (notes.length ? ` — ${notes.join(' | ')}` : ''),
+      });
+      await refresh();
+    } catch (e) {
+      setProgress('');
+      setMsg({ kind: 'err', text: e instanceof Error ? e.message : String(e) });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function checkHealth() {
     setBusy(true);
     setMsg(null);
@@ -542,6 +612,9 @@ export default function CveActions() {
         </button>
         <button style={btn} disabled={busy} onClick={checkHealth}>
           Check health now
+        </button>
+        <button style={btn} disabled={busy} onClick={pollFeeds}>
+          Poll vendor feeds
         </button>
         <button style={btn} disabled={busy} onClick={refresh}>
           Refresh

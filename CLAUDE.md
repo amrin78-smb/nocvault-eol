@@ -428,6 +428,82 @@ because it seeds a frozen corpus and a wall of 404s.
 would have left every episode permanently open. Reading the query did not find
 it; running it did.
 
+### RSS-triggered CVE discovery (`lib/cve/rss.ts`, `rss-sources.ts`)
+
+Built 2026-11-15. `scheduled-cve-rss` (hourly at **:40** — clear of ingest :10,
+health :25, publish :45) polls one vendor advisory feed, enqueues the CVE
+identifiers it finds, then drains the queue against NVD within what is left.
+
+⛔ **RSS CHANGES WHEN WE LOOK. IT NEVER CHANGES WHAT WE ACCEPT.** A feed yields
+identifiers only. Each is fetched FROM NVD and passed through the same
+`extract.ts` + `classifyNvdNativeMatchability` against the same `VENDOR_CPES`
+prefixes as the rotation, so anything not naming a tracked product is recorded
+`other_product` and stored nowhere. This is what keeps the extractor's "zero
+divergence over 243 real NVD records" true for every row in the corpus — and it
+is why Cisco's feed covering every Cisco product is safe rather than a repeat of
+the refused `cpe:2.3:a:checkpoint` wildcard.
+
+⛔ **WHY IT EXISTS:** the CPE rotation re-reads everything a product has ever had
+in order to notice what is new — 2-4 days for a full sweep when healthy, and
+measured far worse on 2026-11-15, when checkpoint's 19 outstanding strings alone
+needed ~16 hours while the corpus ceiling sat 54 days stale. A feed poll finds
+the same advisory in minutes at one NVD request instead of a paged result set.
+
+⛔ **FORTINET WAS MEASURED OUT, NOT OVERLOOKED.** Probed 2026-11-15:
+
+| feed | items | carrying a CVE id | verdict |
+|---|---|---|---|
+| cisco `psirtrss20` | 50 | **49 (98%)**, 106 ids | in |
+| paloalto `rss.xml` | 25 | **24 (96%)**, 25 ids | in |
+| fortinet `ir.xml` | 50 | **1 (2%)**, 10 ids | **refused** |
+
+`filestore.fortinet.com/fortiguard/rss/ir.xml` answers 200 everywhere (the one
+Fortinet URL the September probe found un-Cloudflared) but it is a threat-
+RESEARCH feed — titles like "Numeric truncation error" — not a PSIRT feed. Its
+items link to `fortiguard.com/psirt/<id>`, the byte-identical Cloudflare
+challenge already refused. ⛔ Do not add it "for coverage": a listed vendor that
+silently contributes zero is worse than one honestly absent. Fortinet keeps its
+CPE rotation, which works (279 advisories).
+⛔ `endoflife.date` serves clean JSON and is an **aggregator** — disqualified by
+the official-sources-only rule, recorded so it is not rediscovered as "it parses
+nicely".
+
+⛔ **THE FEED IS NEVER PARSED AS XML**, only scanned for a strict `CVE-\d{4}-\d{4,7}`
+pattern. Feeds differ (RSS here, Atom there, occasionally malformed) and an
+identifier regex survives all of it; parsing untrusted third-party XML invites
+entity expansion for no benefit. No XML dependency is added.
+
+⛔ **A 200 CARRYING NO IDENTIFIERS IS RECORDED AS A FAILURE**, not as "no new
+advisories". A moved feed, a login page and a quiet rewrite all answer 200 with
+bytes — the repo's most-repeated bug, already written down for NVD's
+200-with-the-wrong-shape.
+
+⛔ **DISCOVERY AND RESOLUTION CANNOT SHARE AN INVOCATION.** One Cisco poll
+yielded 106 identifiers; resolving those is ~75s at the keyed rate against a
+function capped near 30. So the poll ENQUEUES (`cve_rss_queue`) and a bounded
+drain resolves — the same resumable-state-machine discipline as
+`cve_ingest_state`. ⛔ The queue is keyed **(cve_id, vendor)**, matching
+`cve_advisories`, because one CVE can be discovered for two vendors and must
+resolve independently for each.
+
+⛔ **`resolved_at` NULL WITH `last_error` SET IS NORMAL:** the vendor published
+before NVD did. It must be retried, so it must not be resolved; it is not a
+fault, so it must not read as one.
+
+⛔ **THE NVD RATE-LIMIT WINDOW IS SHARED**, via `nvdThrottleWaitMs()` /
+`stampNvdCall()` — NVD limits the CALLER, not the query, so a drain pacing itself
+independently would be correct alone and, with the sweep, sail past the limit and
+earn 403s that read like an outage. ⚠️ `ingestStep` still applies the same rule
+inline rather than calling the helper; both are the same definition of the clock
+and must change together.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:cve-rss` — 38 assertions**, including
+identifier-extraction strictness both ways, the 1000-id cap, a full rotation
+pass, re-polling being free, the 200-with-no-identifiers guard, HTTP errors,
+recovery, and a live check that each admitted feed STILL carries identifiers (so
+a feed that goes the way of Fortinet's fails here rather than quietly
+contributing nothing).
+
 ### Licence gate (`lib/cve/license.ts`)
 
 `CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the

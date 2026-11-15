@@ -182,6 +182,54 @@ const CVE_SCHEMA_STATEMENTS: string[] = [
   // so the partial unique index permits exactly one unresolved row.
   `CREATE UNIQUE INDEX IF NOT EXISTS idx_cve_health_alerts_one_open
      ON cve_health_alerts ((resolved_at IS NULL)) WHERE resolved_at IS NULL`,
+
+  // ⛔ RSS DISCOVERY STATE. One row per vendor advisory feed.
+  // `cve_ids_seen` is what the LAST poll found, not a running total — a feed
+  // that silently stops carrying identifiers must be visible as a number that
+  // fell to zero, not hidden inside an ever-growing counter.
+  `CREATE TABLE IF NOT EXISTS cve_rss_sources (
+     id SERIAL PRIMARY KEY,
+     vendor TEXT NOT NULL,
+     url TEXT NOT NULL,
+     last_fetch_at TIMESTAMPTZ,
+     last_status INTEGER,
+     last_error TEXT,
+     last_body_bytes INTEGER,
+     cve_ids_seen INTEGER NOT NULL DEFAULT 0,
+     consecutive_failures INTEGER NOT NULL DEFAULT 0,
+     UNIQUE (vendor, url)
+   )`,
+
+  // ⛔ A QUEUE, BECAUSE DISCOVERY AND RESOLUTION CANNOT SHARE AN INVOCATION.
+  // One poll of Cisco's feed yielded 106 distinct identifiers; resolving those
+  // against NVD at the keyed rate is ~75 seconds, against a function capped near
+  // 30. So the feed poll ENQUEUES and a separate bounded drain resolves — the
+  // same resumable-state-machine discipline as cve_ingest_state, for the same
+  // reason.
+  //
+  // ⛔ KEYED (cve_id, vendor), MATCHING cve_advisories. One CVE can legitimately
+  // be discovered for two vendors and must resolve independently for each; this
+  // is the mistake SecVault made with a cve_id-unique table, recorded in
+  // CLAUDE.md as permanent once made.
+  //
+  // ⛔ resolved_at NULL WITH last_error SET IS A NORMAL, EXPECTED STATE: the
+  // vendor published before NVD did. It must be retried, so it must not be
+  // resolved; it is not a failure, so it must not read as one.
+  `CREATE TABLE IF NOT EXISTS cve_rss_queue (
+     id SERIAL PRIMARY KEY,
+     cve_id TEXT NOT NULL,
+     vendor TEXT NOT NULL,
+     discovered_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+     attempts INTEGER NOT NULL DEFAULT 0,
+     last_attempt_at TIMESTAMPTZ,
+     last_error TEXT,
+     resolved_at TIMESTAMPTZ,
+     outcome TEXT,
+     UNIQUE (cve_id, vendor)
+   )`,
+
+  `CREATE INDEX IF NOT EXISTS idx_cve_rss_queue_pending
+     ON cve_rss_queue (attempts, discovered_at) WHERE resolved_at IS NULL`,
 ];
 
 /**
@@ -247,7 +295,13 @@ export async function ensureCveSchema(): Promise<void> {
                -- health check fails with "relation cve_health_status does not
                -- exist" — a DDL present in the diff and a gate silent about it.
                AND to_regclass('public.cve_health_status') IS NOT NULL
-               AND to_regclass('public.cve_health_alerts') IS NOT NULL) AS present`
+               AND to_regclass('public.cve_health_alerts') IS NOT NULL
+               -- ⛔ WIDENED WITH THE MIGRATION, AGAIN. Third time this rule has
+               -- had to be honoured; the one time it was not, every publish
+               -- failed on a missing advisories_sha256 column while the gate
+               -- reported the schema current.
+               AND to_regclass('public.cve_rss_sources') IS NOT NULL
+               AND to_regclass('public.cve_rss_queue') IS NOT NULL) AS present`
     );
     if (r.rows[0]?.present) {
       schemaReady = true;
