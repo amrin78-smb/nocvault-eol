@@ -156,10 +156,11 @@ still fixable.
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` | seeds the admin user on first init |
 | `NVD_API_KEY` | raises NVD's limit from 5 to 50 requests / rolling 30s. Sent as an `apiKey` REQUEST HEADER, not a query param |
 | `CVE_FEED_KEYS` | who may pull `/api/v1/cve-feed`. Comma-separated `key` or `key:label`; the label names the customer in the log line. **Unset = the gate fails OPEN** (any non-empty key accepted) and every response says so via `X-Feed-License: unenforced` |
-| `ALERT_EMAIL_API_KEY` | HTTP email API key (Resend-shaped: `POST {base}/emails`, bearer auth) for ingest health alerts. **Unset = the health check still RUNS and still RECORDS**; it reports `no_api_key` and the verdict stays readable on `/api/health` and the dashboard |
+| `ALERT_EMAIL_PROVIDER` | `brevo` (default) or `resend`. ⛔ **NOT interchangeable via `ALERT_EMAIL_API_BASE`** — they differ in PATH, AUTH HEADER and BODY (see below) |
+| `ALERT_EMAIL_API_KEY` | HTTP email API key for ingest health alerts. Brevo: `xkeysib-…`. Resend: `re_…`. **Unset = the health check still RUNS and still RECORDS**; it reports `no_api_key` and the verdict stays readable on `/api/health` and the dashboard |
 | `ALERT_EMAIL_TO` | comma-separated alert recipients. Unset behaves exactly as above (`no_recipient`) |
-| `ALERT_EMAIL_FROM` | sender; defaults to `onboarding@resend.dev`, which only delivers to the provider account owner. Set a verified-domain sender for real use |
-| `ALERT_EMAIL_API_BASE` | optional, defaults to `https://api.resend.com`. Exists so `npm run verify:cve-health` can point the mailer at a local capture server and PROVE a send |
+| `ALERT_EMAIL_FROM` | sender. ⛔ **REQUIRED for Brevo** — it has no shared test sender and only sends from an address/domain validated in the account; unset is reported as `no_sender` before any request. Resend falls back to `onboarding@resend.dev`, which delivers only to the Resend account owner |
+| `ALERT_EMAIL_API_BASE` | optional; defaults to `https://api.brevo.com` or `https://api.resend.com` per provider. Exists so `npm run verify:cve-health` can point the mailer at a local capture server and PROVE a send |
 
 ⛔ **AN ENV CHANGE DOES NOT REACH A DEPLOYED FUNCTION UNTIL THE NEXT BUILD.**
 Netlify bakes these in at BUILD time. Editing a value in the UI leaves every
@@ -403,12 +404,25 @@ check still runs, still classifies and still records; it reports `no_api_key` an
 the verdict is readable on `/api/health` and the dashboard. A notifier that
 quietly no-ops when unconfigured reproduces the defect it was built to fix.
 
-⛔ **VERIFIED BY EXECUTION: `npm run verify:cve-health` — 95 assertions.** It
+⛔ **TWO MAIL PROVIDERS, AND A BASE-URL SWAP CANNOT BRIDGE THEM.** Brevo and
+Resend differ in all three parts of the request — path (`/v3/smtp/email` vs
+`/emails`), auth header (`api-key:` vs `Authorization: Bearer`) and body
+(`sender.email`/`to[].email`/`textContent` vs `from`/`to[]` strings/`text`). The
+first draft shipped Resend's shape only and offered `ALERT_EMAIL_API_BASE` as the
+way to point elsewhere, which would have produced a 401 or a 404 from the one
+feature whose job is to work during an incident. `lib/cve/notify.ts` builds the
+request per provider and the verifier asserts the bytes of both.
+⛔ **Brevo has no shared test sender**, so `ALERT_EMAIL_FROM` is REQUIRED there
+and an unset value is reported as `no_sender` *before* the request rather than
+discovered as a rejection during the first real incident.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:cve-health` — 116 assertions.** It
 forces all six states, both probe directions plus the inconclusive one, the
 freshness qualifier against today's real production shape, dedup/cooldown/
-supersede/recovery, and every email outcome (sent, `no_api_key`, `provider_error`)
-against a local capture server. It refuses to run unless `DATABASE_URL` is local
-and contains `test`, because it seeds a frozen corpus and a wall of 404s.
+supersede/recovery, both providers' exact wire format, and every email outcome
+(sent, `no_api_key`, `no_sender`, `provider_error`) against a local capture
+server. It refuses to run unless `DATABASE_URL` is local and contains `test`,
+because it seeds a frozen corpus and a wall of 404s.
 ⛔ It found a `42P08 inconsistent types deduced for parameter $2` that fired
 **only on the recovery path** — open, remind and supersede all passed — which
 would have left every episode permanently open. Reading the query did not find
