@@ -286,16 +286,39 @@ export function classifyIngestHealth(f: HealthFacts): HealthVerdict {
   // is ORDINARY, not exotic. The key was provably bad and the classifier was
   // about to call it healthy. Same failed-read-as-a-fact rule the ingest applies
   // to its own deadline: an inability to measure is not a negative finding.
+  // ⛔ ONLY AN HTTP 404 IS A REJECTION. NOT A TIMEOUT, NOT A 503, NOT A 429.
+  //
+  // ⛔ THIS SHIPPED WRONG AND EMAILED A FALSE ALARM WITHIN THE HOUR
+  // (2026-11-15 16:26:44Z). The test was `keyedStatus !== 200`, and a keyed
+  // request that TIMED OUT has `keyedStatus === null` — which is `!== 200`. So a
+  // probe that proved nothing was read as proof of rejection, and the alert told
+  // the operator to replace a key that had successfully ingested 16 minutes
+  // earlier and to redeploy on the strength of it. The alert's own FACTS block
+  // contradicted its verdict in three places: "keyed no response", "404 since
+  // last success false", and a sample error of HTTP 503.
+  //
+  // ⛔ IT IS THE SAME FAILED-READ-AS-A-FACT RULE THIS CODEBASE KEEPS WRITING
+  // DOWN, in the same file that already applies it to the unkeyed control and
+  // the same repo where ingestStep refuses to count its own deadline against a
+  // target. Guarding one side of the probe and not the other is not a different
+  // bug; it is the same bug, half-fixed. probeApiKey bounds each fetch at
+  // 3000ms against NVD measured at 1.5-14.4s, so a keyed timeout is ORDINARY.
+  //
+  // ⛔ 404 SPECIFICALLY, because that is the signature ingest.ts documents: NVD
+  // answers 404 for an invalid key and "does not use 401 or 403". A keyed 403 or
+  // 429 is rate limiting and a keyed 5xx is NVD's own outage — neither says
+  // anything about the credential, and both would send the operator to rotate a
+  // working key.
   const probeProvesRejected =
-    !!f.probe && f.hasApiKey && f.probe.keyedStatus !== 200 && f.probe.unkeyedStatus === 200;
+    !!f.probe && f.hasApiKey && f.probe.keyedStatus === 404 && f.probe.unkeyedStatus === 200;
   const probeProvesWorking = !!f.probe && f.probe.keyedStatus === 200;
 
   if (probeProvesRejected) {
     return v(
       'key_invalid',
       'alert',
-      `NVD rejects the API key this function holds (keyed ${f.probe!.keyedStatus ?? 'no response'}, `
-        + 'unkeyed 200).',
+      'NVD rejects the API key this function holds (keyed 404, unkeyed 200) — that is the '
+        + 'status NVD uses for an invalid key.',
       KEY_REMEDY
     );
   }
