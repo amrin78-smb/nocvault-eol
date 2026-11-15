@@ -106,7 +106,14 @@ export async function runHealthCheck(opts?: {
         [open.id, now.toISOString(), verdict.summary, JSON.stringify(verdict.facts)]
       );
       if (hoursSinceNotify >= NOTIFY_COOLDOWN_HOURS) {
-        notify = await deliver(verdict, 'reminder', open, now);
+        // ⛔ "STILL FAILING" ONLY IF SOMETHING WAS ACTUALLY SAID BEFORE. The
+        // episode being old does not make this a reminder — a send that never
+        // landed leaves notify_count at 0, and the first message the operator
+        // ever receives must not open with "[STILL FAILING] … Reminder 1".
+        // Observed live on 2026-11-15: the episode opened at 16:19Z on a build
+        // whose ALERT_EMAIL_TO was empty, so the first deliverable message would
+        // have arrived labelled as a repeat of something nobody had been told.
+        notify = await deliver(verdict, open.notify_count > 0 ? 'reminder' : 'new', open, now);
         await markNotified(open.id, now, notify);
         action = 'reminded';
       } else {
