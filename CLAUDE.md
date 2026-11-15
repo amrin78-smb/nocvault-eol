@@ -277,6 +277,43 @@ this failed.
 week. ⛔ It only waits out a rate-limit throttle if the wait FITS in the remaining
 budget — sleeping 6s inside 20s spends a third of the slice doing nothing.
 
+⛔ **"20 SECONDS OF PROGRESS AN HOUR" WAS NEVER TRUE: IT WAS ONE STEP AN HOUR,
+AND THE STATE TABLE SAYS SO WITHOUT READING A SINGLE LOG (measured 2026-11-15).**
+`cve_ingest_state.last_attempt_at` is stamped at the START of every step, so the
+SPREAD of those timestamps inside one tick is the invocation's whole reach. Six
+consecutive ticks (09:10–14:10Z) each touched **1 target, span 0.000s**:
+```sql
+SELECT date_trunc('hour', last_attempt_at) AS tick, count(*) AS targets_touched,
+       extract(epoch FROM max(last_attempt_at) - min(last_attempt_at)) AS span_s
+  FROM cve_ingest_state GROUP BY 1 ORDER BY 1 DESC LIMIT 6;
+```
+⛔ **THE CAUSE WAS A PAIR OF INDEPENDENTLY-SET NUMBERS MULTIPLYING.** The loop
+gate was `elapsed + longestStepMs < WALL_CLOCK_MS` seeded at
+`longestStepMs = 4000` against `WALL_CLOCK_MS = 7000`, so any step leaving under
+4s of headroom ended the slice — i.e. every step slower than 3s. With 32 targets
+and three pages for the largest, that is a **2-4 DAY sweep when fully healthy.**
+
+⛔ **AND THE PER-STEP BUDGET KNOB EXISTED, WAS CLAMPED, WAS HONOURED, AND THE ONLY
+PRODUCTION CALLER NEVER SENT IT.** `/api/admin/ingest-cve` takes `budgetMs` in the
+POST body; `scheduled-cve-ingest` posted no body at all, so every step ran on
+`DEFAULT_BUDGET_MS` (7000) and handed NVD whatever was left — **2267-2867ms,
+visible verbatim in `last_error`, against this file's own measurement of NVD at
+1.5-14.4s.** A request started with 2.3s against a 1.5-14.4s service is not a
+measurement, it is a timeout with extra steps. `ingest.ts`'s `MAX_DEADLINE_MS`
+comment already complained that `maxDuration = 26` "allocated 26 seconds the code
+refused to use"; the route stopped refusing and then nothing ever asked.
+⛔ The function now STATES a budget per step and **will not start a step it cannot
+fund** (`MIN_STEP_BUDGET_MS`), because an unfunded attempt is a false negative
+about the target, not a reading.
+
+⛔ **THE 23-DAY OUTAGE ITSELF WAS THE `NVD_API_KEY`, NOT THE BUDGET** — the trap
+this file already documents two sections up, for the second time. All 32 targets
+errored, 16 with NVD's `HTTP 404` (its answer to an invalid key), and every target
+had last succeeded between 10-18 and 10-23 — so the tight budget was survivable
+and the key was not. ⛔ **The two faults are INDEPENDENTLY OBSERVABLE in
+`cve_ingest_state.last_error`** (`HTTP 404` vs `did not respond within NNNNms`),
+which is what let one deploy verify both fixes separately.
+
 ⛔ **PUBLISH RUNS EVERY TIME, EVEN WHEN NOTHING CHANGED**, because an unchanged
 corpus still has to refresh `checked_at`. A quiet corpus and a dead hub must not
 look the same.
