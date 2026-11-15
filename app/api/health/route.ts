@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { readHealthStatus } from '@/lib/cve/health-alerts';
+import { notifyConfigured, emailProvider } from '@/lib/cve/notify';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -29,7 +30,29 @@ export const runtime = 'nodejs';
  * /api/admin/cve-health. What is here is enough to monitor, not enough to map.
  */
 export async function GET() {
-  const base = { status: 'ok' as const, service: 'nocvault-eol-api' };
+  // ⛔ COMPUTED BEFORE AND OUTSIDE THE DATABASE READ, because both answer the
+  // question an operator has in the ten minutes AFTER changing an env var — and
+  // neither needs Neon to be up to answer it.
+  //
+  // ⛔ `build` IS WHY THIS IS HERE AT ALL. Netlify bakes env vars in at BUILD
+  // time, so "I set the variable" and "the running function has the variable"
+  // are different facts, and CLAUDE.md tells you to confirm the gap with a build
+  // marker — but the only marker lived behind a NextAuth session, on the one
+  // surface you cannot curl. Twice now that gap has cost real downtime. It is
+  // read from BUILD_COMMIT (inlined via next.config.js), never from COMMIT_REF,
+  // which does not exist at runtime.
+  //
+  // ⛔ `alerting` REPORTS CONFIGURATION, NEVER CONFIGURED VALUES. It names env
+  // vars that are missing; it never echoes a key, a sender or a recipient.
+  const base = {
+    status: 'ok' as const,
+    service: 'nocvault-eol-api',
+    build: (process.env.BUILD_COMMIT || 'unknown').slice(0, 7),
+    alerting: (() => {
+      const cfg = notifyConfigured();
+      return { provider: emailProvider(), configured: cfg.ok, reason: cfg.reason };
+    })(),
+  };
 
   try {
     const s = await readHealthStatus();
