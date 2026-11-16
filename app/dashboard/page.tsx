@@ -2,6 +2,7 @@ import AppLayout from '@/components/AppLayout';
 import AdminActions from '@/components/AdminActions';
 import EolWatchActions from '@/components/EolWatchActions';
 import OsCyclesActions from '@/components/OsCyclesActions';
+import OuiActions from '@/components/OuiActions';
 import CveActions from '@/components/CveActions';
 import { query } from '@/lib/db';
 
@@ -83,6 +84,11 @@ export default async function DashboardPage() {
           one layer down — not "is this box supported" but "is the software it
           runs still receiving fixes". */}
       <OsCyclesActions />
+      {/* The fourth corpus: IEEE MAC address blocks. Not lifecycle data at all —
+          it is here because the hub is the one component that can reach the
+          registry and sign what it found, which DDIVault's five-month-stale
+          hand-maintained copy is the argument for. */}
+      <OuiActions />
       {/* Separate panel, separate tables, separate feed — the CVE corpus shares
           nothing with the EOL catalogue above it. */}
       <CveActions />

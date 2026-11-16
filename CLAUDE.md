@@ -790,6 +790,86 @@ permanent, an empty store with an intact database making every publish a no-op f
 audit row recorded for a publish that never happened. All three are tests now, plus a real
 Ed25519 verify over the published bytes and a tampered-body rejection.
 
+## MAC vendor catalogue — the OUI feed (`lib/oui/`)
+
+Built 2026-11-16. A FOURTH corpus and a fourth signed feed, `/api/v1/oui-feed`: the IEEE MAC
+address block registries, 54,469 assignments.
+
+⛔ **WHY IT IS ON THE HUB.** DDIVault keeps its own `data/oui.json`, rebuilt by a human
+running `node scripts/update-oui.js`. Measured 2026-11-16: **39,267 entries, last updated
+2026-06-05 — over five months stale**, because refreshing depends on somebody remembering.
+**NetVault and LogVault have no MAC-vendor resolution at all.** One signed, versioned feed
+replaces a hand-maintained file in one app and a gap in two others.
+
+⛔ **THREE REGISTRIES, AND USING ONE IS A CORRECTNESS BUG.** IEEE assigns at three prefix
+lengths — MA-L 24-bit (40,500), MA-M 28-bit (6,688), MA-S 36-bit (7,281). **442 MA-L blocks
+are registered to "IEEE Registration Authority" itself, with 13,841 MA-M/MA-S assignments
+underneath them.** A 24-bit-only lookup reports all 13,841 as *"IEEE Registration
+Authority"* — not an "unknown", a **confident wrong answer**, which is this repo's
+most-repeated failure mode. `lookupMac` tries 9, then 7, then 6 hex chars, and
+`is_registry_block` travels in the feed so a consumer renders "unknown vendor" rather than a
+registrar's name.
+
+⛔ **IEEE DIRECTLY, AND THE RECORDED REASON FOR NOT DOING SO WAS STALE.** DDIVault's script
+says IEEE "actively blocks scripted clients (HTTP 418)" and uses Wireshark's republished
+`manuf` instead. **All three IEEE CSVs answer HTTP 200 from here.** Under the sourcing rule
+IEEE is the registrar (official, `high`) and Wireshark is a republisher (aggregator, `low`),
+so taking the aggregator when the official source answers would be choosing second-hand data
+for nothing. Same lesson as Check Point's stale "202 bot challenge": a stale reason sends the
+next session hunting a workaround for a problem that no longer exists.
+
+⛔ **IT FETCHES ON A SCHEDULE, AND THAT IS *NOT* THE SCRAPER THIS REPO DELETED** — the OS
+corpus three files away does the opposite, deliberately. The refused thing was a scheduled
+job **inferring dates** from vendor prose into a feed nobody reviews: every row a judgement
+call. This is a **verbatim copy of an official registry** — IEEE says `00000C` is Cisco, and
+that is the whole fact. Committing 54,000 such rows to git would produce a diff nobody reads,
+and a review nobody performs is worse than an honest absence of one.
+
+⛔ **BUT "A 200 IS NOT THE DOCUMENT" STILL APPLIES, SO A REFRESH IS ADMITTED OR REFUSED AS A
+WHOLE.** Per-registry row floors, all three registries present, and six spot checks with
+known-good answers (counts alone cannot tell a good parse from a column-shifted one). ⛔ **A
+refused refresh changes nothing** — overwriting 54,000 assignments with a truncated download
+is a silent, total loss of MAC-vendor resolution in three apps, and it would look like a
+successful run. "We looked and refused" is recorded separately from "we never looked".
+
+⛔ **A REAL CSV PARSER, NOT `line.split(',')`.** IEEE quotes any field containing a comma and
+vendor names are full of them — `"Cisco Systems, Inc"`. Splitting naively makes the org
+"Cisco Systems" and shifts every later column, so it fails on the biggest vendors first and
+silently.
+
+⛔ **IEEE'S OWN REGISTRY CONTAINS DUPLICATE PREFIXES.** `080030` is assigned to three
+organisations and `0001C8` to two (measured 2026-11-16: 3 duplicates in MA-L). First
+assignment wins and duplicates are COUNTED, not silently overwritten — a last-write-wins race
+over the registry's own quirks would make the catalogue depend on file order.
+
+⛔ **`Private` IS A REAL IEEE VALUE, NOT A MISSING ONE.** An assignee may withhold their name
+and the registry records "Private". That is a different fact from "unassigned" and from "we
+failed to read the registry"; a consumer that renders all three alike loses the only
+actionable one.
+
+⛔ **THE ONLY COMPACT FEED IN THE REPO.** 54,469 rows as named objects at indent 2 is ~6.5 MB;
+as positional tuples with no indentation it is under 2 MB. Nobody reads a MAC lookup table by
+eye and every consumer pays the difference on every pull. Canonicality is unaffected —
+determinism comes from fixed field order and a total row order, not whitespace. The payload
+carries a `tuple` field naming the positions so a consumer never guesses, and `match_version`
+so drift in `lookupMac` is detectable.
+
+⛔ **`checked_at` IS THE `MIN` OF THE THREE REGISTRIES' LAST SUCCESS, NOT THE MAX.** Reporting
+the newest would hide a registry that has been failing for a month behind two that are fine.
+
+⛔ **WEEKLY, NOT DAILY** (`scheduled-oui-refresh`, Sunday 05:30 UTC). IEEE assigns a few
+blocks a week against a catalogue of 54,469, and each run pulls ~5.3 MB from three registries.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:oui` — 73 assertions.** Registries are faked for
+the branches that matter (a truncated download, an HTML page answering 200, a 404, a
+withdrawn prefix, recovery), because none of those can be ordered from IEEE on demand; the
+real registries are checked live at the end. ⛔ It found two defects by running:
+a `CASE WHEN $4 IS NULL` with no cast threw `42P08` on the SUCCESS path — the second time
+this repo has hit that, after `health-alerts.ts` — and the catch then pushed a **second,
+phantom zero row** for each registry, so `admit()` refused a healthy refresh while `total`
+said 30. A loop that can report the same subject twice has a verdict that depends on which
+copy is read.
+
 ### Licence gate (`lib/cve/license.ts`)
 
 `CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the
