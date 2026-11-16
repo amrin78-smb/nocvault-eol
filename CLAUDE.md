@@ -653,6 +653,94 @@ acknowledgement. Two findings came out of running it rather than reading it: the
 source **when none was unreadable** — Part B2 had recovered it. The fix was to force the
 state, not to soften the claim.
 
+## OS / firmware branch lifecycle (`lib/eol/os-cycles.ts`, `os-sources.ts`, `data/os-lifecycle.json`)
+
+Built 2026-11-16. A THIRD corpus beside hardware EOL and CVE: which **branch** of a
+vendor OS is still supported. 54 cycles today — PAN-OS 27, Cisco IOS-XE 19, FortiOS 8.
+
+⛔ **IT IS NOT A COLUMN ON THE HARDWARE ROW, AND IT NEVER COULD HAVE BEEN.**
+`eol_models.os_eol_date` exists and is populated on **34 of 7,902 entries (0.4%)**. OS
+support is not a property of a MODEL: one FortiGate runs FortiOS 6.4, 7.0, 7.2 or 7.4,
+each with its own dates, and one column cannot hold four answers. Branches are keyed
+`(vendor, product, cycle)`.
+
+⛔ **WHY IT MATTERS MORE THAN HARDWARE EOL.** SecVault already knows each device's running
+version and matches CVEs against it. Today it can say "this firewall is vulnerable to
+CVE-X". With this it can say "…and it runs PAN-OS 10.0, which left support in 2022, so no
+fix will ever ship." A chassis supported to 2029 running a branch that died in 2022 is
+unpatchable today and nothing in the suite can currently see it.
+
+⛔ **THIS IS NOT THE SCRAPER THIS REPO DELETED. THE DIFFERENCE IS WHERE THE OUTPUT LANDS.**
+Refused: a SCHEDULED job parsing pages into the live feed with no human in the loop. This:
+a **manually run** generator (`npm run build:os-cycles`) writing a version-controlled JSON
+file, reviewed as a git diff like any seed change, published by the same human-pressed
+button. The daily `scheduled-eol-watch` monitors the same pages and raises a review item
+when they change — that is the signal to re-run it. ⛔ **Do not wire the generator to a
+schedule.** That one change recreates what was deleted.
+
+⛔ **THE TIMEZONE BUG THAT ALMOST SHIPPED, AND HOW IT WAS CAUGHT.** Cross-checking Palo
+Alto's official PAN-OS table against endoflife.date showed **all 24 shared cycles
+disagreeing by exactly one day**. The sources were identical; the parser was wrong.
+`new Date('July 30, 2026')` is LOCAL midnight, and on this UTC+7 machine `.toISOString()`
+returned `2026-07-29`. Every date in the corpus would have been one day early, and the only
+symptom looked like an aggregator data-quality problem. ⛔ `parseLifecycleDate` is UTC-only
+and `verify:os` tests it across **UTC-11 to UTC+14**. ⛔ **Never use
+`new Date(string).toISOString()` on a vendor date.** A support-end date one day early is
+the difference between "supported" and "unsupported" on the day someone checks.
+
+⛔ **PAN-OS IS `high`, EVERYTHING ELSE IS `low`, AND THAT ASYMMETRY IS A MEASUREMENT.**
+Palo Alto's `end-of-life-summary` is the ONLY official, server-readable OS lifecycle source
+found anywhere: 251 KB, 30,134 chars of visible text, 22 tables. Every other vendor's
+software page is a shell, a denial or a 404 — Fortinet's `ProductLifeCycle.aspx` 200 with
+**zero** visible text, Juniper 200 with 120 chars, SonicWall an Incapsula denial, Check
+Point 157 chars, Aruba 503. So FortiOS and IOS-XE come from `endoflife.date` at `low`, each
+carrying its `link` as `vendor_link` — a promotion path to `high` for anyone who opens it.
+
+⛔ **THE PAN-OS TABLE IS LOCATED BY THREE MARKERS IN ITS OWN ROWS**, not by position and not
+by `rows[0]`. It is the 4th of 22 tables, and its first rows are `[""]`,
+`["PAN-OS & Panorama"]`, then the column header — a `rows[0]`/`rows[1]` match is what broke
+on the first run, on the leading spacer. A positional read would silently return Prisma
+Access's or QRadar's dates the first time a table is inserted above it, and the output would
+look entirely plausible. ⛔ **The column layout has an EMPTY SPACER at index 3**:
+`[version, release, standard, "", extended]`. `checkCycle` refuses any row whose extended
+date precedes its standard date, because that is what a column swap looks like.
+
+⛔ **EXTENDED SUPPORT IS A SEPARATE DATE, AND `branchState` HAS FOUR STATES NOT THREE.**
+PAN-OS 10.1 is standard-supported to 2024-11-30 and extended to 2026-03-30. Collapsing them
+tells a customer without an extended contract they have 16 more months than they do;
+calling `extended_only` "eol" is wrong for the customers who do hold one.
+
+⛔ **`branchOf()` IS A MATCHING CONTRACT, LIKE `normalizeForMatch`.** The consumer holds
+"PAN-OS 10.1.2" and this corpus holds "10.1". If the two sides disagree the lookup silently
+misses and every device reads "branch unknown". Two components, leading zeros stripped —
+Cisco writes both `17.9.1` and `17.09.01a` for one branch. Bump `OS_BRANCH_VERSION` on any
+change.
+
+⛔ **THE WATCH IS SCOPED, AND WITHOUT THAT IT WOULD ALERT WEEKLY FOREVER.** The Palo Alto
+page carries 556 dated lines across 22 tables, and the FIRST one is Applications & Threats
+content releases — `157.19.x.x`, `156.17.x.x`, `155.16.x.x` — which ship weekly. An
+unscoped watch on that page is a guaranteed weekly false alarm. `EolWatchSource.scope`
+narrows the signal to the PAN-OS table; ⛔ a scope that finds nothing is a **failed read**,
+never an empty one.
+
+⛔ **ONE LOCATOR, SHARED.** `findPanOsTable` lives in `lib/eol/os-sources.ts` and is
+imported by the generator, the verifier AND the watch scope. It was briefly two copies, they
+drifted on the first run, and the verifier then failed against a page that had not changed.
+
+⛔ **ONLY THREE OF endoflife.date's 489 PRODUCTS ARE RELEVANT** — `panos`, `fortios`,
+`cisco-ios-xe`. There is **no Junos, no Aruba AOS, no SonicOS, no Gaia, no Meraki**. The gap
+is in the source, not in the query; do not go looking again without re-reading this.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:os` — 69 assertions**, including the timezone
+matrix, rolled-over dates (`February 31` must be null, not 3 March), vendor words in date
+columns ("Latest", "TBD"), the column-swap guard, all four branch states, and a LIVE
+cross-check that the official PAN-OS corpus still agrees with endoflife.date. ⛔ That
+cross-check is what caught the timezone bug and is kept as a standing test: if the two
+readings ever stop agreeing, one has drifted and the corpus should not be trusted.
+
+**Not yet built:** nothing consumes this. Schema, publish and a consumer route are the next
+step, mirroring the CVE feed's Phase 1 / Phase 2 split.
+
 ### Licence gate (`lib/cve/license.ts`)
 
 `CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the

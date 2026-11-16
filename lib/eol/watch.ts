@@ -223,7 +223,24 @@ export async function watchSourceStep(budgetMs = FETCH_MS): Promise<WatchStepRes
 
   let signal: string[];
   try {
-    signal = extractSignal(body, cfg.signalKind, cfg.hrefPattern);
+    // ⛔ A SCOPE THAT FINDS NOTHING IS A FAILED READ, NOT AN EMPTY ONE. If the
+    // PAN-OS table is gone from Palo Alto's page, "0 dated lines" would mean
+    // "Palo Alto published no lifecycle dates" — which is the exact
+    // failed-read-as-a-fact error this module exists to prevent.
+    let scoped: string = body;
+    if (cfg.scope) {
+      const region = cfg.scope(body);
+      if (!region) {
+        const msg =
+          `HTTP ${status} with ${body.length} bytes, but the watched REGION of the page was not `
+          + 'found. The page still answers, so this is a layout change, not an outage. '
+          + 'Treated as a FAILED READ: an absent region is not an empty one.';
+        await recordFailure(src.id, status, msg);
+        return { ...base, outcome: 'failed', httpStatus: status, bytes: body.length, error: msg };
+      }
+      scoped = region;
+    }
+    signal = extractSignal(scoped, cfg.signalKind, cfg.hrefPattern);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     await recordFailure(src.id, status, `signal extraction failed: ${msg}`);

@@ -11,7 +11,9 @@
     "verify:cve-health": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-cve-health.js",
     "verify:cve-rss": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-cve-rss.js",
     "verify:eol-watch": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-eol-watch.js",
-    "verify:seed": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-seed-policy.js"
+    "verify:seed": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-seed-policy.js",
+    "verify:os": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-os-cycles.js",
+    "build:os-cycles": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/build-os-cycles.js"
   },
   "dependencies": {
     "@netlify/blobs": "^8.1.0",

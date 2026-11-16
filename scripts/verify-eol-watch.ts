@@ -430,6 +430,60 @@ async function partDetector() {
 // ---------------------------------------------------------------------------
 
 async function partNotify() {
+  section('PART B4 — a scoped source');
+
+  // ⛔ THE NOISE PROBLEM THIS SOLVES, REPRODUCED. Palo Alto's EoL summary page
+  // carries 556 dated lines across 22 tables, and the first table is the
+  // Applications & Threats content releases, which ship WEEKLY. Watching the
+  // whole page would raise a review item every week about something nobody
+  // tracks. The scope narrows the signal to the section that matters.
+  const SECTION = '<div id="watched">PA-9999 End-of-Life: March 1, 2030</div>';
+  const noisy = (stamp: string) =>
+    `<html><body><div id="weekly">Content release ${stamp}</div>${SECTION}</body></html>`;
+
+  const scopedSource: EolWatchSource = {
+    vendor: 'TEST', label: 'TEST scoped source', url: pageUrl + '?scoped=1',
+    signalKind: 'dates', minSignalLines: 1,
+    scope: (html) => {
+      const m = html.match(/<div id="watched">([\s\S]*?)<\/div>/);
+      return m ? m[0] : null;
+    },
+    measured: 'local fixture',
+  };
+  EOL_WATCH_SOURCES.push(scopedSource);
+  _resetSourcesMemo();
+
+  pageStatus = 200;
+  pageBody = noisy('January 5, 2027');
+  await makeDue(scopedSource.url);
+  let r = await watchSourceStep(8000);
+  eq('scoped source baselines', r.outcome, 'first_seen');
+  eq('only the scoped region is counted', r.signalCount, 1);
+
+  // The noisy region changes — the watched region does not.
+  pageBody = noisy('January 12, 2027');
+  await makeDue(scopedSource.url);
+  r = await watchSourceStep(8000);
+  eq('a change OUTSIDE the scope is not a change', r.outcome, 'unchanged');
+
+  // The watched region changes.
+  pageBody = noisy('January 19, 2027').replace('March 1, 2030', 'June 1, 2031');
+  await makeDue(scopedSource.url);
+  r = await watchSourceStep(8000);
+  eq('a change INSIDE the scope is a change', r.outcome, 'changed');
+
+  // ⛔ THE REGION DISAPPEARS. "0 dated lines" here would mean "the vendor
+  // published no lifecycle dates", which is the failed-read-as-a-fact error.
+  const beforeScopeChanges = await changeCount();
+  pageBody = '<html><body><div id="weekly">Content release February 2, 2027</div></body></html>';
+  await makeDue(scopedSource.url);
+  r = await watchSourceStep(8000);
+  eq('a vanished scope region is FAILED, not changed', r.outcome, 'failed');
+  check('the error says the REGION was not found',
+    ((await sourceRow(scopedSource.url)).last_error || '').includes('REGION'),
+    (await sourceRow(scopedSource.url)).last_error || '');
+  eq('a vanished region raises NO review item', await changeCount(), beforeScopeChanges);
+
   section('PART C — notification');
 
   process.env.ALERT_EMAIL_API_BASE = mailBase;

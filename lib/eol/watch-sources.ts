@@ -23,6 +23,7 @@
 // records each feed's identifier yield.
 
 import type { SignalKind } from './signal';
+import { PA_EOL_SUMMARY, findPanOsTable } from './os-sources';
 
 export type EolWatchSource = {
   /** Display vendor. Free text — this never selects a CPE or a feed gate. */
@@ -33,6 +34,19 @@ export type EolWatchSource = {
   signalKind: SignalKind;
   /** Required for signalKind 'links'. Anchored to the category path — see below. */
   hrefPattern?: RegExp;
+  /**
+   * ⛔ NARROW THE PAGE BEFORE EXTRACTING, WHEN MOST OF IT IS NOISE.
+   *
+   * Returns the sub-region of the HTML to read, or null when that region has
+   * vanished (which is a FAILED READ, not an empty one). Added for Palo Alto's
+   * End-of-Life Summary: 556 dated lines across 22 tables, of which the FIRST
+   * table is the Applications & Threats content releases — 157.19.x.x on
+   * November 4, 156.17.x.x on October 21, 155.16.x.x on October 8. Those ship
+   * roughly weekly, so watching the whole page would raise a review item every
+   * week, forever, about content updates nobody is tracking. One source like
+   * that is enough to make an operator stop reading the channel.
+   */
+  scope?: (html: string) => string | null;
   /**
    * ⛔ THE COLLAPSE FLOOR. Below this many signal lines the read is treated as
    * FAILED, never as "the vendor removed everything". Set well under the
@@ -111,6 +125,25 @@ export const EOL_WATCH_SOURCES: EolWatchSource[] = [
     url: 'https://documentation.meraki.com/General_Administration/Other_Topics/Meraki_End-of-Life_(EOL)_Products_and_Dates',
     signalKind: 'dates', minSignalLines: 5,
     measured: '2026-11-16: HTTP 200, 157 KB, 24 dated lines, identical hash across two fetches.',
+  },
+
+  // ---- Palo Alto software lifecycle: SCOPED to the PAN-OS table ----
+  // ⛔ THE PAGE IS 90% NOISE FOR THIS PURPOSE. See `scope` above: the content-
+  // release table alone changes weekly. Scoped, the signal is the ~26 PAN-OS
+  // cycle rows, which change a few times a year — and a change there is exactly
+  // the prompt to re-run `npm run build:os-cycles` and read the diff.
+  {
+    vendor: 'Palo Alto', label: 'PAN-OS branch lifecycle (official)',
+    url: PA_EOL_SUMMARY,
+    signalKind: 'dates', minSignalLines: 10,
+    scope: (html) => {
+      const rows = findPanOsTable(html);
+      return rows ? rows.map((r) => r.join(' | ')).join('\n') : null;
+    },
+    measured:
+      '2026-11-16: HTTP 200, 251 KB, 556 dated lines UNSCOPED across 22 tables; scoped to the '
+      + 'PAN-OS table it is 26 cycle rows. The unscoped page would alert weekly on Applications '
+      + '& Threats content releases.',
   },
 
   // ---- HPE/Aruba via endoflife.ai: the only readable record that exists ----
