@@ -860,6 +860,28 @@ the newest would hide a registry that has been failing for a month behind two th
 ⛔ **WEEKLY, NOT DAILY** (`scheduled-oui-refresh`, Sunday 05:30 UTC). IEEE assigns a few
 blocks a week against a catalogue of 54,469, and each run pulls ~5.3 MB from three registries.
 
+⛔ **UNLICENSED, AND IT IS THE ONLY NEW FEED THAT IS.** It shipped metered by `CVE_FEED_KEYS`,
+copied from the CVE feed and justified as "same customers, same commercial relationship".
+That was wrong and it broke something real: NetVault, DDIVault and LogVault hold no key —
+NetVault falls back to a hard-coded `'netvault'` (`lib/eolFeed.ts`) that the allowlist does
+not contain — so **the first thing the suite's own apps got from this feed was a 401**. The
+consumer was never a paying customer; it is this operator's own infrastructure, and the
+payload is the IEEE registry that anyone can download from `standards-oui.ieee.org` without
+asking. What the hub adds is freshness and a signature, not access to something withheld.
+⛔ The **CVE feed stays metered** — that corpus is the one SecVault customers genuinely
+cannot obtain, because their networks cannot reach NVD at all — and so does the **OS feed**,
+whose consumer is SecVault and already holds a working `CVE_HUB_LICENSE_KEY`.
+
+⛔ **AND SO `Cache-Control: public` IS CORRECT HERE — THE EXACT INVERSE OF THE CVE INCIDENT.**
+The CVE feed shipped `public, max-age=3600` WITH a licence check, and Netlify's CDN cache key
+does not vary on `x-license-key`: one authorised fetch populated the edge and everything after
+was served without the function running, making the gate decorative. With no gate there is
+nothing for the edge to bypass, and caching a 2.2 MB body is a straight win. ⛔ **If a licence
+check is ever added back to this route, the `Cache-Control` line must change in the SAME
+commit**, or the incident is recreated verbatim. The response still carries
+`X-Feed-License: not-required`, because the repo's rule is that only the header says whether a
+feed is actually metered.
+
 ⛔ **VERIFIED BY EXECUTION: `npm run verify:oui` — 73 assertions.** Registries are faked for
 the branches that matter (a truncated download, an HTML page answering 200, a 404, a
 withdrawn prefix, recovery), because none of those can be ordered from IEEE on demand; the
@@ -874,6 +896,14 @@ copy is read.
 
 `CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the
 label names which customer pulled, which is the point of metering.
+
+⛔ **IT GOVERNS `/api/v1/cve-feed` AND `/api/v1/os-feed` ONLY.** `/api/v1/feed` (EOL) was
+never wired to it, and `/api/v1/oui-feed` was deliberately un-wired on 2026-11-16 — see the
+OUI section for why. ⛔ **THE ALLOWLIST AND THE KEY A CONSUMER SENDS ARE TWO ENDS OF ONE
+THING**, and confusing them cost a session: the hub holds `CVE_FEED_KEYS` (what is accepted)
+while each consumer holds its own var for what it SENDS (NetVault:
+`NOCVAULT_EOL_LICENSE_KEY`, defaulting to the literal `'netvault'`; SecVault:
+`CVE_HUB_LICENSE_KEY`). A request succeeds only when the sent value appears in the allowlist.
 
 ⛔ **THIS GATE IS COMMERCIAL, NOT SECURITY, AND FAILS OPEN WHEN UNCONFIGURED.**
 Same call the rest of the range makes — SecVault's own rule is "the licence guard

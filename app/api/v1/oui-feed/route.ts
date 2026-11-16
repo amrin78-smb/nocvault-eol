@@ -1,12 +1,28 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 import { getStore } from '@netlify/blobs';
-import { checkLicense } from '@/lib/cve/license';
 
 export const dynamic = 'force-dynamic';
 
 /**
  * The signed OUI (MAC address block) catalogue.
+ *
+ * ⛔ UNLICENSED, DELIBERATELY, AND IT IS THE ONLY NEW FEED THAT IS.
+ *
+ * It shipped metered by CVE_FEED_KEYS, copied from the CVE feed with the
+ * justification "same customers, same commercial relationship". That was wrong,
+ * and it broke something real: NetVault, DDIVault and LogVault hold no key —
+ * NetVault falls back to a hard-coded 'netvault' that the allowlist does not
+ * contain — so the first thing the suite's own apps got from this feed was a
+ * 401. ⛔ The consumer was never a paying customer; it is this operator's own
+ * infrastructure.
+ *
+ * And there is nothing here to meter. The payload is the IEEE registry, which
+ * anyone can download from standards-oui.ieee.org without asking. What the hub
+ * adds is freshness and a signature, not access to something withheld. Metering
+ * it bought nothing and cost a credential on three internal apps. ⛔ The CVE
+ * feed STAYS metered — that corpus is the one SecVault customers genuinely
+ * cannot obtain, because their networks cannot reach NVD at all — and so does
+ * the OS feed, whose consumer is SecVault and already holds a working key.
  *
  * ⛔ READS THE 'oui-feed' STORE — never 'eol-feed', 'cve-feed' or 'os-feed'.
  *
@@ -21,15 +37,7 @@ export const dynamic = 'force-dynamic';
  * only hit has is_registry_block = 1, the correct answer is "unknown vendor",
  * NOT the registry's name.
  */
-export async function GET(req: NextRequest) {
-  const verdict = checkLicense(req.headers.get('x-license-key'));
-  if (!verdict.ok) return NextResponse.json({ error: verdict.reason }, { status: 401 });
-  if (!verdict.enforced) {
-    console.warn('oui-feed: served WITHOUT licence enforcement — CVE_FEED_KEYS is not set.');
-  } else {
-    console.log(`oui-feed: served to ${verdict.label}`);
-  }
-
+export async function GET() {
   try {
     const store = getStore('oui-feed');
     const [feed, sig, latest] = await Promise.all([
@@ -55,16 +63,25 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        // ⛔ NEVER `public` ON A LICENSED RESPONSE. The CVE feed shipped with
-        // public/max-age=3600 copied from the EOL feed, and Netlify's CDN cache
-        // key does not vary on x-license-key — one authorised fetch populated
-        // the edge and everything after was served without the function running.
-        'Cache-Control': 'private, no-store, max-age=0',
-        Vary: 'x-license-key',
+        // ⛔ `public` IS CORRECT HERE, AND ONLY BECAUSE THERE IS NO GATE —
+        // which is the exact inverse of the CVE feed's incident. That feed
+        // shipped `public, max-age=3600` WITH a licence check, and Netlify's CDN
+        // cache key does not vary on x-license-key, so one authorised fetch
+        // populated the edge and every later request was served the full corpus
+        // without the function ever running: the gate was decorative. With no
+        // gate there is nothing for the edge to bypass, and caching a 2.2 MB
+        // body is a straight win — consumers read /latest first and only pull
+        // the body when the version actually moved.
+        // ⛔ IF A LICENCE CHECK IS EVER ADDED BACK, THIS LINE MUST CHANGE IN THE
+        // SAME COMMIT, or it recreates that incident verbatim.
+        'Cache-Control': 'public, max-age=3600',
         'X-Feed-Signature': sig || '',
         'X-Feed-Sha256': sha256,
         'X-Feed-Checked-At': checkedAt,
-        'X-Feed-License': verdict.enforced ? 'enforced' : 'unenforced',
+        // ⛔ NEVER SILENT ABOUT THE GATE, even when there is not one. The repo's
+        // rule is that code merely mentioning licences reads as metered and only
+        // the header says whether it actually is.
+        'X-Feed-License': 'not-required',
       },
     });
   } catch {
