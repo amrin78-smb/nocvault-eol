@@ -504,6 +504,104 @@ recovery, and a live check that each admitted feed STILL carries identifiers (so
 a feed that goes the way of Fortinet's fails here rather than quietly
 contributing nothing).
 
+## Vendor EOL page watch (`lib/eol/watch.ts`, `signal.ts`, `watch-sources.ts`)
+
+Built 2026-11-16, the EOL half of "read vendor feeds automatically". `scheduled-eol-watch`
+(**daily at 06:20 UTC** — clear of the monthly EOL publish at 06:00 and of every CVE
+schedule) reads each watched lifecycle listing, reduces it to the set of statements it
+publishes, and raises a **review item** when that set changes.
+
+⛔ **IT NEVER WRITES AN EOL DATE, AND THAT RESTRAINT IS THE FEATURE.** This repo already
+deleted per-vendor HTML scrapers once because they did not work; a detector that parsed
+dates out of these pages would be those scrapers again, writing unreviewed dates into the
+feed NetVault matches customer devices against — where a wrong date is worse than a missing
+one, because a missing date shows as "unknown" and a wrong one shows as a confident answer.
+The output is "go and look"; a human still reads the bulletin and still edits
+`data/eol-seed.json`. Asserted twice in the verifier: a sentinel `eol_models` is unchanged
+across a cycle that saw a brand-new date, **and** the module sources are scanned for any
+statement touching `eol_models` / `model_aliases` / `feed_versions` / `vendors`.
+
+⛔ **THERE ARE NO EOL RSS FEEDS. NOT ONE, FROM ANY VENDOR.** Probed 2026-11-16 across
+Cisco, Fortinet, Palo Alto, HPE/Aruba, Netgear, Juniper, SonicWall, Check Point, Ruckus,
+Ubiquiti, Meraki, TP-Link and D-Link. Every lifecycle listing is an HTML page. That is why
+the CVE half gets real feeds (`lib/cve/rss-sources.ts`) and this half is a change detector.
+
+⛔ **HASHING THE PAGE DOES NOT WORK.** A raw body hash moves on nonces, build ids and
+rotating banners, so it alerts daily — the shape that trains an operator to filter the
+channel. The page is reduced to its **set of lifecycle statements**, sorted and deduped, and
+only that is hashed. Sorted because a re-ordered table is not a date change.
+
+⛔ **TWO SIGNAL KINDS, BECAUSE THE VENDORS GENUINELY DIFFER.** Palo Alto and Meraki publish
+dates in the page (13, 45 and 24 dated lines). **Cisco's category listings carry ZERO
+dates** — the page says so itself ("Only the linked items below are End-of-Sale or
+End-of-Life products") — so their signal is the **link set**, and "Cisco added Catalyst 9200
+to the switches listing" is exactly the review prompt wanted. A date-only extractor scores
+nothing on them.
+
+⛔ **SEVEN SOURCES ADMITTED OUT OF NINETEEN PROBED — AND FIVE OF THE REFUSALS ANSWER HTTP
+200.** The refusals are the more important half of `watch-sources.ts`:
+
+| refused | what it actually returns |
+|---|---|
+| SonicWall `product-lifecycle-tables` | **200**, 1,159 B: `Request unsuccessful. Incapsula incident ID: …` — a WAF denial wearing a 200 |
+| Juniper `/support/eol/hardware/` | **200**, 58 KB, **120 chars** of visible text (a survey pop-up) |
+| Check Point `sk95746` | **200**, 29 KB, **157 chars** (a copyright footer) |
+| Fortinet `ProductLifeCycle.aspx` | **200**, 9.9 KB, **zero** visible text |
+| Netgear `kb…/NETGEAR-End-of-Life-Products` | **200**, 127 KB of real prose — **and it is a DGN2200v1 security advisory**. The KB id routes; the slug is decorative |
+| HPE/Aruba | old URL **503** "Site is no longer available … Feb 23, 2026"; successor `networkingsupport.hpe.com/endoflife` is 200 with **9 chars** |
+| Ubiquiti 403 · TP-Link 404 · D-Link 404 · Ruckus Cloudflare challenge | |
+
+⛔ **CISCO `interfaces-modules` WAS ADMITTED, THEN REMOVED BY ITS OWN LIVE TEST** — the most
+instructive failure in the build. It **redirects to the generic products landing page**:
+200, 201 KB, zero product links. The first probe called it "STABLE, 16 links", and that
+measurement was real and completely wrong — a loose href pattern was counting the landing
+page's navigation, and it was stable *because site furniture is stable*. **The source looked
+healthiest precisely when it was reading nothing.** The live check in the verifier asserts a
+floor against the real URL rather than trusting the admission measurement, and that is what
+caught it. A failed read now reports `REDIRECTED TO <final url>` instead of "0 links found".
+
+⛔ **THE LINK PATTERN IS CATEGORY-ANCHORED, MEASURED NOT GUESSED.** A pattern of merely
+`/products/<x>/<y>/index.html` also matched `Choose your firewall ::
+/site/us/en/products/security/firewalls/index.html`. Site navigation is re-templated far
+more often than an EoL listing changes; one nav link inside the signal turns the detector
+into a false-alarm generator.
+
+⛔ **A SIGNAL THAT COLLAPSES IS A FAILED READ, NEVER A CHANGE** — and here that rule has
+teeth, because five refused URLs answer 200 with plenty of bytes. Reading any of them as
+"the vendor removed every EoL product" would manufacture a review item that is not merely
+useless but false. Each source carries a `minSignalLines` floor; below it the baseline hash
+is **preserved**, `consecutive_failures` increments, and nothing is recorded as changed.
+
+⛔ **THE FIRST SUCCESSFUL READ IS A BASELINE, NOT A CHANGE.** Without that, the feature's
+debut is a burst of emails about every source "changing" from nothing — and the first
+impression of an alert channel decides whether the second one is ever read.
+
+⛔ **AGGREGATORS ARE REFUSED HERE TOO, AND THEY ARE THE TEMPTING OPTION.** A search for HPE
+Aruba EOL dates returns almost nothing *but* aggregators (router-switch, endoflife.ai,
+parkplace, layer23), several with clean complete tables. `endoflife.ai` concedes its dates
+are read **from** `networkingsupport.hpe.com` — the JS shell above — so using it means
+trusting a third party's rendering of a page we refuse to trust ourselves.
+
+⛔ **ALERTS REUSE `lib/cve/notify.ts`**: one email per cycle (not per source), `notified_at`
+set **only on a real send**, a source called unreadable only after
+`UNREADABLE_AFTER_FAILURES = 3` consecutive failures (three days at this cadence) with a
+7-day reminder cooldown. Review items are **acknowledgeable** on the dashboard — an
+un-acknowledgeable alert list grows until it is ignored. With no mailer configured the check
+still runs, still records, and says `no_api_key`.
+
+⛔ **DAILY, NOT HOURLY, AND THAT IS A MEASUREMENT.** Vendor lifecycle listings change a few
+times a *year*; the CVE feeds change a few times a week. Hourly would be 168 fetches a week
+to observe something monthly, against vendor sites that already front themselves with WAFs.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:eol-watch` — 169 assertions.** Pages are served
+locally so the branches can be forced: a page that quietly empties, the measured SonicWall
+Incapsula body, a client-rendered shell, a retirement-by-redirect, a re-ordered table, a
+navigation rewrite, a listing that gains one product, a failing mailer, the cooldown, and
+acknowledgement. Two findings came out of running it rather than reading it: the
+`interfaces-modules` source above, and an assertion that the alert email named an unreadable
+source **when none was unreadable** — Part B2 had recovered it. The fix was to force the
+state, not to soften the claim.
+
 ### Licence gate (`lib/cve/license.ts`)
 
 `CVE_FEED_KEYS` is a comma-separated list of `key` or `key:label` entries; the

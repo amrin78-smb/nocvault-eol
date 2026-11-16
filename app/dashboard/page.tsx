@@ -1,5 +1,6 @@
 import AppLayout from '@/components/AppLayout';
 import AdminActions from '@/components/AdminActions';
+import EolWatchActions from '@/components/EolWatchActions';
 import CveActions from '@/components/CveActions';
 import { query } from '@/lib/db';
 
@@ -72,6 +73,10 @@ export default async function DashboardPage() {
         </div>
       </div>
       <AdminActions />
+      {/* The watch belongs beside the EOL feed it reports on, and ABOVE the CVE
+          panel: it raises review items for the curated seed those buttons
+          publish. It writes no dates of its own. */}
+      <EolWatchActions />
       {/* Separate panel, separate tables, separate feed — the CVE corpus shares
           nothing with the EOL catalogue above it. */}
       <CveActions />
