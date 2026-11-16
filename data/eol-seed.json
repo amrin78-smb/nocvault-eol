@@ -2685,7 +2685,7 @@
     ],
     "support_end_date": "2017-03-31",
     "os_eol_date": null,
-    "confidence": "medium",
+    "confidence": "low",
     "source": "https://eosl.date/network/ethernet-switches/vendor/cisco/esw/",
     "note": "Cisco ESW 520 24-Port PoE: EoL 2017-03-31 (EOSL.date / Park Place). Aggregator-sourced."
   },
@@ -3361,7 +3361,7 @@
     ],
     "support_end_date": "2023-11-30",
     "os_eol_date": null,
-    "confidence": "medium",
+    "confidence": "low",
     "source": "https://www.layer23-switch.com/eol-eosl-tool/sf300-24/",
     "note": "Cisco SF300-24 (300 Series): EoL 2018-05-15, EoS 2018-11-15, EoSL 2023-11-30 (Layer23/ServiceExpress). Replaced by CBS350-24T-4G."
   },
@@ -3482,7 +3482,7 @@
     ],
     "support_end_date": "2023-08-31",
     "os_eol_date": null,
-    "confidence": "medium",
+    "confidence": "low",
     "source": "https://serviceexpress.com/eol-eosl-database/products/cisco-sg200-26fp-na-cisco-network-services/",
     "note": "Cisco 200 Series (SG200-26): EoL 2017, EoSL 2023-08-31 per ServiceExpress (Layer23 cites 2023-05-31). Aggregator-sourced."
   },
@@ -3507,7 +3507,7 @@
     ],
     "support_end_date": "2023-08-31",
     "os_eol_date": null,
-    "confidence": "medium",
+    "confidence": "low",
     "source": "https://serviceexpress.com/eol-eosl-database/products/cisco-sg200-50fp-na-cisco-network-services/",
     "note": "Cisco 200 Series (SG200-50): EoL 2017, EoSL ~2023-08-31 (ServiceExpress). Same family as SG200-26. Aggregator-sourced."
   },
@@ -4192,7 +4192,7 @@
     ],
     "support_end_date": "2026-07-15",
     "os_eol_date": null,
-    "confidence": "high",
+    "confidence": "medium",
     "source": "https://community.fortinet.com/t5/Support-Forum/FORTIGATE-300E-EOL-QUESTIONS/m-p/406159",
     "note": "EOS 2026-07-15, LSED 2025-07-15 per Fortinet Product Life Cycle portal; quoted verbatim by Fortinet SuperUser (AEK) in official community thread"
   },
@@ -4205,7 +4205,7 @@
     ],
     "support_end_date": "2027-04-16",
     "os_eol_date": null,
-    "confidence": "high",
+    "confidence": "medium",
     "source": "https://community.fortinet.com/t5/Support-Forum/Fortinet-FG-3700D-Value/m-p/412969",
     "note": "EOS 2027-04-16, last license renewal 2026-04-16 per Product Life Cycle; quoted by Fortinet SuperUser (Toshi_Esumi) in official community thread; EOO was 2022"
   },
@@ -5109,7 +5109,7 @@
     ],
     "support_end_date": "2020-01-08",
     "os_eol_date": null,
-    "confidence": "high",
+    "confidence": "medium",
     "source": "https://community.juniper.net/discussion/ssg-5-ssg-20-end-of-life-announcement",
     "note": "SSG-5/SSG-20 EOL 07/08/2014; End of Support 01/08/2020"
   },
@@ -5158,7 +5158,7 @@
     ],
     "support_end_date": "2020-01-08",
     "os_eol_date": null,
-    "confidence": "high",
+    "confidence": "medium",
     "source": "https://community.juniper.net/discussion/ssg-5-ssg-20-end-of-life-announcement",
     "note": "SSG-5/SSG-20 EOL 07/08/2014; End of Support 01/08/2020"
   },
@@ -5242,7 +5242,7 @@
     ],
     "support_end_date": "2025-12-31",
     "os_eol_date": null,
-    "confidence": "medium",
+    "confidence": "low",
     "source": "https://www.datalive.co.jp/eosl/ibm-eosl-check-list-server/",
     "note": "Lenovo ThinkSystem NE1032 RackSwitch EoS/maintenance-end 2025-12-31 (Datalive). Confirm via Lenovo EOS lookup."
   },
@@ -12800,7 +12800,7 @@
     ],
     "support_end_date": "2021-03-01",
     "os_eol_date": null,
-    "confidence": "high",
+    "confidence": "medium",
     "source": "https://community.ui.com/questions/Select-UniFi-Access-Point-AP-Models-Obsoletion-Date-March-1-2021/65487283-ce9d-49f4-85b9-b6aa54659ef7",
     "note": "Ubiquiti UniFi UAP-Pro — obsoletion/EOL 2021-03-01 (Ubiquiti official community announcement). https://community.ui.com/questions/Select-UniFi-Access-Point-AP-Models-Obsoletion-Date-March-1-2021/65487283-ce9d-49f4-85b9-b6aa54659ef7"
   },
@@ -33550,7 +33550,7 @@
     "support_end_date": "2029-08-01",
     "os_eol_date": null,
     "confidence": "high",
-    "source": "Current Product",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
     "note": "Palo Alto Networks PA-5200 Series Firewalls — End of Service Life 2029-08-01; End of Sale 2024-08-01; replacement: PA-7500 / PA-5400; Palo Alto Networks Official source. Current Product"
   },
   {
@@ -33563,7 +33563,7 @@
     "support_end_date": "2029-08-01",
     "os_eol_date": null,
     "confidence": "high",
-    "source": "Current Product",
+    "source": "https://www.paloaltonetworks.com/services/support/end-of-life-announcements/hardware-end-of-life-dates",
     "note": "Palo Alto Networks PA-7000 Series Firewalls — End of Service Life 2029-08-01; End of Sale 2024-08-01; replacement: PA-7500; Palo Alto Networks Official source. Current Product"
   },
   {

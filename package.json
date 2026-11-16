@@ -10,7 +10,8 @@
     "gen:keys": "node scripts/gen-keys.ts",
     "verify:cve-health": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-cve-health.js",
     "verify:cve-rss": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-cve-rss.js",
-    "verify:eol-watch": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-eol-watch.js"
+    "verify:eol-watch": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-eol-watch.js",
+    "verify:seed": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-seed-policy.js"
   },
   "dependencies": {
     "@netlify/blobs": "^8.1.0",

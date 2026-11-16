@@ -83,10 +83,25 @@ export const FORTINET_REFUSED =
   + 'research feed, not a PSIRT feed, and the advisory pages it links are Cloudflare-challenged.';
 
 /**
- * ⛔ AGGREGATORS ARE REFUSED, INCLUDING THE CONVENIENT ONE. `endoflife.date`
- * answers 200 with 87 KB of clean JSON and is NOT an official vendor source, so
- * it fails the rule that governs this entire dataset. Recorded here so the next
- * session does not rediscover it and treat "it parses nicely" as qualification.
+ * ⛔ AGGREGATORS ARE STILL REFUSED **FOR CVE DATA**, AND THE REASON IS NOT THE
+ * SOURCING RULE ANY MORE.
+ *
+ * The EOL sourcing rule changed on 2026-11-16 (see CLAUDE.md "THE SOURCING
+ * RULE" and lib/eol/source-policy.ts): aggregators are now permitted there at
+ * `low` confidence, always labelled, and `endoflife.date` is admitted. ⛔ THAT
+ * CHANGE DOES NOT REACH THIS FILE, and the distinction is worth stating because
+ * the next session will notice the two files disagree.
+ *
+ * An EOL date is a FACT A HUMAN RE-VERIFIES before it is published, and a `low`
+ * tag travels with it so a consumer can weigh it. A CVE advisory is matched
+ * MECHANICALLY against a customer's running version, with no human in the loop
+ * and no confidence field in the feed — so a second-hand version range cannot be
+ * labelled, only believed. There is also nothing to gain: every identifier found
+ * here is resolved against NVD anyway, which is the authority an aggregator is
+ * merely repeating.
  */
 export const AGGREGATORS_REFUSED =
-  'endoflife.date and similar aggregators: not official vendor sources.';
+  'Aggregators are refused for CVE data specifically: advisories are matched mechanically '
+  + 'with no confidence field to label provenance, and every identifier is resolved against '
+  + 'NVD regardless. (EOL aggregators ARE permitted at low confidence — see '
+  + 'lib/eol/source-policy.ts.)';

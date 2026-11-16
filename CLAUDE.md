@@ -37,7 +37,8 @@ and human-reviewable. This is what you edit to grow coverage. Entry shape:
   "matches": ["C9300-48P", "<aliases>"],  // [0] = canonical model_raw; [1..] = alias_raw (SKU variants, legacy/garbled strings)
   "support_end_date": "2027-04-30",       // End-of-Support / Last Date of Support (apps key on this) | null
   "os_eol_date": null,                    // software/firmware EOL if separate | null
-  "confidence": "high",                   // 'high' = model named in an official bulletin/table; 'medium' = series-level; 'low' = weak
+  "confidence": "high",                   // see "THE SOURCING RULE" below — capped by the SOURCE CLASS:
+                                          // official -> high, community -> medium, aggregator -> low
   "source": "https://official-vendor-url",
   "note": "short: what it is + which bulletin"
 }
@@ -54,14 +55,64 @@ vendor, pull their **entire published EOL/EOS table** and add every model that h
 official date.
 
 ### Rules (non-negotiable)
-- **Official vendor sources ONLY** (vendor.com EoL/EoS/lifecycle pages, official PDFs).
-  Reseller/aggregator "estimated" dates do **not** count.
-- **NEVER guess or infer a date.** If a model has no official published date, **skip
-  it** (don't add a null-dated row).
+
+**THE SOURCING RULE (owner's decision, 2026-11-16 — replaces "official sources ONLY"):**
+
+> **Official sources only for `high` and `medium`. Aggregators are permitted at `low`,
+> always labelled.**
+
+⛔ **IT IS ENFORCED BY `npm run verify:seed`, NOT BY THIS PARAGRAPH.** The previous rule
+said official-only, sat here in bold marked non-negotiable, and was quoted to refuse new
+sources twice in one week — while **22.4% of the shipped corpus (1,767 of 7,902 entries)
+was already aggregator-sourced**, nearly all of it correctly tagged `low`. A rule the data
+contradicts is worse than a looser rule the data obeys: it gets applied selectively, and
+the selection is whoever read it last. `lib/eol/source-policy.ts` is now the rule; this is
+its description.
+
+⛔ **CONFIDENCE AND PROVENANCE ARE TWO AXES.** `low` means EITHER "official but weak" OR
+"aggregator-sourced", and the difference matters: the first cannot improve until the vendor
+publishes better, the second can be **promoted to `high` by one person opening the vendor
+link the aggregator already cites**. Provenance is derived from the source HOST, so it is
+always recoverable from data the seed already carries and no feed-format change is needed.
+
+| source class | ceiling | examples |
+|---|---|---|
+| **official** | `high` | `cisco.com`, `docs.fortinet.com`, `paloaltonetworks.com`, vendor PDFs |
+| **community** | `medium` | `community.fortinet.com`, `community.juniper.net` — vendor-HOSTED but user-WRITTEN; nobody at the vendor signed it |
+| **aggregator** | `low` | `endoflife.date`, `endoflife.ai`, Park Place, Layer23, router-switch, Service Express |
+| **unknown host** | *inadmissible* | ⛔ an unrecognised host is NOT official by default — it fails toward refusal, like `health.ts`'s `unknown` verdict |
+| **no source** | *inadmissible* | a date with no citation is not a weak fact, it is an unverifiable one |
+
+- **To admit a new host**, add it to the right set in `lib/eol/source-policy.ts`. That is
+  the single place; the verifier reads it.
+- **NEVER guess or infer a date.** If a model has no published date anywhere, **skip it**.
+  The one exception is explicit: `lifecycle: "eol"` with a null date, meaning *the vendor
+  confirmed EOL but published no date* — a THIRD state, distinct from both "a date" and
+  "no information" (26 entries). ⛔ The first draft of the verifier asserted "every row has
+  a date" and failed on 24 of them; the rows were right and the assertion was wrong.
 - `support_end_date` = End-of-Support / Last Date of Support (LDoS). Capture
   `os_eol_date` only if the vendor publishes a separate software EOL.
-- `confidence`: `high` when the model is named in the bulletin/table; `medium` when a
-  series-level date is applied to a member.
+- `confidence` within a class: `high` when the model is named in the bulletin/table;
+  `medium` when a series-level date is applied to a member; `low` when weak **or**
+  aggregator-sourced.
+
+⛔ **PRE-EXISTING DEBT IS PINNED, NOT WAIVED.** 70 entries carry `high` with no source URL
+at all — their notes name real documents, so a human read a source and did not record the
+link. Silently downgrading 70 published dates changes what consumers match against on no
+new evidence; silently waiving them makes the rule decorative on day one. So
+`UNSOURCED_HIGH_BASELINE` pins the count: the verifier fails if it ever RISES, so no new
+unsourced row can be added, and the debt stays visible with a number on it. Lower the
+constant in the same commit as any batch that gets its citations back.
+
+⛔ **`endoflife.date` IS THE ONE THAT CHANGES WHAT IS POSSIBLE.** Measured 2026-11-16: a
+clean JSON API, 489 products, and — unlike every other source here — it is organised by
+**OS/firmware BRANCH CYCLE**, which is the gap in this corpus (`os_eol_date` is populated
+on 34 of 7,902 entries, 0.4%). `api/panos.json` returns 26 cycles shaped
+`{cycle, releaseDate, eol, support, latest, link}`, and `link` points at the official
+vendor page — so every row arrives at `low` with its own promotion path to `high`.
+⛔ `endoflife.ai` is permitted but is NOT a bulk source: its hardware tables are
+client-rendered (7-9 dated lines reach a server fetch against "366 release lines tracked"),
+and `/api/<product>` 301s to a marketing page about software products.
 
 ### The flow
 1. **Fan vendor-grouped research agents** (Agent tool, parallel — one per vendor).

@@ -112,6 +112,29 @@ export const EOL_WATCH_SOURCES: EolWatchSource[] = [
     signalKind: 'dates', minSignalLines: 5,
     measured: '2026-11-16: HTTP 200, 157 KB, 24 dated lines, identical hash across two fetches.',
   },
+
+  // ---- HPE/Aruba via endoflife.ai: the only readable record that exists ----
+  // See ARUBA_HPE_BLIND_SPOT below. Change signal only; floor deliberately low.
+  {
+    vendor: 'HPE Aruba', label: 'Aruba switches lifecycle (endoflife.ai)',
+    url: 'https://endoflife.ai/aruba-switches',
+    signalKind: 'dates', minSignalLines: 3,
+    measured:
+      '2026-11-16: HTTP 200, 158 KB, 34,103 chars visible text, 9 dated lines, identical '
+      + 'signal hash across two fetches. AGGREGATOR — any date taken enters the seed at "low".',
+  },
+  {
+    vendor: 'HPE Aruba', label: 'Aruba gateways/controllers lifecycle (endoflife.ai)',
+    url: 'https://endoflife.ai/aruba-gateways',
+    signalKind: 'dates', minSignalLines: 3,
+    measured: '2026-11-16: HTTP 200, 203 KB, 51,901 chars visible text, 7 dated lines, stable.',
+  },
+  {
+    vendor: 'HPE Aruba', label: 'Aruba access points lifecycle (endoflife.ai)',
+    url: 'https://endoflife.ai/aruba-access-points',
+    signalKind: 'dates', minSignalLines: 3,
+    measured: '2026-11-16: HTTP 200, 373 KB, 7 dated lines, stable. Tracks 366 release lines.',
+  },
 ];
 
 /**
@@ -138,7 +161,7 @@ export const CISCO_INTERFACES_MODULES_REMOVED =
 /**
  * ⛔ THE REFUSALS ARE THE MORE IMPORTANT HALF OF THIS FILE.
  *
- * Seven sources were admitted out of nineteen URLs probed. Every rejection below
+ * Ten sources were admitted out of nineteen URLs probed (seven official, three aggregator). Every rejection below
  * is recorded with what was actually measured, so the next session does not
  * rediscover a URL, see HTTP 200, and conclude it works. ⛔ FIVE OF THESE
  * REFUSALS ANSWER HTTP 200.
@@ -193,20 +216,49 @@ export const EOL_SOURCES_REFUSED =
   + 'Ubiquiti (403), TP-Link/D-Link (404), Ruckus (Cloudflare challenge). Measured 2026-11-16.';
 
 /**
- * ⛔ AGGREGATORS ARE REFUSED HERE TOO, AND THEY ARE THE TEMPTING OPTION.
+ * ⛔ AGGREGATORS ARE NO LONGER REFUSED — THE RULE CHANGED ON 2026-11-16.
  *
- * A web search for HPE Aruba EOL dates returns almost nothing BUT aggregators —
- * router-switch.com, endoflife.ai, parkplacetechnologies.com, layer23-switch.com
- * — and several serve clean, complete, well-structured tables that would parse
- * beautifully. They are disqualified by the rule that governs this entire
- * dataset: CLAUDE.md's "Official vendor sources ONLY ... Reseller/aggregator
- * 'estimated' dates do not count." endoflife.ai's own switch page concedes its
- * dates are read FROM networkingsupport.hpe.com, which is the JS shell above —
- * so using it would mean trusting a third party's rendering of a page we refuse
- * to trust ourselves.
+ * CLAUDE.md's "THE SOURCING RULE" now reads: official sources only for `high`
+ * and `medium`; **aggregators permitted at `low`, always labelled**. The change
+ * was made because the old official-only rule was being quoted to refuse new
+ * sources while 22.4% of the shipped corpus was already aggregator-sourced.
+ * `lib/eol/source-policy.ts` is the enforceable version; `npm run verify:seed`
+ * runs it over all 7,902 entries.
  *
- * Recorded so "it parses nicely" is never mistaken for qualification.
+ * ⛔ WHAT THAT DOES **NOT** CHANGE: an aggregator still has to be READABLE to be
+ * watched. Admission here is a measurement, not a policy question, and the
+ * measurement is unchanged — see ARUBA_HPE_BLIND_SPOT below for the one that
+ * passed and why it only half-passes.
  */
-export const EOL_AGGREGATORS_REFUSED =
-  'router-switch.com, endoflife.ai, parkplacetechnologies.com, layer23-switch.com: '
-  + 'resellers and aggregators, not official vendor sources.';
+export const EOL_AGGREGATORS_PERMITTED_AT_LOW =
+  'Aggregators (endoflife.date, endoflife.ai, Park Place, Layer23, router-switch, Service '
+  + 'Express) are permitted as SEED sources at confidence "low", always labelled. See '
+  + 'lib/eol/source-policy.ts — the rule is executable, not prose.';
+
+/**
+ * ⛔ HPE/ARUBA IS THE ONE VENDOR WE ARE GENUINELY BLIND ON, and these three
+ * pages are the only readable record that exists.
+ *
+ * ~2,100 Aruba + HPE models are carried in the seed. The official listing is
+ * gone (503, "Site is no longer available ... Feb 23, 2026") and its successor
+ * is a 13 KB page containing NINE characters of visible text. So for this vendor
+ * the choice is not "aggregator or official" — it is "aggregator or nothing".
+ *
+ * ⛔ AND THEY ARE ADMITTED AS A CHANGE SIGNAL ONLY, NOT AS A DATA SOURCE.
+ * Measured 2026-11-16: each page is stable across two fetches, but yields only
+ * **7-9 dated lines** server-side while advertising "366 release lines tracked"
+ * — the per-model table is client-rendered, exactly like the vendor pages this
+ * file already refuses. What DOES reach a server fetch is the summary: "The next
+ * HPE Aruba Networking access points support end date is December 31, 2026, when
+ * version JW177A ... reaches end of life." When that sentence changes, something
+ * in Aruba's lifecycle moved and a human should go and look. That is worth
+ * having and it is all that is being claimed.
+ *
+ * ⛔ DO NOT RAISE minSignalLines HERE TO "GET MORE COVERAGE". The floor is 3
+ * against a measured 7-9. Setting it near the measurement would turn a vendor
+ * reformatting one summary line into a failed source.
+ */
+export const ARUBA_HPE_BLIND_SPOT =
+  'endoflife.ai Aruba pages are watched as a CHANGE SIGNAL only (7-9 server-readable dated '
+  + 'lines vs "366 release lines tracked"); the per-model table is client-rendered. Any date '
+  + 'taken from them enters the seed at confidence "low".';
