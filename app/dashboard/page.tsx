@@ -1,6 +1,7 @@
 import AppLayout from '@/components/AppLayout';
 import AdminActions from '@/components/AdminActions';
 import EolWatchActions from '@/components/EolWatchActions';
+import OsCyclesActions from '@/components/OsCyclesActions';
 import CveActions from '@/components/CveActions';
 import { query } from '@/lib/db';
 
@@ -77,6 +78,11 @@ export default async function DashboardPage() {
           panel: it raises review items for the curated seed those buttons
           publish. It writes no dates of its own. */}
       <EolWatchActions />
+      {/* The third corpus: OS branches, its own signed feed and its own blob
+          store. Sits with the EOL panels because it answers the same question
+          one layer down — not "is this box supported" but "is the software it
+          runs still receiving fixes". */}
+      <OsCyclesActions />
       {/* Separate panel, separate tables, separate feed — the CVE corpus shares
           nothing with the EOL catalogue above it. */}
       <CveActions />

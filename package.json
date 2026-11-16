@@ -13,6 +13,7 @@
     "verify:eol-watch": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-eol-watch.js",
     "verify:seed": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-seed-policy.js",
     "verify:os": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-os-cycles.js",
+    "verify:os-feed": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/verify-os-feed.js",
     "build:os-cycles": "tsc -p scripts/tsconfig.verify.json && node .verify-build/scripts/build-os-cycles.js"
   },
   "dependencies": {

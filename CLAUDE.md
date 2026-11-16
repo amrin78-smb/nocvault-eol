@@ -738,8 +738,57 @@ cross-check that the official PAN-OS corpus still agrees with endoflife.date. �
 cross-check is what caught the timezone bug and is kept as a standing test: if the two
 readings ever stop agreeing, one has drifted and the corpus should not be trusted.
 
-**Not yet built:** nothing consumes this. Schema, publish and a consumer route are the next
-step, mirroring the CVE feed's Phase 1 / Phase 2 split.
+### The OS feed (Phase 2) — `/api/v1/os-feed`
+
+A THIRD signed feed beside EOL and CVE, built from `os_cycles` by `lib/eol/os-feed.ts`.
+Same Ed25519 detached signature over canonical-JSON bytes, same `X-Feed-Signature` /
+`X-Feed-Sha256` headers, same `latest.json` pointer — a consumer that can verify either
+existing feed needs no new verification code.
+
+⛔ **ITS OWN BLOB STORE, `os-feed`.** Never `eol-feed` (the model catalogue NetVault reads
+in production) and never `cve-feed`. Three products, three stores, no shared key names —
+and `os_feed_versions` is its own audit log for the same reason.
+
+⛔ **ROWS ABSENT FROM THE SEED ARE DELETED.** The corpus is fully regenerated each time, so
+a cycle that disappears upstream must disappear here; a stale branch row would go on telling
+a consumer that a long-dead branch is the vendor's current statement, and nothing would ever
+contradict it. Safe only because the file, not the table, is the source of truth.
+
+⛔ **AN INVALID CORPUS WRITES NOTHING AT ALL.** `applyOsCycles` runs `checkCycle` over every
+row before it writes one; half-applying leaves the database in a state no file describes.
+
+⛔ **`checked_at` REUSES `MAX(eol_watch_sources.last_success_at)`.** This corpus is refreshed
+by a human running the generator, so `generated_at` says only when someone last did that —
+a corpus untouched for three months is indistinguishable from a hub that died three months
+ago. The daily watch's success timestamp is an automated liveness signal that advances
+whether or not anything changed, and it is the SAME expression the watch already records,
+not a second definition of "alive".
+
+⛔ **DATES ARE `to_char`-FORMATTED OUT OF POSTGRES.** A pg `date` arrives as a JS Date and
+serialises to a full ISO timestamp in the SERVER's timezone — the same class of bug as
+`parseLifecycleDate`'s, one layer down. The verifier asserts no `T00:00:00` ever reaches the
+feed.
+
+⛔ **`Cache-Control: private, no-store` + `Vary: x-license-key`,** never `public`. The CVE
+feed shipped with `public, max-age=3600` copied from the EOL feed and it made the licence
+gate decorative — the CDN cache key does not vary on the header, so one authorised fetch
+populated the edge and everything after was served without the function running. Metered by
+the same `CVE_FEED_KEYS` list: same customers, same commercial relationship, and a third key
+list would be a third thing to configure before anyone can pull.
+
+⛔ **`scheduled-os-publish` runs DAILY at 06:50 UTC with `mode: "both"`**, after the watch at
+06:20. It seeds as well as publishing because the corpus lives in a DEPLOYED FILE — a deploy
+shipping a new `data/os-lifecycle.json` changes nothing until something loads it, and leaving
+that to a human lets the file and the feed drift silently. Publishing is idempotent, so the
+daily run exists to refresh `checked_at`.
+
+⛔ **VERIFIED BY EXECUTION: `npm run verify:os-feed` — 46 assertions**, against a FAKE blob
+store (`FeedBlobStore`, a seam that supplies the store and nothing else). Without it the
+whole publish path could only be verified by reading, and every subtle rule in it is there
+because the CVE feed got it wrong first: a partial write making a broken signature
+permanent, an empty store with an intact database making every publish a no-op for ever, an
+audit row recorded for a publish that never happened. All three are tests now, plus a real
+Ed25519 verify over the published bytes and a tampered-body rejection.
 
 ### Licence gate (`lib/cve/license.ts`)
 
